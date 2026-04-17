@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Play, SkipBack, SkipForward, ArrowLeft, ExternalLink } from "lucide-react";
-import { useRef } from "react";
+import { Play, SkipBack, SkipForward, ExternalLink } from "lucide-react";
+
 
 const albumData = [
   {
@@ -63,7 +63,7 @@ const MusicPortfolio = () => {
         </div>
       </footer>
 
-      <style jsx global>{`
+      <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
