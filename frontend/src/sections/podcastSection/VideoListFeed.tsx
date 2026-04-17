@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MoreVertical, CheckCircle2, ChevronDown } from "lucide-react";
+import { MoreVertical, CheckCircle2 } from "lucide-react";
 
 
 
