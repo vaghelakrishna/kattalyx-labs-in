@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const categories = [
   { id: 1, title: 'Podcast Charts', color: 'bg-[#1e3264]', img: 'https://placehold.co/200x200/png?text=Chart', size: 'col-span-2 row-span-2' },
