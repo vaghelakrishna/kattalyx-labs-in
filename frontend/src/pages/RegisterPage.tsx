@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Mail, Lock, Eye, EyeOff, Loader2, User, ArrowLeft, ChevronRight } from "lucide-react";
-import { authAPI } from "@/services/api";
+// import { authAPI } from "@/services/api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -25,7 +25,7 @@ export default function RegisterPage() {
     setLoading(true);
     setError("");
     try {
-      await authAPI.register({ name, email, role, password });
+      // await authAPI.register({ name, email, role, password });
       navigate("/login");
     } catch (error: any) {
       setError(error.response?.data?.message || "Registration failed");
