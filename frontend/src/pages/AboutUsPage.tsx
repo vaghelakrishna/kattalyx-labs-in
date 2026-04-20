@@ -1,20 +1,63 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import vansh from "../assets/vansh.jpg";
-import image from "../assets/loginslider1.avif"
+// import image from "../assets/loginslider1.avif"
 import AboutCompany from "@/sections/aboutussection/AboutCompany";
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
+import { useEffect } from "react";
 import {
   ArrowRight, ArrowUpRight,
-  Rocket, Target, Zap, Users
+  Rocket, Target, Zap, Users,
+  Eye,
+  Landmark,
+  Plus,
+  X
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 // import SuccessCardSlider from "@/sections/aboutussection/SuccessCardSection";
 // import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import FAQSection from "@/components/FAQ";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
+
+
+const stats = [
+  { num: "9", label: "YEARS' EXPERIENCE" },
+  { num: "12", label: "INDUSTRIES SERVED" },
+  { num: "10+", label: "GLOBAL PARTNERSHIPS" },
+  { num: "135+", label: "COMPLETED PROJECTS" },
+];
+
+const galleryImages = [
+  { src: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070", w: "w-[300px]", h: "h-[450px]" },
+  { src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070", w: "w-[400px]", h: "h-[300px]", mt: "mt-24" },
+  { src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070", w: "w-[280px]", h: "h-[400px]" },
+  { src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084", w: "w-[350px]", h: "h-[350px]", mt: "mt-12" },
+  { src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070", w: "w-[450px]", h: "h-[380px]" },
+];
+const steps = [
+  {
+    title: "Your Team, Your Champions",
+    desc: "We don't just join your project, we become part of your journey. Think of us as an extension of your team, bringing expertise and fresh ideas while leaving egos at the door. Together, we'll create something extraordinary and maybe even have a little fun along the way.",
+  },
+  {
+    title: "Straight Talk, Always",
+    desc: "Transparency is our foundation. We provide honest feedback and clear communication at every stage of the process.",
+  },
+  {
+    title: "Let's Build Together",
+    desc: "Collaboration is key. We work closely with you to ensure your vision is translated into a digital reality that exceeds expectations.",
+  },
+  {
+    title: "Big Ideas, No Big Egos",
+    desc: "We focus on what works best for the project. Innovation comes from everywhere, and we listen to every voice.",
+  },
+  {
+    title: "Results That Actually Matter",
+    desc: "We don't just deliver code; we deliver impact. Our goal is to ensure your investment drives real growth and value.",
+  },
+];
 const AboutUsPage = () => {
   const images = [
     { id: 1, src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400', h: 'h-80' },
@@ -40,6 +83,30 @@ const AboutUsPage = () => {
     { id: 4, title: "Skill Mastery", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format" },
     { id: 5, title: "Future Careers", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format" },
   ];
+
+
+  // Image pools for Row 1 and Row 2
+  const row1Images = [
+    "https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=800",
+    "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800",
+    "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800"
+  ];
+
+  const row2Images = [
+    "https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=800",
+    "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=800",
+    "https://images.unsplash.com/photo-1569058242253-92a9c71f9867?q=80&w=800"
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Switch image every 3.5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % row1Images.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [row1Images.length]);
 
 
 
@@ -69,12 +136,14 @@ const AboutUsPage = () => {
     target: targetRef,
     offset: ["start end", "end start"] // Starts moving when top of section hits bottom of viewport
   });
-
   // Maps vertical scroll (0 to 1) to horizontal movement (-20% to 20%)
   // Adjust these values to make the slide more or less dramatic
   const x = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
+  const duplicatedImages = [...galleryImages, ...galleryImages, ...galleryImages];
 
+  const [expanded, setExpanded] = useState<number | null>(0);
   return (
+
     <>
       <Navbar />
       <section className="relative w-full py-30 bg-[#FFFCF9] overflow-hidden">
@@ -154,6 +223,52 @@ const AboutUsPage = () => {
           </div>
         </div>
       </section>
+
+
+      <section className="bg-white py-24 overflow-hidden font-mono text-black">
+        {/* 1. RAW MINIMAL STATS */}
+        <div className="flex flex-wrap gap-x-20 gap-y-10 px-10 md:px-20 mb-32">
+          {stats.map((item, i) => (
+            <div key={i} className="flex flex-col gap-3">
+              <span className="text-7xl md:text-8xl font-normal tracking-tighter leading-none">
+                {item.num}
+              </span>
+              <span className="text-[10px] font-bold tracking-[0.2em] max-w-[90px] leading-tight">
+                {item.label}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* 2. INFINITE MASONRY SCROLL */}
+        <div className="relative flex">
+          <motion.div
+            className="flex gap-10 items-start whitespace-nowrap"
+            animate={{ x: [0, -2500] }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 45,
+                ease: "linear",
+              },
+            }}
+          >
+            {duplicatedImages.map((img, i) => (
+              <div
+                key={i}
+                className={`shrink-0 overflow-hidden bg-zinc-100 border border-zinc-50 ${img.w} ${img.h} ${img.mt || ""}`}
+              >
+                <img
+                  src={img.src}
+                  alt="Studio Work"
+                  className="w-full h-full object-cover transition-all duration-1000"
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
       {/* 
        <HeroSection/> */}
       {/* <section className="relative w-full min-h-screen bg-[#F8F9FA] text-[#1A1A1A] font-sans overflow-hidden">
@@ -219,111 +334,138 @@ const AboutUsPage = () => {
 
 
       {/* <ProblemsSolutions /> */}
-      <section className="relative w-full py-32 bg-[#F8FAFC] overflow-hidden">
-        {/* --- VIBEY BACKGROUND ELEMENTS --- */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      <section className="bg-white py-32 px-6 md:px-20 font-sans text-black overflow-hidden border-t border-zinc-100">
+        <div className="max-w-7xl mx-auto">
 
-
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-
-          {/* Header Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16 flex flex-col items-center"
-          >
-            {/* Compact Badge */}
-            <div className="flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-blue-100 bg-white shadow-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-slate-600">
-                The Kattalyx Edge
-              </span>
+          {/* Section Header for Features */}
+          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div>
+              <span className="text-[10px] font-black tracking-[0.4em] uppercase text-blue-600 block mb-4">Core Features</span>
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase italic leading-[0.8]">
+                The <span className="text-zinc-200">Toolkit</span>.
+              </h2>
             </div>
-
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-              Why Choose {" "}
-              <span className="relative inline-block px-1">
-                <span className="text-blue-600">Kattalyx Labs</span>
-
-                {/* Amazing Vedantu-style Loopy Underline */}
-                <svg
-                  className="absolute -bottom-4 left-0 w-full h-6 text-blue-400/60"
-                  viewBox="0 0 200 20"
-                  fill="none"
-                >
-                  {/* First stroke */}
-                  <motion.path
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                    d="M5 12c40-5 120-5 190 2"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                  />
-                  {/* Second "loopy" accent stroke */}
-                  <motion.path
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-                    d="M10 16c30-2 80-4 150 1"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    opacity="0.5"
-                  />
-                </svg>
-              </span>?
-            </h2>
-
-            <p className="mt-8 text-slate-500 text-base md:text-lg font-medium max-w-xl mx-auto leading-relaxed">
-              We bridge the gap between traditional schooling and <span className="text-slate-900 font-bold">industry reality</span> through our specialized ecosystem.
+            <p className="max-w-[240px] text-[10px] font-bold text-zinc-400 uppercase tracking-widest leading-loose">
+              Precision tools designed to bridge the gap between classroom and industry.
             </p>
-          </motion.div>
-          {/* --- THE BENTO GRID --- */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 w-full max-w-6xl mx-auto">
+          </div>
+
+          {/* Studio Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-zinc-100">
             {features.map((f, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -10 }}
-                className={`group relative bg-white border-2 border-slate-100 p-8 rounded-[2rem] transition-all duration-300 overflow-hidden
-                ${i === 0 || i === 3 ? 'md:col-span-7' : 'md:col-span-5'}
+                whileHover={{ backgroundColor: "#FAFAFA" }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: i * 0.05 }}
+                className={`
+                group p-12 relative transition-colors cursor-default
+                border-r border-b border-zinc-100
+                ${i === 0 ? "lg:col-span-1" : ""}
               `}
               >
-                {/* Massive Background Index Number */}
-                <span className="absolute -bottom-4 -right-4 text-9xl font-black text-slate-50 group-hover:text-blue-50/50 transition-colors pointer-events-none">
+                {/* Subtle Index Number (Top Right) */}
+                <span className="absolute top-8 right-8 text-[10px] font-black text-zinc-200 group-hover:text-blue-200 transition-colors">
                   0{i + 1}
                 </span>
 
-                <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-slate-900 flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-all duration-300">
-                    <f.icon size={24} className="text-white" />
-                  </div>
+                {/* Icon with Pastel Circle Background */}
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center mb-10 group-hover:scale-110 transition-all duration-500"
+                  style={{
+                    backgroundColor: i % 3 === 0 ? '#A0D2FF' : i % 3 === 1 ? '#FFADF0' : '#C4FF8E'
+                  }}
+                >
+                  <f.icon size={20} className="text-black/80" />
+                </div>
 
-                  <h4 className="text-3xl font-black text-slate-900 mb-3 leading-tight">
-                    {f.title}
-                  </h4>
-
-                  <p className="text-slate-500 text-lg font-medium leading-snug max-w-[80%]">
+                {/* Text Content */}
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-black tracking-tighter uppercase leading-none group-hover:text-blue-600 transition-colors">
+                    {f.title.split(' ').map((word, index) => (
+                      <span key={index}>{word} <br /></span>
+                    ))}
+                  </h3>
+                  <p className="text-zinc-500 text-sm font-medium leading-relaxed max-w-[240px]">
                     {f.desc}
                   </p>
                 </div>
 
-                {/* Vedantu-style Accent Line */}
-                <div className="absolute top-0 left-0 w-2 h-0 bg-blue-600 group-hover:h-full transition-all duration-500" />
+                {/* Bottom Decorative Line (Modern Touch) */}
+                <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-600 group-hover:w-full transition-all duration-700" />
               </motion.div>
             ))}
-          </div>
-        </div>
 
+            {/* Optional: Empty Grid Fillers (to keep the grid symmetrical if items are less) */}
+            {features.length % 3 !== 0 && (
+              <div className="hidden lg:block p-12 border-r border-b border-zinc-100 bg-zinc-50/30" />
+            )}
+          </div>
+
+
+        </div>
       </section>
 
 
+      <section className="bg-[#0A0A0A] text-white py-32 px-6 md:px-20 font-sans">
+        <div className="max-w-7xl mx-auto">
+
+          {/* Section Header */}
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-20">
+            How we work.
+          </h2>
+
+          {/* List Container */}
+          <div className="border-t border-zinc-800">
+            {steps.map((step, i) => (
+              <div key={i} className="border-b border-zinc-800">
+                <button
+                  onClick={() => setExpanded(expanded === i ? null : i)}
+                  className="w-full flex items-start justify-between py-10 text-left group transition-all"
+                >
+                  {/* Index Number */}
+                  <span className="text-xs font-bold tracking-widest text-zinc-500 mt-2">
+                    0{i + 1}
+                  </span>
+
+                  {/* Title & Description Container */}
+                  <div className="flex-1 md:ml-40 max-w-2xl">
+                    <h3 className={`text-2xl md:text-4xl font-medium tracking-tight transition-colors ${expanded === i ? 'text-white' : 'text-zinc-400 group-hover:text-zinc-200'}`}>
+                      {step.title}
+                    </h3>
+
+                    <AnimatePresence>
+                      {expanded === i && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <p className="mt-8 text-zinc-500 text-lg leading-relaxed font-normal">
+                            {step.desc}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Icon Switch */}
+                  <div className="mt-2 ml-4">
+                    {expanded === i ? (
+                      <X size={20} className="text-zinc-500" />
+                    ) : (
+                      <Plus size={20} className="text-zinc-500 group-hover:text-white transition-colors" />
+                    )}
+                  </div>
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
 
       {/* Our purpose */}
@@ -434,10 +576,9 @@ const AboutUsPage = () => {
 
 
       {/* vission mission history cards */}
-      <section className="bg-white px-5 md:px-16 py-16 md:py-20">
+      {/* <section className="bg-white px-5 md:px-16 py-16 md:py-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10">
 
-          {/* ================= LEFT CARDS ================= */}
           <div
             className="
         flex lg:block
@@ -450,7 +591,6 @@ const AboutUsPage = () => {
       "
           >
 
-            {/* Our Vision */}
             <div className="snap-center shrink-0 w-[85%] sm:w-[70%] lg:w-auto rounded-2xl md:rounded-3xl bg-blue-200 p-6 md:p-8">
               <span className="inline-block bg-white text-gray-800 px-4 md:px-5 py-2 rounded-full font-medium mb-4 text-sm md:text-base">
                 Our Vision
@@ -460,7 +600,6 @@ const AboutUsPage = () => {
               </p>
             </div>
 
-            {/* Our Mission */}
             <div className="snap-center shrink-0 w-[85%] sm:w-[70%] lg:w-auto rounded-2xl md:rounded-3xl bg-blue-200 p-6 md:p-8">
               <span className="inline-block bg-white text-gray-800 px-4 md:px-5 py-2 rounded-full font-medium mb-4 text-sm md:text-base">
                 Our Mission
@@ -470,7 +609,6 @@ const AboutUsPage = () => {
               </p>
             </div>
 
-            {/* Our History */}
             <div className="snap-center shrink-0 w-[85%] sm:w-[70%] lg:w-auto rounded-2xl md:rounded-3xl bg-blue-400 p-6 md:p-8 text-white">
               <span className="inline-block bg-white text-gray-800 px-4 md:px-5 py-2 rounded-full font-medium mb-4 text-sm md:text-base">
                 Our History
@@ -485,7 +623,6 @@ const AboutUsPage = () => {
 
           </div>
 
-          {/* ================= RIGHT IMAGE CARD ================= */}
           <div className="relative rounded-2xl md:rounded-3xl overflow-hidden min-h-[420px] md:min-h-[600px]">
 
             <img
@@ -516,6 +653,71 @@ const AboutUsPage = () => {
               </Link>
             </div>
           </div>
+
+        </div>
+      </section> */}
+
+      <section className="bg-white py-32 px-6 md:px-20 font-sans text-black overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+
+
+
+          {/* The Grid - Pure Lines, No Boxes */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-b border-zinc-100">
+
+            {/* Vision Segment */}
+            <motion.div
+              whileHover={{ backgroundColor: "#FAFAFA" }}
+              className="group p-12 lg:border-r border-zinc-100 transition-colors cursor-default"
+            >
+              <div className="w-10 h-10 rounded-full bg-[#A0D2FF] flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+                <Eye size={18} className="text-blue-900" />
+              </div>
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-300 block mb-4">01 / Vision</span>
+              <h3 className="text-3xl font-black tracking-tighter uppercase leading-none mb-6">
+                Empower <br /> The System
+              </h3>
+              <p className="text-zinc-500 text-sm font-medium leading-relaxed max-w-[240px]">
+                Building India’s most powerful real-world learning ecosystem for schools.
+              </p>
+            </motion.div>
+
+            {/* Mission Segment */}
+            <motion.div
+              whileHover={{ backgroundColor: "#FAFAFA" }}
+              className="group p-12 lg:border-r border-zinc-100 transition-colors cursor-default"
+            >
+              <div className="w-10 h-10 rounded-full bg-[#FFADF0] flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+                <Target size={18} className="text-pink-900" />
+              </div>
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-300 block mb-4">02 / Mission</span>
+              <h3 className="text-3xl font-black tracking-tighter uppercase leading-none mb-6">
+                Transform <br /> The Skills
+              </h3>
+              <p className="text-zinc-500 text-sm font-medium leading-relaxed max-w-[240px]">
+                Evolving classrooms through modern skills and sustainable systems.
+              </p>
+            </motion.div>
+
+            {/* History Segment */}
+            <motion.div
+              whileHover={{ backgroundColor: "#FAFAFA" }}
+              className="group p-12 transition-colors cursor-default"
+            >
+              <div className="w-10 h-10 rounded-full bg-[#C4FF8E] flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+                <Landmark size={18} className="text-emerald-900" />
+              </div>
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-300 block mb-4">03 / History</span>
+              <h3 className="text-3xl font-black tracking-tighter uppercase leading-none mb-6">
+                Born From <br /> Impact
+              </h3>
+              <p className="text-zinc-500 text-sm font-medium leading-relaxed max-w-[240px]">
+                Started with a simple realization: schools need connections, not just tools.
+              </p>
+            </motion.div>
+
+          </div>
+
 
         </div>
       </section>
@@ -631,16 +833,7 @@ const AboutUsPage = () => {
                     className="w-full h-[500px] object-cover scale-150"
                   />
                 </div>
-                {/* Floating ID Card Overlay */}
-                <div className="absolute -bottom-6 -right-6 md:-right-12 bg-slate-900 text-white p-8 rounded-[2rem] shadow-2xl max-sm:hidden">
-                  {/* <h3 className="text-2xl font-bold">Vansh Jain</h3> */}
-                  <p className="text-blue-400 text-xs font-black uppercase tracking-[0.2em] mt-1">Lead Mentor</p>
-                  <div className="mt-6 flex gap-2">
-                    <div className="h-1 w-8 bg-blue-500 rounded-full" />
-                    <div className="h-1 w-2 bg-slate-700 rounded-full" />
-                    <div className="h-1 w-2 bg-slate-700 rounded-full" />
-                  </div>
-                </div>
+
               </motion.div>
             </div>
 
@@ -704,6 +897,42 @@ const AboutUsPage = () => {
       </section>
 
 
+      {/* --- 4. FOUNDER SECTION --- */}
+      <section className="relative z-10 py-32 px-10 md:px-20 border-t border-white/[0.05] bg-black">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="lg:col-span-5 relative order-1">
+            <div className="relative aspect-[2/2] overflow-hidden rounded-sm grayscale group border border-white/5">
+              <div className="absolute inset-0 z-10 opacity-20 pointer-events-none" style={{ backgroundImage: `radial-gradient(circle, #fff 0.5px, transparent 0.5px)`, backgroundSize: '15px 15px' }} />
+              <img src={vansh} className="w-full h-full object-cover scale-105 group-hover:scale-100 " alt="Vansh Jain" />
+              <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-white/20" />
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-white/20" />
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 space-y-12 order-2">
+            <div className="space-y-4">
+              <span className="text-[9px] font-black uppercase tracking-[0.6em] text-blue-600">Leadership Protocol</span>
+              <h2 className="text-[clamp(3.5rem,8vw,6.5rem)] font-[1000] text-white leading-[0.85] tracking-tighter uppercase">VANSH JAIN<span className="text-blue-600">.</span></h2>
+              <div className="flex gap-4 pt-2">
+                <span className="text-[10px] font-bold text-white bg-blue-600/10 border border-blue-600/20 px-3 py-1 rounded-sm uppercase tracking-widest">Founder & CEO</span>
+                <span className="text-[10px] font-bold text-zinc-500 border border-white/10 px-3 py-1 rounded-sm uppercase tracking-widest">Lead Architect</span>
+              </div>
+            </div>
+            <p className="text-2xl md:text-3xl font-medium text-zinc-300 leading-snug tracking-tight max-w-xl">
+              Architecting a <span className="text-white italic">full-stack ecosystem</span> to bridge the gap between academia and the digital economy.
+            </p>
+            <motion.a href="https://www.linkedin.com/in/vansh-jain26/" target="_blank" whileHover={{ x: 10 }} className="flex items-center gap-5 group pt-8">
+              <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:border-blue-600 transition-colors">
+                <ArrowUpRight className="w-5 h-5 text-white group-hover:text-blue-600 transition-colors" />
+              </div>
+              <div>
+                <p className="text-[9px] font-black text-zinc-600 uppercase tracking-widest">Network</p>
+                <p className="text-sm font-bold text-white uppercase group-hover:text-blue-600 transition-colors">LinkedIn Profile</p>
+              </div>
+            </motion.a>
+          </div>
+        </div>
+      </section>
       {/* Team Cards - Only shown when team members exist */}
       {team.length > 0 && (
         <section className="max-w-6xl mx-auto px-6 py-12">
@@ -795,7 +1024,77 @@ const AboutUsPage = () => {
         </div>
       </section>
 
-      <FAQSection/>
+
+
+
+      <section className="relative bg-[#050508] py-40 px-6 md:px-12 overflow-hidden">
+
+        {/* 1. BACKGROUND PROGRESS LINE (image_ee1be1 match) */}
+        <div className="absolute top-[48%] left-0 w-full h-[1px] bg-white/10 z-0 flex items-center">
+          <div className="w-[60%] h-full bg-transparent" />
+          <div className="w-24 h-[2px] bg-[#D4FF00] shadow-[0_0_15px_#D4FF00]" />
+        </div>
+
+        <div className="max-w-[1800px] mx-auto relative z-10 space-y-4">
+
+          {/* ROW 1: BUILT FOR + IMAGE (Slideshow) */}
+          <div className="flex flex-col md:flex-row items-baseline md:items-center gap-6 md:gap-12">
+            <h2 className="text-[clamp(4.5rem,15vw,18rem)] font-[1000] leading-none tracking-[-0.08em] text-white uppercase shrink-0">
+              BUILT FOR
+            </h2>
+
+            <div className="relative w-full md:w-[500px] h-[100px] md:h-[180px] lg:h-[220px] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 grayscale opacity-80">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={row1Images[activeIndex]}
+                  src={row1Images[activeIndex]}
+                  initial={{ opacity: 0, scale: 1.1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  alt="Build context"
+                />
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* ROW 2: IMAGE (Slideshow) + GROWTH */}
+          <div className="flex flex-col-reverse md:flex-row items-baseline md:items-center justify-end gap-6 md:gap-12 md:-mt-8">
+            <div className="relative w-full md:w-[400px] h-[100px] md:h-[180px] lg:h-[220px] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 grayscale opacity-80">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={row2Images[activeIndex]}
+                  src={row2Images[activeIndex]}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  alt="Growth context"
+                />
+              </AnimatePresence>
+            </div>
+
+            <h2 className="text-[clamp(4.5rem,15vw,18rem)] font-[1000] leading-none tracking-[-0.08em] text-white uppercase shrink-0">
+              GROWTH
+            </h2>
+          </div>
+
+        </div>
+
+        {/* SYSTEM PROTOCOL LABEL */}
+        <div className="absolute bottom-10 left-10 flex items-center gap-4 opacity-20">
+          <span className="text-[9px] font-black uppercase tracking-[0.5em] text-white">
+            Scale Strategy / v.2026
+          </span>
+        </div>
+
+      </section>
+
+      <WorkMarquee5Col />
+
+      <FAQSection />
       <Footer />
 
       <style>{`
@@ -807,4 +1106,94 @@ const AboutUsPage = () => {
 };
 
 export default AboutUsPage;
+
+
+
+const WorkMarquee5Col = () => {
+  const allProjects = [
+    { title: "Smash Foods", img: "https://images.unsplash.com/photo-1569058242253-92a9c71f9867?q=80&w=800" },
+    { title: "Lumar", img: "https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=800" },
+    { title: "Vybrance Labs", img: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800", video: true },
+    { title: "Coho+", img: "https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=800" },
+    { title: "Kahuna", img: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800" },
+    { title: "A La Maison", img: "https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=800" },
+  ];
+
+  // Helper component for each vertical track
+  const ColumnTrack = ({ items, reverse = false, duration = 30 }: { items: Array<{ title: string; img: string; video?: boolean;[key: string]: unknown }>; reverse?: boolean; duration?: number }) => (
+    <div className="flex flex-col gap-4 overflow-hidden h-[700px] relative shrink-0">
+      <motion.div
+        animate={{ y: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
+        transition={{ ease: "linear", duration: duration, repeat: Infinity }}
+        className="flex flex-col gap-4"
+      >
+        {[...items, ...items].map((item, idx) => (
+          <div
+            key={idx}
+            className="w-full aspect-[4/5] rounded-[1.8rem] overflow-hidden border border-white/5 bg-zinc-900 group relative"
+          >
+            <img
+              src={item.img}
+              className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+              alt={item.title}
+            />
+            {/* Minimal label on hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-5 flex flex-col justify-end">
+              <h3 className="text-white font-bold uppercase tracking-tighter text-sm">{item.title}</h3>
+            </div>
+            {item.video && (
+              <div className="absolute top-4 right-4">
+                <div className="w-8 h-8 rounded-full bg-[#D4FF00] flex items-center justify-center">
+                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-l-[7px] border-l-black border-b-[4px] border-b-transparent ml-0.5" />
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+
+  return (
+    <section className="bg-[#050508] py-32 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4">
+
+        {/* SECTION HEADER */}
+        <div className="mb-12 flex flex-col items-center text-center space-y-4">
+          <div className="flex items-center gap-3">
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-600">Continuous Output</span>
+            <div className="w-12 h-[1px] bg-zinc-800" />
+          </div>
+          <h2 className="text-5xl md:text-7xl font-[1000] text-white tracking-tighter uppercase leading-none">
+            WORK CYCLE<span className="text-[#D4FF00]">.</span>
+          </h2>
+        </div>
+
+        {/* 5-COLUMN GRID */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 h-[700px] relative overflow-hidden">
+
+          {/* Col 1: UP */}
+          <ColumnTrack items={[allProjects[0], allProjects[1], allProjects[2]]} duration={25} />
+
+          {/* Col 2: DOWN */}
+          <ColumnTrack items={[allProjects[3], allProjects[4], allProjects[5]]} reverse duration={35} />
+
+          {/* Col 3: UP */}
+          <ColumnTrack items={[allProjects[2], allProjects[0], allProjects[4]]} duration={20} />
+
+          {/* Col 4: DOWN */}
+          <ColumnTrack items={[allProjects[1], allProjects[5], allProjects[3]]} reverse duration={40} />
+
+          {/* Col 5: UP */}
+          <ColumnTrack items={[allProjects[4], allProjects[2], allProjects[1]]} duration={28} />
+
+          {/* Fading Mask Overlays */}
+          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#050508] to-transparent z-20 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#050508] to-transparent z-20 pointer-events-none" />
+        </div>
+
+      </div>
+    </section>
+  );
+};
 
