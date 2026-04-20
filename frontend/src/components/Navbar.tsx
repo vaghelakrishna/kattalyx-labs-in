@@ -24,6 +24,7 @@ const Navbar = () => {
     { name: "Branding", path: "/branding", desc: "Build your brand identity" },
     { name: "Podcasting", path: "/podcasting", desc: "Your voice, your platform" },
     { name: "Blog", path: "/blog" },
+    {name : "Contact Us", path: "/contact"}
   ];
 
   // const exploreLinks = [
