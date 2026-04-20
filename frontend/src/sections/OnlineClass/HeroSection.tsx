@@ -6,8 +6,8 @@ interface DynamicIconProps {
   className?: string;
   size?: number;
 }
-import "swiper/css";
-import "swiper/css/effect-coverflow";
+// import "swiper/css";
+// import "swiper/css/effect-coverflow";
 
 const DynamicIcon = ({ name, className, size }: DynamicIconProps) => {
   const Icon = Icons[name as keyof typeof Icons] as React.ComponentType<{ className?: string; size?: number }>;
