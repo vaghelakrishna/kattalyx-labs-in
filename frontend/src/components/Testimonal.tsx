@@ -73,7 +73,7 @@ const testimonials = [
 
 export default function Testimonial() {
   const sliderRef = useRef<HTMLDivElement | null>(null);
-  const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
+  const autoScrollRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isHovering = useRef(false);
 
   const [canLeft, setCanLeft] = useState(false);
