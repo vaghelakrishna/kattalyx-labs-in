@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { dashboardAPI } from "@/services/api";
+// import { dashboardAPI } from "@/services/api";
 import {
   Calendar,
   Clock,
@@ -23,8 +23,8 @@ const EventsDetailPage = () => {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const response = await dashboardAPI.getEventById(id);
-        setEvent(response?.data?.data || null);
+        // const response = await dashboardAPI.getEventById(id);
+        // setEvent(response?.data?.data || null);
       } catch (error) {
         console.error("Failed to load event", error);
         setEvent(null);
