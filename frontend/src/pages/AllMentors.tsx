@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useRef } from "react";
 import SEO from "@/components/ui/SEO";
-
 import { dashboardAPI } from "@/services/api";
 import vansh from "../assets/vansh.jpg";
 import ishika from "../assets/ishika.jpg";
@@ -190,7 +189,7 @@ export default function AllMentors() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.3em] text-blue-600 uppercase bg-white border border-blue-100 shadow-sm px-5 py-2 rounded-full mb-6"
               >
-                 Built for Everyone
+                Built for Everyone
               </motion.div>
 
               <motion.h2
@@ -333,7 +332,7 @@ export default function AllMentors() {
             </motion.div>
           </div>
         </section>
-        <FAQSection/>
+        <FAQSection />
         <Footer />
       </div>
     </>
