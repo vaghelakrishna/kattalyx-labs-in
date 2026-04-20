@@ -13,6 +13,7 @@ const links = {
     { name: "online-classes", href: "/online-classes"},
     { name: "College Visits", href: "/college" },
     { name: "verifyCertificate", href: "/verify" },
+    {name : "Contact Us", href: "/contact"}
   ],
   resources: [
     { name: "Events", href: "/events" },
