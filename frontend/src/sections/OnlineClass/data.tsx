@@ -1,5 +1,5 @@
 // Shared data for OnlineClasses page sections
-import { Activity, Box, Slack, Zap, Command } from 'lucide-react';
+import { Activity, Box, Zap, Command } from 'lucide-react';
 
 export interface Mentor {
   name: string;
@@ -203,7 +203,7 @@ export const partners = [
   },
   {
     name: 'Slack',
-    icon: <Slack size={24} className="text-purple-500" />,
+    // icon: <Slack size={24} className="text-purple-500" />,
     brand: 'Slack',
   },
 ];
