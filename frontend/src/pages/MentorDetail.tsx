@@ -2,9 +2,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowLeft, Linkedin, Twitter, BookOpen,
+  ArrowLeft, BookOpen,
   MessageSquare, Calendar, X,
-  ChevronDown, Quote, Star, TrendingUp, Users, CheckCircle2, 
+  ChevronDown, Quote, Star, TrendingUp, Users, CheckCircle2,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
@@ -51,7 +51,7 @@ export default function MentorDetail() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  
+
   const mentor = mentorsData[slug as keyof typeof mentorsData];
 
   // Scroll to top on mount
@@ -122,8 +122,8 @@ export default function MentorDetail() {
                   Book 1-on-1 Session <MessageSquare size={16} />
                 </button>
                 <div className="flex gap-3 justify-center">
-                  <a href={mentor.linkedin} className="w-14 h-14 rounded-full border border-slate-100 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"><Linkedin size={20} /></a>
-                  <a href={mentor.twitter} className="w-14 h-14 rounded-full border border-slate-100 flex items-center justify-center hover:bg-slate-900 hover:text-white transition-all"><Twitter size={20} /></a>
+                  <a href={mentor.linkedin} className="w-14 h-14 rounded-full border border-slate-100 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all text-lg font-bold">in</a>
+                  <a href={mentor.twitter} className="w-14 h-14 rounded-full border border-slate-100 flex items-center justify-center hover:bg-slate-900 hover:text-white transition-all">𝕏</a>
                 </div>
               </div>
             </motion.div>
@@ -304,7 +304,7 @@ export default function MentorDetail() {
       </motion.div>
 
 
-      
+
       <Footer />
     </>
   );
