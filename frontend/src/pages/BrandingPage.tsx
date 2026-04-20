@@ -1,12 +1,22 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Palette, TrendingUp, Megaphone, Star, Plus } from "lucide-react";
+import { ArrowUpRight, Plus } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Services from "@/sections/brandingSection/Services";
 import { useState } from "react";
 import LightInfiniteBurst from "@/sections/podcastSection/Mushic";
 import CaseStudiesSection from "@/components/CaseStudy";
+import FinalStudioFeed from "@/sections/uniqueDesign/unique";
+import WorkCarousel from "@/sections/uniqueDesign/Scrollani";
+import KattalyxUnifiedFlow from "@/sections/uniqueDesign/NewScroll";
 
+
+// Using the same staggered online image layout for consistency
+// const studioImages = [
+//   { src: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600", w: "w-[160px]", h: "h-[220px]" },
+//   { src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600", w: "w-[200px]", h: "h-[160px]", mt: "mt-12" },
+//   { src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600", w: "w-[150px]", h: "h-[200px]" },
+// ];
 
 const logos = [
   { name: 'BENTLEY', style: 'font-bold italic text-xl' },
@@ -36,50 +46,51 @@ const faqs = [
   }
 ];
 
-const services = [
-  {
-    icon: <Palette className="w-6 h-6" />,
-    title: "Brand Identity",
-    desc: "Logo, color palette, typography — everything that makes you recognizable.",
-  },
-  {
-    icon: <Megaphone className="w-6 h-6" />,
-    title: "Brand Storytelling",
-    desc: "Craft narratives that connect emotionally with your audience.",
-  },
-  {
-    icon: <TrendingUp className="w-6 h-6" />,
-    title: "Brand Strategy",
-    desc: "Positioning, messaging, and go-to-market strategy built for growth.",
-  },
-  {
-    icon: <Star className="w-6 h-6" />,
-    title: "Personal Branding",
-    desc: "Build your authority as a founder, speaker, or industry expert.",
-  },
-];
+// const services = [
+//   {
+//     icon: <Palette className="w-6 h-6" />,
+//     title: "Brand Identity",
+//     desc: "Logo, color palette, typography — everything that makes you recognizable.",
+//   },
+//   {
+//     icon: <Megaphone className="w-6 h-6" />,
+//     title: "Brand Storytelling",
+//     desc: "Craft narratives that connect emotionally with your audience.",
+//   },
+//   {
+//     icon: <TrendingUp className="w-6 h-6" />,
+//     title: "Brand Strategy",
+//     desc: "Positioning, messaging, and go-to-market strategy built for growth.",
+//   },
+//   {
+//     icon: <Star className="w-6 h-6" />,
+//     title: "Personal Branding",
+//     desc: "Build your authority as a founder, speaker, or industry expert.",
+//   },
+// ];
 
-const caseStudies = [
-  {
-    title: "How a student startup 10x'd their reach with a rebrand",
-    category: "CASE STUDY",
-    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=800",
-  },
-  {
-    title: "Building a personal brand from zero to 50k followers",
-    category: "PERSONAL BRAND",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=800",
-  },
-  {
-    title: "Why storytelling shapes brand success in 2025",
-    category: "BRANDING",
-    image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800",
-  },
-];
+// const caseStudies = [
+//   {
+//     title: "How a student startup 10x'd their reach with a rebrand",
+//     category: "CASE STUDY",
+//     image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=800",
+//   },
+//   {
+//     title: "Building a personal brand from zero to 50k followers",
+//     category: "PERSONAL BRAND",
+//     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=800",
+//   },
+//   {
+//     title: "Why storytelling shapes brand success in 2025",
+//     category: "BRANDING",
+//     image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800",
+//   },
+// ];
 
 const BrandingPage = () => {
   const displayLogos = [...logos, ...logos, ...logos];
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="min-h-screen bg-[#FDFDFD] text-[#1A1A1A]">
       <Navbar />
@@ -120,7 +131,7 @@ const BrandingPage = () => {
       </section> */}
 
 
-      <LightInfiniteBurst/>
+      <LightInfiniteBurst />
 
       {/* SERVICES GRID */}
       {/* <section className="max-w-6xl mx-auto px-6 py-16">
@@ -145,11 +156,11 @@ const BrandingPage = () => {
         </div>
       </section> */}
 
-      <Services/>
-      
+      <Services />
+
 
       {/* CASE STUDIES */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      {/* <section className="max-w-6xl mx-auto px-6 py-16">
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-8">Case Studies</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {caseStudies.map((c, i) => (
@@ -173,7 +184,10 @@ const BrandingPage = () => {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section> */}
+
+      <FinalStudioFeed />
+
 
 
       <section className="bg-white py-20 overflow-hidden text-[#1a1a1a]">
@@ -229,9 +243,9 @@ const BrandingPage = () => {
           </button>
         </div>
       </section>
-      
 
-      <CaseStudiesSection/>
+
+      <CaseStudiesSection />
       <section className="bg-[#f9f9fb] text-zinc-900 py-24 px-6 md:px-20 font-sans selection:bg-black selection:text-white">
         <div className="max-w-4xl mx-auto">
 
@@ -290,19 +304,83 @@ const BrandingPage = () => {
         </div>
       </section>
 
+      <WorkCarousel />
 
-      {/* CTA */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="bg-slate-900 rounded-[3rem] p-16 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6">
-            Ready to Build Your <span className="text-[#FFD100]">Brand?</span>
-          </h2>
-          <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
-            Join hundreds of students and startups who've transformed their identity with Kattalyx Labs.
-          </p>
-          <button className="bg-[#FFD100] text-black px-10 py-4 rounded-2xl font-black hover:scale-105 transition-all">
-            Get Started Today
-          </button>
+
+
+      <KattalyxUnifiedFlow />
+
+      <section className="bg-white py-20 px-6 overflow-hidden">
+        <div className="max-w-7xl mx-auto border-t-2 border-black pt-20">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-12">
+
+            {/* Left: Heading with Hover-to-Slide Image */}
+            <div className="max-w-4xl">
+              <span className="text-[8px] font-black uppercase tracking-[0.5em] text-blue-600 block mb-8">
+                Next Phase
+              </span>
+
+              <h2
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                className="text-[clamp(3rem,5vw,7.5rem)] font-[1000] leading-[0.8] tracking-tighter uppercase italic text-zinc-900 cursor-default"
+              >
+                Let's <br />
+
+                <span className="flex items-center flex-wrap">
+                  {/* THE DYNAMIC SLIDE IMAGE */}
+                  <motion.div
+                    initial={{ width: 0, opacity: 0, marginRight: 0 }}
+                    animate={{
+                      width: isHovered ? "auto" : 0,
+                      opacity: isHovered ? 1 : 0,
+                      marginRight: isHovered ? "2rem" : 0
+                    }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="relative w-28 h-18 md:w-60 md:h-35 overflow-hidden rounded-2xl md:rounded-[3rem] bg-zinc-100 border border-zinc-200 shadow-2xl my-2">
+                      <img
+                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600"
+                        alt="Work"
+                        className="w-full h-full object-cover "
+                      />
+                      {/* Visual Marker (Blue Dot) */}
+                      <div className="absolute bottom-4 left-8 w-3 h-3 bg-blue-600 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.8)]" />
+                    </div>
+                  </motion.div>
+
+                  <span className={`transition-colors duration-500 ${isHovered ? 'text-black' : 'text-zinc-200'}`}>
+                    Scale Your
+                  </span>
+                </span>
+
+                Visions<span className="text-blue-600 not-italic">.</span>
+              </h2>
+            </div>
+
+            {/* Right Column */}
+            <div className="md:self-end flex flex-col items-start md:items-end gap-10">
+              <p className="max-w-[300px] text-xs font-bold text-zinc-400 uppercase tracking-widest leading-loose md:text-right">
+                Join the ecosystem of students and startups redefining the digital DNA of modern education.
+              </p>
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative flex items-center gap-4 bg-black text-white px-6 py-2 rounded-full overflow-hidden transition-all"
+              >
+                <span className="relative z-10 text-xs font-black uppercase tracking-[0.3em]">
+                  Get Started Today
+                </span>
+                <div className="relative z-10 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
+                  <ArrowUpRight size={20} />
+                </div>
+                <div className="absolute inset-0 bg-blue-700 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+              </motion.button>
+            </div>
+
+          </div>
         </div>
       </section>
 
