@@ -23,7 +23,7 @@ const CollaborationsPage = () => {
   useEffect(() => {
     const fetchSchools = async () => {
       try {
-        await dashboardAPI.getSchools(1, 50);
+        // await dashboardAPI.getSchools(1, 50);
       } catch (err) {
         console.error("Error fetching schools:", err);
       }
