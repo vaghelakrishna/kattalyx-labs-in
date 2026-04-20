@@ -1,3 +1,4 @@
+// import { motion } from "framer-motion";
 import { motion } from "framer-motion";
 import { MoreVertical, CheckCircle2, Play, ArrowRight } from "lucide-react";
 
