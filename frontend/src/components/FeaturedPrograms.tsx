@@ -34,7 +34,7 @@
 //   return (
 //     <section className="py-24 bg-white">
 //       <div className="max-w-6xl mx-auto px-6">
-        
+
 //         {/* Header */}
 //         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
 //           <div>
@@ -72,7 +72,7 @@
 //                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
 //                 />
 //               </div>
-              
+
 //               {/* Content */}
 //               <div className="p-5">
 //                 {/* Tag */}
@@ -83,14 +83,14 @@
 //                     {program.tag}
 //                   </span>
 //                 )}
-                
+
 //                 <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
 //                   {program.title}
 //                 </h3>
 //                 <p className="text-sm text-slate-500 mb-4 leading-relaxed">
 //                   {program.description}
 //                 </p>
-                
+
 //                 <div className="flex items-center gap-4 text-xs text-slate-400">
 //                   <span className="flex items-center gap-1">
 //                     <Clock className="w-3 h-3" />
@@ -115,20 +115,20 @@ import { motion } from "framer-motion";
 import { ArrowRight, Clock, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { useModules } from "@/hooks/useModules";
+import { type Module, useModules } from "@/hooks/useModules";
 
 const DEFAULT_IMAGE =
   "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&fit=crop";
 
 export default function FeaturedProgramsSection() {
-  const { modules, loading } = useModules(3); // 👈 fetch only 3 modules
+  const { modules, loading } = useModules(3); // fetch only 3 modules
 
   if (loading) return null;
 
   return (
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        
+
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
           <div>
@@ -150,7 +150,7 @@ export default function FeaturedProgramsSection() {
 
         {/* Programs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {modules.map((module, i) => (
+          {modules.map((module: Module, i: number) => (
             <motion.div
               key={module._id}
               initial={{ opacity: 0, y: 15 }}
