@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Mail, Lock, Eye, EyeOff, Loader2, ArrowLeft, ChevronRight } from "lucide-react";
-import { authAPI } from "@/services/api";
+// import { authAPI } from "@/services/api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,36 +12,36 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
-    try {
-      const response = await authAPI.login({ email, password });
-      const { token, user } = response.data.data;
-      localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(user));
+    // try {
+    //   // const response = await authAPI.login({ email, password });
+    //   // const { token, user } = response.data.data;
+    //   // localStorage.setItem("token", token);
+    //   // localStorage.setItem("user", JSON.stringify(user));
 
-      // Role-based navigation logic
-      if (user.role === "Admin" || user.role === "SuperAdmin") {
-        navigate("/admin-dashboard");
-      } else if (user.role === "Student") {
-        navigate("/student-dashboard");
-      } else if (user.role === "School") {
-        navigate("/school-dashboard");
-      } else if (user.role === "Speaker") {
-        navigate("/speaker-dashboard");
-      } else {
-        navigate("/");
-      }
-      window.location.reload();
-    } catch (error: any) {
-      setError(error.response?.data?.message || "Login failed");
-    } finally {
-      setLoading(false);
-    }
+    //   // Role-based navigation logic
+    //   if (user.role === "Admin" || user.role === "SuperAdmin") {
+    //     navigate("/admin-dashboard");
+    //   } else if (user.role === "Student") {
+    //     navigate("/student-dashboard");
+    //   } else if (user.role === "School") {
+    //     navigate("/school-dashboard");
+    //   } else if (user.role === "Speaker") {
+    //     navigate("/speaker-dashboard");
+    //   } else {
+    //     navigate("/");
+    //   }
+    //   window.location.reload();
+    // } catch (error: any) {
+    //   setError(error.response?.data?.message || "Login failed");
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
   return (
