@@ -44,6 +44,7 @@ import {
   getSortedRowModel,
   type Row,
   type SortingState,
+  type Table as TableType,
   useReactTable,
   type VisibilityState,
 } from "@tanstack/react-table"
@@ -138,11 +139,11 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   {
     id: "drag",
     header: () => null,
-    cell: ({ row }) => <DragHandle id={row.original.id} />,
+    cell: ({ row }: { row: Row<z.infer<typeof schema>> }) => <DragHandle id={row.original.id} />,
   },
   {
     id: "select",
-    header: ({ table }) => (
+    header: ({ table }: { table: TableType<z.infer<typeof schema>> }) => (
       <div className="flex items-center justify-center">
         <Checkbox
           checked={
@@ -495,9 +496,9 @@ export function DataTable({
                           {header.isPlaceholder
                             ? null
                             : flexRender(
-                                header.column.columnDef.header,
-                                header.getContext()
-                              )}
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
                         </TableHead>
                       )
                     })}
