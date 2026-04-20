@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 // Premium high-quality images for a design studio vibe
 const images = [
@@ -14,7 +15,7 @@ const images = [
 
 const LightInfiniteBurst = () => {
   return (
-    <section className="relative min-h-screen w-full bg-[#F9F9F9] flex items-center justify-center overflow-hidden font-sans">
+    <section className="relative min-h-screen mt-15 w-full  flex items-center justify-center overflow-hidden font-sans ">
 
       {/* --- Infinite Burst Layer --- */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -67,9 +68,11 @@ const LightInfiniteBurst = () => {
           </h1>
 
           <div className="flex flex-col items-center gap-8">
+            <Link to="/contact">  
             <button className="bg-[#111111] text-white px-14 py-5 rounded-full font-semibold text-xl hover:scale-105 transition-transform duration-300 shadow-xl active:scale-95">
               Book a Call
             </button>
+            </Link>
 
             <p className="text-zinc-400 text-sm max-w-[280px] leading-relaxed uppercase tracking-widest">
               Available for new projects <br /> starting June 2026
@@ -77,14 +80,7 @@ const LightInfiniteBurst = () => {
           </div>
         </motion.div>
 
-        {/* Static Scroll Indicator */}
-        <div className="absolute bottom-[-100px] md:bottom-[-150px] opacity-20">
-          <div className="w-10 h-10 border-2 border-black rounded-full flex items-center justify-center animate-bounce">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-              <path d="M7 13l5 5 5-5M12 6v12" />
-            </svg>
-          </div>
-        </div>
+
       </div>
 
       {/* Optional: Soft background noise or gradient for extra "Prestige" */}
