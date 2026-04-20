@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const cases = [
@@ -93,8 +93,8 @@ const CaseStudySection = () => {
               key={item.id}
               onClick={() => setActiveCase(index)}
               className={`w-12 h-12 rounded-full border transition-all flex items-center justify-center font-bold text-sm ${activeCase === index
-                  ? "bg-white text-black border-white"
-                  : "bg-transparent text-white border-zinc-800 hover:border-zinc-500"
+                ? "bg-white text-black border-white"
+                : "bg-transparent text-white border-zinc-800 hover:border-zinc-500"
                 }`}
             >
               {item.id}
