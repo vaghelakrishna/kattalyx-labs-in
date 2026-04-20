@@ -11,7 +11,6 @@ import {
   Users,
   Cloud,
   ShieldCheck,
-  Github,
 } from 'lucide-react';
 
 export default function SignInPage() {
@@ -238,7 +237,7 @@ export default function SignInPage() {
                       type="button"
                       className="border-border bg-secondary text-foreground hover:bg-secondary/80 flex items-center justify-center rounded-lg border px-4 py-2.5 text-sm shadow-sm"
                     >
-                      <Github className="h-5 w-5" />
+                      <span className="h-5 w-5">🐙</span>
                       <span className="ml-2">GitHub</span>
                     </button>
                   </div>
