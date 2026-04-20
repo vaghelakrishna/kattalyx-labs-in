@@ -8,11 +8,9 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
-  const [isExploreOpen, setIsExploreOpen] = useState(false);
 
   const lastScrollY = useRef(0);
-  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
-  const exploreRef = useRef<HTMLDivElement>(null);
+  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
@@ -20,8 +18,8 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Events", path: "/event"},
-    { name: "Event Portfolio", path: "/event-portfolio" },  
+    { name: "Events", path: "/event" },
+    { name: "Event Portfolio", path: "/event-portfolio" },
     { name: "Collaborations", path: "/collaborations" },
     { name: "Branding", path: "/branding", desc: "Build your brand identity" },
     { name: "Podcasting", path: "/podcasting", desc: "Your voice, your platform" },
@@ -34,7 +32,7 @@ const Navbar = () => {
   //   { name: "Entrepreneurship", path: "/entrepreneurship", desc: "Launch your startup" },
   // ];
 
-  useEffect(() => {   
+  useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setIsScrolled(currentScrollY > 50);
@@ -48,10 +46,8 @@ const Navbar = () => {
       lastScrollY.current = currentScrollY;
     };
 
-    const handleClickOutside = (e: MouseEvent) => {
-      if (exploreRef.current && !exploreRef.current.contains(e.target as Node)) {
-        setIsExploreOpen(false);
-      }
+    const handleClickOutside = () => {
+      // Handle click outside logic if needed
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -69,21 +65,18 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false);
-    setIsExploreOpen(false);
   }, [location]);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ease-in-out ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
     >
       <nav
-        className={`w-full transition-all duration-500 ease-in-out ${
-          isScrolled || isOpen
-            ? "bg-white shadow-lg py-3 border-b border-gray-100"
-            : "bg-transparent py-4"
-        }`}
+        className={`w-full transition-all duration-500 ease-in-out ${isScrolled || isOpen
+          ? "bg-white shadow-lg py-3 border-b border-gray-100"
+          : "bg-transparent py-4"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 relative z-[70]">
           <div className="flex items-center justify-between">
@@ -102,11 +95,10 @@ const Navbar = () => {
                   to={link.path}
                   className="relative px-3 py-2 text-sm font-medium transition-colors outline-none"
                 >
-                  <span className={`relative z-10 ${
-                    isActive(link.path)
-                      ? "text-blue-600 font-bold"
-                      : isScrolled ? "text-gray-600 hover:text-blue-500" : "text-gray-800 hover:text-blue-600"
-                  }`}>
+                  <span className={`relative z-10 ${isActive(link.path)
+                    ? "text-blue-600 font-bold"
+                    : isScrolled ? "text-gray-600 hover:text-blue-500" : "text-gray-800 hover:text-blue-600"
+                    }`}>
                     {link.name}
                   </span>
                   {isActive(link.path) && (
@@ -199,9 +191,8 @@ const Navbar = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`text-2xl font-bold transition-all ${
-                      isActive(link.path) ? "text-blue-600 translate-x-2" : "text-gray-800"
-                    }`}
+                    className={`text-2xl font-bold transition-all ${isActive(link.path) ? "text-blue-600 translate-x-2" : "text-gray-800"
+                      }`}
                   >
                     {link.name}
                   </Link>
