@@ -1,10 +1,10 @@
 import CircularTextBadge from "@/components/ui/CircularTextBadge";
-import * as CountUpModule from "react-countup";
+// import * as CountUpModule from "react-countup";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
-const CountUp = CountUpModule.default;
+// const CountUp = CountUpModule.default;
 export default function AboutCompany() {
   const scrollToMission = () => {
     document
@@ -100,24 +100,24 @@ export default function AboutCompany() {
 }
 
 /* ===== STAT COMPONENT ===== */
-function Stat({ number, label }: { number: string; label: string }) {
-  const numericValue = parseFloat(number.replace(/[^\d.]/g, ""));
-  const suffix = number.replace(/[\d.]/g, "");
+// function Stat({ number, label }: { number: string; label: string }) {
+//   const numericValue = parseFloat(number.replace(/[^\d.]/g, ""));
+//   const suffix = number.replace(/[\d.]/g, "");
 
-  return (
-    <div>
-      <h3 className="text-2xl md:text-4xl font-bold text-gray-900">
+//   return (
+//     <div>
+//       <h3 className="text-2xl md:text-4xl font-bold text-gray-900">
 
-        <CountUp
-          end={numericValue}
-          duration={2}
-          enableScrollSpy
-          scrollSpyOnce
-        />
-        {suffix}
-      </h3>
-      <p className="text-gray-500 mt-1 text-xs md:text-sm">
-        {label}</p>
-    </div>
-  );
-}
+//         <CountUp
+//           end={numericValue}
+//           duration={2}
+//           enableScrollSpy
+//           scrollSpyOnce
+//         />
+//         {suffix}
+//       </h3>
+//       <p className="text-gray-500 mt-1 text-xs md:text-sm">
+//         {label}</p>
+//     </div>
+//   );
+// }
