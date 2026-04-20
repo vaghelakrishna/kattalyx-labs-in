@@ -10,6 +10,7 @@ import EventPortfolio from "./pages/EventPortfolio";
 import BlogPage from "./pages/BlogPage";
 import ScrollToTop from "./components/ScrollToTop";
 import CollaborationsPage from "./pages/CollaborationsPage";
+import ContactPage from "./pages/ContactUsPage";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/entrepreneurship" element={<EntrepreneurshipPage />} />
 
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </>
   );
