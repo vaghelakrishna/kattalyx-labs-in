@@ -3,6 +3,25 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight, Calendar, MapPin, Users, Star, X, Globe, GraduationCap, ArrowUpRight, CheckCircle2, Briefcase, type LucideIcon } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { TOP_EVENTS, POPULAR_EVENTS, UNI_EVENTS } from '@/data/events';
+import Event1 from '@/assets/events/Event1.webp';
+import Event2 from '@/assets/events/Event2.webp';
+import Event3 from '@/assets/events/Event3.webp';
+import Event4 from '@/assets/events/Event4.webp';
+import Event5 from '@/assets/events/Event5.webp';
+import Event6 from '@/assets/events/Event6.webp';
+import Event7 from '@/assets/events/Event7.webp';
+import Event8 from '@/assets/events/Event8.webp';
+import Event10 from '@/assets/events/Event10.webp';
+import Event11 from '@/assets/events/Event11.webp';
+import Event12 from '@/assets/events/Event12.webp';
+import Event15 from '@/assets/events/Event15.webp';
+import Event16 from '@/assets/events/Event16.webp';
+import DU1 from '@/assets/events/DU1.webp';
+import DU2 from '@/assets/events/DU2.webp';
+import DU3 from '@/assets/events/DU3.webp';
+import DU4 from '@/assets/events/DU4.webp';
+import DU5 from '@/assets/events/DU5.webp';
 import { useState } from 'react';
 import FAQSection from '@/components/FAQ';
 
@@ -18,28 +37,28 @@ interface StatItem {
 
 const STATS: StatItem[] = [
   {
-    label: "Active Students",
-    value: "150K+",
-    icon: Users,
-    color: "from-blue-600 to-indigo-700"
-  },
-  {
-    label: "Years of Excellence",
-    value: "12+",
+    label: "Total Events",
+    value: "20+",
     icon: Briefcase,
     color: "from-indigo-500 to-purple-600"
   },
   {
-    label: "Professional Courses",
-    value: "450+",
-    icon: GraduationCap,
-    color: "from-blue-400 to-blue-600"
+    label: "Students Reached",
+    value: "10K+",
+    icon: Users,
+    color: "from-blue-600 to-indigo-700"
   },
   {
-    label: "Global Reach",
-    value: "25+",
+    label: "Schools & Institutions",
+    value: "12+",
     icon: Globe,
     color: "from-slate-800 to-slate-900"
+  },
+  {
+    label: "Event Feedback",
+    value: "9.4/10",
+    icon: Star,
+    color: "from-yellow-400 to-orange-500"
   }
 ];
 
@@ -52,45 +71,26 @@ const Icon3 = STATS[3].icon;
 
 
 
-const TOP_EVENTS = [
-  {
-    id: 1,
-    title: "AI & LinkedIn Masterclass",
-    location: "Delhi Public School",
-    date: "March 2024",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200",
-  },
-  {
-    id: 2,
-    title: "Startup Business Conference",
-    location: "Ryan International School",
-    date: "April 2024",
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1200",
-  }
-];
-
-const POPULAR_EVENTS = [
-  { id: 1, title: "Digital Marketing Workshop", img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=600", desc: "Learn digital marketing strategies and social media management from industry experts.", date: "March 15, 2024", location: "DPS Noida" },
-  { id: 2, title: "Tech Innovation Summit", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=600", desc: "Explore cutting-edge technologies and innovation in AI, ML, and emerging tech.", date: "March 20, 2024", location: "Ryan International" },
-  { id: 3, title: "Leadership Development", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600", desc: "Build essential leadership skills and learn to inspire teams effectively.", date: "March 25, 2024", location: "Modern School" },
-  { id: 4, title: "Industry Mentorship", img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600", desc: "Connect with industry professionals and get personalized career guidance.", date: "April 1, 2024", location: "Amity International" },
-  { id: 5, title: "Coding Bootcamp", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=600", desc: "Intensive coding workshop covering web development and programming fundamentals.", date: "April 5, 2024", location: "DPS Ghaziabad" },
-  { id: 6, title: "Public Speaking Masterclass", img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=600", desc: "Master the art of public speaking and presentation skills.", date: "April 10, 2024", location: "St. Xavier's" },
-  { id: 7, title: "Financial Literacy Session", img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=600", desc: "Understand personal finance, investments, and money management basics.", date: "April 15, 2024", location: "Lotus Valley" },
-  { id: 8, title: "Design Thinking Workshop", img: "https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&q=80&w=600", desc: "Learn design thinking methodology to solve real-world problems creatively.", date: "April 20, 2024", location: "Bal Bharati" },
-  { id: 9, title: "Robotics Competition", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=600", desc: "Hands-on robotics competition with exciting challenges and prizes.", date: "April 25, 2024", location: "Sanskriti School" },
-  { id: 10, title: "Career Guidance Workshop", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600", desc: "Comprehensive career counseling and pathway exploration session.", date: "April 30, 2024", location: "Delhi Public School" },
-  { id: 11, title: "Design Thinking Workshop", img: "https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&q=80&w=600", desc: "Learn design thinking methodology to solve real-world problems creatively.", date: "April 20, 2024", location: "Bal Bharati" },
-  { id: 12, title: "Robotics Competition", img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=600", desc: "Hands-on robotics competition with exciting challenges and prizes.", date: "April 25, 2024", location: "Sanskriti School" },
-  { id: 13, title: "Career Guidance Workshop", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600", desc: "Comprehensive career counseling and pathway exploration session.", date: "April 30, 2024", location: "Delhi Public School" },
-];
 
 const PHOTO_GALLERY = [
-  { url: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=1000", tag: "Workshop" },
-  { url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1000", tag: "Innovation" },
-  { url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000", tag: "Mentorship" },
-  { url: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1000", tag: "Leadership" },
-  { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1000", tag: "Collaboration" },
+  { url: Event1, tag: "Highlights" },
+  { url: Event2, tag: "Innovation" },
+  { url: Event3, tag: "Mentorship" },
+  { url: Event4, tag: "Leadership" },
+  { url: Event5, tag: "Cybersecurity" },
+  { url: Event6, tag: "Confidence" },
+  { url: Event7, tag: "Technology" },
+  { url: Event8, tag: "Career" },
+  { url: Event10, tag: "Community" },
+  { url: Event11, tag: "Journey" },
+  { url: Event12, tag: "Expression" },
+  { url: Event15, tag: "Empowerment" },
+  { url: Event16, tag: "Impact" },
+  { url: DU1, tag: "AI" },
+  { url: DU2, tag: "Bootcamp" },
+  { url: DU3, tag: "Startup" },
+  { url: DU4, tag: "Guidance" },
+  { url: DU5, tag: "Collaboration" },
 ];
 
 
@@ -110,7 +110,7 @@ const EventPortfolio = () => {
       achievement: "Secured internship at Google after our AI workshop",
       tag: "Tech Placement",
       color: "bg-blue-500",
-      img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop"
+      img: DU1
     },
     {
       student: "Sneha Kapoor",
@@ -118,7 +118,7 @@ const EventPortfolio = () => {
       achievement: "Started her tech startup after the Summit",
       tag: "Entrepreneurship",
       color: "bg-indigo-600",
-      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop"
+      img: DU2
     },
   ];
 
@@ -141,7 +141,7 @@ const EventPortfolio = () => {
               className="absolute inset-0"
             >
               {/* Background Image with refined overlay */}
-              <img  
+              <img
                 src={TOP_EVENTS[currentSlide].image}
                 className="h-full w-full object-cover opacity-50 md:opacity-60"
                 alt="Event Spotlight"
@@ -255,7 +255,7 @@ const EventPortfolio = () => {
                   {event.title}
                 </h3>
                 <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button 
+                  <button
                     onClick={() => setSelectedEvent(event.id)}
                     className="text-[10px] font-black text-blue-400 uppercase tracking-widest hover:text-blue-300 transition-colors"
                   >
@@ -278,16 +278,47 @@ const EventPortfolio = () => {
         )}
       </section>
 
+      <section className="max-w-[1400px] mx-auto py-16 px-6 bg-[#f8fafc] text-slate-900">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight">University Events</h2>
+            <p className="text-slate-500 mt-2 max-w-2xl">Featured university-level workshops and bootcamps that showcase our campus partnerships.</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {UNI_EVENTS.slice().reverse().map((event, idx) => (
+            <div key={`${event.id}-${idx}`} className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-sm transition-all hover:shadow-xl">
+              <div className="relative h-56 overflow-hidden">
+                <img src={event.image} alt={event.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-5">
+                  <p className="text-sm uppercase tracking-[0.26em] text-slate-200 font-bold">{event.category}</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-black text-slate-900 mb-3">{event.title}</h3>
+                <p className="text-sm text-slate-500 mb-4">{event.location} • {event.date}</p>
+                <p className="text-sm text-slate-600 leading-relaxed mb-5">{event.description}</p>
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-xs uppercase tracking-[0.3em] font-bold text-slate-500">{event.segment}</span>
+                  <button className="rounded-full bg-slate-900 px-5 py-3 text-sm font-bold text-white hover:bg-blue-600 transition-colors">View Schedule</button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* EVENT MODAL */}
       {selectedEvent && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={() => setSelectedEvent(null)}>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
             onClick={(e) => e.stopPropagation()}
           >
-            <button 
+            <button
               onClick={() => setSelectedEvent(null)}
               className="absolute top-6 right-6 p-2 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors"
             >
@@ -295,8 +326,8 @@ const EventPortfolio = () => {
             </button>
             {POPULAR_EVENTS.find(e => e.id === selectedEvent) && (
               <>
-                <img 
-                  src={POPULAR_EVENTS.find(e => e.id === selectedEvent)!.img} 
+                <img
+                  src={POPULAR_EVENTS.find(e => e.id === selectedEvent)!.img}
                   className="w-full h-64 object-cover rounded-t-3xl"
                   alt="Event"
                 />
@@ -419,10 +450,10 @@ const EventPortfolio = () => {
               className="col-span-12 lg:col-span-7 bg-slate-900 rounded-3xl p-6 flex items-center justify-between group overflow-hidden shadow-2xl"
             >
               <div className="relative z-10 px-4">
-                <p className="text-slate-400 text-[9px] font-bold uppercase tracking-[0.4em] mb-2">Network Expansion</p>
+                <p className="text-slate-400 text-[9px] font-bold uppercase tracking-[0.4em] mb-2">{STATS[3].label}</p>
                 <div className="flex items-baseline gap-2 text-white">
                   <h4 className="text-6xl font-black tracking-tighter leading-none">{STATS[3].value}</h4>
-                  <span className="text-blue-400 text-2xl font-bold italic">Nations</span>
+                  <span className="text-blue-400 text-2xl font-bold italic">Avg Feedback</span>
                 </div>
               </div>
               <div className="hidden md:block opacity-10 group-hover:opacity-20 transition-opacity duration-500">
@@ -458,12 +489,12 @@ const EventPortfolio = () => {
                 key={i}
                 whileHover={{ scale: 0.98 }}
                 className={`relative flex-shrink-0 overflow-hidden rounded-[2.5rem] bg-slate-100 group cursor-none
-            ${i % 3 === 0 ? 'w-[300px] md:w-[400px]' : i % 2 === 0 ? 'w-[400px] md:w-[600px]' : 'w-[250px] md:w-[350px]'} 
-            h-[350px] md:h-[500px]`}
+            ${i % 3 === 0 ? 'w-[300px] md:w-[300px]' : i % 2 === 0 ? 'w-[400px] md:w-[600px]' : 'w-[250px] md:w-[350px]'} 
+            h-[350px] md:h-[350px]`}
               >
                 <img
                   src={photo.url}
-                  className="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 ease-in-out group-hover:scale-110"
+                  className="h-full w-full object-cover  transition-all duration-1000 ease-in-out group-hover:scale-110"
                   alt="Event highlight"
                 />
                 {/* Subtle Glass Tag */}
@@ -499,7 +530,7 @@ const EventPortfolio = () => {
 
 
       {/* 7. VIDEO SECTION - PREMIUM CINEMATIC GRID */}
-      <section className="bg-slate-50 py-20 px-6">
+      {/* <section className="bg-slate-50 py-20 px-6">
         <div className="max-w-[1400px] mx-auto">
 
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
@@ -542,18 +573,15 @@ const EventPortfolio = () => {
                 transition={{ duration: 0.8, delay: i * 0.2 }}
                 className={`${video.cols} group relative h-[400px] md:h-[550px] rounded-[3rem] overflow-hidden cursor-pointer bg-slate-200`}
               >
-                {/* Background Image */}
                 <img
                   src={video.thumbnail}
                   className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-[1.5s] ease-out"
                   alt={video.title}
                 />
 
-                {/* Intelligent Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-slate-950/90 transition-opacity duration-500" />
                 <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Top Info (Duration/Tags) */}
                 <div className="absolute top-8 left-8 right-8 flex justify-between items-start opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-y-4 group-hover:translate-y-0">
                   <div className="flex gap-2">
                     {video.tags.map(tag => (
@@ -567,7 +595,6 @@ const EventPortfolio = () => {
                   </span>
                 </div>
 
-                {/* Center Play Button */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative">
                     <div className="absolute inset-0 rounded-full bg-blue-600 blur-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
@@ -577,7 +604,6 @@ const EventPortfolio = () => {
                   </div>
                 </div>
 
-                {/* Bottom Title Area */}
                 <div className="absolute bottom-10 left-10 right-10">
                   <motion.div className="flex flex-col gap-2">
                     <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none group-hover:text-blue-400 transition-colors duration-300">
@@ -592,7 +618,7 @@ const EventPortfolio = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="bg-[#f0f4f8] py-16 font-sans selection:bg-blue-100 selection:text-blue-900">
         <div className="max-w-[1400px] mx-auto px-6">
@@ -687,7 +713,7 @@ const EventPortfolio = () => {
 
 
 
-<FAQSection/>
+      <FAQSection />
       <Footer />
     </div>
   );
