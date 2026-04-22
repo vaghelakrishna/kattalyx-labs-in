@@ -21,7 +21,7 @@ import Event3 from "../assets/events/event3.webp";
 import Event11 from "../assets/events/event11.webp";
 import Event12 from "../assets/events/Event12.webp";
 import Event15 from "../assets/events/event15.webp";
-import Event16 from "../assets/events/event16.webp";
+import Event16 from "../assets/events/event16.webp";    
 
 const CollaborationsPage = () => {
   const [activeImage, setActiveImage] = useState(0);
