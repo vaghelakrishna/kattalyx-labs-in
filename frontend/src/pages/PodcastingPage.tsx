@@ -1,3 +1,5 @@
+import FAQSection from '@/components/FAQ'
+import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import ServicesStack from '@/sections/brandingSection/Stack'
 import MediaCarousel from '@/sections/podcastSection/Hero'
@@ -22,7 +24,9 @@ export default function PodcastingPage() {
       <HorizontalVideoFeed/>
       <VideoFeed />
 <VideoListFeed/>
-      <MatchedPodcastFeed/>
+      <MatchedPodcastFeed />
+      <FAQSection/>
+      <Footer/>
     </>
     
   )
