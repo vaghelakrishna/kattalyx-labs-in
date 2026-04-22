@@ -114,6 +114,8 @@ const AboutUsPage = () => {
   // Team members can be added here when real team is ready
   const team: { name: string; role: string; suffix: string; linkedin: string }[] = [];
 
+  const purposeRef = useRef(null);
+
   // const differentiators = [
   //   { icon: Video, title: "Live Mentorship", desc: "Connect with industry experts for personalized guidance." },
   //   { icon: Layers, title: "4 Learning Formats", desc: "Workshops, seminars, hackathons, and mentorship circles." },
@@ -468,14 +470,15 @@ const AboutUsPage = () => {
       </section>
 
 
-      {/* Our purpose */}
-      <section className="relative h-screen max-h-screen min-h-[1000px] w-full bg-[#FAFBFF] overflow-hidden flex items-center">
+      {/* --- SECTION 2: OUR PURPOSE (DARK MODERN GLASS) --- */}
+      <section ref={purposeRef} className="relative h-screen max-h-screen min-h-[1000px] w-full bg-black overflow-hidden flex items-center py-20 border-t border-white/5">
+
         {/* Background Watermark - Adjusted for screen fit */}
         <div className="absolute top-0 left-4 pointer-events-none select-none">
-          <span className="text-[clamp(100px,15vw,200px)] font-black text-slate-200/30 leading-none">GOAL</span>
+          <span className="text-[clamp(100px,15vw,200px)] font-black text-white/5 leading-none uppercase">GOAL</span>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
 
           {/* Left Side: Typography */}
           <motion.div
@@ -485,23 +488,23 @@ const AboutUsPage = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-px w-10 bg-blue-600"></div>
-              <span className="text-blue-600 font-black uppercase tracking-[0.2em] text-[10px]">Our Purpose</span>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-px w-10 bg-[#D4FF00]"></div>
+              <span className="text-[#D4FF00] font-black uppercase tracking-[0.3em] text-[10px]">Our Purpose</span>
             </div>
 
-            <h2 className="text-4xl lg:text-6xl xl:text-7xl font-black leading-[0.85] tracking-tighter text-slate-950  uppercase">
+            <h2 className="text-4xl lg:text-6xl xl:text-7xl font-black leading-[0.85] tracking-tighter text-white uppercase">
               Transform <br />
-              <span className="text-blue-600 ">Reality.</span>
+              <span className="text-[#D4FF00]">Reality.</span>
             </h2>
 
-            <p className="mt-6 text-slate-500 max-w-sm leading-relaxed text-lg font-medium">
+            <p className="mt-8 text-white/60 max-w-sm leading-relaxed text-lg font-medium">
               We don't just upgrade schools; we rewrite their DNA through a
-              <span className="text-slate-900 font-bold"> 360° integrated ecosystem.</span>
+              <span className="text-white font-bold"> 360° integrated ecosystem.</span>
             </p>
           </motion.div>
 
-          {/* Right Side: Bento Floating Grid - Scaled for Viewport */}
+          {/* Right Side: Bento Floating Grid - Glass Effects */}
           <div className="lg:col-span-7 relative h-[500px] lg:h-[600px] w-full flex items-center justify-center">
 
             {/* Central Unique Image: Squircle Mask */}
@@ -509,17 +512,17 @@ const AboutUsPage = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1 }}
-              className="absolute w-[70%] h-[75%] bg-blue-100 rounded-[60px] lg:rounded-[80px] overflow-hidden shadow-2xl max-sm:hidden"
+              className="absolute w-[70%] h-[75%] bg-zinc-900 rounded-[60px] lg:rounded-[80px] overflow-hidden shadow-2xl shadow-[#D4FF00]/5 max-sm:hidden"
             >
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop"
-                className="w-full h-full object-cover mix-blend-multiply opacity-70"
+                className="w-full h-full object-cover opacity-60"
                 alt="Mission"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#D4FF00]/10 to-transparent" />
             </motion.div>
 
-            {/* Staggered Floating Cards - Using Percentages for absolute positioning */}
+            {/* Staggered Floating Cards - Glassmorphism style */}
             <div className="relative w-full h-full flex flex-col lg:block gap-6 items-center px-4 sm:px-8 lg:px-0">
               {missionCards.map((item, index) => (
                 <motion.div
@@ -527,35 +530,32 @@ const AboutUsPage = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.15 }}
-                  // Responsive classes:
-                  // Mobile: relative aur w-full (margin parent ke px-4 se control hogi)
-                  // Desktop: absolute aur fixed width (w-68)
                   className={`
-        relative lg:absolute z-20 
-        bg-white/90 backdrop-blur-md shadow-xl 
-        flex flex-col rounded-[32px] p-6 lg:p-7 
-        border border-white/50 w-full lg:w-68 
-        group hover:bg-blue-600 transition-all duration-500
-        ${index === 0 ? "lg:top-[5%] lg:right-0 lg:-right-4" : ""}
-        ${index === 1 ? "lg:top-[40%] lg:left-0 lg:-left-8" : ""}
-        ${index === 2 ? "lg:bottom-[5%] lg:right-0 lg:right-4" : ""}
-      `}
+                    relative lg:absolute z-20 
+                    bg-white/5 backdrop-blur-md shadow-2xl 
+                    flex flex-col rounded-[32px] p-6 lg:p-7 
+                    border border-white/5 w-full lg:w-64 
+                    group hover:bg-[#D4FF00] transition-all duration-500
+                    ${index === 0 ? "lg:top-[5%] lg:-right-4" : ""}
+                    ${index === 1 ? "lg:top-[40%] lg:-left-8" : ""}
+                    ${index === 2 ? "lg:bottom-[5%] lg:right-4" : ""}
+                  `}
                 >
-                  <div className="flex flex-col gap-3">
-                    <div className="flex justify-between items-center">
-                      <span className="text-blue-600 font-black text-3xl group-hover:text-white transition-colors tracking-tighter">
+                  <div className="flex flex-col gap-3 text-left">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-[#D4FF00] font-black text-3xl group-hover:text-black transition-colors tracking-tighter">
                         {item.id}
                       </span>
-                      <div className="w-8 h-8 rounded-full border border-slate-200 group-hover:border-white/30 flex items-center justify-center group-hover:bg-white/10">
-                        <div className="w-1.5 h-1.5 bg-blue-600 rounded-full group-hover:bg-white" />
+                      <div className="w-8 h-8 rounded-full border border-white/10 group-hover:border-black/10 flex items-center justify-center group-hover:bg-black/5">
+                        <div className="w-1.5 h-1.5 bg-[#D4FF00] rounded-full group-hover:bg-black transition-colors" />
                       </div>
                     </div>
 
                     <div>
-                      <h4 className="font-bold text-lg text-slate-900 group-hover:text-white tracking-tight uppercase">
+                      <h4 className="font-bold text-lg text-white group-hover:text-black tracking-tight uppercase">
                         {item.title}
                       </h4>
-                      <p className="text-slate-500 text-sm mt-2 leading-relaxed group-hover:text-blue-50 transition-colors">
+                      <p className="text-white/60 text-sm mt-2 leading-relaxed group-hover:text-black/80 transition-colors">
                         {item.desc}
                       </p>
                     </div>
@@ -566,7 +566,6 @@ const AboutUsPage = () => {
           </div>
         </div>
       </section>
-
 
 
 
