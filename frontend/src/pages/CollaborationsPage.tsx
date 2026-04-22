@@ -2,19 +2,26 @@ import { useEffect, useState } from "react";
 import {
   Building2, Heart, Globe,
   Mail, Phone, MapPin, ExternalLink, Sparkles,
-  CheckCircle2,  Share2, Layers, ArrowRight, X,
+  CheckCircle2, Share2, Layers, ArrowRight, X,
   Users,
   Cpu
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-// import { dashboardAPI } from "@/services/api";
+import { dashboardAPI } from "@/services/api";
 import commudleImg from "../assets/commudle.jpg";
 import ngoImg from "../assets/Ngo.jpg";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import FAQSection from "@/components/FAQ";
+import Event1 from "@/assets/events/event1.webp";
+import Event2 from "../assets/events/event2.webp";
+import Event3 from "../assets/events/event3.webp";
+import Event11 from "../assets/events/event11.webp";
+import Event12 from "../assets/events/Event12.webp";
+import Event15 from "../assets/events/event15.webp";
+import Event16 from "../assets/events/event16.webp";
 
 const CollaborationsPage = () => {
   const [activeImage, setActiveImage] = useState(0);
@@ -31,15 +38,14 @@ const CollaborationsPage = () => {
     fetchSchools();
   }, []);
   const PARTNER_SCHOOLS = [
-    { name: "Delhi Public School", img: "https://images.unsplash.com/photo-1541339907198-e087563f02b3?q=80&w=1000&auto=format&fit=crop" },
-    { name: "Ryan International", img: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=1000&auto=format&fit=crop" },
-    { name: "Modern School", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop" },
-    { name: "Amity International", img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop" },
-    { name: "DPS Ghaziabad", img: "https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?q=80&w=1000&auto=format&fit=crop" },
-    { name: "St. Xavier's", img: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=1000&auto=format&fit=crop" },
-    { name: "Lotus Valley", img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1000&auto=format&fit=crop" },
-    { name: "Bal Bharati", img: "https://images.unsplash.com/photo-1525921429624-479b6a29d84c?q=80&w=1000&auto=format&fit=crop" },
-    { name: "Sanskriti School", img: "https://images.unsplash.com/photo-1510531704581-5b2870972060?q=80&w=1000&auto=format&fit=crop" }
+    { name: "Growell Girls School", img: Event1 },
+    { name: "Growell CoEd", img: Event2 },
+    { name: "Growell CoEd", img: Event3 },
+    { name: "Doon School", img: Event11 },
+    { name: "Growell Girls School", img: Event12 },
+    { name: "Kidzee School", img: Event15 },
+    { name: "Growell Co-ed", img: Event16 },
+    { name: "Saifia Institute", img: Event12 }
   ];
   return (
     <div className="min-h-screen bg-[#FDFDFD] text-slate-900 font-sans">
@@ -105,11 +111,11 @@ const CollaborationsPage = () => {
 
           <div className="relative flex py-12 bg-slate-50/50 overflow-hidden border-y border-slate-200">
             {/* Overlay Gradients - adjusted to match light background */}
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-50 to-transparent z-10" />
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10" />
+            {/* <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-50 to-transparent z-10" />
+            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10" /> */}
 
-            <div className="flex whitespace-nowrap animate-marquee-fast items-center">
-              {[...Array(12)].map((_, i) => (
+            <div className="flex whitespace-nowrap  items-center">
+              {[...Array(1)].map((_, i) => (
                 <motion.div
                   key={i}
                   className="flex items-center gap-8 mx-6 bg-white border border-slate-200 p-8 rounded-[2.5rem] min-w-[400px] shadow-sm group hover:shadow-xl hover:border-blue-200 transition-all duration-500 cursor-default"
@@ -349,23 +355,23 @@ const CollaborationsPage = () => {
                   </div>
 
                   <h3 className="text-2xl font-[1000] uppercase  tracking-tighter text-slate-900 mb-2 leading-none">
-                    Ma Saathi
+                    saarthi welfare foundation
                   </h3>
 
                   <p className="text-slate-500 text-xs font-medium leading-relaxed mb-4 line-clamp-2">
-                    Quality tech education accessible to rural communities across the nation.
+                    promoting menstral hygience awareness
                   </p>
 
                   {/* Impact Mini-Stats - Compact */}
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
+                  {/* <div className="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
                     <div>
-                      <p className="text-lg font-black text-slate-900 leading-none">5k+</p>
+                      <p className="text-lg font-black text-slate-900 leading-none">5k+</p> 
                       <p className="text-[8px] font-black uppercase tracking-widest text-slate-400">Students</p>
                     </div>
                     <button className="flex items-center gap-2 text-[9px] font-black uppercase tracking-tighter bg-slate-900 text-white px-4 py-2.5 rounded-lg hover:bg-blue-600 transition-colors">
                       Read <ArrowRight size={12} />
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
@@ -408,7 +414,7 @@ const CollaborationsPage = () => {
 
                 {/* Right Side: Partnership Actions */}
                 <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto">
-                  <Link to="/collaborate">
+                  <Link to="/contact">
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
@@ -418,14 +424,14 @@ const CollaborationsPage = () => {
                     </motion.button>
                   </Link>
 
-                  <Link to="/contact">
+                  {/* <Link to="/contact">
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       className="w-full sm:w-56 py-4 bg-white text-slate-900 border border-slate-200 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-50 transition-all"
                     >
                       Discuss Synergy
                     </motion.button>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
 
@@ -496,7 +502,7 @@ const CollaborationsPage = () => {
         </section>
       </main>
 
-      <FAQSection/>
+      <FAQSection />
       <Footer />
     </div>
   );
