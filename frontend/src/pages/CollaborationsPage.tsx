@@ -9,7 +9,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { dashboardAPI } from "@/services/api";
+// import { dashboardAPI } from "@/services/api";
 import commudleImg from "../assets/commudle.jpg";
 import ngoImg from "../assets/Ngo.jpg";
 import { Badge } from "@/components/ui/badge";
