@@ -21,8 +21,7 @@ const Navbar = () => {
   const [isEventMobileOpen, setIsEventMobileOpen] = useState(false);
 
   const lastScrollY = useRef(0);
-  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
-  const navigate = useNavigate();
+  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);  const navigate = useNavigate();
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -31,14 +30,12 @@ const Navbar = () => {
   const announcementMessages: Record<string, string> = {
     "/": "Welcome to Kattalyx Labs! Discover the latest programs and events.",
     "/about": "Learn why thousands of students choose Kattalyx Labs for their growth.",
-    "/modules": "Explore our cutting-edge modules designed for future-ready skills.",
     "/collaborations": "See our powerful collaborations and global partners.",
     "/event": "Join upcoming events and workshops curated for achievers.",
     "/event-portfolio": "Browse our event portfolio and success stories.",
     "/mentors": "Find the perfect mentor to accelerate your learning journey.",
     "/blog": "Read inspiring stories, tips, and industry insights from our blog.",
     "/online-classes": "Access live classes and expert-led sessions anytime, anywhere.",
-    "/college": "Discover our college visit programs and admission support.",
     "/branding": "Explore our institutional branding services for visibility, digital marketing and brand value.",
     "/contact": "Need help? Reach out to our support team anytime.",
     "/login": "Log in to continue your journey with Kattalyx Labs.",
