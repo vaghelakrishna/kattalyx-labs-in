@@ -15,13 +15,13 @@ import ngoImg from "../assets/Ngo.jpg";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import FAQSection from "@/components/FAQ";
-import Event1 from "@/assets/events/event1.webp";
-import Event2 from "../assets/events/event2.webp";
-import Event3 from "../assets/events/event3.webp";
-import Event11 from "../assets/events/event11.webp";
-import Event12 from "../assets/events/Event12.webp";
-import Event15 from "../assets/events/event15.webp";
-import Event16 from "../assets/events/event16.webp";    
+// import Event1 from "@/assets/events/event1.webp";
+// import Event2 from "../assets/events/event2.webp";
+// import Event3 from "../assets/events/event3.webp";
+// import Event11 from "../assets/events/event11.webp";
+// import Event12 from "../assets/events/Event12.webp";
+// import Event15 from "../assets/events/event15.webp";
+// import Event16 from "../assets/events/event16.webp";    
 
 const CollaborationsPage = () => {
   const [activeImage, setActiveImage] = useState(0);
@@ -38,14 +38,14 @@ const CollaborationsPage = () => {
     fetchSchools();
   }, []);
   const PARTNER_SCHOOLS = [
-    { name: "Growell Girls School", img: Event1 },
-    { name: "Growell CoEd", img: Event2 },
-    { name: "Growell CoEd", img: Event3 },
-    { name: "Doon School", img: Event11 },
-    { name: "Growell Girls School", img: Event12 },
-    { name: "Kidzee School", img: Event15 },
-    { name: "Growell Co-ed", img: Event16 },
-    { name: "Saifia Institute", img: Event12 }
+    { name: "Growell Girls School", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Growell CoEd", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Growell CoEd", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Doon School", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Growell Girls School", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Kidzee School", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Growell Co-ed", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Saifia Institute", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' }
   ];
   return (
     <div className="min-h-screen bg-[#FDFDFD] text-slate-900 font-sans">
