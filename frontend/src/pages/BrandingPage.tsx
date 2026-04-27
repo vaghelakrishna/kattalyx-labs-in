@@ -1,14 +1,14 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Plus } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Services from "@/sections/brandingSection/Services";
 import { useState } from "react";
 import LightInfiniteBurst from "@/sections/podcastSection/Mushic";
-import CaseStudiesSection from "@/components/CaseStudy";
-import FinalStudioFeed from "@/sections/uniqueDesign/unique";
-import WorkCarousel from "@/sections/uniqueDesign/Scrollani";
-import KattalyxUnifiedFlow from "@/sections/uniqueDesign/NewScroll";
+// import CaseStudiesSection from "@/components/CaseStudy";
+// import FinalStudioFeed from "@/sections/uniqueDesign/unique";
+// import WorkCarousel from "@/sections/uniqueDesign/Scrollani";
+// import KattalyxUnifiedFlow from "@/sections/uniqueDesign/NewScroll";
 
 
 // Using the same staggered online image layout for consistency
@@ -18,14 +18,14 @@ import KattalyxUnifiedFlow from "@/sections/uniqueDesign/NewScroll";
 //   { src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600", w: "w-[150px]", h: "h-[200px]" },
 // ];
 
-const logos = [
-  { name: 'BENTLEY', style: 'font-bold italic text-xl' },
-  { name: 'DEPT OF MUNICIPALITIES', style: 'text-[10px] font-semibold leading-none text-center' },
-  { name: 'MERCEDES', style: 'w-10 h-10 border-2 border-black rounded-full flex items-center justify-center font-bold' },
-  { name: 'Builder.ai', style: 'text-2xl font-black tracking-tighter' },
-  { name: 'knowsmoke', style: 'text-2xl font-bold lowercase tracking-tighter' },
-  { name: 'KINSHIP', style: 'text-2xl font-light tracking-[0.2em]' },
-];
+// const logos = [
+//   { name: 'BENTLEY', style: 'font-bold italic text-xl' },
+//   { name: 'DEPT OF MUNICIPALITIES', style: 'text-[10px] font-semibold leading-none text-center' },
+//   { name: 'MERCEDES', style: 'w-10 h-10 border-2 border-black rounded-full flex items-center justify-center font-bold' },
+//   { name: 'Builder.ai', style: 'text-2xl font-black tracking-tighter' },
+//   { name: 'knowsmoke', style: 'text-2xl font-bold lowercase tracking-tighter' },
+//   { name: 'KINSHIP', style: 'text-2xl font-light tracking-[0.2em]' },
+// ];
 
 
 // const services = [
