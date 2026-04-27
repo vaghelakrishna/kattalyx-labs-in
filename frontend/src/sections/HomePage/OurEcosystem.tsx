@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 import {
-  Mic2, Calendar, Users, Globe, School,
-  Lightbulb, Presentation,
-  GraduationCap,
   type LucideIcon,
   Rocket,
   Award,
