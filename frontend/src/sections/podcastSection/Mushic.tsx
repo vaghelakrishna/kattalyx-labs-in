@@ -62,9 +62,9 @@ const LightInfiniteBurst = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <h1 className="text-[#111111] text-6xl md:text-[100px] font-bold tracking-tighter leading-[0.85] mb-12">
-            Design & copywriting <br />
-            <span className="text-zinc-400">tailored for speed.</span>
+          <h1 className="text-[#111111] text-6xl md:text-[70px] font-bold tracking-tighter leading-[0.85] mb-12">
+            Your Institution Deserves <br />
+            <span className="text-zinc-400">a Brand That Commands Respect.</span>
           </h1>
 
           <div className="flex flex-col items-center gap-8">
@@ -74,9 +74,6 @@ const LightInfiniteBurst = () => {
             </button>
             </Link>
 
-            <p className="text-zinc-400 text-sm max-w-[280px] leading-relaxed uppercase tracking-widest">
-              Available for new projects <br /> starting June 2026
-            </p>
           </div>
         </motion.div>
 
