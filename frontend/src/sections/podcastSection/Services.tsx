@@ -3,10 +3,10 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 // Precise card data from screenshots
 const challengeCards = [
-  { color: "#FFADF0", text: "You don't have a design team", rotate: -5 },
-  { color: "#A0D2FF", text: "You're launching next week", rotate: 8 },
-  { color: "#C4FF8E", text: "You need assets fast", rotate: -3 },
-  { color: "#FFE16A", text: "You're tired of chasing freelancers", rotate: 6 },
+  { color: "#FFADF0", text: "C-Suite Access", rotate: -5 },
+  { color: "#A0D2FF", text: "Zero Filter", rotate: 8 },
+  { color: "#C4FF8E", text: "Built for Students", rotate: -3 },
+  { color: "#FFE16A", text: "Pan India Reach", rotate: 6 },
 ];
 
 const PremiumPortfolio = () => {
@@ -37,9 +37,9 @@ const PremiumPortfolio = () => {
 
           {/* Intro Info */}
           <div className="relative z-20 mb-40 self-start">
-            <h3 className="text-4xl font-bold mb-4 tracking-tight">This will help if:</h3>
+            <h3 className="text-4xl font-bold mb-4 tracking-tight">Real Conversations. Real Leaders. Real Education.</h3>
             <p className="text-zinc-500 text-lg max-w-sm leading-snug">
-              You've got work to get done. We're here to take the creative tasks off your plate.
+              Where India's top CEOs, CFOs, and CMOs teach what no classroom ever could.
             </p>
           </div>
 
