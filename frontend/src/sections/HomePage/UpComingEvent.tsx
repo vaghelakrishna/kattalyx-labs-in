@@ -104,10 +104,9 @@ export default function UpComingEvent() {
           className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-8"
         >
           <div className="max-w-xl">
-            <p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Events</p>
-            <h2 className="text-5xl md:text-7xl font-bold text-slate-900 tracking-tighter">
-              Mastered by <br />
-              <span className="text-slate-300 italic font-serif">the best.</span>
+            <p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.5em] mb-4"> Explore the Glimpse of Our Events</p>
+            <h2 className="text-5xl md:text-4xl font-bold text-slate-900 tracking-tighter">
+              Here is what real-world learning looks like.
             </h2>
           </div>
           <Link to="/mentors">
