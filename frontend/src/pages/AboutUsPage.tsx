@@ -1,15 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import vansh from "../assets/vansh.jpg";
+// import vansh from "../assets/vansh.jpg";
 // import image from "../assets/loginslider1.avif"
 import AboutCompany from "@/sections/aboutussection/AboutCompany";
 // import { Link } from "react-router-dom"
 import { useEffect } from "react";
 import {
-  ArrowRight, ArrowUpRight,
+  ArrowRight,
   Rocket, Target, Zap, Users,
   Eye,
-  Landmark,
   Plus,
   X
 } from "lucide-react";
