@@ -19,14 +19,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import FAQSection from "@/components/FAQ";
 import { useRef, useState } from "react";
+import Founder from "@/sections/aboutussection/Founder";
 
 
 
 const stats = [
-  { num: "9", label: "YEARS' EXPERIENCE" },
-  { num: "12", label: "INDUSTRIES SERVED" },
-  { num: "10+", label: "GLOBAL PARTNERSHIPS" },
-  { num: "135+", label: "COMPLETED PROJECTS" },
+  { num: "50+", label: "Topics  Covered " },
+  { num: "12+", label: "Institutions  Partnered " },
+  { num: "16+", label: "Events Conducted" },
 ];
 
 const galleryImages = [
@@ -38,25 +38,21 @@ const galleryImages = [
 ];
 const steps = [
   {
-    title: "Your Team, Your Champions",
-    desc: "We don't just join your project, we become part of your journey. Think of us as an extension of your team, bringing expertise and fresh ideas while leaving egos at the door. Together, we'll create something extraordinary and maybe even have a little fun along the way.",
+    title: "Discovery & Institution Audit",
+    desc: "Hum aapke institution ke culture, current infrastructure aur students ki needs ko samajhte hain takki ek customized roadmap taiyar ho sake."
   },
   {
-    title: "Straight Talk, Always",
-    desc: "Transparency is our foundation. We provide honest feedback and clear communication at every stage of the process.",
+    title: "Ecosystem Integration",
+    desc: "Aapke campus mein real-world learning modules integrate kiye jaate hain—chahe wo E-Cells ho, founder meetups ho ya practical workshops."
   },
   {
-    title: "Let's Build Together",
-    desc: "Collaboration is key. We work closely with you to ensure your vision is translated into a digital reality that exceeds expectations.",
+    title: "Execution & Real-World Exposure",
+    desc: "C-suite leaders aur founders aapke students se directly interact karte hain, passive learning ko active thinking mein badalte hue."
   },
   {
-    title: "Big Ideas, No Big Egos",
-    desc: "We focus on what works best for the project. Innovation comes from everywhere, and we listen to every voice.",
-  },
-  {
-    title: "Results That Actually Matter",
-    desc: "We don't just deliver code; we deliver impact. Our goal is to ensure your investment drives real growth and value.",
-  },
+    title: "Institutional Identity Transformation",
+    desc: "We don't just deliver branding. We build your institution's entire identity — digital presence, reputation, and the perception that makes parents choose you, students thrive in you, and the world take notice of you."
+  }
 ];
 const AboutUsPage = () => {
   const images = [
@@ -70,10 +66,12 @@ const AboutUsPage = () => {
   ];
 
   const features = [
-    { title: "Industry Immersion", desc: "Real-world projects that mirror actual workplace challenges.", icon: Rocket },
-    { title: "Expert Mentorship", desc: "Learn directly from veterans who have built what you're studying.", icon: Users },
-    { title: "Rapid Upskilling", desc: "Accelerated pathways designed to get you job-ready in weeks.", icon: Zap },
-    { title: "Outcome Driven", desc: "We don't just teach; we ensure you achieve your career goals.", icon: Target },
+    {
+      title: "Events in Schools & Colleges", desc: "From entrepreneurship bootcamps to AI workshops — we bring real founders and industry experts into your institution, turning every session into a live mentorship experience that textbooks cannot replicate.", icon: Rocket },
+    { title: " Institutional Branding Services", desc: "Your institution's reputation is built on outcomes and visibility. We build websites, apps, and brand strategies that position your school or college as a forward-thinking, future-ready institution.", icon: Users },
+    { title: "Podcasting for Real-World Education", desc: "We bring CEOs, CFOs, and CMOs onto our podcast to share raw, unfiltered real-world knowledge with students — giving them a front-row seat to conversations that no classroom has ever hosted.", icon: Zap },
+    {
+      title: " Investor–Founder Networking Events", desc:"We curate high- signal rooms where startup founders meet the right investors.Meaningful connections, real conversations, and funding opportunities — all in one room.", icon: Target },
   ];
 
   const cards = [
@@ -659,68 +657,77 @@ const AboutUsPage = () => {
       <section className="bg-white py-32 px-6 md:px-20 font-sans text-black overflow-hidden">
         <div className="max-w-7xl mx-auto">
 
-
+          {/* Section Header */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-6xl font-black tracking-tighter mb-20 text-center lg:text-left leading-none"
+          >
+            WHERE WE COME FROM.<br />
+            <span className="text-zinc-400">WHERE WE'RE GOING.</span>
+          </motion.h2>
 
           {/* The Grid - Pure Lines, No Boxes */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-b border-zinc-100">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-y border-zinc-100">
 
             {/* Vision Segment */}
             <motion.div
               whileHover={{ backgroundColor: "#FAFAFA" }}
-              className="group p-12 lg:border-r border-zinc-100 transition-colors cursor-default"
+              className="group p-10 lg:p-14 lg:border-r border-zinc-100 transition-colors cursor-default"
             >
-              <div className="w-10 h-10 rounded-full bg-[#A0D2FF] flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
-                <Eye size={18} className="text-blue-900" />
+              <div className="w-12 h-12 rounded-full bg-[#A0D2FF] flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+                <Eye size={22} className="text-blue-900" />
               </div>
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-300 block mb-4">01 / Vision</span>
-              <h3 className="text-3xl font-black tracking-tighter uppercase leading-none mb-6">
-                Empower <br /> The System
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-300 block mb-6">01 / Vision</span>
+              <h3 className="text-3xl md:text-4xl font-black tracking-tighter uppercase leading-[0.9] mb-8">
+                Default <br /> Layer
               </h3>
-              <p className="text-zinc-500 text-sm font-medium leading-relaxed max-w-[240px]">
-                Building India’s most powerful real-world learning ecosystem for schools.
+              <p className="text-zinc-500 text-sm md:text-base font-medium leading-relaxed">
+                To become the default real-world learning layer for every institution in India.
+                <span className="text-black block mt-4">We aren't building EdTech; we're building the infrastructure of an entrepreneurial generation.</span>
               </p>
             </motion.div>
 
             {/* Mission Segment */}
             <motion.div
               whileHover={{ backgroundColor: "#FAFAFA" }}
-              className="group p-12 lg:border-r border-zinc-100 transition-colors cursor-default"
+              className="group p-10 lg:p-14 lg:border-r border-zinc-100 transition-colors cursor-default"
             >
-              <div className="w-10 h-10 rounded-full bg-[#FFADF0] flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
-                <Target size={18} className="text-pink-900" />
+              <div className="w-12 h-12 rounded-full bg-[#FFADF0] flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+                <Target size={22} className="text-pink-900" />
               </div>
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-300 block mb-4">02 / Mission</span>
-              <h3 className="text-3xl font-black tracking-tighter uppercase leading-none mb-6">
-                Transform <br /> The Skills
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-300 block mb-6">02 / Mission</span>
+              <h3 className="text-3xl md:text-4xl font-black tracking-tighter uppercase leading-[0.9] mb-8">
+                Bridge <br /> The Gap
               </h3>
-              <p className="text-zinc-500 text-sm font-medium leading-relaxed max-w-[240px]">
-                Evolving classrooms through modern skills and sustainable systems.
+              <p className="text-zinc-500 text-sm md:text-base font-medium leading-relaxed">
+                Connecting 12 lakh institutions to the real world. High-impact events, branding, and networking.
+                <span className="text-black block mt-4">Every student deserves exposure. Every institution deserves a world-class brand. We make both happen.</span>
               </p>
             </motion.div>
 
             {/* History Segment */}
             <motion.div
               whileHover={{ backgroundColor: "#FAFAFA" }}
-              className="group p-12 transition-colors cursor-default"
+              className="group p-10 lg:p-14 transition-colors cursor-default"
             >
-              <div className="w-10 h-10 rounded-full bg-[#C4FF8E] flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
-                <Landmark size={18} className="text-emerald-900" />
+              <div className="w-12 h-12 rounded-full bg-[#C4FF8E] flex items-center justify-center mb-10 group-hover:scale-110 transition-transform">
+                <Zap size={22} className="text-emerald-900" />
               </div>
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-300 block mb-4">03 / History</span>
-              <h3 className="text-3xl font-black tracking-tighter uppercase leading-none mb-6">
-                Born From <br /> Impact
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-300 block mb-6">03 / History</span>
+              <h3 className="text-3xl md:text-4xl font-black tracking-tighter uppercase leading-[0.9] mb-8">
+                How It <br /> Started
               </h3>
-              <p className="text-zinc-500 text-sm font-medium leading-relaxed max-w-[240px]">
-                Started with a simple realization: schools need connections, not just tools.
+              <p className="text-zinc-500 text-sm md:text-base font-medium leading-relaxed">
+                2025. Vansh Jain realized students study for marks while the real world moves on. Kattalyx Labs was born to fix that.
+                <span className="text-black block mt-4 font-bold">16+ events. 12+ institutions. 93.9% satisfaction. The scale is just beginning.</span>
               </p>
             </motion.div>
 
           </div>
-
-
         </div>
       </section>
-
 
 
       <section ref={targetRef} className="bg-black w-full overflow-hidden py-32">
@@ -757,147 +764,11 @@ const AboutUsPage = () => {
       </section>
 
 
-      {/* FOUNDER SECTION - DOSSIER UI DESIGN */}
-      <section className="bg-white py-24 overflow-hidden mx-6">
-        <div className="max-w-6xl mx-auto">
-
-          {/* 1. INTERACTIVE TRANSFORMING HEADING */}
-          <div className="border-b border-slate-100 pb-12 mb-20 relative">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-
-              <div className="relative group">
-                {/* Background Decorative Text - Ultra Light */}
-                <motion.span
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 0.03, x: 0 }}
-                  className="absolute -top-12 -left-4 text-8xl font-black select-none pointer-events-none"
-                >
-                  ORIGIN
-                </motion.span>
-
-                <motion.div
-                  initial="initial"
-                  whileHover="hover"
-                  className="relative cursor-default"
-                >
-                  {/* Main Heading with Character Animation */}
-                  <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter flex items-center overflow-hidden">
-                    {"Our Founder".split("").map((char, i) => (
-                      <motion.span
-                        key={i}
-                        custom={i}
-                        variants={{
-                          initial: { y: 0 },
-                          hover: { y: -10, color: "#2563eb" }
-                        }}
-                        transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                        className="inline-block"
-                      >
-                        {char === " " ? "\u00A0" : char}
-                      </motion.span>
-                    ))}
-                  </h2>
-
-                  {/* Sub-heading with a 'Slide-and-Fade' reveal */}
-                  <motion.div
-                    initial={{ width: 0, opacity: 0 }}
-                    whileInView={{ width: "100%", opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    className="mt-4 flex items-center gap-4 overflow-hidden whitespace-nowrap"
-                  >
-                    <span className="text-blue-600 font-bold text-lg md:text-xl tracking-tight">
-                      The vision behind <span >Kattalyx Labs</span>
-                    </span>
-                    <div className="h-[1px] flex-1 bg-blue-100" />
-                  </motion.div>
-                </motion.div>
-              </div>
-
-            </div>
-          </div>
-
-          {/* 2. THE DOSSIER GRID */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0">
-
-            {/* LEFT COLUMN - THE VISUAL PROFILE */}
-            <div className="lg:col-span-5 relative">
-              <motion.div
-
-                className="relative z-10"
-              >
-                <div className="rounded-[3rem] overflow-hidden shadow-2xl">
-                  <img
-                    src={vansh}
-                    alt="Vansh Jain"
-                    className="w-full h-[500px] object-cover scale-150"
-                  />
-                </div>
-
-              </motion.div>
-            </div>
-
-            {/* RIGHT COLUMN - THE DATA POINTS */}
-            <div className="lg:col-span-7 lg:pl-20 flex flex-col justify-center">
-              <div className="space-y-12">
-
-                {/* Actionable Quote with 'Progress' feel */}
-                <div className="relative">
-                  <div className="absolute -left-4 top-0 h-full w-1 bg-blue-100 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ height: 0 }}
-                      whileInView={{ height: "100%" }}
-                      transition={{ duration: 1.5 }}
-                      className="w-full bg-blue-600"
-                    />
-                  </div>
-                  <p className="text-slate-800 text-2xl md:text-3xl font-bold leading-tight tracking-tight pl-8">
-                    "We focus on the <span className="text-blue-600 underline decoration-blue-100 underline-offset-8">skills</span> that actually get students hired."
-                  </p>
-                </div>
-
-                {/* Clean Bio with pill labels */}
-                <div className="space-y-6">
-                  <div className="flex flex-wrap gap-2">
-                    {['Mission-Driven', 'Industry-First', 'Digital-Native'].map((pill) => (
-                      <span key={pill} className="px-3 py-1 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                        {pill}
-                      </span>
-                    ))}
-                  </div>
-                  <p className="text-slate-500 text-lg leading-relaxed font-medium">
-                    Vansh founded Kattalyx Labs to transform schools into future-ready institutions. By building a full-stack ecosystem, he's empowering schools to bridge the gap between academic education and industry demands.
-                  </p>
-                </div>
-
-                {/* Interactive Footer Action */}
-                <div className="pt-8 flex items-center gap-8">
-                  <motion.a
-                    href="https://www.linkedin.com/in/vansh-jain26/"
-                    target="_blank"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold shadow-xl shadow-blue-200 flex items-center gap-3 group"
-                  >
-                    Get in Touch
-                    <ArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </motion.a>
-
-                  <div className="hidden sm:block">
-                    <p className="text-slate-400 text-xs font-bold uppercase tracking-tighter">Verified Profile</p>
-                    <p className="text-slate-900 font-bold text-sm">Active Community Mentor</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+<Founder/>
 
 
       {/* --- 4. FOUNDER SECTION --- */}
-      <section className="relative z-10 py-32 px-10 md:px-20 border-t border-white/[0.05] bg-black">
+      {/* <section className="relative z-10 py-32 px-10 md:px-20 border-t border-white/[0.05] bg-black">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-5 relative order-1">
             <div className="relative aspect-[2/2] overflow-hidden rounded-sm grayscale group border border-white/5">
@@ -931,7 +802,9 @@ const AboutUsPage = () => {
             </motion.a>
           </div>
         </div>
-      </section>
+      </section> */}
+
+
       {/* Team Cards - Only shown when team members exist */}
       {team.length > 0 && (
         <section className="max-w-6xl mx-auto px-6 py-12">
@@ -969,9 +842,9 @@ const AboutUsPage = () => {
           </h2>
 
           <p className="mt-4 text-[1.1rem] text-zinc-700">
-            Schools already Transforming their Students learning Experience with Real-World Industry Connections.
+            Institutions already transforming their students' learning experience with real-world industry connections. Your school or college is next.
           </p>
-
+          <p className="font-bold pt-4">The only question is — when does yours begin?</p>
           <div className="mt-16 text-center">
             <a
               href="/programs"
