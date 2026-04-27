@@ -88,8 +88,8 @@ const faqs = [
 // ];
 
 const BrandingPage = () => {
-  const displayLogos = [...logos, ...logos, ...logos];
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  // const displayLogos = [...logos, ...logos, ...logos];
+  // const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="min-h-screen bg-[#FDFDFD] text-[#1A1A1A]">
