@@ -87,13 +87,6 @@ const ServicesStack = () => {
         ))}
       </div>
 
-      {/* LET'S BEGIN Button remains sticky */}
-      <div className="sticky bottom-10 left-10 md:left-20 z-[60] pointer-events-none">
-        <button className="pointer-events-auto bg-white border border-gray-200 text-black px-7 py-3 rounded-full text-[10px] font-bold flex items-center gap-3 shadow-sm hover:scale-105 transition-all uppercase tracking-widest">
-          <span className="w-1.5 h-1.5 bg-[#4ade80] rounded-full animate-pulse"></span>
-          Let's Begin
-        </button>
-      </div>
     </div>
   );
 };
