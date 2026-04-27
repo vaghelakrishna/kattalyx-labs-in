@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function StartLearningCTA() {
   return (
@@ -30,7 +31,7 @@ function StartLearningCTA() {
               className="text-3xl md:text-5xl font-semibold leading-tight"
             >
               Ready to Transform <br />
-              Your School?
+              Your Institution?
             </motion.h2>
 
             <motion.p
@@ -39,10 +40,15 @@ function StartLearningCTA() {
               transition={{ delay: 0.15 }}
               className="mt-4 text-sm md:text-base text-white/70 max-w-md"
             >
-              Join 9+ schools already transforming their students' learning experience with real-world industry connections and digital infrastructure.
+              Whether you are a school principal looking to bring real-world
+              learning to your students, a college administrator building
+              an entrepreneurship culture, or a founder ready to connect
+              with the right investors — Kattalyx Labs is your next step.
+
             </motion.p>
 
             {/* CTA Button */}
+            <Link to="/contact">
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -54,8 +60,9 @@ function StartLearningCTA() {
                 transition hover:bg-white/90
               "
             >
-              Start Exploring
-            </motion.button>
+              Partner With Us Today
+              </motion.button>
+            </ Link>
           </div>
 
           {/* RIGHT IMAGE */}
