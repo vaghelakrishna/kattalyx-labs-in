@@ -5,27 +5,27 @@ import { ArrowRight } from 'lucide-react';
 const services = [
   {
     id: "01",
-    title: "Brand Identity Design",
-    desc: "Building strong visual identities that reflect personality and voice.",
-    img: "https://images.unsplash.com/photo-1635405074683-96d6921a2a2c?w=300&h=180&fit=crop",
+    title: "Website Development",
+    desc: "We build fast, SEO-optimized websites that transform your institution's digital first impression into a position of leadership.",
+    img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop", 
   },
   {
     id: "02",
-    title: "Web Design & Development",
-    desc: "Powerful branding that captures attention and builds trust.",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=180&fit=crop",
+    title: "App Development",
+    desc: "Custom mobile apps that put your institution in every pocket—streamlining communication, fees, and engagement in one branded experience.",
+    img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop", 
   },
   {
     id: "03",
-    title: "UI/UX Design",
-    desc: "Intuitive interfaces and seamless user experiences that keep users engaged.",
-    img: "https://images.unsplash.com/photo-1551288049-bbbda536339a?w=300&h=180&fit=crop",
+    title: "Digital Marketing",
+    desc: "Data-driven strategies and creative campaigns that put your institution in front of the right families to drive consistent admissions.",
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop", 
   },
   {
     id: "04",
-    title: "Digital Marketing",
-    desc: "Scaling brands through data-driven positioning and creative content.",
-    img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=300&h=180&fit=crop",
+    title: "Brand Strategy & Identity",
+    desc: "Complete visual systems and brand guidelines that make your institution instantly recognizable and deeply trusted across every touchpoint.",
+    img: "https://images.unsplash.com/photo-1635405074683-96d6921a2a2c?w=600&h=400&fit=crop", 
   }
 ];
 
@@ -50,7 +50,7 @@ const SleekServices = () => {
 
           <div className="max-w-sm">
             <p className="text-zinc-500 text-sm leading-relaxed mb-6">
-              With every client, we bring forth a deep passion for solving problems and moving thinking boundaries.
+              We do not just build websites and apps. We build the complete digital identity of your institution.
             </p>
             <button className="group flex items-center gap-3 border border-zinc-800 rounded-full px-4 py-2 hover:bg-white hover:text-black transition-all duration-300">
               <span className="text-[10px] font-bold uppercase tracking-widest">Let's Talk</span>
