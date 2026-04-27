@@ -21,10 +21,10 @@ export default function PodcastingPage() {
       <PremiumPortfolio />
       {/* <MusicPortfolio /> */}
       <ServicesStack />
-      <HorizontalVideoFeed/>
-      <VideoFeed />
-<VideoListFeed/>
-      <MatchedPodcastFeed />
+      {/* <HorizontalVideoFeed/> */}
+      {/* <VideoFeed /> */}
+{/* <VideoListFeed/> */}
+      {/* <MatchedPodcastFeed /> */}
       <FAQSection/>
       <Footer/>
     </>
