@@ -5,68 +5,62 @@ import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    name: "Arjun Sharma",
-    role: "Final Year Student",
-    company: "IIT Delhi",
-    avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face",
-    text:
-      "The AI masterclass by Dr. Sarah completely transformed my understanding of machine learning. Within 8 weeks, I landed a ₹5.2L job offer at a top tech company!",
+    text: "This was not like any other event our school has hosted. The speaker talked to our students like they were equals — not children. The energy in the room was unlike anything we have seen in 12 years of running this institution.",
     rating: 5,
   },
   {
     id: 2,
-    name: "Priya Patel",
-    role: "MBA Student",
-    company: "ISB Hyderabad",
-    avatar:
-      "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=50&h=50&fit=crop&crop=face",
-    text:
-      "The FinTech sessions opened doors I never knew existed. Raj Mehta's insights helped me secure an internship at JP Morgan.",
+    text: "Our students came out of the entrepreneurship session asking questions we have never heard before — about funding, about market validation, about building products. Kattalyx Labs did in 3 hours what we could not do in 3 years.",
     rating: 5,
   },
   {
     id: 3,
-    name: "Rohan Kumar",
-    role: "Computer Science Student",
-    company: "IIT Bombay",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face",
-    text:
-      "From zero coding knowledge to building production ML models — this platform made it possible.",
+    text: "I always thought entrepreneurship was for someone else. After this session I realized it was for me. I have already started working on my first idea. This event changed everything about how I see my future.",
     rating: 5,
   },
   {
     id: 4,
-    name: "Dr. Sarah Chen",
-    role: "AI Research Lead",
-    company: "Google",
-    avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face",
-    text:
-      "Teaching 2.4K students live was incredible. The engagement quality exceeded expectations.",
+    text: "The branding work Kattalyx did for our institution was exceptional. Our new website and app have completely changed how parents perceive us during admission season. Inquiries went up by 40% within the first month.",
     rating: 5,
   },
   {
     id: 5,
-    name: "Raj Mehta",
-    role: "Vice President",
-    company: "JP Morgan",
-    avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop&crop=face",
-    text:
-      "The perfect bridge between industry and academia. Student engagement is phenomenal.",
+    text: "I have attended dozens of investor networking events. Kattalyx Labs curated something genuinely different — the founders in the room were serious, the conversations were real, and I found two deals I am actively pursuing.",
     rating: 5,
   },
   {
     id: 6,
-    name: "Anita Sharma",
-    role: "CEO",
-    company: "TechStart Inc",
-    avatar:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=50&h=50&fit=crop&crop=face",
-    text:
-      "Meaningful mentor-student connections that drive real career transformation.",
+    text: "Our college had been talking about setting up an E-Cell for years. Kattalyx Labs made it happen in 3 weeks — structure, events, mentors, everything. Our students now have a real launchpad for their startup ideas.",
+    rating: 5,
+  },
+  {
+    id: 7,
+    text: "The podcast session was broadcast to our entire student body. Hearing a real CFO explain how money works in a business — not a textbook, but a real conversation — was something our commerce students had never experienced.",
+    rating: 5,
+  },
+  {
+    id: 8,
+    text: "What sets Kattalyx apart is the energy. Every person they bring in is genuinely passionate. Our students felt that. They were not sitting and listening — they were engaged, asking questions, exchanging contacts. Real impact.",
+    rating: 5,
+  },
+  {
+    id: 9,
+    text: "We partnered with Kattalyx for three events this academic year. Each one better than the last. The team understands our students, respects our institution's culture, and delivers every single time. We have renewed for next year.",
+    rating: 5,
+  },
+  {
+    id: 10,
+    text: "I am a first-year BBA student who had no idea what entrepreneurship really meant. After the Kattalyx session I went home and spent 4 hours researching how to validate a business idea. That is the kind of spark they create.",
+    rating: 5,
+  },
+  {
+    id: 11,
+    text: "As a founder who has spoken at many school events, I can say Kattalyx Labs is in a different league. The curation, the student preparation, the format — it is professional in a way that most EdTech events are not.",
+    rating: 5,
+  },
+  {
+    id: 12,
+    text: "Our school's digital presence was nonexistent before Kattalyx Labs. They built our website, our app, and coached our admin team on digital communication. Parents now say our school looks as good as any private school in the city.",
     rating: 5,
   },
 ];
@@ -235,27 +229,6 @@ export default function Testimonial() {
                   "{t.text}"
                 </p>
 
-                <div className="flex items-center gap-4 mt-auto">
-                  <div className="relative shrink-0">
-                    <div className="absolute inset-0 bg-blue-500/20 blur-md rounded-full group-hover:scale-110 transition-transform duration-500" />
-                    <img
-                      src={t.avatar}
-                      className="relative w-14 h-14 rounded-full object-cover border-2 border-white shadow-md"
-                      alt={t.name}
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <h4 className="text-base font-black text-slate-900 leading-tight">
-                      {t.name}
-                    </h4>
-                    <span className="text-[11px] font-bold text-blue-600 uppercase tracking-wider mb-0.5">
-                      {t.company}
-                    </span >
-                    <span className="text-xs text-slate-400 font-medium italic">
-                      {t.role}
-                    </span>
-                  </div>
-                </div>
               </div>
             </motion.div>
           ))}
