@@ -27,24 +27,6 @@ const logos = [
   { name: 'KINSHIP', style: 'text-2xl font-light tracking-[0.2em]' },
 ];
 
-const faqs = [
-  {
-    question: "How long does a typical branding project take?",
-    answer: "Most branding identities are completed within 4-6 weeks, including research, concept development, and final delivery of assets."
-  },
-  {
-    question: "Do you offer custom ERP/CRM solutions?",
-    answer: "Yes, we specialize in building custom digital structures tailored to your specific business workflows and scaling needs."
-  },
-  {
-    question: "Can you help position our school in a competitive market?",
-    answer: "Absolutely. We handle the tech chores and combine them with strategic positioning to make your institution stand out."
-  },
-  {
-    question: "What is your pricing model for long-term marketing?",
-    answer: "We offer both project-based and monthly retainer models depending on the scope and growth targets of your brand."
-  }
-];
 
 // const services = [
 //   {
