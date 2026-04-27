@@ -4,6 +4,14 @@ import {
   Lightbulb, Presentation,
   GraduationCap,
   type LucideIcon,
+  Rocket,
+  Award,
+  Handshake,
+  Landmark,
+  MessagesSquare,
+  Podcast,
+  UserRoundCheck,
+  Zap,
 } from "lucide-react";
 
 import logo from "@/assets/logo.png";
@@ -11,15 +19,16 @@ import logo from "@/assets/logo.png";
 const words = ["Ecosystem", "Community", "Platform", "Future", "Network"];
 
 const ecosystemTags = [
-  { id: 1, icon: Mic2, text: "Podcasts", color: "text-purple-500", x: 18, y: 15 },
-  { id: 2, icon: Calendar, text: "Events", color: "text-emerald-500", x: 8, y: 35 },
-  { id: 3, icon: Users, text: "Sessions", color: "text-blue-500", x: 12, y: 55, large: true },
-  { id: 4, icon: Globe, text: "Online/Offline", color: "text-orange-500", x: 10, y: 75 },
-  { id: 6, icon: Lightbulb, text: "E-Cell", color: "text-amber-600", x: 82, y: 15 },
-  { id: 8, icon: Presentation, text: "Workshops", color: "text-cyan-500", x: 92, y: 35 },
-  { id: 7, icon: School, text: "Online Lectures", color: "text-indigo-600", x: 88, y: 55, large: true },
-  { id: 9, icon: GraduationCap, text: "Skill Development", color: "text-rose-500", x: 90, y: 75 },
+  { id: 1, icon: Rocket, text: "Entrepreneurship Events", color: "text-purple-500", x: 18, y: 15 },
+  { id: 2, icon: Award, text: "Institution Branding", color: "text-emerald-500", x: 8, y: 35 },
+  { id: 3, icon: Landmark, text: "College Events", color: "text-blue-500", x: 12, y: 55, large: true },
+  { id: 4, icon: Handshake, text: "Investor Meetups", color: "text-orange-500", x: 10, y: 75 },
+  { id: 6, icon: Zap, text: "E-Cell Setup", color: "text-amber-600", x: 82, y: 15 },
+  { id: 8, icon: MessagesSquare, text: "Founder Meetups", color: "text-cyan-500", x: 92, y: 35 },
+  { id: 7, icon: Podcast, text: " C - Suite Podcasts", color: "text-indigo-600", x: 88, y: 55, large: true },
+  { id: 9, icon: UserRoundCheck, text: "Personal Branding", color: "text-rose-500", x: 90, y: 75 },
 ];
+
 
 const Connector = ({ x, y }: { x: number; y: number }) => {
   const isLeft = x < 50;
