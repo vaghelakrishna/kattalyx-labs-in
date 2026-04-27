@@ -77,11 +77,18 @@ const CollaborationsPage = () => {
 
         {/* --- 2. PARTNERSHIP MODEL SECTION (NEW) --- */}
         <section className="mb-32">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
-              { icon: Layers, title: "Resource Sharing", desc: "Access to our curriculum, tools, and technical modules for your students." },
-              { icon: Share2, title: "Industry Bridge", desc: "Direct connection between academic learning and corporate expectations." },
-              { icon: CheckCircle2, title: "Verified Network", desc: "Become a part of a globally recognized hub of educational excellence." }
+              {
+                icon: Layers, title: " Industry Bridge", desc: "founders, executives, and domain experts — creating a direct bridge between academic learning and professional reality." },
+              {
+                icon: Share2, title: "Verified Network", desc: "Every collaborator in the Kattalyx ecosystem is verified, vetted, and value-driven." },
+              {
+                icon: CheckCircle2, title: "Founder Ecosystem", desc: " Kattalyx Labs builds the environment where India's next generation of founders find their footing."
+              },
+              {
+                icon: CheckCircle2, title: " Institutional Growth", desc: "where institutions gain branding, students gain exposure, and every stakeholder gains measurable value."
+              }
             ].map((feature, i) => (
               <div key={i} className="p-8 bg-slate-50 border border-slate-100 rounded-[2rem] hover:bg-white hover:shadow-xl transition-all">
                 <feature.icon className="text-blue-600 mb-4" size={28} />
@@ -94,7 +101,7 @@ const CollaborationsPage = () => {
         </section>
 
         {/* --- 3. COMPANY PARTNERS SECTION (LIGHT MODERN MARQUEE) --- */}
-        <section className="mb-40 -mx-6 overflow-hidden">
+        {/* <section className="mb-40 -mx-6 overflow-hidden">
           <div className="px-6 flex flex-col md:flex-row md:items-end gap-4 mb-12 group">
             <div className="flex items-center gap-4">
               <div className="p-4 bg-blue-600 rounded-[1.25rem] text-white shadow-[8px_8px_0px_0px_rgba(37,99,235,0.1)] group-hover:shadow-none transition-all duration-300">
@@ -110,9 +117,7 @@ const CollaborationsPage = () => {
           </div>
 
           <div className="relative flex py-12 bg-slate-50/50 overflow-hidden border-y border-slate-200">
-            {/* Overlay Gradients - adjusted to match light background */}
-            {/* <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-50 to-transparent z-10" />
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10" /> */}
+
 
             <div className="flex whitespace-nowrap  items-center">
               {[...Array(1)].map((_, i) => (
@@ -121,7 +126,6 @@ const CollaborationsPage = () => {
                   className="flex items-center gap-8 mx-6 bg-white border border-slate-200 p-8 rounded-[2.5rem] min-w-[400px] shadow-sm group hover:shadow-xl hover:border-blue-200 transition-all duration-500 cursor-default"
                 >
                   <div className="relative">
-                    {/* Removed 'invert' so the logo looks natural on light bg */}
                     <img
                       src={commudleImg}
                       className="w-16 h-16 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
@@ -142,13 +146,11 @@ const CollaborationsPage = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
-        {/* PARTNER SCHOOLS SECTION */}
         <section className="bg-white py-24 px-6 md:px-8">
           <div className="max-w-7xl mx-auto">
 
-            {/* TOP HEADING: Separated from the grid */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -167,7 +169,6 @@ const CollaborationsPage = () => {
 
             <div className="grid lg:grid-cols-12 gap-16 items-start">
 
-              {/* LEFT SIDE: STICKY IMAGE */}
               <div className="lg:col-span-5 lg:sticky lg:top-32 order-2 lg:order-1">
                 <div className="relative aspect-[5/5] w-full rounded-[3rem] overflow-hidden bg-slate-900 shadow-2xl">
                   <AnimatePresence mode="wait">
@@ -198,7 +199,6 @@ const CollaborationsPage = () => {
                 </div>
               </div>
 
-              {/* RIGHT SIDE: SCROLLING LIST */}
               <div className="lg:col-span-7 order-1 lg:order-2">
                 {PARTNER_SCHOOLS.map((school, i) => (
                   <motion.div
@@ -230,7 +230,6 @@ const CollaborationsPage = () => {
                     <div className={`absolute inset-0 bg-blue-50/50 rounded-2xl -z-10 transition-transform duration-700 origin-left ${activeImage === i ? 'scale-x-100' : 'scale-x-0'}`} />
                   </motion.div>
                 ))}
-                {/* Extra padding to allow the last item to trigger the sticky image */}
                 <div className="h-[20vh]" />
               </div>
 
@@ -316,8 +315,7 @@ const CollaborationsPage = () => {
         )}
 
         {/* --- 5. NGO PARTNERS SECTION (COMPACT GRID) --- */}
-        <section className="mb-40">
-          {/* Section Heading */}
+        {/* <section className="mb-40">
           <div className="px-6 flex flex-col md:flex-row md:items-end gap-4 mb-10 group">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-blue-600 rounded-2xl text-white shadow-[6px_6px_0px_0px_rgba(16,185,129,0.1)] transition-all duration-300">
@@ -332,12 +330,10 @@ const CollaborationsPage = () => {
             </div>
           </div>
 
-          {/* 3-Column Grid with Reduced Height */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
             {[1].map((item) => (
               <div key={item} className="relative group overflow-hidden bg-white border border-slate-200 rounded-[2rem] p-4 hover:border-blue-500/30 transition-all duration-500 shadow-lg shadow-slate-200/40 flex flex-col">
 
-                {/* Shorter Image Aspect Ratio (video instead of square) */}
                 <div className="relative w-full aspect-video rounded-[1.5rem] overflow-hidden mb-4">
                   <img
                     src={ngoImg}
@@ -347,7 +343,6 @@ const CollaborationsPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent" />
                 </div>
 
-                {/* Compact Content Body */}
                 <div className="flex flex-col flex-grow px-1">
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="text-blue-500" size={14} />
@@ -362,21 +357,11 @@ const CollaborationsPage = () => {
                     promoting menstral hygience awareness
                   </p>
 
-                  {/* Impact Mini-Stats - Compact */}
-                  {/* <div className="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
-                    <div>
-                      <p className="text-lg font-black text-slate-900 leading-none">5k+</p> 
-                      <p className="text-[8px] font-black uppercase tracking-widest text-slate-400">Students</p>
-                    </div>
-                    <button className="flex items-center gap-2 text-[9px] font-black uppercase tracking-tighter bg-slate-900 text-white px-4 py-2.5 rounded-lg hover:bg-blue-600 transition-colors">
-                      Read <ArrowRight size={12} />
-                    </button>
-                  </div> */}
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
 
         {/* --- 6. FINAL CTA SECTION (KATTALYX ECOSYSTEM COLLABORATION) --- */}
@@ -400,7 +385,7 @@ const CollaborationsPage = () => {
                 <div className="text-center lg:text-left max-w-2xl">
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-50 border border-slate-100 rounded-lg mb-4">
                     <Users size={14} className="text-blu-600" />
-                    <span className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">Collaborative Network</span>
+                    <span className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">Partner With Kattalyx Labs</span>
                   </div>
 
                   <h2 className="text-4xl md:text-5xl font-[1000] text-slate-900 tracking-tighter leading-[0.9] mb-6">
@@ -408,7 +393,7 @@ const CollaborationsPage = () => {
                   </h2>
 
                   <p className="text-slate-500 text-sm md:text-lg font-medium leading-relaxed">
-                    Whether you are a <span className="text-slate-900 font-bold">School</span> looking for elite tech labs, an <span className="text-slate-900 font-bold">NGO</span> driving social impact, or a <span className="text-slate-900 font-bold">Company</span> seeking top-tier talent—let's build the infrastructure of tomorrow together.
+                    Whether you are a school principal ready to bring real-world learning to your students, a college administrator building an entrepreneurship culture, an industry expert who wants to impact the next generation, or a founder looking for the right investor room — Kattalyx Labs is your partnership.
                   </p>
                 </div>
 
