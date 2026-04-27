@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import {
-  Building2, Heart, Globe,
-  Mail, Phone, MapPin, ExternalLink, Sparkles,
+  Globe,
+  Mail, Phone, MapPin,
   CheckCircle2, Share2, Layers, ArrowRight, X,
   Users,
   Cpu
@@ -10,9 +10,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 // import { dashboardAPI } from "@/services/api";
-import commudleImg from "../assets/commudle.jpg";
-import ngoImg from "../assets/Ngo.jpg";
-import { Badge } from "@/components/ui/badge";
+// import commudleImg from "../assets/commudle.jpg";
+// import ngoImg from "../assets/Ngo.jpg";
+// import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import FAQSection from "@/components/FAQ";
 // import Event1 from "@/assets/events/event1.webp";
