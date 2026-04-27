@@ -186,11 +186,11 @@ const BrandingPage = () => {
         </div>
       </section> */}
 
-      <FinalStudioFeed />
+      {/* <FinalStudioFeed /> */}
 
 
 
-      <section className="bg-white py-20 overflow-hidden text-[#1a1a1a]">
+      {/* <section className="bg-white py-20 overflow-hidden text-[#1a1a1a]">
         <div className="max-w-[1400px] mx-auto px-6 mb-12">
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">Partners</span>
           <hr className="mt-4 border-gray-100" />
@@ -206,7 +206,6 @@ const BrandingPage = () => {
           </div>
         </div>
 
-        {/* --- SCROLLING CONTAINER --- */}
         <div className="relative flex overflow-hidden group">
           <div className="flex animate-scroll whitespace-nowrap items-center">
             {displayLogos.map((logo, index) => (
@@ -219,7 +218,6 @@ const BrandingPage = () => {
             ))}
           </div>
 
-          {/* CSS for Animation (Isse copy-paste karlo component ke bahar ya global.css mein) */}
           <style dangerouslySetInnerHTML={{
             __html: `
           @keyframes scroll {
@@ -231,7 +229,6 @@ const BrandingPage = () => {
           }
         `}} />
 
-          {/* Fades for smooth edges */}
           <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
           <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
         </div>
@@ -242,14 +239,14 @@ const BrandingPage = () => {
             Our Partners
           </button>
         </div>
-      </section>
+      </section> */}
 
 
-      <CaseStudiesSection />
-      <section className="bg-[#f9f9fb] text-zinc-900 py-24 px-6 md:px-20 font-sans selection:bg-black selection:text-white">
+      {/* <CaseStudiesSection /> */}
+
+      {/* <section className="bg-[#f9f9fb] text-zinc-900 py-24 px-6 md:px-20 font-sans selection:bg-black selection:text-white">
         <div className="max-w-4xl mx-auto">
 
-          {/* Header - Image 3 style adaptation for Light Mode */}
           <div className="mb-16 space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-1 h-1 bg-blue-600 rounded-full" />
@@ -258,7 +255,6 @@ const BrandingPage = () => {
             <h2 className="text-4xl font-bold tracking-tighter uppercase italic text-black">Common Queries</h2>
           </div>
 
-          {/* FAQ List - Hairline Borders like Image 3 */}
           <div className="border-t-[0.5px] border-zinc-200">
             {faqs.map((faq, i) => (
               <div key={i} className="border-b-[0.5px] border-zinc-200 group">
@@ -270,7 +266,6 @@ const BrandingPage = () => {
                     {faq.question}
                   </span>
 
-                  {/* Plus Icon - Image 2 vibe refined */}
                   <div className={`transform transition-transform duration-500 ${openIndex === i ? 'rotate-45 text-blue-600' : 'rotate-0 text-zinc-300 group-hover:text-zinc-900'}`}>
                     <Plus size={20} strokeWidth={2.5} />
                   </div>
@@ -295,20 +290,19 @@ const BrandingPage = () => {
             ))}
           </div>
 
-          {/* Simple CTA Footer */}
           <div className="mt-12 text-center">
             <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
               Still have questions? <span className="text-black font-black underline underline-offset-4 cursor-pointer ml-2 hover:text-blue-600 transition-colors">Reach out directly</span>
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <WorkCarousel />
+      {/* <WorkCarousel /> */}
 
 
 
-      <KattalyxUnifiedFlow />
+      {/* <KattalyxUnifiedFlow /> */}
 
       <section className="bg-white py-20 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto border-t-2 border-black pt-20">
