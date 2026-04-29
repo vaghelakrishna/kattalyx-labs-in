@@ -8,7 +8,7 @@ import {
   Zap,
   ArrowRight
 } from "lucide-react";
-
+import Event1 from "../../assets/events/event1.webp";
 const BigBrushUnderline = ({ text }: { text: string }) => {
   return (
     <span className="relative inline-block px-1">
@@ -48,7 +48,7 @@ function OurExpertise() {
       icon: <Target className="w-5 h-5" />,
       description: "High-impact entrepreneurship events covering 60+ domains. 2–3 hours of real industry exposure — not just a lecture.",
       details: "Topics: Entrepreneurship · AI/ML · Cybersecurity · and 55 more",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+      image: Event1,
       link: "/events",
       btnText: "View Domains",
       highlight: true
@@ -163,7 +163,7 @@ function OurExpertise() {
                     transition={{ duration: 0.4 }}
                     src={service.image}
                     alt={service.title}
-                    className="h-32 w-full object-cover"
+                    className="h-52 w-full object-cover"
                   />
                 </div>
               )}
