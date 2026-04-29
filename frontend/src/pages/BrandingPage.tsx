@@ -5,10 +5,9 @@ import Footer from "@/components/Footer";
 import Services from "@/sections/brandingSection/Services";
 import { useState } from "react";
 import LightInfiniteBurst from "@/sections/podcastSection/Mushic";
-// import CaseStudiesSection from "@/components/CaseStudy";
-// import FinalStudioFeed from "@/sections/uniqueDesign/unique";
-// import WorkCarousel from "@/sections/uniqueDesign/Scrollani";
-// import KattalyxUnifiedFlow from "@/sections/uniqueDesign/NewScroll";
+
+import Event1 from '../assets/events/Event1.webp';
+
 
 
 // Using the same staggered online image layout for consistency
@@ -317,7 +316,7 @@ const BrandingPage = () => {
                   >
                     <div className="relative w-28 h-18 md:w-60 md:h-35 overflow-hidden rounded-2xl md:rounded-[3rem] bg-zinc-100 border border-zinc-200 shadow-2xl my-2">
                       <img
-                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600"
+                        src={Event1}
                         alt="Work"
                         className="w-full h-full object-cover "
                       />
