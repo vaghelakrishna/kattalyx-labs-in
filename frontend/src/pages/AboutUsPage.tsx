@@ -20,7 +20,7 @@ import FAQSection from "@/components/FAQ";
 import { useRef, useState } from "react";
 import Founder from "@/sections/aboutussection/Founder";
 
-
+import Watermark from '../assets/Watermark.webp';
 
 const stats = [
   { num: "50+", label: "Topics  Covered " },
@@ -165,7 +165,7 @@ const AboutUsPage = () => {
               {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
               </svg> */}
-              <img src="./src/assets/Watermark.png" width="28" height="28" />
+              <img src={Watermark} width="28" height="28" />
             </div>
           </div>
 
