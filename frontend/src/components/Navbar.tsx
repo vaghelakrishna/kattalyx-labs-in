@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import kattalyx from "../assets/kattalyxlab-removebg-preview.png";
-import watermark from "../assets/Watermark.png";
+import watermark from "../assets/Watermark.webp";
 import AnnouncementBar from "./ui/AnnouncementBar";
 
 interface User {
