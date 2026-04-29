@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
-
+import Event8 from '../../assets/events/event8.webp';
+import Event10 from '../../assets/events/Event10.webp';
+import Event11 from '../../assets/events/event12.webp';
+import Event12 from '../../assets/events/event11.webp';
 const PodcastHero = () => {
   const [index, setIndex] = useState(0);
 
@@ -7,15 +10,20 @@ const PodcastHero = () => {
   const media = [
     {
       type: 'image',
-      url: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=1400&auto=format&fit=crop'
-    },
-    {
-      type: 'video',
-      url: 'https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-studio-microphone-43051-large.mp4'
+      url: Event8
     },
     {
       type: 'image',
-      url: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1400&auto=format&fit=crop'
+      url: Event11
+    },
+    {
+      type: 'image',
+      url: Event12
+    
+    }, {
+      type: 'image',
+      url: Event10
+
     }
   ];
 
