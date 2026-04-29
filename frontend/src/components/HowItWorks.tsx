@@ -1,34 +1,37 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-
+import Event1 from "../assets/events/Event1.webp";
+import Event2 from "../assets/events/Event2.webp";
+import Event3 from "../assets/events/Event3.webp";
+import Event4 from "../assets/events/Event4.webp";
 const modules = [
   {
     id: "step-1",
     label: "Step 01",
     title: "Book a Free Consultation",
     description: "Fill our partner form and our team reaches out within 24 hours to understand your institution's specific needs, audience, and goals.",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=80",
+    image: Event1,
   },
   {
     id: "step-2",
     label: "Step 02",
     title: "Get a Custom Proposal",
     description: "We build a tailored proposal — event topics, podcast format, branding plan, E-Cell structure — designed specifically for your institution.",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80",
+    image:Event2,
   },
   {
     id: "step-3",
     label: "Step 03",
     title: "We Set Everything Up",
     description: "From speaker coordination to event logistics, branding assets to digital infrastructure — we handle every detail end to end.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80",
+    image: Event3,
   },
   {
     id: "step-4",
     label: "Step 04",
     title: "Your Institution Transforms",
     description: "Students gain real-world exposure. Your institution gains a modern brand. Founders find their network. Results are visible from day one.",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80",
+    image: Event4,
   },
 ];
 
