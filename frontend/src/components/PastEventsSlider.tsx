@@ -1,34 +1,39 @@
 import { useEffect, useRef, useState } from "react";
+import Event1 from "../assets/events/event1.webp";
+import Event2 from "../assets/events/event2.webp";
+import Event3 from "../assets/events/event3.webp";
+import Event4 from "../assets/events/event4.webp";
+import Event5 from "../assets/events/event5.webp";
 
 const events = [
   {
     title: "Startup Launchpad Session",
     date: "Dec 14, 2024",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df",
+    image: Event1,
     description: "Helping early-stage founders validate ideas and launch faster with expert guidance."
   },
   {
     title: "Design & Brand Strategy Workshop",
     date: "Dec 21, 2024",
-    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d",
+    image: Event2,
     description: "Building strong brand identities that connect emotionally with users."
   },
   {
     title: "Web & Product Development Bootcamp",
     date: "Jan 05, 2025",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    image: Event3,
     description: "Hands-on sessions focused on scalable web and product development."
   },
   {
     title: "Growth & Digital Marketing Meetup",
     date: "Jan 18, 2025",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978",
+    image: Event4,
     description: "Strategies, tools, and insights to grow startups in the digital-first world."
   },
   {
     title: "AI & Automation for Founders",
     date: "Feb 02, 2025",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    image: Event5,
     description: "Leveraging AI tools and automation to scale smarter, not harder."
   }
 ];
