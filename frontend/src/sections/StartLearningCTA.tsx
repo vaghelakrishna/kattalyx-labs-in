@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Event2 from "../assets/events/event2.webp";
 
 function StartLearningCTA() {
   return (
@@ -68,7 +69,7 @@ function StartLearningCTA() {
           {/* RIGHT IMAGE */}
           <div className="relative h-full w-full p-4 md:p-6">
             <img
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+              src= {Event2}
               alt="Learning journey"
               className="h-full w-full object-cover rounded-2xl"
             />
