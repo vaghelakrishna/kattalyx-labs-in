@@ -434,6 +434,7 @@ const EventsPage = () => {
           </div>
         </div>
 
+        
 
         <FAQSection />
       </section>
