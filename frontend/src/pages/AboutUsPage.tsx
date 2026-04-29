@@ -19,6 +19,19 @@ import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import FAQSection from "@/components/FAQ";
 import { useRef, useState } from "react";
 import Founder from "@/sections/aboutussection/Founder";
+import Event1 from '../assets/events/Event1.webp';
+import Event2 from '../assets/events/Event2.webp';
+import Event3 from '../assets/events/Event3.webp';
+import Event4 from '../assets/events/Event4.webp';
+import Event5 from '../assets/events/Event5.webp';
+import Event6 from '../assets/events/Event6.webp';
+import Event7 from '../assets/events/Event7.webp';
+// import Event8 from '../assets/events/Event8.webp';
+import Event10 from '../assets/events/Event10.webp';
+// import Event11 from '../assets/events/Event11.webp';
+// import Event12 from '../assets/events/Event12.webp';
+// import Event15 from '../assets/events/Event15.webp';
+// import Event16 from '../assets/events/Event16.webp';
 
 import Watermark from '../assets/Watermark.webp';
 
@@ -29,11 +42,11 @@ const stats = [
 ];
 
 const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070", w: "w-[300px]", h: "h-[450px]" },
-  { src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070", w: "w-[400px]", h: "h-[300px]", mt: "mt-24" },
-  { src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070", w: "w-[280px]", h: "h-[400px]" },
-  { src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084", w: "w-[350px]", h: "h-[350px]", mt: "mt-12" },
-  { src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070", w: "w-[450px]", h: "h-[380px]" },
+  { src: Event1, h: "h-[450px]" },
+  { src: Event2, h: "h-[450px]" },
+  { src: Event3, h: "h-[450px]" },
+  { src: Event4, h: "h-[450px]" },
+  { src: Event5, h: "h-[450px]" },
 ];
 const steps = [
   {
@@ -55,13 +68,13 @@ const steps = [
 ];
 const AboutUsPage = () => {
   const images = [
-    { id: 1, src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400', h: 'h-80' },
-    { id: 2, src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400', h: 'h-96' },
-    { id: 3, src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400', h: 'h-[400px]' },
-    { id: 4, src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400', h: 'h-80' },
-    { id: 5, src: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400', h: 'h-96' },
-    { id: 6, src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400', h: 'h-72' },
-    { id: 7, src: 'https://images.unsplash.com/photo-1600880210119-75914674661a?w=400', h: 'h-80' },
+    { id: 1, src: Event1, h: 'h-80' },
+    { id: 2, src: Event2, h: 'h-96' },
+    { id: 3, src: Event3, h: 'h-[400px]' },
+    { id: 4, src: Event4, h: 'h-80' },
+    { id: 5, src: Event5, h: 'h-96' },
+    { id: 6, src: Event6, h: 'h-72' },
+    { id: 7, src: Event7, h: 'h-80' },
   ];
 
   const features = [
@@ -74,25 +87,25 @@ const AboutUsPage = () => {
   ];
 
   const cards = [
-    { id: 1, title: "Modern Labs", img: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format" },
-    { id: 2, title: "Live Mentorship", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format" },
-    { id: 3, title: "Our Ecosystem", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format" },
-    { id: 4, title: "Skill Mastery", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format" },
-    { id: 5, title: "Future Careers", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format" },
+    { id: 1, title: "Modern Labs", img: Event1 },
+    { id: 2, title: "Live Mentorship", img: Event2 },
+    { id: 3, title: "Our Ecosystem", img: Event3 },
+    { id: 4, title: "Skill Mastery", img: Event4 },
+    { id: 5, title: "Future Careers", img: Event5 },
   ];
 
 
   // Image pools for Row 1 and Row 2
   const row1Images = [
-    "https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=800",
-    "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800",
-    "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800"
+    Event1,
+    Event2,
+    Event3
   ];
 
   const row2Images = [
-    "https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=800",
-    "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=800",
-    "https://images.unsplash.com/photo-1569058242253-92a9c71f9867?q=80&w=800"
+    Event4,
+    Event5,
+    Event6
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -256,7 +269,7 @@ const AboutUsPage = () => {
             {duplicatedImages.map((img, i) => (
               <div
                 key={i}
-                className={`shrink-0 overflow-hidden bg-zinc-100 border border-zinc-50 ${img.w} ${img.h} ${img.mt || ""}`}
+                className={`shrink-0 overflow-hidden bg-zinc-100 border border-zinc-50 $ ${img.h}`}
               >
                 <img
                   src={img.src}
@@ -512,7 +525,7 @@ const AboutUsPage = () => {
               className="absolute w-[70%] h-[75%] bg-zinc-900 rounded-[60px] lg:rounded-[80px] overflow-hidden shadow-2xl shadow-[#D4FF00]/5 max-sm:hidden"
             >
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop"
+                src= {Event7}
                 className="w-full h-full object-cover opacity-60"
                 alt="Mission"
               />
@@ -860,7 +873,7 @@ const AboutUsPage = () => {
           {/* Image 1 */}
           <div className="absolute top-[10%] left-[10%] w-[120px] rotate-[-10deg] rounded-xl shadow-xl">
             <img
-              src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=300&h=300&fit=crop"
+              src={Event10}
               alt=""
               className="rounded-xl"
             />
@@ -869,7 +882,7 @@ const AboutUsPage = () => {
           {/* Image 2 */}
           <div className="absolute bottom-[10%] left-[20%] w-[150px] rotate-[5deg] rounded-xl shadow-xl">
             <img
-              src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=300&h=300&fit=crop"
+              src={Event2}
               alt=""
               className="rounded-xl"
             />
@@ -878,7 +891,7 @@ const AboutUsPage = () => {
           {/* Image 3 */}
           <div className="absolute top-[15%] right-[10%] w-[130px] rotate-[8deg] rounded-xl shadow-xl">
             <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=300&h=300&fit=crop"
+              src={Event3}
               alt=""
               className="rounded-xl"
             />
@@ -887,7 +900,7 @@ const AboutUsPage = () => {
           {/* Image 4 */}
           <div className="absolute bottom-[6%] right-[20%] w-[180px] rotate-[-5deg] rounded-xl shadow-xl">
             <img
-              src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=300&h=300&fit=crop"
+              src={Event4}
               alt=""
               className="rounded-xl"
             />
@@ -982,12 +995,12 @@ export default AboutUsPage;
 
 const WorkMarquee5Col = () => {
   const allProjects = [
-    { title: "Smash Foods", img: "https://images.unsplash.com/photo-1569058242253-92a9c71f9867?q=80&w=800" },
-    { title: "Lumar", img: "https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=800" },
-    { title: "Vybrance Labs", img: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800", video: true },
-    { title: "Coho+", img: "https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=800" },
-    { title: "Kahuna", img: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800" },
-    { title: "A La Maison", img: "https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=800" },
+    { title: "Smash Foods", img: Event1 },
+    { title: "Lumar", img: Event2 },
+    { title: "Vybrance Labs", img: Event3, video: true },
+    { title: "Coho+", img: Event4 },
+    { title: "Kahuna", img: Event5 },
+    { title: "A La Maison", img: Event6 },
   ];
 
   // Helper component for each vertical track
