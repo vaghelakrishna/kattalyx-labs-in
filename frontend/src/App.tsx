@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutUsPage from "./pages/AboutUsPage";
-import EventsPage from "./pages/AllEvents";
+// import EventsPage from "./pages/AllEvents";
 import CollegePage from "./pages/CollegePage";
 import BrandingPage from "./pages/BrandingPage";
 import PodcastingPage from "./pages/PodcastingPage";
