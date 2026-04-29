@@ -1,16 +1,34 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Event1 from '../../assets/events/Event1.webp';
+import Event2 from '../../assets/events/Event2.webp';
+import Event3 from '../../assets/events/Event3.webp';
+import Event4 from '../../assets/events/Event4.webp';
+import Event5 from '../../assets/events/Event5.webp';
+import Event6 from '../../assets/events/Event6.webp';
+import Event7 from '../../assets/events/Event7.webp';
+import Event8 from '../../assets/events/Event8.webp';
+import Event10 from '../../assets/events/Event10.webp';
+import Event11 from '../../assets/events/Event11.webp';
+import Event12 from '../../assets/events/Event12.webp';
+import Event15 from '../../assets/events/Event15.webp';
+import Event16 from '../../assets/events/Event16.webp';
 
-// Premium high-quality images for a design studio vibe
 const images = [
-  "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1541976844346-f18aeac57b06?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop",
+  Event1,
+  Event2,
+  Event3,
+  Event4,
+  Event5,
+  Event6,
+  Event7,
+  Event8,
+  Event10,
+  Event11,
+  Event12,
+  Event15,
+  Event16
+
 ];
 
 const LightInfiniteBurst = () => {
