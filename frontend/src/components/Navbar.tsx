@@ -132,8 +132,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Events", path: "/event" },
-    { name: "Event Portfolio", path: "/event-portfolio" },
+    { name: "Events", path: "/events" },
     { name: "Collaborations", path: "/collaborations" },
     { name: "Branding", path: "/branding", desc: "Build your brand identity" },
     { name: "Podcasting", path: "/podcasting", desc: "Your voice, your platform" },
