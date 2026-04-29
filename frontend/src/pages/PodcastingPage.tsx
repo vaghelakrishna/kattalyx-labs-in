@@ -1,7 +1,7 @@
 import FAQSection from '@/components/FAQ'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
-import ServicesStack from '@/sections/brandingSection/Stack'
+// import ServicesStack from '@/sections/brandingSection/Stack'
 import MediaCarousel from '@/sections/podcastSection/Hero'
 // import PodcastHero from '@/sections/podcastSection/HeroSection'
 // import MusicPortfolio from '@/sections/podcastSection/MusicPortfolio'
@@ -20,7 +20,7 @@ export default function PodcastingPage() {
       <MediaCarousel />
       <PremiumPortfolio />
       {/* <MusicPortfolio /> */}
-      <ServicesStack />
+      {/* <ServicesStack /> */}
       {/* <HorizontalVideoFeed/> */}
       {/* <VideoFeed /> */}
 {/* <VideoListFeed/> */}
