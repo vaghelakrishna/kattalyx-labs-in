@@ -1,6 +1,6 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
-import {  ChevronLeft, ChevronRight, Calendar, MapPin, Users, Star, X, Globe, GraduationCap, ArrowUpRight, CheckCircle2, Briefcase, type LucideIcon } from 'lucide-react';
+import {  ChevronLeft, ChevronRight, Calendar, MapPin, Users, Star, X, Globe,  Briefcase, type LucideIcon } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TOP_EVENTS, POPULAR_EVENTS, UNI_EVENTS } from '@/data/events';
@@ -103,24 +103,24 @@ const EventPortfolio = () => {
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % TOP_EVENTS.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + TOP_EVENTS.length) % TOP_EVENTS.length);
 
-  const stories = [
-    {
-      student: "Rohan Mehta",
-      school: "DPS Ghaziabad",
-      achievement: "Secured internship at Google after our AI workshop",
-      tag: "Tech Placement",
-      color: "bg-blue-500",
-      img: DU1
-    },
-    {
-      student: "Sneha Kapoor",
-      school: "Ryan International",
-      achievement: "Started her tech startup after the Summit",
-      tag: "Entrepreneurship",
-      color: "bg-indigo-600",
-      img: DU2
-    },
-  ];
+  // const stories = [
+  //   {
+  //     student: "Rohan Mehta",
+  //     school: "DPS Ghaziabad",
+  //     achievement: "Secured internship at Google after our AI workshop",
+  //     tag: "Tech Placement",
+  //     color: "bg-blue-500",
+  //     img: DU1
+  //   },
+  //   {
+  //     student: "Sneha Kapoor",
+  //     school: "Ryan International",
+  //     achievement: "Started her tech startup after the Summit",
+  //     tag: "Entrepreneurship",
+  //     color: "bg-indigo-600",
+  //     img: DU2
+  //   },
+  // ];
   const EVENT_ASSETS = [
     Event1,
     Event2,
@@ -665,10 +665,9 @@ const EventPortfolio = () => {
         </div>
       </section> */}
 
-      <section className="bg-[#f0f4f8] py-16 font-sans selection:bg-blue-100 selection:text-blue-900">
+      {/* <section className="bg-[#f0f4f8] py-16 font-sans selection:bg-blue-100 selection:text-blue-900">
         <div className="max-w-[1400px] mx-auto px-6">
 
-          {/* Header with Color Accents */}
           <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <span className="text-blue-600 font-black uppercase tracking-widest text-[10px] bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
@@ -683,7 +682,6 @@ const EventPortfolio = () => {
             </p>
           </div>
 
-          {/* Two Columns Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {stories.map((story, i) => (
               <motion.div
@@ -693,7 +691,6 @@ const EventPortfolio = () => {
                 viewport={{ once: true }}
                 className="group relative bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 flex h-[280px]"
               >
-                {/* Left Side: Image with Color Overlay on Hover */}
                 <div className="w-1/3 h-full relative overflow-hidden">
                   <img
                     src={story.img}
@@ -703,9 +700,7 @@ const EventPortfolio = () => {
                   <div className={`absolute inset-0 ${story.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
                 </div>
 
-                {/* Right Side: Content */}
                 <div className="w-2/3 p-6 md:p-8 flex flex-col justify-between relative">
-                  {/* Achievement Badge */}
                   <div className="absolute top-4 right-6">
                     <div className={`px-3 py-1 rounded-full ${story.color} text-white text-[9px] font-black uppercase tracking-tighter`}>
                       {story.tag}
@@ -745,7 +740,6 @@ const EventPortfolio = () => {
             ))}
           </div>
 
-          {/* Minimalist Footer Stat */}
           <div className="mt-12 flex items-center justify-center gap-3">
             <CheckCircle2 size={18} className="text-green-500" />
             <p className="text-slate-500 text-sm font-semibold">
@@ -753,7 +747,7 @@ const EventPortfolio = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
 
 
@@ -769,12 +763,12 @@ export default EventPortfolio;
 
 const WorkMarquee5Col = () => {
   const allProjects = [
-    { title: "Smash Foods", img: "https://images.unsplash.com/photo-1569058242253-92a9c71f9867?q=80&w=800" },
-    { title: "Lumar", img: "https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=800" },
-    { title: "Vybrance Labs", img: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800", video: true },
-    { title: "Coho+", img: "https://images.unsplash.com/photo-1615529328331-f8917597711f?q=80&w=800" },
-    { title: "Kahuna", img: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=800" },
-    { title: "A La Maison", img: "https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=800" },
+    { title: "Smash Foods", img: Event1},
+    { title: "Lumar", img: Event2 },
+    { title: "Vybrance Labs", img: Event3, video: true },
+    { title: "Coho+", img: Event4 },
+    { title: "Kahuna", img: Event5 },
+    { title: "A La Maison", img: Event6 },
   ];
 
   const ColumnTrack = ({ items, reverse = false, duration = 30 }: { items: any[]; reverse?: boolean; duration?: number }) => (
@@ -787,11 +781,11 @@ const WorkMarquee5Col = () => {
         {[...items, ...items].map((item, idx) => (
           <div
             key={idx}
-            className="w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-zinc-100 bg-white group relative shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
+            className="w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-zinc-100 bg-white group relative shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.03)] transition-all duration-500"
           >
             <img
               src={item.img}
-              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
+              className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
               alt={item.title}
             />
             {/* Elegant light-themed overlay */}
@@ -803,7 +797,7 @@ const WorkMarquee5Col = () => {
             {item.video && (
               <div className="absolute top-5 right-5">
                 <div className="w-9 h-9 rounded-full bg-white/90 backdrop-blur-md shadow-sm flex items-center justify-center border border-zinc-100">
-                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-l-[7px] border-l-zinc-900 border-b-[4px] border-b-transparent ml-0.5" />
+                  {/* <div className="w-0 h-0 border-t-[4px] border-t-transparent border-l-[7px] border-l-zinc-900 border-b-[4px] border-b-transparent ml-0.5" /> */}
                 </div>
               </div>
             )}
@@ -824,7 +818,7 @@ const WorkMarquee5Col = () => {
             <div className="w-12 h-[1.5px] bg-zinc-200" />
           </div>
           <h2 className="text-5xl md:text-8xl font-[1000] text-zinc-900 tracking-tighter uppercase leading-[0.8]">
-            WORK CYCLE<span className="text-zinc-300">.</span>
+            WORK CYCLE<span className="text-blue-700">.</span>
           </h2>
         </div>
 
