@@ -50,20 +50,20 @@ const galleryImages = [
 ];
 const steps = [
   {
-    title: "Discovery & Institution Audit",
-    desc: "Hum aapke institution ke culture, current infrastructure aur students ki needs ko samajhte hain takki ek customized roadmap taiyar ho sake."
+    title: "Discovery & Institutional Audit",
+    desc: "We analyze your institution’s culture, existing infrastructure, and student demographics to architect a customized roadmap for transformation."
   },
   {
     title: "Ecosystem Integration",
-    desc: "Aapke campus mein real-world learning modules integrate kiye jaate hain—chahe wo E-Cells ho, founder meetups ho ya practical workshops."
+    desc: "We infuse your campus with real-world learning modules—from establishing high-impact E-Cells to hosting founder residencies and practical industry workshops."
   },
   {
     title: "Execution & Real-World Exposure",
-    desc: "C-suite leaders aur founders aapke students se directly interact karte hain, passive learning ko active thinking mein badalte hue."
+    desc: "C-suite leaders and industry founders engage directly with your students, catalyzing the shift from passive learning to active, entrepreneurial thinking."
   },
   {
     title: "Institutional Identity Transformation",
-    desc: "We don't just deliver branding. We build your institution's entire identity — digital presence, reputation, and the perception that makes parents choose you, students thrive in you, and the world take notice of you."
+    desc: "We go beyond mere branding to engineer your institution’s entire identity—elevating your digital footprint, reputation, and the prestige that makes you the first choice for parents and a launchpad for students."
   }
 ];
 const AboutUsPage = () => {
@@ -94,7 +94,23 @@ const AboutUsPage = () => {
     { id: 5, title: "Future Careers", img: Event5 },
   ];
 
-
+  const missionCards = [
+    {
+      id: "01",
+      title: "Bridging Classrooms With the Real World",
+      desc: "We exist to end the gap between what students learn and what the world actually demands — one event, one institution at a time."
+    },
+    {
+      id: "02",
+      title: "Entrepreneurship as a Language",
+      desc: "It is a mindset, not a course. We make sure every student understands how to think, build, and lead, regardless of background."
+    },
+    {
+      id: "03",
+      title: "Empowering Institutional Leadership",
+      desc: "We give schools and colleges the edge to attract better talent and outcomes through real-world learning and branding."
+    }
+  ];
   // Image pools for Row 1 and Row 2
   const row1Images = [
     Event1,
@@ -133,12 +149,6 @@ const AboutUsPage = () => {
   //   { icon: LineChart, title: "Impact Tracking", desc: "Monitor progress and continuously improve outcomes." }
   // ];
 
-
-  const missionCards = [
-    { id: 1, title: "School-Centric Transformation", desc: "Empowering schools with integrated systems that modernize learning, operations, and outcomes." },
-    { id: 2, title: "Ecosystem-Led Innovation", desc: "Unifying education, technology, and digital infrastructure into one scalable school ecosystem." },
-    { id: 3, title: "Future-Ready Institutions", desc: "Enabling schools to evolve with automation, hybrid learning, and career-aligned programs." }
-  ];
 
 
   const targetRef = useRef<HTMLDivElement>(null);
@@ -188,7 +198,7 @@ const AboutUsPage = () => {
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed mb-20 font-medium">
             Kattalyx Labs is more than a platform—it's a commitment to bringing <br className="hidden md:block" />
-            world-class industry standards into every school classroom.
+            world-class industry standards into every educational institution.
           </p>
 
           {/* 3D PERSPECTIVE GALLERY */}
@@ -346,8 +356,8 @@ const AboutUsPage = () => {
 
 
       {/* <ProblemsSolutions /> */}
-      <section className="bg-white py-32 px-6 md:px-20 font-sans text-black overflow-hidden border-t border-zinc-100">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-white py-32 px-5  font-sans text-black overflow-hidden border-t border-zinc-100">
+        <div className="max-w-8xl mx-auto">
 
           {/* Section Header for Features */}
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
@@ -396,7 +406,7 @@ const AboutUsPage = () => {
                 <div className="space-y-4">
                   <h3 className="text-2xl font-black tracking-tighter uppercase leading-none group-hover:text-blue-600 transition-colors">
                     {f.title.split(' ').map((word, index) => (
-                      <span key={index}>{word} <br /></span>
+                      <span key={index}>{word} </span>
                     ))}
                   </h3>
                   <p className="text-zinc-500 text-sm font-medium leading-relaxed max-w-[240px]">
@@ -481,16 +491,20 @@ const AboutUsPage = () => {
 
 
       {/* --- SECTION 2: OUR PURPOSE (DARK MODERN GLASS) --- */}
-      <section ref={purposeRef} className="relative h-screen max-h-screen min-h-[1000px] w-full bg-black overflow-hidden flex items-center py-20 border-t border-white/5">
-
-        {/* Background Watermark - Adjusted for screen fit */}
+      <section
+        ref={purposeRef}
+        className="relative h-screen max-h-screen min-h-[900px] w-full bg-black overflow-hidden flex items-center py-20 border-t border-white/5"
+      >
+        {/* Background Watermark */}
         <div className="absolute top-0 left-4 pointer-events-none select-none">
-          <span className="text-[clamp(100px,15vw,200px)] font-black text-white/5 leading-none uppercase">GOAL</span>
+          <span className="text-[clamp(100px,15vw,200px)] font-black text-white/5 leading-none uppercase">
+            GOAL
+          </span>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
 
-          {/* Left Side: Typography */}
+          {/* LEFT SIDE: TYPOGRAPHY */}
           <motion.div
             className="lg:col-span-5"
             initial={{ opacity: 0, x: -40 }}
@@ -500,7 +514,9 @@ const AboutUsPage = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-10 bg-[#D4FF00]"></div>
-              <span className="text-[#D4FF00] font-black uppercase tracking-[0.3em] text-[10px]">Our Purpose</span>
+              <span className="text-[#D4FF00] font-black uppercase tracking-[0.3em] text-[10px]">
+                Our Purpose
+              </span>
             </div>
 
             <h2 className="text-4xl lg:text-6xl xl:text-7xl font-black leading-[0.85] tracking-tighter text-white uppercase">
@@ -508,13 +524,15 @@ const AboutUsPage = () => {
               <span className="text-[#D4FF00]">Reality.</span>
             </h2>
 
-            <p className="mt-8 text-white/60 max-w-sm leading-relaxed text-lg font-medium">
-              We don't just upgrade schools; we rewrite their DNA through a
-              <span className="text-white font-bold"> 360° integrated ecosystem.</span>
+            <p className="mt-8 text-white/70 max-w-sm leading-relaxed text-lg md:text-xl font-medium tracking-tight">
+              Everything we do is driven by one belief—that real education happens outside the textbook.
+              <span className="text-white font-extrabold ml-1">
+                Here is why we exist.
+              </span>
             </p>
           </motion.div>
 
-          {/* Right Side: Bento Floating Grid - Glass Effects */}
+          {/* RIGHT SIDE: BENTO FLOATING GRID */}
           <div className="lg:col-span-7 relative h-[500px] lg:h-[600px] w-full flex items-center justify-center">
 
             {/* Central Unique Image: Squircle Mask */}
@@ -524,15 +542,18 @@ const AboutUsPage = () => {
               transition={{ duration: 1 }}
               className="absolute w-[70%] h-[75%] bg-zinc-900 rounded-[60px] lg:rounded-[80px] overflow-hidden shadow-2xl shadow-[#D4FF00]/5 max-sm:hidden"
             >
-              <img
-                src= {Event7}
-                className="w-full h-full object-cover opacity-60"
-                alt="Mission"
-              />
+              {/* Replace src with your Event7 import */}
+              <div className="w-full h-full bg-zinc-800 relative">
+                <img
+                  src={Event1}
+                  className="w-full h-full object-cover  transition-all duration-1000"
+                  alt="Mission focus"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-tr from-[#D4FF00]/10 to-transparent" />
             </motion.div>
 
-            {/* Staggered Floating Cards - Glassmorphism style */}
+            {/* Staggered Floating Cards */}
             <div className="relative w-full h-full flex flex-col lg:block gap-6 items-center px-4 sm:px-8 lg:px-0">
               {missionCards.map((item, index) => (
                 <motion.div
@@ -541,31 +562,31 @@ const AboutUsPage = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                   className={`
-                    relative lg:absolute z-20 
-                    bg-white/5 backdrop-blur-md shadow-2xl 
-                    flex flex-col rounded-[32px] p-6 lg:p-7 
-                    border border-white/5 w-full lg:w-64 
-                    group hover:bg-[#D4FF00] transition-all duration-500
-                    ${index === 0 ? "lg:top-[5%] lg:-right-4" : ""}
-                    ${index === 1 ? "lg:top-[40%] lg:-left-8" : ""}
-                    ${index === 2 ? "lg:bottom-[5%] lg:right-4" : ""}
-                  `}
+                  relative lg:absolute z-20 
+                  bg-white/5 backdrop-blur-xl shadow-2xl 
+                  flex flex-col rounded-[32px] p-6 lg:p-8 
+                  border border-white/10 w-full lg:w-72 
+                  group hover:bg-[#D4FF00] transition-all duration-500
+                  ${index === 0 ? "lg:top-0 lg:-right-4" : ""}
+                  ${index === 1 ? "lg:top-[35%] lg:-left-12" : ""}
+                  ${index === 2 ? "lg:bottom-0 lg:right-4" : ""}
+                `}
                 >
                   <div className="flex flex-col gap-3 text-left">
                     <div className="flex justify-between items-center mb-1">
-                      <span className="text-[#D4FF00] font-black text-3xl group-hover:text-black transition-colors tracking-tighter">
+                      <span className="text-[#D4FF00] font-black text-4xl group-hover:text-black transition-colors tracking-tighter">
                         {item.id}
                       </span>
-                      <div className="w-8 h-8 rounded-full border border-white/10 group-hover:border-black/10 flex items-center justify-center group-hover:bg-black/5">
-                        <div className="w-1.5 h-1.5 bg-[#D4FF00] rounded-full group-hover:bg-black transition-colors" />
+                      <div className="w-10 h-10 rounded-full border border-white/10 group-hover:border-black/20 flex items-center justify-center group-hover:bg-black/5">
+                        <ArrowRight className="text-white/40 group-hover:text-black transition-colors" size={20} />
                       </div>
                     </div>
 
                     <div>
-                      <h4 className="font-bold text-lg text-white group-hover:text-black tracking-tight uppercase">
+                      <h4 className="font-bold text-lg text-white group-hover:text-black tracking-tight uppercase leading-tight">
                         {item.title}
                       </h4>
-                      <p className="text-white/60 text-sm mt-2 leading-relaxed group-hover:text-black/80 transition-colors">
+                      <p className="text-white/50 text-xs mt-3 leading-relaxed group-hover:text-black/70 transition-colors font-medium">
                         {item.desc}
                       </p>
                     </div>
@@ -576,7 +597,6 @@ const AboutUsPage = () => {
           </div>
         </div>
       </section>
-
 
 
 
@@ -666,8 +686,8 @@ const AboutUsPage = () => {
         </div>
       </section> */}
 
-      <section className="bg-white py-32 px-6 md:px-20 font-sans text-black overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-white py-32 px-6 md:px-10 font-sans text-black overflow-hidden">
+        <div className="max-w-8xl mx-auto">
 
           {/* Section Header */}
           <motion.h2
@@ -859,7 +879,7 @@ const AboutUsPage = () => {
           <p className="font-bold pt-4">The only question is — when does yours begin?</p>
           <div className="mt-16 text-center">
             <a
-              href="/programs"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-8 py-3 text-sm font-medium text-slate-900 transition-all hover:border-slate-900 hover:bg-slate-900 hover:text-white"
             >
               Register Yourself
@@ -911,9 +931,8 @@ const AboutUsPage = () => {
 
 
 
-      <section className="relative bg-[#050508] py-40 px-6 md:px-12 overflow-hidden">
+      {/* <section className="relative bg-[#050508] py-40 px-6 md:px-12 overflow-hidden">
 
-        {/* 1. BACKGROUND PROGRESS LINE (image_ee1be1 match) */}
         <div className="absolute top-[48%] left-0 w-full h-[1px] bg-white/10 z-0 flex items-center">
           <div className="w-[60%] h-full bg-transparent" />
           <div className="w-24 h-[2px] bg-[#D4FF00] shadow-[0_0_15px_#D4FF00]" />
@@ -921,7 +940,6 @@ const AboutUsPage = () => {
 
         <div className="max-w-[1800px] mx-auto relative z-10 space-y-4">
 
-          {/* ROW 1: BUILT FOR + IMAGE (Slideshow) */}
           <div className="flex flex-col md:flex-row items-baseline md:items-center gap-6 md:gap-12">
             <h2 className="text-[clamp(4.5rem,15vw,18rem)] font-[1000] leading-none tracking-[-0.08em] text-white uppercase shrink-0">
               BUILT FOR
@@ -943,7 +961,6 @@ const AboutUsPage = () => {
             </div>
           </div>
 
-          {/* ROW 2: IMAGE (Slideshow) + GROWTH */}
           <div className="flex flex-col-reverse md:flex-row items-baseline md:items-center justify-end gap-6 md:gap-12 md:-mt-8">
             <div className="relative w-full md:w-[400px] h-[100px] md:h-[180px] lg:h-[220px] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 grayscale opacity-80">
               <AnimatePresence mode="wait">
@@ -967,16 +984,15 @@ const AboutUsPage = () => {
 
         </div>
 
-        {/* SYSTEM PROTOCOL LABEL */}
         <div className="absolute bottom-10 left-10 flex items-center gap-4 opacity-20">
           <span className="text-[9px] font-black uppercase tracking-[0.5em] text-white">
             Scale Strategy / v.2026
           </span>
         </div>
 
-      </section>
+      </section> */}
 
-      <WorkMarquee5Col />
+      {/* <WorkMarquee5Col /> */}
 
       <FAQSection />
       <Footer />
@@ -1080,4 +1096,8 @@ const WorkMarquee5Col = () => {
     </section>
   );
 };
+
+
+
+
 
