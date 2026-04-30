@@ -38,12 +38,11 @@ const PodcastHero = () => {
       {/* 1. TEXT SECTION - Left Centered */}
       <div className="absolute top-1/2 -translate-y-1/2 left-10 md:left-16 lg:left-20 z-10">
         <h1 className="text-[7vw] lg:text-[90px] font-bold leading-[0.82] tracking-[-0.05em] uppercase text-black">
-          UNCUT VOICES <br />
-          REDEFINING <br />
-          THE NARRATIVE
+          Real Conversations. <br />
+          Real Leaders.<br />
+          Real Education.
         </h1>
       </div>
-
       {/* 2. MEDIA BOX - Bottom Right pinned */}
       <div className="absolute bottom-12 right-10 md:right-16 lg:right-20 w-[45%] max-w-[360px]">
         <div className="aspect-square md:aspect-video w-full h-full border border-gray-100 rounded-sm overflow-hidden bg-black shadow-2xl">
