@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Services from "@/sections/brandingSection/Services";
 import { useState } from "react";
 import LightInfiniteBurst from "@/sections/podcastSection/Mushic";
-
+import { Link } from "react-router-dom";
 import Event1 from '../assets/events/Event1.webp';
 
 
@@ -340,6 +340,7 @@ const BrandingPage = () => {
                 Join the ecosystem of students and startups redefining the digital DNA of modern education.
               </p>
 
+              <Link to="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -352,7 +353,8 @@ const BrandingPage = () => {
                   <ArrowUpRight size={20} />
                 </div>
                 <div className="absolute inset-0 bg-blue-700 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-              </motion.button>
+                </motion.button>
+                </Link>
             </div>
 
           </div>
