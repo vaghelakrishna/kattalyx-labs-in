@@ -231,7 +231,7 @@ export default function HeroSection() {
                 </button>
               </Link>
 
-              <Link to="/event" className="w-full sm:w-auto">
+              <Link to="/events" className="w-full sm:w-auto">
                 <button className="group w-full flex items-center justify-center gap-3 bg-white border-2 border-slate-200 text-slate-900 px-4 py-3 rounded-2xl text-sm sm:text-base font-bold uppercase tracking-wider hover:border-blue-600 transition-all active:scale-95">
                   Explore Our Work
                 </button>
