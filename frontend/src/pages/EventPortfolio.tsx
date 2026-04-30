@@ -199,9 +199,9 @@ const EventPortfolio = () => {
             >
               {/* Floating Tags */}
               <div className="flex flex-wrap items-center gap-3 mb-6 md:mb-8">
-                <span className="bg-blue-600 text-white text-[10px] md:text-xs font-black px-3 py-1 rounded-lg uppercase tracking-widest">
+                {/* <span className="bg-blue-600 text-white text-[10px] md:text-xs font-black px-3 py-1 rounded-lg uppercase tracking-widest">
                   Live Now
-                </span>
+                </span> */}
                 <div className="flex items-center gap-4 text-white/70 text-[10px] md:text-xs font-bold uppercase tracking-wider">
                   <span className="flex items-center gap-1.5">
                     <Calendar size={14} className="text-blue-500" /> {TOP_EVENTS[currentSlide].date}
@@ -218,14 +218,14 @@ const EventPortfolio = () => {
               </h1>
 
               {/* Action Buttons - Stacked on mobile, row on desktop */}
-              <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+              {/* <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                 <button className="w-full sm:w-auto group flex items-center justify-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all duration-300">
                   Get Tickets <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-white/20 transition-all">
                   Learn More
                 </button>
-              </div>
+              </div> */}
             </motion.div>
           </div>
 
