@@ -1,6 +1,6 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ChevronLeft, ChevronRight, Calendar, MapPin, Users, Star, X, Globe, GraduationCap, ArrowUpRight, CheckCircle2, Briefcase, type LucideIcon } from 'lucide-react';
+import {  ChevronLeft, ChevronRight, Calendar, MapPin, Users, Star, X, Globe, GraduationCap, ArrowUpRight, CheckCircle2, Briefcase, type LucideIcon } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TOP_EVENTS, POPULAR_EVENTS, UNI_EVENTS } from '@/data/events';
