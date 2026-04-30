@@ -118,18 +118,18 @@ const AboutUsPage = () => {
     Event3
   ];
 
-  const row2Images = [
-    Event4,
-    Event5,
-    Event6
-  ];
+  // const row2Images = [
+  //   Event4,
+  //   Event5,
+  //   Event6
+  // ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  // const [activeIndex, setActiveIndex] = useState(0);
 
   // Switch image every 3.5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % row1Images.length);
+      // setActiveIndex((prev) => (prev + 1) % row1Images.length);
     }, 3500);
     return () => clearInterval(interval);
   }, [row1Images.length]);
@@ -1009,93 +1009,93 @@ export default AboutUsPage;
 
 
 
-const WorkMarquee5Col = () => {
-  const allProjects = [
-    { title: "Smash Foods", img: Event1 },
-    { title: "Lumar", img: Event2 },
-    { title: "Vybrance Labs", img: Event3, video: true },
-    { title: "Coho+", img: Event4 },
-    { title: "Kahuna", img: Event5 },
-    { title: "A La Maison", img: Event6 },
-  ];
+// const WorkMarquee5Col = () => {
+//   const allProjects = [
+//     { title: "Smash Foods", img: Event1 },
+//     { title: "Lumar", img: Event2 },
+//     { title: "Vybrance Labs", img: Event3, video: true },
+//     { title: "Coho+", img: Event4 },
+//     { title: "Kahuna", img: Event5 },
+//     { title: "A La Maison", img: Event6 },
+//   ];
 
-  // Helper component for each vertical track
-  const ColumnTrack = ({ items, reverse = false, duration = 30 }: { items: Array<{ title: string; img: string; video?: boolean;[key: string]: unknown }>; reverse?: boolean; duration?: number }) => (
-    <div className="flex flex-col gap-4 overflow-hidden h-[700px] relative shrink-0">
-      <motion.div
-        animate={{ y: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
-        transition={{ ease: "linear", duration: duration, repeat: Infinity }}
-        className="flex flex-col gap-4"
-      >
-        {[...items, ...items].map((item, idx) => (
-          <div
-            key={idx}
-            className="w-full aspect-[4/5] rounded-[1.8rem] overflow-hidden border border-white/5 bg-zinc-900 group relative"
-          >
-            <img
-              src={item.img}
-              className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
-              alt={item.title}
-            />
-            {/* Minimal label on hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-5 flex flex-col justify-end">
-              <h3 className="text-white font-bold uppercase tracking-tighter text-sm">{item.title}</h3>
-            </div>
-            {item.video && (
-              <div className="absolute top-4 right-4">
-                <div className="w-8 h-8 rounded-full bg-[#D4FF00] flex items-center justify-center">
-                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-l-[7px] border-l-black border-b-[4px] border-b-transparent ml-0.5" />
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
-      </motion.div>
-    </div>
-  );
+//   // Helper component for each vertical track
+//   const ColumnTrack = ({ items, reverse = false, duration = 30 }: { items: Array<{ title: string; img: string; video?: boolean;[key: string]: unknown }>; reverse?: boolean; duration?: number }) => (
+//     <div className="flex flex-col gap-4 overflow-hidden h-[700px] relative shrink-0">
+//       <motion.div
+//         animate={{ y: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
+//         transition={{ ease: "linear", duration: duration, repeat: Infinity }}
+//         className="flex flex-col gap-4"
+//       >
+//         {[...items, ...items].map((item, idx) => (
+//           <div
+//             key={idx}
+//             className="w-full aspect-[4/5] rounded-[1.8rem] overflow-hidden border border-white/5 bg-zinc-900 group relative"
+//           >
+//             <img
+//               src={item.img}
+//               className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+//               alt={item.title}
+//             />
+//             {/* Minimal label on hover */}
+//             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-5 flex flex-col justify-end">
+//               <h3 className="text-white font-bold uppercase tracking-tighter text-sm">{item.title}</h3>
+//             </div>
+//             {item.video && (
+//               <div className="absolute top-4 right-4">
+//                 <div className="w-8 h-8 rounded-full bg-[#D4FF00] flex items-center justify-center">
+//                   <div className="w-0 h-0 border-t-[4px] border-t-transparent border-l-[7px] border-l-black border-b-[4px] border-b-transparent ml-0.5" />
+//                 </div>
+//               </div>
+//             )}
+//           </div>
+//         ))}
+//       </motion.div>
+//     </div>
+//   );
 
-  return (
-    <section className="bg-[#050508] py-32 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4">
+//   return (
+//     <section className="bg-[#050508] py-32 overflow-hidden">
+//       <div className="max-w-6xl mx-auto px-4">
 
-        {/* SECTION HEADER */}
-        <div className="mb-12 flex flex-col items-center text-center space-y-4">
-          <div className="flex items-center gap-3">
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-600">Continuous Output</span>
-            <div className="w-12 h-[1px] bg-zinc-800" />
-          </div>
-          <h2 className="text-5xl md:text-7xl font-[1000] text-white tracking-tighter uppercase leading-none">
-            WORK CYCLE<span className="text-[#D4FF00]">.</span>
-          </h2>
-        </div>
+//         {/* SECTION HEADER */}
+//         <div className="mb-12 flex flex-col items-center text-center space-y-4">
+//           <div className="flex items-center gap-3">
+//             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-600">Continuous Output</span>
+//             <div className="w-12 h-[1px] bg-zinc-800" />
+//           </div>
+//           <h2 className="text-5xl md:text-7xl font-[1000] text-white tracking-tighter uppercase leading-none">
+//             WORK CYCLE<span className="text-[#D4FF00]">.</span>
+//           </h2>
+//         </div>
 
-        {/* 5-COLUMN GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 h-[700px] relative overflow-hidden">
+//         {/* 5-COLUMN GRID */}
+//         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 h-[700px] relative overflow-hidden">
 
-          {/* Col 1: UP */}
-          <ColumnTrack items={[allProjects[0], allProjects[1], allProjects[2]]} duration={25} />
+//           {/* Col 1: UP */}
+//           <ColumnTrack items={[allProjects[0], allProjects[1], allProjects[2]]} duration={25} />
 
-          {/* Col 2: DOWN */}
-          <ColumnTrack items={[allProjects[3], allProjects[4], allProjects[5]]} reverse duration={35} />
+//           {/* Col 2: DOWN */}
+//           <ColumnTrack items={[allProjects[3], allProjects[4], allProjects[5]]} reverse duration={35} />
 
-          {/* Col 3: UP */}
-          <ColumnTrack items={[allProjects[2], allProjects[0], allProjects[4]]} duration={20} />
+//           {/* Col 3: UP */}
+//           <ColumnTrack items={[allProjects[2], allProjects[0], allProjects[4]]} duration={20} />
 
-          {/* Col 4: DOWN */}
-          <ColumnTrack items={[allProjects[1], allProjects[5], allProjects[3]]} reverse duration={40} />
+//           {/* Col 4: DOWN */}
+//           <ColumnTrack items={[allProjects[1], allProjects[5], allProjects[3]]} reverse duration={40} />
 
-          {/* Col 5: UP */}
-          <ColumnTrack items={[allProjects[4], allProjects[2], allProjects[1]]} duration={28} />
+//           {/* Col 5: UP */}
+//           <ColumnTrack items={[allProjects[4], allProjects[2], allProjects[1]]} duration={28} />
 
-          {/* Fading Mask Overlays */}
-          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#050508] to-transparent z-20 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#050508] to-transparent z-20 pointer-events-none" />
-        </div>
+//           {/* Fading Mask Overlays */}
+//           <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#050508] to-transparent z-20 pointer-events-none" />
+//           <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#050508] to-transparent z-20 pointer-events-none" />
+//         </div>
 
-      </div>
-    </section>
-  );
-};
+//       </div>
+//     </section>
+//   );
+// };
 
 
 
