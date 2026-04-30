@@ -69,9 +69,11 @@ const CollaborationsPage = () => {
             {/* OR For the Yellow Fat Scribble Style */}
             {/* <FatScribble text="Together." color="#6EE7B7" /> */}
           </h1>
-          <p className="text-slate-500 text-lg font-medium max-w-2xl leading-relaxed">
-            Kattalyx Labs integrates with industry leaders, elite schools, and social organizations
-            to transform the landscape of modern education.
+          <p className="text-slate-500 text-lg md:text-xl font-medium max-w-2xl leading-relaxed tracking-tight">
+            Kattalyx Labs
+            <span className="text-slate-900 mx-1 italic">converges</span>
+            with industry titans, elite institutions, and global social organizations to
+            <span className="text-slate-900 font-bold ml-1">architect the future of human capital.</span>
           </p>
         </section>
 
