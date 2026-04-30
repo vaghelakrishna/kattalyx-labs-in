@@ -392,8 +392,10 @@ const CollaborationsPage = () => {
                     Partner with <span className=" text-blu-600 font-serif">Kattalyx Lab.</span>
                   </h2>
 
-                  <p className="text-slate-500 text-sm md:text-lg font-medium leading-relaxed">
-                    Whether you are a school principal ready to bring real-world learning to your students, a college administrator building an entrepreneurship culture, an industry expert who wants to impact the next generation, or a founder looking for the right investor room — Kattalyx Labs is your partnership.
+                  <p className="text-slate-500 text-sm md:text-xl font-medium leading-relaxed tracking-tight max-w-4xl">
+                    From institutional leaders architecting the future of pedagogy to founders and
+                    industry titans shaping the next generation of builders—Kattalyx Labs is the
+                    <span className="text-slate-900 font-bold ml-1">definitive ecosystem for high-impact partnership.</span>
                   </p>
                 </div>
 
