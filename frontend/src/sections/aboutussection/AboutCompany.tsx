@@ -32,7 +32,7 @@ export default function AboutCompany() {
         >
           <Stat number="16+" label="Events Hosted" />
           <Stat number="50+" label="Modules Learned" />
-          <Stat number="10+" label="Years of Exp" />
+          {/* <Stat number="10+" label="Years of Exp" /> */}
         </motion.div>
 
         {/* CENTER – IMAGE + BADGE */}
