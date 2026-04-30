@@ -297,7 +297,7 @@ export const TOP_EVENTS: PortfolioEvent[] = [
     location: 'Growell Girls School, Baraut',
     date: 'July 14, 2025',
     image: Event1,
-    desc: 'AI fundamentals, LinkedIn branding, and career pathways shaped by AI.',
+    desc: 'Delivered an intensive masterclass on AI fundamentals and LinkedIn branding, empowering students to navigate AI-driven career pathways.',
   },
   {
     id: 3,
@@ -305,7 +305,7 @@ export const TOP_EVENTS: PortfolioEvent[] = [
     location: 'Growell CoEd School, Baraut',
     date: 'August 6, 2025',
     image: Event3,
-    desc: 'Startup fundamentals, business strategy, branding, networking, digital marketing, and soft skills.',
+    desc: 'Orchestrated a comprehensive business summit focused on startup strategy, digital marketing, and the essential soft skills required for the modern economy.',
   }
 ];
 
