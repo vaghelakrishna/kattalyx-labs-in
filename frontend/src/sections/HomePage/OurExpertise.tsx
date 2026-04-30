@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router";
+// import { Link } from "react-router";
 import {
   Target,
   School,
   Mic2,
   Handshake,
   Zap,
-  ArrowRight
+  // ArrowRight
 } from "lucide-react";
 import Event1 from "../../assets/events/event1.webp";
 const BigBrushUnderline = ({ text }: { text: string }) => {
@@ -49,7 +49,7 @@ function OurExpertise() {
       description: "High-impact entrepreneurship events covering 60+ domains. 2–3 hours of real industry exposure — not just a lecture.",
       details: "Topics: Entrepreneurship · AI/ML · Cybersecurity · and 55 more",
       image: Event1,
-      link: "/events",
+      // link: "/events",
       btnText: "View Domains",
       highlight: true
     },
@@ -60,7 +60,7 @@ function OurExpertise() {
       icon: <School className="w-5 h-5" />,
       description: "Complete digital infrastructure. Websites, apps, and brand strategy for modern institutions.",
       details: "Includes: Web/App Dev · Digital Marketing",
-      link: "/branding",
+      // link: "/branding",
       btnText: "Build Brand"
     },
     {
@@ -70,7 +70,7 @@ function OurExpertise() {
       icon: <Mic2 className="w-5 h-5" />,
       description: "Pure industry insight from CEOs and C-suite executives shared directly with students.",
       details: "Guests: CEOs · founders · VCs · Experts",
-      link: "/podcast",
+      // link: "/podcast",
       btnText: "Listen Now"
     },
     {
@@ -80,7 +80,7 @@ function OurExpertise() {
       icon: <Handshake className="w-5 h-5" />,
       description: "Curated rooms where early-stage founders meet investors for high-quality connections.",
       details: "Focus: Seed Funding · Angel Investment",
-      link: "/networking",
+      // link: "/networking",
       btnText: "Get Funded"
     },
     {
@@ -90,7 +90,7 @@ function OurExpertise() {
       icon: <Zap className="w-5 h-5" />,
       description: "We help institutions establish fully functional E-Cells to build a permanent innovation culture.",
       details: "Includes: Structure · Mentorship · Events",
-      link: "/ecell",
+      // link: "/ecell",
       btnText: "Start E-Cell"
     }
   ];
@@ -173,19 +173,19 @@ function OurExpertise() {
                 <p className={`text-[10px] font-medium mb-3 italic ${service.highlight ? "text-blue-200" : "text-slate-400"}`}>
                   {service.details}
                 </p>
-                <Link to={service.link} className="inline-flex items-center group/link">
+                {/* <Link to={service.link} className="inline-flex items-center group/link">
                   <span className={`text-xs font-bold transition-all ${service.highlight ? "text-white" : "text-blue-600 group-hover/link:translate-x-1"}`}>
                     {service.btnText}
                   </span>
                   <ArrowRight className={`ml-1 w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1 ${service.highlight ? "text-white" : "text-blue-600"}`} />
-                </Link>
+                </Link> */}
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -198,7 +198,7 @@ function OurExpertise() {
             Explore All Solutions
             <ArrowRight className="w-4 h-4" />
           </Link>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
