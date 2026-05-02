@@ -11,7 +11,7 @@ export default function Founder() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 items-start">
 
         {/* LEFT: COMPACT STICKY IMAGE */}
-        <div className="sticky top-24 hidden lg:block rounded-[1.5rem] overflow-hidden bg-slate-100 aspect-[4/5]">
+        <div className="sticky top-24  lg:block rounded-[1.5rem] overflow-hidden bg-slate-100 aspect-[4/5]">
           <motion.div style={{ y: imageY }} className="h-[120%] w-full">
             <img
               src={vansh}
@@ -42,7 +42,7 @@ export default function Founder() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div className="space-y-6">
               <p className="text-xl font-bold leading-tight text-slate-900">
-                19. Founder. Obsessed with making real learning happen in every institution in India.
+                 Founder. Obsessed with making real learning happen in every institution in India.
               </p>
               <div className="flex flex-wrap gap-2">
                 {['Builder', 'Visionary', 'Connector', 'Disruptor', 'Founder'].map(tag => (
