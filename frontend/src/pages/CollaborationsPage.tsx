@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {
   Globe,
   Mail, Phone, MapPin,
-  CheckCircle2, Share2, Layers, ArrowRight, X,
+  CheckCircle2, Share2, Layers, X,
   Users,
   Cpu
 } from "lucide-react";
@@ -218,14 +218,14 @@ const CollaborationsPage = () => {
                           {school.name}
                         </h3>
                       </div>
-
+{/* 
                       <div
                         onClick={() => setSelectedSchool(i)}
                         className={`flex flex-col items-end gap-2 transition-all duration-500 cursor-pointer ${activeImage === i ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
                       >
                         <ArrowRight className="text-blue-600 -rotate-45" size={32} />
                         <span className="text-[9px] font-black uppercase tracking-tighter text-blue-600">View History</span>
-                      </div>
+                      </div> */}
                     </div>
 
                     {/* Hover background effect */}
@@ -430,11 +430,11 @@ const CollaborationsPage = () => {
 
                 {[
 
-                  { label: "Partners", value: "200+" },
+                  { label: "Topic Covered", value: "50+" },
 
-                  { label: "Course Modules", value: "45" },
+                  { label: "Institutions Partnered", value: "15+" },
 
-                  { label: "Success Rate", value: "98%" }
+                  { label: "Events Conducted", value: "20+" }
 
                 ].map((stat, i) => (
 
@@ -458,11 +458,11 @@ const CollaborationsPage = () => {
 
         {/* --- 7. CONTACT GRID (CLEAN ACADEMIC STYLE) --- */}
         <section className="pt-20 border-t border-slate-100 flex items-center justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
             {[
               { icon: Mail, label: "Partner Relations", value: "official@kattalyxlabs.com" },
               { icon: Phone, label: "Direct Inquiries", value: "+91 82735 15100" },
-              { icon: MapPin, label: "HQ Location", value: "Ghaziabad, India" }
+              // { icon: MapPin, label: "HQ Location", value: "Ghaziabad, India" }
             ].map((item, i) => (
               <div
                 key={i}
@@ -524,23 +524,6 @@ const ZScribbleUnderline = ({ text, color = "#FACC15" }: { text: string; color?:
           ease: "easeInOut",
         }}
       />
-
-      {/* Background 'Ink' Fill (Optional: Animates slightly after) */}
-      {/* <motion.path
-        d="M2 10 Q 15 8, 25 10 L 5 15 Q 20 18, 40 14 L 98 12"
-        stroke={color}
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        initial={{ pathLength: 0, opacity: 0 }}
-        whileInView={{ pathLength: 1, opacity: 0.4 }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 0.8,
-          delay: 0.3, // Slight stagger for the messy effect
-          ease: "easeInOut",
-        }}
-      /> */}
     </svg>
   </span>
 );
