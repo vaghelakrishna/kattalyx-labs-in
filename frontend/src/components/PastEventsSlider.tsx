@@ -90,7 +90,7 @@ export default function PastEventsSlider() {
           onMouseLeave={() => setIsHovering(false)}
           className="
             flex gap-6 overflow-x-auto scroll-smooth
-            scrollbar-hide px-10
+            scrollbar-hide px-10 
           "
         >
           {events.map((event, index) => (
