@@ -129,7 +129,7 @@ const EventsPage = () => {
       <Navbar />
 
       {/* HERO SECTION */}
-      {/* <section className="relative pt-20 mt-20 pb-16 overflow-hidden bg-slate-50/40">
+      <section className="relative pt-20 mt-20 pb-16 overflow-hidden bg-slate-50/40">
         <div className="max-w-[1400px] mx-auto text-center mb-16 px-6 relative z-20 group">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}>
             <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}
@@ -174,9 +174,9 @@ const EventsPage = () => {
             <ScrollingRow items={heroImages} baseVelocity={50} reverse />
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {/* <WorkMarquee5Col /> */}
+      <WorkMarquee5Col />
 
       <section className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center border-t border-slate-100 pt-12 py-16">
         <div>
@@ -391,8 +391,54 @@ const EventsPage = () => {
         </div>
       </section>
 
-  
-      {/* <Footer /> */}
+      <section className="max-w-[1400px] mx-auto py-16 px-6">
+        <div className="relative overflow-hidden rounded-[3rem] bg-white border border-slate-400 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.05)]">
+          {/* Decorative Grid Pattern (Common in Lab/Tech designs) */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")` }}
+          />
+
+          <div className="relative z-10 p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="flex-1 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-6">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+                </span>
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-700">Enrollment Open</span>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-none">
+                Build the future, <br />
+                <span className="text-blue-600">byte by byte.</span>
+              </h2>
+
+              <p className="mt-6 text-slate-500 text-lg max-w-md font-medium leading-relaxed">
+                Don’t just watch the evolution—engineer it. Join school and college events designed for real campus collaboration.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row md:flex-col gap-4 w-full md:w-auto">
+              <button className="group relative overflow-hidden bg-slate-900 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all hover:bg-blue-600 active:scale-95 shadow-xl shadow-slate-200">
+                <span className="relative z-10">Start Your Journey</span>
+                <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-blue-400 to-blue-600 transition-transform duration-300 group-hover:translate-y-0" />
+              </button>
+
+              <button className="flex items-center justify-center gap-2 px-10 py-5 rounded-2xl bg-white border border-slate-200 text-slate-600 font-bold hover:bg-slate-50 transition-all">
+                Schedule a Demo
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <FAQSection />
+      </section>
+      <Footer />
     </div>
   );
 };
