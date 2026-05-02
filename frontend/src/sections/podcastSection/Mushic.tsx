@@ -87,9 +87,27 @@ const LightInfiniteBurst = () => {
 
           <div className="flex flex-col items-center gap-8">
             <Link to="/contact">  
-            <button className="bg-[#111111] text-white px-14 py-5 rounded-full font-semibold text-xl hover:scale-105 transition-transform duration-300 shadow-xl active:scale-95">
-              Book a Call
-            </button>
+              <motion.button
+                // Hover karne par 10px upar (-y) aur 5px right (x) move hoga
+                whileHover={{
+                  y: -10,
+                  x: 5,
+                  scale: 1.02,
+                  backgroundColor: "#1a1a1a",
+                  boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.3)"
+                }}
+                // Click karne par dabega
+                whileTap={{ scale: 0.95 }}
+                // Smooth movement ke liye spring physics
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 15
+                }}
+                className="bg-[#111111] text-white px-14 py-5 rounded-full font-semibold text-xl shadow-xl outline-none"
+              >
+                Book a Call
+              </motion.button>
             </Link>
 
           </div>
