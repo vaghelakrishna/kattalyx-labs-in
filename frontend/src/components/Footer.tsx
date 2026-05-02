@@ -6,20 +6,22 @@ import logo from "../assets/logo.png";
 const links = {
   company: [
     { name: "About", href: "/about" },
-    { name: "Programs", href: "/programs" },
-    { name: "Mentors", href: "/mentors" },
+    // { name: "Programs", href: "/programs" },
+    // { name: "Mentors", href: "/mentors" },
     { name: "Collaborations", href: "/collaborations" },
     { name: "Blog", href: "/blog" },
-    { name: "online-classes", href: "/online-classes"},
-    { name: "College Visits", href: "/college" },
-    { name: "verifyCertificate", href: "/verify" },
+    // { name: "online-classes", href: "/online-classes"},
+    // { name: "College Visits", href: "/college" },
+    // { name: "verifyCertificate", href: "/verify" },
     {name : "Contact Us", href: "/contact"}
   ],
   resources: [
     { name: "Events", href: "/events" },
-    { name: "Portfolio", href: "/event-portfolio" },
-    { name: "For Schools", href: "/school-dashboard" },
-    { name: "For Speakers", href: "/speaker-dashboard" },
+    // { name: "Portfolio", href: "/event-portfolio" },
+    // { name: "For Schools", href: "/school-dashboard" },
+    // { name: "For Speakers", href: "/speaker-dashboard" },
+    { name: "branding", href: "/branding" },
+    {name: "podcasting", href: "/podcasting"},
   ],
 };
 
