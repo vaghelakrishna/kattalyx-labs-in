@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
@@ -43,6 +44,7 @@ const SleekServices = () => {
               <div className="w-1 h-1 bg-blue-500 rounded-full" />
               <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-500">Our Services</span>
             </div>
+
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase leading-none italic">
               What we offer
             </h2>
@@ -52,10 +54,12 @@ const SleekServices = () => {
             <p className="text-zinc-500 text-sm leading-relaxed mb-6">
               We do not just build websites and apps. We build the complete digital identity of your institution.
             </p>
+            <Link to="/contact">
             <button className="group flex items-center gap-3 border border-zinc-800 rounded-full px-4 py-2 hover:bg-white hover:text-black transition-all duration-300">
               <span className="text-[10px] font-bold uppercase tracking-widest">Let's Talk</span>
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </button>
+            </Link>
           </div>
         </div>
 
@@ -105,9 +109,7 @@ const SleekServices = () => {
                   {service.desc}
                 </p>
 
-                <div className="w-8 h-8 rounded-full border border-zinc-800 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-45 transition-all duration-300">
-                  <ArrowRight size={14} />
-                </div>
+
               </div>
 
               {/* Subtle Overlay Highlight */}
