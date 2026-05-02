@@ -1,9 +1,9 @@
 
-import { motion, AnimatePresence } from 'framer-motion';
-import {  ChevronLeft, ChevronRight, Calendar, MapPin, Users, Star, X, Globe,  Briefcase, type LucideIcon } from 'lucide-react';
+import { motion } from 'framer-motion';
+import {   Calendar, MapPin, Users, Star, X, Globe,  Briefcase, type LucideIcon } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { TOP_EVENTS, POPULAR_EVENTS, UNI_EVENTS } from '@/data/events';
+import {  POPULAR_EVENTS, UNI_EVENTS } from '@/data/events';
 import Event1 from '@/assets/events/Event1.webp';
 import Event2 from '@/assets/events/Event2.webp';
 import Event3 from '@/assets/events/Event3.webp';
@@ -17,13 +17,12 @@ import Event11 from '@/assets/events/Event11.webp';
 import Event12 from '@/assets/events/Event12.webp';
 import Event15 from '@/assets/events/Event15.webp';
 import Event16 from '@/assets/events/Event16.webp';
-import DU1 from '@/assets/events/DU1.webp';
-import DU2 from '@/assets/events/DU2.webp';
-import DU3 from '@/assets/events/DU3.webp';
-import DU4 from '@/assets/events/DU4.webp';
-import DU5 from '@/assets/events/DU5.webp';
 import { useState } from 'react';
 import FAQSection from '@/components/FAQ';
+import Hero from '@/sections/event/Hero';
+import { WorkMarquee5Col } from '@/sections/event/WorkMarquee5Col';
+import { Marquee } from '@/sections/event/Marquee';
+import AllEvents from './AllEvents';
 
 
 
@@ -71,37 +70,10 @@ const Icon3 = STATS[3].icon;
 
 
 
-
-const PHOTO_GALLERY = [
-  { url: Event1, tag: "Highlights" },
-  { url: Event2, tag: "Innovation" },
-  { url: Event3, tag: "Mentorship" },
-  { url: Event4, tag: "Leadership" },
-  { url: Event5, tag: "Cybersecurity" },
-  { url: Event6, tag: "Confidence" },
-  { url: Event7, tag: "Technology" },
-  { url: Event8, tag: "Career" },
-  { url: Event10, tag: "Community" },
-  { url: Event11, tag: "Journey" },
-  { url: Event12, tag: "Expression" },
-  { url: Event15, tag: "Empowerment" },
-  { url: Event16, tag: "Impact" },
-  { url: DU1, tag: "AI" },
-  { url: DU2, tag: "Bootcamp" },
-  { url: DU3, tag: "Startup" },
-  { url: DU4, tag: "Guidance" },
-  { url: DU5, tag: "Collaboration" },
-];
-
-
-
 const EventPortfolio = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [visibleEvents, setVisibleEvents] = useState(8);
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % TOP_EVENTS.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + TOP_EVENTS.length) % TOP_EVENTS.length);
 
   // const stories = [
   //   {
@@ -164,101 +136,12 @@ const EventPortfolio = () => {
       <Navbar />
 
       {/* 1. TOP EVENT SLIDER (HERO) */}
-      <section className="relative w-full px-4 pt-28 pb-10 bg-[#FBFCFE]">
-        {/* Main Container - Responsive Height */}
-        <div className="relative min-h-[500px] md:h-[80vh] w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-slate-900 shadow-2xl shadow-blue-900/10">
+<Hero/>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.7 }}
-              className="absolute inset-0"
-            >
-              {/* Background Image with refined overlay */}
-              <img
-                src={TOP_EVENTS[currentSlide].image}
-                className="h-full w-full object-cover opacity-50 md:opacity-60"
-                alt="Event Spotlight"
-              />
-              {/* Multilayered Gradient for Text Readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-transparent to-transparent hidden md:block" />
-            </motion.div>
-          </AnimatePresence>
+<Marquee/>
 
-          {/* Content Area - Flexbox for perfect mobile centering */}
-          <div className="relative h-full w-full flex flex-col justify-end p-6 md:p-16 lg:p-24">
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="max-w-4xl"
-            >
-              {/* Floating Tags */}
-              <div className="flex flex-wrap items-center gap-3 mb-6 md:mb-8">
-                {/* <span className="bg-blue-600 text-white text-[10px] md:text-xs font-black px-3 py-1 rounded-lg uppercase tracking-widest">
-                  Live Now
-                </span> */}
-                <div className="flex items-center gap-4 text-white/70 text-[10px] md:text-xs font-bold uppercase tracking-wider">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar size={14} className="text-blue-500" /> {TOP_EVENTS[currentSlide].date}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <MapPin size={14} className="text-blue-500" /> {TOP_EVENTS[currentSlide].location}
-                  </span>
-                </div>
-              </div>
+<AllEvents/>
 
-              {/* Dynamic Typography - Fluid scaling */}
-              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-[1.1] md:leading-[0.9] mb-8 md:mb-12">
-                {TOP_EVENTS[currentSlide].title}
-              </h1>
-
-              {/* Action Buttons - Stacked on mobile, row on desktop */}
-              {/* <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                <button className="w-full sm:w-auto group flex items-center justify-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all duration-300">
-                  Get Tickets <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-white/20 transition-all">
-                  Learn More
-                </button>
-              </div> */}
-            </motion.div>
-          </div>
-
-          {/* Navigation Controls - Relocated for better thumb reach on mobile */}
-          <div className="absolute top-6 right-6 md:top-auto md:bottom-10 md:right-10 flex flex-col md:flex-row items-center gap-4">
-            {/* Slide Indicator Dots */}
-            <div className="flex md:flex-row gap-2 mb-2 md:mb-0">
-              {TOP_EVENTS.map((_, i) => (
-                <div
-                  key={i}
-                  className={`h-1.5 transition-all duration-300 rounded-full ${currentSlide === i ? 'w-8 bg-blue-500' : 'w-2 bg-white/30'}`}
-                />
-              ))}
-            </div>
-
-            {/* Arrow Buttons */}
-            <div className="flex gap-2">
-              <button
-                onClick={prevSlide}
-                className="p-3 md:p-4 rounded-xl bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-white hover:text-slate-900 transition-all"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="p-3 md:p-4 rounded-xl bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-white hover:text-slate-900 transition-all"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* 2. POPULAR EVENTS (MODERN GRID) */}
       <section className="max-w-[1400px] mx-auto py-16 px-6">
         <div className="flex justify-between items-end mb-16">
@@ -315,85 +198,7 @@ const EventPortfolio = () => {
         )}
       </section>
 
-      <section className="max-w-[1400px] mx-auto py-16 px-6 bg-[#f8fafc] text-slate-900">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight">University Events</h2>
-            <p className="text-slate-500 mt-2 max-w-2xl">Featured university-level workshops and bootcamps that showcase our campus partnerships.</p>
-          </div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {UNI_EVENTS.slice().reverse().map((event, idx) => (
-            <div key={`${event.id}-${idx}`} className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-sm transition-all hover:shadow-xl">
-              <div className="relative h-56 overflow-hidden">
-                <img src={event.image} alt={event.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-5">
-                  <p className="text-sm uppercase tracking-[0.26em] text-slate-200 font-bold">{event.category}</p>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-black text-slate-900 mb-3">{event.title}</h3>
-                <p className="text-sm text-slate-500 mb-4">{event.location} • {event.date}</p>
-                <p className="text-sm text-slate-600 leading-relaxed mb-5">{event.description}</p>
-                <div className="flex items-center justify-between gap-3">
-                  <span className="text-xs uppercase tracking-[0.3em] font-bold text-slate-500">{event.segment}</span>
-                  <button className="rounded-full bg-slate-900 px-5 py-3 text-sm font-bold text-white hover:bg-blue-600 transition-colors">View Schedule</button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* EVENT MODAL */}
-      {selectedEvent && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={() => setSelectedEvent(null)}>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setSelectedEvent(null)}
-              className="absolute top-6 right-6 p-2 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            {POPULAR_EVENTS.find(e => e.id === selectedEvent) && (
-              <>
-                <img
-                  src={POPULAR_EVENTS.find(e => e.id === selectedEvent)!.img}
-                  className="w-full h-64 object-cover rounded-t-3xl"
-                  alt="Event"
-                />
-                <div className="p-8">
-                  <h2 className="text-4xl font-black text-slate-900 mb-4">
-                    {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.title}
-                  </h2>
-                  <div className="flex gap-4 mb-6">
-                    <span className="flex items-center gap-2 text-slate-600 text-sm font-bold">
-                      <Calendar className="w-4 h-4 text-blue-600" />
-                      {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.date}
-                    </span>
-                    <span className="flex items-center gap-2 text-slate-600 text-sm font-bold">
-                      <MapPin className="w-4 h-4 text-blue-600" />
-                      {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.location}
-                    </span>
-                  </div>
-                  <p className="text-slate-600 leading-relaxed mb-8">
-                    {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.desc}
-                  </p>
-                  <button className="w-full bg-blue-600 text-white py-4 rounded-full font-bold hover:bg-blue-700 transition-colors">
-                    Register Now
-                  </button>
-                </div>
-              </>
-            )}
-          </motion.div>
-        </div>
-      )}
 
 
 
@@ -405,6 +210,8 @@ const EventPortfolio = () => {
           <ScrollingRow items={EVENT_ASSETS} baseVelocity={50} reverse />
         </div>
       </div>
+
+
       <section className="relative h-screen max-h-screen min-h-[700px] flex flex-col justify-center overflow-hidden bg-white text-slate-900 py-12">
         {/* Soft Background Decorative Elements */}
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] pointer-events-none" />
@@ -508,247 +315,12 @@ const EventPortfolio = () => {
           </div>
         </div>
       </section>
+
       <WorkMarquee5Col />
 
 
       {/* 5. PHOTO FEED SECTION (DYNAMIC INFINITE MARQUEE) */}
-      <section className="bg-white py-20 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div>
-            <h2 className="text-[10px] font-black text-blue-600 uppercase tracking-[0.4em] mb-4">Inside the Experience</h2>
-            <p className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter leading-none">
-              Moments in <span className="text-slate-300">Motion.</span>
-            </p>
-          </div>
-          <p className="text-slate-500 font-medium max-w-xs text-sm leading-relaxed">
-            A glimpse into the workshops, energy, and breakthroughs from our global sessions.
-          </p>
-        </div>
-
-        {/* Marquee Container */}
-        <div className="relative flex flex-col gap-6">
-          {/* First Row - Moving Right */}
-          <div className="flex gap-6 animate-marquee whitespace-nowrap">
-            {[...PHOTO_GALLERY, ...PHOTO_GALLERY].map((photo, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 0.98 }}
-                className={`relative flex-shrink-0 overflow-hidden rounded-[2.5rem] bg-slate-100 group cursor-none
-            ${i % 3 === 0 ? 'w-[300px] md:w-[300px]' : i % 2 === 0 ? 'w-[400px] md:w-[600px]' : 'w-[250px] md:w-[350px]'} 
-            h-[350px] md:h-[350px]`}
-              >
-                <img
-                  src={photo.url}
-                  className="h-full w-full object-cover  transition-all duration-1000 ease-in-out group-hover:scale-110"
-                  alt="Event highlight"
-                />
-                {/* Subtle Glass Tag */}
-                <div className="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                  <div className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white text-[10px] font-black uppercase tracking-widest">
-                    {photo.tag}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Reverse Row - Optional: Use if you want a second row moving left for more depth */}
-        </div>
-
-        {/* CSS for the Marquee Animation */}
-        <style>{`
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-marquee {
-      display: flex;
-      width: fit-content;
-      animation: marquee 40s linear infinite;
-    }
-    .animate-marquee:hover {
-      animation-play-state: paused;
-    }
-  `}</style>
-      </section>
-
-
-
-      {/* 7. VIDEO SECTION - PREMIUM CINEMATIC GRID */}
-      {/* <section className="bg-slate-50 py-20 px-6">
-        <div className="max-w-[1400px] mx-auto">
-
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div className="max-w-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="flex h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-                <span className="text-red-500 text-[10px] font-black uppercase tracking-[0.3em]">Aftermovies</span>
-              </div>
-              <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter leading-none">
-                EVENT <span className="text-blue-600">RECAPS.</span>
-              </h2>
-            </div>
-            <p className="text-slate-500 font-medium max-w-xs text-sm leading-relaxed border-l-2 border-slate-200 pl-6">
-              Relive the energy and the breakthroughs. Cinematic highlights from our latest workshops.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            {[
-              {
-                title: "AI Workshop Highlights",
-                duration: "2:45",
-                tags: ["Technology", "2024"],
-                thumbnail: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200",
-                cols: "md:col-span-7"
-              },
-              {
-                title: "Startup Conference",
-                duration: "3:12",
-                tags: ["Business", "Delhi"],
-                thumbnail: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1200",
-                cols: "md:col-span-5"
-              }
-            ].map((video, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.2 }}
-                className={`${video.cols} group relative h-[400px] md:h-[550px] rounded-[3rem] overflow-hidden cursor-pointer bg-slate-200`}
-              >
-                <img
-                  src={video.thumbnail}
-                  className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-[1.5s] ease-out"
-                  alt={video.title}
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-slate-950/90 transition-opacity duration-500" />
-                <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className="absolute top-8 left-8 right-8 flex justify-between items-start opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-y-4 group-hover:translate-y-0">
-                  <div className="flex gap-2">
-                    {video.tags.map(tag => (
-                      <span key={tag} className="px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <span className="font-mono text-white text-xs bg-black/40 px-3 py-1.5 rounded-lg backdrop-blur-md">
-                    {video.duration}
-                  </span>
-                </div>
-
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative">
-                    <div className="absolute inset-0 rounded-full bg-blue-600 blur-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
-                    <div className="w-20 h-20 md:w-28 md:h-28 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-500 shadow-2xl">
-                      <div className="w-0 h-0 border-l-[18px] border-l-white group-hover:border-l-blue-600 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-2 transition-colors" />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute bottom-10 left-10 right-10">
-                  <motion.div className="flex flex-col gap-2">
-                    <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none group-hover:text-blue-400 transition-colors duration-300">
-                      {video.title}
-                    </h3>
-                    <p className="text-white/50 text-xs font-bold uppercase tracking-[0.2em] overflow-hidden h-0 group-hover:h-5 transition-all duration-500">
-                      Click to play full recap
-                    </p>
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* <section className="bg-[#f0f4f8] py-16 font-sans selection:bg-blue-100 selection:text-blue-900">
-        <div className="max-w-[1400px] mx-auto px-6">
-
-          <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div>
-              <span className="text-blue-600 font-black uppercase tracking-widest text-[10px] bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-                Testimonials
-              </span>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mt-4">
-                Real Impact, <span className="text-blue-600">Real Stories</span>
-              </h2>
-            </div>
-            <p className="text-slate-500 font-medium max-w-xs text-sm">
-              Join the ranks of thousands of students who redefined their future with us.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {stories.map((story, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="group relative bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 flex h-[280px]"
-              >
-                <div className="w-1/3 h-full relative overflow-hidden">
-                  <img
-                    src={story.img}
-                    alt={story.student}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className={`absolute inset-0 ${story.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
-                </div>
-
-                <div className="w-2/3 p-6 md:p-8 flex flex-col justify-between relative">
-                  <div className="absolute top-4 right-6">
-                    <div className={`px-3 py-1 rounded-full ${story.color} text-white text-[9px] font-black uppercase tracking-tighter`}>
-                      {story.tag}
-                    </div>
-                  </div>
-
-                  <div className="mt-4">
-                    <div className="flex gap-0.5 mb-4">
-                      {[...Array(5)].map((_, j) => (
-                        <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                      ))}
-                    </div>
-                    <h3 className="text-lg md:text-xl font-bold text-slate-800 leading-snug">
-                      "{story.achievement}"
-                    </h3>
-                  </div>
-
-                  <div className="flex items-center justify-between mt-6 pt-6 border-t border-slate-50">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-full ${story.color} flex items-center justify-center text-white font-bold text-sm shadow-lg`}>
-                        {story.student[0]}
-                      </div>
-                      <div>
-                        <p className="text-sm font-bold text-slate-900">{story.student}</p>
-                        <p className="text-[11px] text-slate-400 font-semibold flex items-center gap-1">
-                          <GraduationCap size={12} className="text-blue-500" />
-                          {story.school}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="p-2 rounded-xl bg-slate-50 text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                      <ArrowUpRight size={18} />
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-12 flex items-center justify-center gap-3">
-            <CheckCircle2 size={18} className="text-green-500" />
-            <p className="text-slate-500 text-sm font-semibold">
-              Over <span className="text-slate-900 font-black">5,000+</span> workshops conducted across India
-            </p>
-          </div>
-        </div>
-      </section> */}
-
+     
 
 
 
@@ -760,84 +332,4 @@ const EventPortfolio = () => {
 
 export default EventPortfolio;
 
-
-const WorkMarquee5Col = () => {
-  const allProjects = [
-    { title: "Smash Foods", img: Event1},
-    { title: "Lumar", img: Event2 },
-    { title: "Vybrance Labs", img: Event3, video: true },
-    { title: "Coho+", img: Event4 },
-    { title: "Kahuna", img: Event5 },
-    { title: "A La Maison", img: Event6 },
-  ];
-
-  const ColumnTrack = ({ items, reverse = false, duration = 30 }: { items: any[]; reverse?: boolean; duration?: number }) => (
-    <div className="flex flex-col gap-4 overflow-hidden h-[700px] relative shrink-0">
-      <motion.div
-        animate={{ y: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
-        transition={{ ease: "linear", duration: duration, repeat: Infinity }}
-        className="flex flex-col gap-4"
-      >
-        {[...items, ...items].map((item, idx) => (
-          <div
-            key={idx}
-            className="w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-zinc-100 bg-white group relative shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.03)] transition-all duration-500"
-          >
-            <img
-              src={item.img}
-              className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
-              alt={item.title}
-            />
-            {/* Elegant light-themed overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-              <h3 className="text-zinc-900 font-black uppercase tracking-[0.1em] text-xs translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                {item.title}
-              </h3>
-            </div>
-            {item.video && (
-              <div className="absolute top-5 right-5">
-                <div className="w-9 h-9 rounded-full bg-white/90 backdrop-blur-md shadow-sm flex items-center justify-center border border-zinc-100">
-                  {/* <div className="w-0 h-0 border-t-[4px] border-t-transparent border-l-[7px] border-l-zinc-900 border-b-[4px] border-b-transparent ml-0.5" /> */}
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
-      </motion.div>
-    </div>
-  );
-
-  return (
-    <section className="bg-[#FCFCFD] py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* SECTION HEADER */}
-        <div className="mb-20 flex flex-col items-center text-center space-y-4">
-          <div className="flex items-center gap-3">
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400">Archive / 2026</span>
-            <div className="w-12 h-[1.5px] bg-zinc-200" />
-          </div>
-          <h2 className="text-5xl md:text-8xl font-[1000] text-zinc-900 tracking-tighter uppercase leading-[0.8]">
-            WORK CYCLE<span className="text-blue-700">.</span>
-          </h2>
-        </div>
-
-        {/* 5-COLUMN GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 h-[700px] relative overflow-hidden px-2">
-
-          <ColumnTrack items={[allProjects[0], allProjects[1], allProjects[2]]} duration={28} />
-          <ColumnTrack items={[allProjects[3], allProjects[4], allProjects[5]]} reverse duration={38} />
-          <ColumnTrack items={[allProjects[2], allProjects[0], allProjects[4]]} duration={22} />
-          <ColumnTrack items={[allProjects[1], allProjects[5], allProjects[3]]} reverse duration={45} />
-          <ColumnTrack items={[allProjects[4], allProjects[2], allProjects[1]]} duration={32} />
-
-          {/* Fading Mask Overlays - Match background color */}
-          <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#FCFCFD] via-[#FCFCFD]/80 to-transparent z-20 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#FCFCFD] via-[#FCFCFD]/80 to-transparent z-20 pointer-events-none" />
-        </div>
-
-      </div>
-    </section>
-  );
-};
 
