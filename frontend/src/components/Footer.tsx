@@ -6,20 +6,13 @@ import logo from "../assets/logo.png";
 const links = {
   company: [
     { name: "About", href: "/about" },
-    // { name: "Programs", href: "/programs" },
-    // { name: "Mentors", href: "/mentors" },
     { name: "Collaborations", href: "/collaborations" },
     { name: "Blog", href: "/blog" },
-    // { name: "online-classes", href: "/online-classes"},
-    // { name: "College Visits", href: "/college" },
-    // { name: "verifyCertificate", href: "/verify" },
+
     {name : "Contact Us", href: "/contact"}
   ],
   resources: [
     { name: "Events", href: "/events" },
-    // { name: "Portfolio", href: "/event-portfolio" },
-    // { name: "For Schools", href: "/school-dashboard" },
-    // { name: "For Speakers", href: "/speaker-dashboard" },
     { name: "branding", href: "/branding" },
     {name: "podcasting", href: "/podcasting"},
   ],
@@ -30,25 +23,6 @@ export default function Footer() {
     <footer className="bg-white border-t border-slate-100 pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* TOP SECTION: NEWSLETTER / CALL TO ACTION */}
-        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-center">
-          <div>
-            <h4 className="text-4xl font-black   uppercase tracking-tighter mb-4 leading-none">
-              Level up your <br /> <span className="text-blue-600">Inbox.</span>
-            </h4>
-            <p className="text-slate-500 text-sm font-medium">Join 5,000+ students receiving real-world skill updates.</p>
-          </div>
-          <div className="flex gap-2">
-            <input
-              type="text"
-              placeholder="Enter your email"
-              className="flex-grow bg-slate-50 border border-slate-100 px-6 py-4 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all"
-            />
-            <button className="bg-slate-900 text-white p-4 rounded-2xl hover:bg-blue-600 transition-all group">
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </div> */}
 
         <div className="grid grid-cols-2 md:grid-cols-9 gap-12 lg:gap-8 pb-20">
 
