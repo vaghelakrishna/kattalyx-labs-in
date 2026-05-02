@@ -198,7 +198,85 @@ const EventPortfolio = () => {
         )}
       </section>
 
+      <section className="max-w-[1400px] mx-auto py-16 px-6 text-slate-900">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight">University Events</h2>
+            <p className="text-slate-500 mt-2 max-w-2xl">Featured university-level workshops and bootcamps that showcase our campus partnerships.</p>
+          </div>
+        </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {UNI_EVENTS.slice().reverse().map((event, idx) => (
+            <div key={`${event.id}-${idx}`} className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-sm transition-all hover:shadow-xl">
+              <div className="relative h-56 overflow-hidden">
+                <img src={event.image} alt={event.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-5">
+                  <p className="text-sm uppercase tracking-[0.26em] text-slate-200 font-bold">{event.category}</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-black text-slate-900 mb-3">{event.title}</h3>
+                <p className="text-sm text-slate-500 mb-4">{event.location} • {event.date}</p>
+                <p className="text-sm text-slate-600 leading-relaxed mb-5">{event.description}</p>
+                {/* <div className="flex items-center justify-between gap-3">
+                  <span className="text-xs uppercase tracking-[0.3em] font-bold text-slate-500">{event.segment}</span>
+                  <button className="rounded-full bg-slate-900 px-5 py-3 text-sm font-bold text-white hover:bg-blue-600 transition-colors">View Schedule</button>
+                </div> */}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* EVENT MODAL */}
+      {selectedEvent && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={() => setSelectedEvent(null)}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedEvent(null)}
+              className="absolute top-6 right-6 p-2 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            {POPULAR_EVENTS.find(e => e.id === selectedEvent) && (
+              <>
+                <img
+                  src={POPULAR_EVENTS.find(e => e.id === selectedEvent)!.img}
+                  className="w-full h-64 object-cover rounded-t-3xl"
+                  alt="Event"
+                />
+                <div className="p-8">
+                  <h2 className="text-4xl font-black text-slate-900 mb-4">
+                    {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.title}
+                  </h2>
+                  <div className="flex gap-4 mb-6">
+                    <span className="flex items-center gap-2 text-slate-600 text-sm font-bold">
+                      <Calendar className="w-4 h-4 text-blue-600" />
+                      {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.date}
+                    </span>
+                    <span className="flex items-center gap-2 text-slate-600 text-sm font-bold">
+                      <MapPin className="w-4 h-4 text-blue-600" />
+                      {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.location}
+                    </span>
+                  </div>
+                  <p className="text-slate-600 leading-relaxed mb-8">
+                    {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.desc}
+                  </p>
+                  <button className="w-full bg-blue-600 text-white py-4 rounded-full font-bold hover:bg-blue-700 transition-colors">
+                    Register Now
+                  </button>
+                </div>
+              </>
+            )}
+          </motion.div>
+        </div>
+      )}
 
 
 
