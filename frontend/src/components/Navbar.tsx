@@ -18,7 +18,6 @@ const Navbar = () => {
   const [user, setUser] = useState<User | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [isEventMobileOpen, setIsEventMobileOpen] = useState(false);
 
   const lastScrollY = useRef(0);
   const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);  const navigate = useNavigate();
@@ -118,7 +117,6 @@ const Navbar = () => {
   useEffect(() => {
     setIsOpen(false);
     setIsProfileOpen(false);
-    setIsEventMobileOpen(false);
   }, [location]);
 
   const handleLogout = () => {
