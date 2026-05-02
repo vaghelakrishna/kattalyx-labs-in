@@ -663,7 +663,7 @@ const AboutUsPage = () => {
               </h3>
               <p className="text-zinc-500 text-sm md:text-base font-medium leading-relaxed">
                 At 21 Vansh Jain realized students study for marks while the real world moves on. Kattalyx Labs was born to fix that.
-                <span className="text-black block mt-4 font-bold">16+ events. 12+ institutions. 93.9% satisfaction. The scale is just beginning.</span>
+                <span className="text-black block mt-4 font-bold">16+ events. 12+ institutions. 96% satisfaction. The scale is just beginning.</span>
               </p>
             </motion.div>
 
