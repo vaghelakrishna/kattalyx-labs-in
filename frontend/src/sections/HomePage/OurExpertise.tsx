@@ -8,7 +8,7 @@ import {
   Zap,
   // ArrowRight
 } from "lucide-react";
-import Event1 from "../../assets/events/event1.webp";
+import Event1 from "../../assets/events/Event1.webp";
 const BigBrushUnderline = ({ text }: { text: string }) => {
   return (
     <span className="relative inline-block px-1">
