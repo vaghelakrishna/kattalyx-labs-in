@@ -56,7 +56,7 @@ const STATS: StatItem[] = [
   },
   {
     label: "Event Feedback",
-    value: "9.4/10",
+    value: "9.6/10",
     icon: Star,
     color: "from-yellow-400 to-orange-500"
   }
@@ -336,10 +336,10 @@ const EventPortfolio = () => {
                 <h3 className="text-2xl font-black text-slate-900 mb-3">{event.title}</h3>
                 <p className="text-sm text-slate-500 mb-4">{event.location} • {event.date}</p>
                 <p className="text-sm text-slate-600 leading-relaxed mb-5">{event.description}</p>
-                <div className="flex items-center justify-between gap-3">
+                {/* <div className="flex items-center justify-between gap-3">
                   <span className="text-xs uppercase tracking-[0.3em] font-bold text-slate-500">{event.segment}</span>
                   <button className="rounded-full bg-slate-900 px-5 py-3 text-sm font-bold text-white hover:bg-blue-600 transition-colors">View Schedule</button>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
