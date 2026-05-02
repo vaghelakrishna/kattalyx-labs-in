@@ -45,7 +45,10 @@ const CollaborationsPage = () => {
     { name: "Growell Girls School", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
     { name: "Kidzee School", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
     { name: "Growell Co-ed", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Saifia Institute", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' }
+    { name: "Saifia Institute", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "IIT Delhi", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "KIET Group of Institutions", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "ABESIT", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
   ];
   return (
     <div className="min-h-screen bg-[#FDFDFD] text-slate-900 font-sans">
@@ -165,7 +168,7 @@ const CollaborationsPage = () => {
               </div>
               <h2 className="text-6xl md:text-7xl font-black text-slate-900 tracking-tighter leading-none">
                 Partner <br />
-                <span className="text-slate-300 ">Schools.</span>
+                <span className="text-slate-300 ">Institution.</span>
               </h2>
             </motion.div>
 
