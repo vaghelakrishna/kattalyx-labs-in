@@ -31,7 +31,7 @@ const PremiumPortfolio = () => {
           {/* Background Text */}
           <motion.div style={{ opacity: bgOpacity }} className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
             <h2 className="text-[8vw] font-black text-black leading-[0.8] tracking-tighter uppercase whitespace-nowrap ">
-              WHAT <br /> CHALLENGES <br /> WE TACKLE
+              WHAT <br /> YOU <br /> GET
             </h2>
           </motion.div>
 
