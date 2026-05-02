@@ -31,7 +31,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* TOP SECTION: NEWSLETTER / CALL TO ACTION */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-center">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-center">
           <div>
             <h4 className="text-4xl font-black   uppercase tracking-tighter mb-4 leading-none">
               Level up your <br /> <span className="text-blue-600">Inbox.</span>
@@ -48,7 +48,7 @@ export default function Footer() {
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-2 md:grid-cols-12 gap-12 lg:gap-8 pb-20">
 
