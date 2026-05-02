@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import Event1 from "../assets/events/event1.webp";
-import Event2 from "../assets/events/event2.webp";
-import Event3 from "../assets/events/event3.webp";
-import Event4 from "../assets/events/event4.webp";
-import Event5 from "../assets/events/event5.webp";
+import Event1 from "../assets/events/Event1.webp";
+import Event2 from "../assets/events/Event2.webp";
+import Event3 from "../assets/events/Event3.webp";
+import Event4 from "../assets/events/Event4.webp";
+import Event5 from "../assets/events/Event5.webp";
 
 const events = [
   {
