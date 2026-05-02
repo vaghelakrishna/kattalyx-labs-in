@@ -103,13 +103,7 @@ const Navbar = () => {
     setIsProfileOpen(false);
   }, [location]);
 
-  const handleLogout = () => {
-    localStorage.clear();
-    setIsLoggedIn(false);
-    setUser(null);
-    setIsOpen(false);
-    navigate("/");
-  };
+
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -162,17 +156,6 @@ const Navbar = () => {
 
             {/* User & Hamburger */}
             <div className="flex items-center space-x-4">
-              <div className="hidden lg:block">
-                {!isLoggedIn ? (
-                  <Link to="/login">
-                    <button className="bg-blue-600 text-white px-6 py-2.5 text-sm font-bold rounded-lg">SIGN UP</button>
-                  </Link>
-                ) : (
-                  <button onClick={() => setIsProfileOpen(!isProfileOpen)} className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
-                    {user?.avatar ? <img src={user.avatar} className="rounded-full h-full w-full object-cover" /> : getInitials(user?.name || "")}
-                  </button>
-                )}
-              </div>
 
               {/* Toggle Button */}
               <button
@@ -216,17 +199,6 @@ const Navbar = () => {
 
                 <hr className="border-gray-100" />
 
-                {!isLoggedIn ? (
-                  <div className="flex flex-col space-y-4">
-                    <Link to="/login" onClick={() => setIsOpen(false)} className="text-xl font-bold text-gray-700">SIGN IN</Link>
-                    <Link to="/register" onClick={() => setIsOpen(false)} className="bg-blue-600 text-white text-center py-4 rounded-xl font-bold">SIGN UP</Link>
-                  </div>
-                ) : (
-                  <div className="flex flex-col space-y-4">
-                    <Link to="/profile" onClick={() => setIsOpen(false)} className="text-xl font-bold text-gray-700">My Profile</Link>
-                    <button onClick={handleLogout} className="text-left text-xl font-bold text-red-600">Logout</button>
-                  </div>
-                )}
               </div>
             </motion.div>
           )}
