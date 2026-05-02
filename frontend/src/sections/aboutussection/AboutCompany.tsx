@@ -3,7 +3,7 @@ import { ArrowUpRight, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-
+import Event1 from "@/assets/events/Event1.webp";
 // Stat Component (For the left side numbers)
 function Stat({ number, label }: { number: string; label: string }) {
   return (
@@ -30,9 +30,9 @@ export default function AboutCompany() {
         <motion.div
           className="flex lg:flex-col justify-between lg:justify-start border-l-2 border-blue-600 pl-6 lg:mt-4" // thoda top margin for alignment
         >
-          <Stat number="16+" label="Events Hosted" />
-          <Stat number="50+" label="Modules Learned" />
-          {/* <Stat number="10+" label="Years of Exp" /> */}
+          <Stat number="20+" label="Events Hosted" />
+          <Stat number="15+" label="Events Conducted" />
+          <Stat number="50+" label="Topics Covered" />
         </motion.div>
 
         {/* CENTER – IMAGE + BADGE */}
@@ -40,7 +40,7 @@ export default function AboutCompany() {
           className="relative flex justify-center lg:sticky lg:top-24" // Sticky use kar sakte ho taki image wahi rahe
         >
           <img
-            src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1000"
+            src= {Event1}
             alt="About Kattalyx Labs"
             className="rounded-2xl md:rounded-3xl shadow-2xl w-full max-w-[520px] object-cover h-[450px]"
           />
