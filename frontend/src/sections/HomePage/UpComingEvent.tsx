@@ -4,11 +4,11 @@ import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
-import Event1 from "../../assets/events/event1.webp";
-import Event2 from "../../assets/events/event2.webp";
-import Event3 from "../../assets/events/event3.webp";
-import Event4 from "../../assets/events/event4.webp";
-import Event5 from "../../assets/events/event5.webp";
+import Event1 from "../../assets/events/Event1.webp";
+import Event3 from "../../assets/events/Event3.webp";
+import Event2 from "../../assets/events/Event2.webp";
+import Event4 from "../../assets/events/Event4.webp";
+import Event5 from "../../assets/events/Event5.webp";
 
 
 // --- DATA ---
