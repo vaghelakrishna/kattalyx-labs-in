@@ -32,10 +32,10 @@ const Navbar = () => {
     "/about": "Learn why thousands of students choose Kattalyx Labs for their growth.",
     "/collaborations": "See our powerful collaborations and global partners.",
     "/event": "Join upcoming events and workshops curated for achievers.",
-    "/event-portfolio": "Browse our event portfolio and success stories.",
-    "/mentors": "Find the perfect mentor to accelerate your learning journey.",
+    // "/event-portfolio": "Browse our event portfolio and success stories.",
+    // "/mentors": "Find the perfect mentor to accelerate your learning journey.",
     "/blog": "Read inspiring stories, tips, and industry insights from our blog.",
-    "/online-classes": "Access live classes and expert-led sessions anytime, anywhere.",
+    // "/online-classes": "Access live classes and expert-led sessions anytime, anywhere.",
     "/branding": "Explore our institutional branding services for visibility, digital marketing and brand value.",
     "/contact": "Need help? Reach out to our support team anytime.",
     "/login": "Log in to continue your journey with Kattalyx Labs.",
@@ -43,7 +43,7 @@ const Navbar = () => {
     "/privacy-policy": "Read how we protect your data and build trust with every interaction.",
     "/terms": "Review the terms and conditions that govern our services.",
     "/refund-policy": "Learn about our refund and cancellation policy before you enroll.",
-    "/verify": "Verify your certificate quickly with our trusted system.",
+    // "/verify": "Verify your certificate quickly with our trusted system.",
   };
 
   const getAnnouncementMessage = (pathname: string) => {
@@ -275,18 +275,6 @@ const Navbar = () => {
                   </Link>
                 ))}
 
-                <div className="space-y-2">
-                  <button
-                    type="button"
-                    onClick={() => setIsEventMobileOpen((prev) => !prev)}
-                    className={`w-full flex items-center justify-between text-left text-2xl font-bold transition-all}`}
-                  >
-                    <span>Events</span>
-                    <span className="text-3xl">{isEventMobileOpen ? "−" : "+"}</span>
-                  </button>
-
-
-                </div>
 
                 <hr className="my-4 border-gray-100" />
 
