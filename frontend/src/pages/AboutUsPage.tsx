@@ -596,92 +596,6 @@ const AboutUsPage = () => {
 
 
 
-
-      {/* <SuccessCardSlider /> */}
-
-
-      {/* vission mission history cards */}
-      {/* <section className="bg-white px-5 md:px-16 py-16 md:py-20">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10">
-
-          <div
-            className="
-        flex lg:block
-        gap-4
-        overflow-x-auto
-        snap-x snap-mandatory
-        lg:overflow-visible
-        lg:space-y-6
-        no-scrollbar
-      "
-          >
-
-            <div className="snap-center shrink-0 w-[85%] sm:w-[70%] lg:w-auto rounded-2xl md:rounded-3xl bg-blue-200 p-6 md:p-8">
-              <span className="inline-block bg-white text-gray-800 px-4 md:px-5 py-2 rounded-full font-medium mb-4 text-sm md:text-base">
-                Our Vision
-              </span>
-              <p className="text-gray-600 leading-relaxed text-sm md:text-base max-w-md">
-                To build India’s most powerful real-world learning ecosystem for schools.
-              </p>
-            </div>
-
-            <div className="snap-center shrink-0 w-[85%] sm:w-[70%] lg:w-auto rounded-2xl md:rounded-3xl bg-blue-200 p-6 md:p-8">
-              <span className="inline-block bg-white text-gray-800 px-4 md:px-5 py-2 rounded-full font-medium mb-4 text-sm md:text-base">
-                Our Mission
-              </span>
-              <p className="text-gray-600 leading-relaxed text-sm md:text-base max-w-md">
-                To transform schools through skills, systems, and long-term partnerships.
-              </p>
-            </div>
-
-            <div className="snap-center shrink-0 w-[85%] sm:w-[70%] lg:w-auto rounded-2xl md:rounded-3xl bg-blue-400 p-6 md:p-8 text-white">
-              <span className="inline-block bg-white text-gray-800 px-4 md:px-5 py-2 rounded-full font-medium mb-4 text-sm md:text-base">
-                Our History
-              </span>
-              <p className="leading-relaxed text-sm md:text-base max-w-md">
-                Born from real classrooms. Built for real impact.
-                <br />
-                Kattalyx Labs started with one clear insight:
-                schools don’t need more tools — they need a connected system.
-              </p>
-            </div>
-
-          </div>
-
-          <div className="relative rounded-2xl md:rounded-3xl overflow-hidden min-h-[420px] md:min-h-[600px]">
-
-            <img
-              src={image}
-              alt="about us"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-
-            <div className="absolute inset-0 bg-black/60" />
-
-            <div className="relative z-10 h-full p-6 md:p-10 flex flex-col justify-start md:justify-between">
-              <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white leading-snug max-w-md">
-                  Our Plan Is To Shape The Future Of Education Through Our Ideas
-                </h2>
-
-                <p className="mt-4 text-white/80 max-w-md leading-relaxed text-sm md:text-base">
-                  Building Long Term Partnerships with Schools, Empowering Students
-                  with Real-World Skills, and Creating a Connected Ecosystem for
-                  Lasting Impact.
-                </p>
-              </div>
-
-              <Link
-                to="/contact"
-                className="mt-8 md:mt-0 self-start md:self-end bg-gradient-to-br from-blue-300 to-blue-500 text-white px-6 py-3 rounded-full font-medium hover:opacity-90 transition"
-              >
-              </Link>
-            </div>
-          </div>
-
-        </div>
-      </section> */}
-
       <section className="bg-white py-32 px-6 md:px-10 font-sans text-black overflow-hidden">
         <div className="max-w-8xl mx-auto">
 
@@ -870,7 +784,7 @@ const AboutUsPage = () => {
           </h2>
 
           <p className="mt-4 text-[1.1rem] text-zinc-700">
-            Institutions already transforming their students' learning experience with real-world industry connections. Your school or college is next.
+            Institutions already transforming their students' learning experience with real-world industry connections. Your Institution is next.
           </p>
           <p className="font-bold pt-4">The only question is — when does yours begin?</p>
           <div className="mt-16 text-center">
@@ -1002,98 +916,5 @@ const AboutUsPage = () => {
 };
 
 export default AboutUsPage;
-
-
-
-// const WorkMarquee5Col = () => {
-//   const allProjects = [
-//     { title: "Smash Foods", img: Event1 },
-//     { title: "Lumar", img: Event2 },
-//     { title: "Vybrance Labs", img: Event3, video: true },
-//     { title: "Coho+", img: Event4 },
-//     { title: "Kahuna", img: Event5 },
-//     { title: "A La Maison", img: Event6 },
-//   ];
-
-//   // Helper component for each vertical track
-//   const ColumnTrack = ({ items, reverse = false, duration = 30 }: { items: Array<{ title: string; img: string; video?: boolean;[key: string]: unknown }>; reverse?: boolean; duration?: number }) => (
-//     <div className="flex flex-col gap-4 overflow-hidden h-[700px] relative shrink-0">
-//       <motion.div
-//         animate={{ y: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
-//         transition={{ ease: "linear", duration: duration, repeat: Infinity }}
-//         className="flex flex-col gap-4"
-//       >
-//         {[...items, ...items].map((item, idx) => (
-//           <div
-//             key={idx}
-//             className="w-full aspect-[4/5] rounded-[1.8rem] overflow-hidden border border-white/5 bg-zinc-900 group relative"
-//           >
-//             <img
-//               src={item.img}
-//               className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
-//               alt={item.title}
-//             />
-//             {/* Minimal label on hover */}
-//             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-5 flex flex-col justify-end">
-//               <h3 className="text-white font-bold uppercase tracking-tighter text-sm">{item.title}</h3>
-//             </div>
-//             {item.video && (
-//               <div className="absolute top-4 right-4">
-//                 <div className="w-8 h-8 rounded-full bg-[#D4FF00] flex items-center justify-center">
-//                   <div className="w-0 h-0 border-t-[4px] border-t-transparent border-l-[7px] border-l-black border-b-[4px] border-b-transparent ml-0.5" />
-//                 </div>
-//               </div>
-//             )}
-//           </div>
-//         ))}
-//       </motion.div>
-//     </div>
-//   );
-
-//   return (
-//     <section className="bg-[#050508] py-32 overflow-hidden">
-//       <div className="max-w-6xl mx-auto px-4">
-
-//         {/* SECTION HEADER */}
-//         <div className="mb-12 flex flex-col items-center text-center space-y-4">
-//           <div className="flex items-center gap-3">
-//             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-600">Continuous Output</span>
-//             <div className="w-12 h-[1px] bg-zinc-800" />
-//           </div>
-//           <h2 className="text-5xl md:text-7xl font-[1000] text-white tracking-tighter uppercase leading-none">
-//             WORK CYCLE<span className="text-[#D4FF00]">.</span>
-//           </h2>
-//         </div>
-
-//         {/* 5-COLUMN GRID */}
-//         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 h-[700px] relative overflow-hidden">
-
-//           {/* Col 1: UP */}
-//           <ColumnTrack items={[allProjects[0], allProjects[1], allProjects[2]]} duration={25} />
-
-//           {/* Col 2: DOWN */}
-//           <ColumnTrack items={[allProjects[3], allProjects[4], allProjects[5]]} reverse duration={35} />
-
-//           {/* Col 3: UP */}
-//           <ColumnTrack items={[allProjects[2], allProjects[0], allProjects[4]]} duration={20} />
-
-//           {/* Col 4: DOWN */}
-//           <ColumnTrack items={[allProjects[1], allProjects[5], allProjects[3]]} reverse duration={40} />
-
-//           {/* Col 5: UP */}
-//           <ColumnTrack items={[allProjects[4], allProjects[2], allProjects[1]]} duration={28} />
-
-//           {/* Fading Mask Overlays */}
-//           <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#050508] to-transparent z-20 pointer-events-none" />
-//           <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#050508] to-transparent z-20 pointer-events-none" />
-//         </div>
-
-//       </div>
-//     </section>
-//   );
-// };
-
-
-
 
 
