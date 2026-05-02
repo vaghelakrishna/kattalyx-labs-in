@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Event8 from '../../assets/events/event8.webp';
+import Event8 from '../../assets/events/Event8.webp';
 import Event10 from '../../assets/events/Event10.webp';
 import Event11 from '../../assets/events/event11.webp';
 import Event12 from '../../assets/events/event12.webp';
