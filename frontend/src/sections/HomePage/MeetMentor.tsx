@@ -1,6 +1,6 @@
 "use client";
 import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
-import { ArrowRight, Fingerprint, ChevronLeft, ChevronRight } from "lucide-react";
+import {  Fingerprint, ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
@@ -21,8 +21,6 @@ function MeetMentor() {
     { slug: "vansh-jain", name: "Vansh Jain", role: "Founder & CEO", linkedin: "#", avatar: vanshImg },
     { slug: "pushpak", name: "Pushpak", role: "AI Specialist", linkedin: "#", avatar: pushpakImg },
     { slug: "ishika-sharma", name: "Ishika Sharma", role: "Tech Expert", linkedin: "#", avatar: ishikaImg },
-    { slug: "mentor-4", name: "Mentor Four", role: "Design Lead", linkedin: "#", avatar: ishikaImg },
-    { slug: "mentor-5", name: "Mentor Five", role: "Marketing", linkedin: "#", avatar: ishikaImg }
   ];
 
   const [team, setTeam] = useState(initialTeam);
@@ -108,11 +106,11 @@ function MeetMentor() {
               <span className="text-slate-300 italic font-serif">the best.</span>
             </h2>
           </div>
-
+{/* 
           <button className="group flex items-center gap-3 border border-slate-900 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-500">
             View All Experts
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          </button> */}
         </div>
 
         <div className="group/container relative">
