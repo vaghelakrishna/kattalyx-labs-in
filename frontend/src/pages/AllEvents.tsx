@@ -188,8 +188,8 @@ const EventsPage = () => {
           <p className="text-slate-500 font-medium">Students Impacted</p>
         </div>
         <div>
-          <p className="text-4xl font-black text-slate-900">12+</p>
-          <p className="text-slate-500 font-medium">Partner Schools & Colleges</p>
+          <p className="text-4xl font-black text-slate-900">15+</p>
+          <p className="text-slate-500 font-medium">Partner Institutions</p>
         </div>
       </section>
 
