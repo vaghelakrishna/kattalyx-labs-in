@@ -211,7 +211,7 @@ export default function HeroSection() {
               Learning & Branding <br />
               <span className="text-blue-600 relative inline-block mt-1">
                 Ecosystem for Institutions.
-                <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 300 12" fill="none">
+                <svg className="absolute -bottom-1 left-0 w-[60%]" viewBox="0 0 300 12" fill="none">
                   <path d="M1 10.5C50 3.5 150 1.5 299 10.5" stroke="#3b82f6" strokeWidth="6"  strokeLinecap="round" />
                 </svg>
               </span>
@@ -241,8 +241,8 @@ export default function HeroSection() {
             {/* Updated Stats Bar */}
             <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-4 w-full max-w-md">
               <Stat value="50+" label="Topics Covered" color="bg-blue-50" />
-              <Stat value="12+" label="Institutions Partnered" color="bg-yellow-50" />
-              <Stat value="16+" label="Events Conducted" color="bg-purple-50" />
+              <Stat value="15+" label="Institutions Partnered" color="bg-yellow-50" />
+              <Stat value="20+" label="Events Conducted" color="bg-purple-50" />
             </div>
           </div>
 
