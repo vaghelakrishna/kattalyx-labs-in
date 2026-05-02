@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
         </div> */}
 
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-12 lg:gap-8 pb-20">
+        <div className="grid grid-cols-2 md:grid-cols-9 gap-12 lg:gap-8 pb-20">
 
           {/* Brand & Mission */}
           <div className="col-span-2 md:col-span-4 lg:col-span-5">
@@ -84,7 +84,7 @@ export default function Footer() {
           </div>
 
           {/* Links Sections */}
-          <div className="col-span-1 md:col-span-3 lg:col-span-2">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <p className="text-[10px] font-black text-slate-900 uppercase tracking-[0.2em] mb-8">Ecosystem</p>
             <ul className="space-y-4">
               {links.company.map((link) => (
@@ -111,7 +111,7 @@ export default function Footer() {
           </div>
 
           {/* Contact / Location */}
-          <div className="col-span-2 md:col-span-2">
+          {/* <div className="col-span-2 md:col-span-2">
             <p className="text-[10px] font-black text-slate-900 uppercase tracking-[0.2em] mb-8">Status</p>
             <div className="flex items-center gap-2 mb-4">
               <span className="flex h-2 w-2 relative">
@@ -130,7 +130,7 @@ export default function Footer() {
               TAN: MRTK09475E <br />
               Incorporation Date: 19th December 2025 <br />
               ROC: Kanpur</p>
-          </div>
+          </div> */}
 
         </div>
 
