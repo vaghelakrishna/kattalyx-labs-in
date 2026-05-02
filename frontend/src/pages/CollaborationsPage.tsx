@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   Globe,
-  Mail, Phone, MapPin,
+  Mail, Phone,
   CheckCircle2, Share2, Layers, X,
   Users,
   Cpu
