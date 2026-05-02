@@ -58,7 +58,7 @@ export default function Founder() {
                   <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Events Led</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-black text-slate-900">9.2/10</p>
+                  <p className="text-2xl font-black text-slate-900">9.6/10</p>
                   <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Avg Rating</p>
                 </div>
               </div>
