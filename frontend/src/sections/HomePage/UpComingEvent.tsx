@@ -115,7 +115,7 @@ export default function UpComingEvent() {
               Here is what real-world learning looks like.
             </h2>
           </div>
-          <Link to="/mentors">
+          <Link to="/events">
             <button className="group flex items-center gap-3 bg-transparent text-slate-900 border border-slate-900 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:bg-black hover:text-white">
               All Events
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -214,6 +214,7 @@ export default function UpComingEvent() {
           )}
 
           {/* SECTION TEXT */}
+          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -223,9 +224,11 @@ export default function UpComingEvent() {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">What’s Coming Up</h2>
             <p className="mt-3 text-slate-400">Join our upcoming events and master your craft with industry leaders.</p>
-            <button className="mt-8 px-10 py-4 rounded-full bg-white text-black font-black uppercase text-[10px] tracking-[0.2em] hover:bg-slate-200 transition-colors">
-              Explore All Events
-            </button>
+            <Link to="/events">
+              <button className="mt-8 px-10 py-4 rounded-full bg-white text-black font-black uppercase text-[10px] tracking-[0.2em] hover:bg-slate-200 transition-colors">
+                Explore All Events
+              </button>
+            </Link>
           </motion.div>
         </section>
       </div>
