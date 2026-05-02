@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Event2 from "../assets/events/event2.webp";
+import Event2 from "../assets/events/Event2.webp";
 
 function StartLearningCTA() {
   return (
