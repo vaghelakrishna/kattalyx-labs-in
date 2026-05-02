@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import vansh from "../../assets/vansh.jpg";
+import vansh from "../../assets/vanshjain.webp";
 
 export default function Founder() {
   const { scrollYProgress } = useScroll();
