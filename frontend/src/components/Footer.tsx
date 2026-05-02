@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Zap } from "lucide-react";
+import {  Zap } from "lucide-react";
 import { FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
 import logo from "../assets/logo.png";
 
