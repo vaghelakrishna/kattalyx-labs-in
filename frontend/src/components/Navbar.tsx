@@ -1,29 +1,20 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import kattalyx from "../assets/kattalyxlab-removebg-preview.png";
 import watermark from "../assets/Watermark.webp";
 import AnnouncementBar from "./ui/AnnouncementBar";
 
-interface User {
-  name: string;
-  role: 'Admin' | 'SuperAdmin' | 'User';
-  avatar?: string;
-}
+
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState<User | null>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const lastScrollY = useRef(0);
   const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const navigate = useNavigate();
   const location = useLocation();
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -39,9 +30,7 @@ const Navbar = () => {
 
   const announcementMessage = announcementMessages[location.pathname] ?? "Stay updated with Kattalyx Labs.";
 
-  const getInitials = (name: string) => {
-    return name.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2);
-  };
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,27 +57,12 @@ const Navbar = () => {
       lastScrollY.current = currentScrollY;
     };
 
-    // Auth check
-    const token = localStorage.getItem("token");
-    const userData = localStorage.getItem("user");
-    if (token && userData) {
-      try {
-        setUser(JSON.parse(userData));
-        setIsLoggedIn(true);
-      } catch { localStorage.clear(); }
-    }
 
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsProfileOpen(false);
-      }
-    };
+
 
     window.addEventListener("scroll", handleScroll);
-    document.addEventListener("mousedown", handleClickOutside);
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen]); // Added isOpen as dependency
 
@@ -100,7 +74,6 @@ const Navbar = () => {
   // Close menu on route change
   useEffect(() => {
     setIsOpen(false);
-    setIsProfileOpen(false);
   }, [location]);
 
 
