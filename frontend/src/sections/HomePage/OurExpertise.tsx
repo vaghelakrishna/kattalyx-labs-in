@@ -108,7 +108,7 @@ function OurExpertise() {
           className="text-center mb-8"
         >
           <span className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-1 text-sm font-medium text-blue-700">
-            OUR MODULES
+            OUR SERVICES
           </span>
 
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-8">
