@@ -50,7 +50,7 @@ const STATS: StatItem[] = [
   },
   {
     label: "Schools & Institutions",
-    value: "12+",
+    value: "15+",
     icon: Globe,
     color: "from-slate-800 to-slate-900"
   },
