@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Event1 from '../../assets/events/Event1.webp';
 import Event2 from '../../assets/events/Event2.webp';
@@ -13,6 +13,7 @@ import Event11 from '../../assets/events/Event11.webp';
 import Event12 from '../../assets/events/Event12.webp';
 import Event15 from '../../assets/events/Event15.webp';
 import Event16 from '../../assets/events/Event16.webp';
+import { useRef } from 'react';
 
 const images = [
   Event1,
@@ -30,7 +31,34 @@ const images = [
   Event16
 
 ];
+const MagneticButton = ({ children }: { children: React.ReactNode }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const mouseX = useSpring(x, { damping: 15, stiffness: 150 });
+  const mouseY = useSpring(y, { damping: 15, stiffness: 150 });
 
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!ref.current) return;
+    const { clientX, clientY } = e;
+    const { left, top, width, height } = ref.current.getBoundingClientRect();
+    x.set(clientX - (left + width / 2));
+    y.set(clientY - (top + height / 2));
+  };
+
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={() => { x.set(0); y.set(0); }}
+      style={{ x: mouseX, y: mouseY }}
+      className="relative inline-block"
+    >
+      {children}
+    </motion.div>
+  );
+};
 const LightInfiniteBurst = () => {
   return (
     <section className="relative min-h-screen mt-15 w-full  flex items-center justify-center overflow-hidden font-sans ">
@@ -87,27 +115,10 @@ const LightInfiniteBurst = () => {
 
           <div className="flex flex-col items-center gap-8">
             <Link to="/contact">  
-              <motion.button
-                // Hover karne par 10px upar (-y) aur 5px right (x) move hoga
-                whileHover={{
-                  y: -10,
-                  x: 5,
-                  scale: 1.02,
-                  backgroundColor: "#1a1a1a",
-                  boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.3)"
-                }}
-                // Click karne par dabega
-                whileTap={{ scale: 0.95 }}
-                // Smooth movement ke liye spring physics
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 15
-                }}
-                className="bg-[#111111] text-white px-14 py-5 rounded-full font-semibold text-xl shadow-xl outline-none"
-              >
-                Book a Call
-              </motion.button>
+              <MagneticButton>
+                <button className="px-8 py-4 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-indigo-600 transition-all duration-300 shadow-2xl shadow-indigo-200 active:scale-95">
+              Book a Call                </button>
+              </MagneticButton>
             </Link>
 
           </div>
