@@ -33,12 +33,11 @@ import Event10 from '../assets/events/Event10.webp';
 // import Event15 from '../assets/events/Event15.webp';
 // import Event16 from '../assets/events/Event16.webp';
 
-import Watermark from '../assets/Watermark.webp';
 
 const stats = [
   { num: "50+", label: "Topics  Covered " },
-  { num: "12+", label: "Institutions  Partnered " },
-  { num: "16+", label: "Events Conducted" },
+  { num: "15+", label: "Institutions  Partnered " },
+  { num: "20+", label: "Events Conducted" },
 ];
 
 const galleryImages = [
@@ -183,14 +182,11 @@ const AboutUsPage = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           {/* Top Icon Badge */}
-          <div className="flex justify-center mb-6">
+          {/* <div className="flex justify-center mb-6">
             <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-orange-100 flex items-center justify-center">
-              {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg> */}
               <img src={Watermark} width="28" height="28" />
             </div>
-          </div>
+          </div> */}
 
           {/* Updated Heading Content */}
           <h2 className="text-4xl md:text-6xl font-black text-[#0F172A] tracking-tighter mb-4 uppercase">
