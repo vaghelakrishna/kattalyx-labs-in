@@ -21,7 +21,7 @@ const ContactPage: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxZo1F_jEya1LGwWJrKeippSzIfU9eVUHuUiMRXO3RAAphdztdPJO2GxvQS6TLU1Ifj/exec";
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbw6Dr63IuG4b49PL42dCFmqhMRQenisz6VUodAZ7i9G6-R1AvU4u0yjdrj0vFj8zp_Q-A/exec";
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
