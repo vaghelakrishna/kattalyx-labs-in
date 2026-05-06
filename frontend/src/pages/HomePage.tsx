@@ -81,6 +81,7 @@ const HomePage: React.FC = () => {
 
 
       <MeetMentor />
+      
 
       {/* <OurPartner /> */}
 
