@@ -18,9 +18,9 @@ function MeetMentor() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const initialTeam = [
-    { slug: "vansh-jain", name: "Vansh Jain", role: "Founder & CEO", linkedin: "#", avatar: vanshImg },
-    { slug: "pushpak", name: "Pushpak", role: "AI Specialist", linkedin: "#", avatar: pushpakImg },
-    { slug: "ishika-sharma", name: "Ishika Sharma", role: "Tech Expert", linkedin: "#", avatar: ishikaImg },
+    { slug: "vansh-jain", name: "Vansh Jain", role: "Founder & CEO", linkedin: "https://www.linkedin.com/in/vansh-jain26?utm_source=share_via&utm_content=profile&utm_medium=member_android", avatar: vanshImg },
+    { slug: "pushpak", name: "Pushpak", role: "AI Specialist", linkedin: "https://www.linkedin.com/in/pushpakgoel56?utm_source=share_via&utm_content=profile&utm_medium=member_android", avatar: pushpakImg },
+    { slug: "ishika-sharma", name: "Ishika Sharma", role: "Tech Expert", linkedin: "https://www.linkedin.com/in/ishikasharma07?utm_source=share_via&utm_content=profile&utm_medium=member_android", avatar: ishikaImg },
   ];
 
   const [team, setTeam] = useState(initialTeam);
