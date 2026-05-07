@@ -11,6 +11,9 @@ import Event11 from '@/assets/events/Event11.webp';
 import Event12 from '@/assets/events/Event12.webp';
 import Event15 from '@/assets/events/Event15.webp';
 import Event16 from '@/assets/events/Event16.webp';
+import Event17 from '@/assets/events/Event17.jpeg';
+import Event18 from '@/assets/events/Event18.jpeg';
+// import Event19 from '@/assets/events/Event19.webp';
 import DU1 from '@/assets/events/DU1.webp';
 import DU2 from '@/assets/events/DU2.webp';
 import DU3 from '@/assets/events/DU3.webp';
@@ -139,17 +142,17 @@ export const SCHOOL_EVENTS: EducationEvent[] = [
     image: Event12,
     description: 'Public speaking, teamwork, presentation skills, and leadership.',
   },
-  {
-    id: '10',
-    title: 'Cyber Shield - Shield Your Clicks, Secure Your Future',
-    date: 'September 11, 2025',
-    time: '10:00 AM',
-    category: 'Cybersecurity',
-    location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat',
-    segment: 'School',
-    image: Event15,
-    description: 'Data protection, device safety, and secure digital habits.',
-  },
+  // {
+  //   id: '10',
+  //   title: 'Cyber Shield - Shield Your Clicks, Secure Your Future',
+  //   date: 'September 11, 2025',
+  //   time: '10:00 AM',
+  //   category: 'Cybersecurity',
+  //   location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat',
+  //   segment: 'School',
+  //   image: Event15,
+  //   description: 'Data protection, device safety, and secure digital habits.',
+  // },
   {
     id: '11',
     title: 'Evarire - Women Empowerment & Menstrual Hygiene',
@@ -172,17 +175,17 @@ export const SCHOOL_EVENTS: EducationEvent[] = [
     image: DU1,
     description: 'AI fundamentals, education impact, and hands-on future-readiness.',
   },
-  {
-    id: '13',
-    title: 'Founder Fiesta',
-    date: 'November 17, 2025',
-    time: '02:00 PM',
-    category: 'Entrepreneurship',
-    location: 'Lakshya Public School, Baghpat',
-    segment: 'School',
-    image: DU3,
-    description: 'Startup fundamentals, branding, and entrepreneurial mindset for students.',
-  },
+  // {
+  //   id: '13',
+  //   title: 'Founder Fiesta',
+  //   date: 'November 17, 2025',
+  //   time: '02:00 PM',
+  //   category: 'Entrepreneurship',
+  //   location: 'Lakshya Public School, Baghpat',
+  //   segment: 'School',
+  //   image: DU3,
+  //   description: 'Startup fundamentals, branding, and entrepreneurial mindset for students.',
+  // },
   {
     id: '14',
     title: 'Dream Direction Drive',
@@ -274,7 +277,7 @@ export const UNI_EVENTS: EducationEvent[] = [
     category: 'Generative AI',
     location: 'Innovation Hub',
     segment: 'University',
-    image: Event15,
+    image: Event18,
     description: 'Recipient of the KITE Institution Event Speaking Award for delivering an intensive bootcamp on building autonomous agents using Vertex AI and Google Agent Kit.',
   },
   {
@@ -321,11 +324,11 @@ export const POPULAR_EVENTS: PortfolioEvent[] = [
   { id: 9, title: 'Personality Development', img: Event10, desc: 'Self-awareness, communication, resilience, and foundation skills for longer workshops.', date: 'August 22, 2025', location: 'Godwin School, Kirthal, Uttar Pradesh' },
   { id: 10, title: 'Project UTurn - From Pressure to Purpose', img: Event11, desc: 'Self-management, positive habits, emotional intelligence, and purpose discovery at scale.', date: 'August 25, 2025', location: 'Takshashila World School, Ambehta, Saharanpur' },
   { id: 11, title: 'Persona X - Unmute Yourself', img: Event12, desc: 'Public speaking, leadership, teamwork, presentation skills, and self-expression.', date: 'September 1, 2025', location: 'Cambridge Public School, Baraut' },
-  { id: 12, title: 'Cyber Shield - Shield Your Clicks, Secure Your Future', img: Event15, desc: 'Cybercrime, data protection, device safety, digital ethics, and cybersecurity career inspiration.', date: 'September 11, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat' },
-  { id: 13, title: 'Evarire - Women Empowerment & Menstrual Hygiene', img: Event16, desc: 'Menstrual health, body positivity, gender inclusivity, and empowered conversations.', date: 'September 16, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat' },
-  { id: 14, title: 'AIgnition - Igniting the Future of AI', img: DU1, desc: 'AI fundamentals, education impact, hands-on exercises, and future-readiness for faculty.', date: 'September 24, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli' },
+  // { id: 12, title: 'Cyber Shield - Shield Your Clicks, Secure Your Future', img: Event15, desc: 'Cybercrime, data protection, device safety, digital ethics, and cybersecurity career inspiration.', date: 'September 11, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat' },
+  { id: 13, title: 'Evarire - Women Empowerment & Menstrual Hygiene', img: Event18, desc: 'Menstrual health, body positivity, gender inclusivity, and empowered conversations.', date: 'September 16, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat' },
+  { id: 14, title: 'AIgnition - Igniting the Future of AI', img: Event17, desc: 'AI fundamentals, education impact, hands-on exercises, and future-readiness for faculty.', date: 'September 24, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli' },
   { id: 15, title: 'AI Bootcamp - Vertex AI & Google Agent Kit', img: DU2, desc: 'Vertex AI and Google Agent Kit training for college students building intelligent systems.', date: 'September 27, 2025', location: 'KIET Group of Institutions' },
-  { id: 16, title: 'Founder Fiesta', img: DU3, desc: 'Startup fundamentals, business strategy, branding, networking, and entrepreneurial mindset.', date: 'November 17, 2025', location: 'Lakshya Public School, Baghpat' },
+  // { id: 16, title: 'Founder Fiesta', img: DU3, desc: 'Startup fundamentals, business strategy, branding, networking, and entrepreneurial mindset.', date: 'November 17, 2025', location: 'Lakshya Public School, Baghpat' },
   { id: 17, title: 'Dream Direction Drive', img: DU4, desc: 'Career clarity, stream alignment, skill-based jobs, and emerging field guidance.', date: 'December 2, 2025', location: 'Maharaja Agrasen Public School, Noida' },
-  { id: 18, title: 'Collaboration Catalyst', img: DU5, desc: 'Strategic partnerships, peer learning, and institutional networking.', date: 'December 10, 2025', location: 'Andrews Public School, Noida' }
+  // { id: 18, title: 'Collaboration Catalyst', img: DU5, desc: 'Strategic partnerships, peer learning, and institutional networking.', date: 'December 10, 2025', location: 'Andrews Public School, Noida' }
 ];
