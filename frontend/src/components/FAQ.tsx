@@ -257,10 +257,7 @@ const allPageFaqs: Record<string, { q: string, a: string }[]> = {
       a: "Both. Standard episodes are recorded and edited for major platforms, while campus collaboration sessions can be recorded in front of a live audience. All episodes are available on-demand after release, allowing students and institutions to revisit any conversation at any time."
     }
   ],
-    "/blog": [ // Branding Page
-    { q: "How do we start institution branding?", a: "Contact us for a custom proposal." },
-    { q: "Is it for schools only?", a: "No, colleges and universities too." }
-  ],
+
 };
 
 export default function FAQSection() {
