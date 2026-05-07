@@ -28,6 +28,12 @@ const services = [
     desc: "Complete visual systems and brand guidelines that make your institution instantly recognizable and deeply trusted across every touchpoint.",
     img: "https://images.unsplash.com/photo-1635405074683-96d6921a2a2c?w=600&h=400&fit=crop", 
   }
+  , {
+    id: "05",
+    title: "ERP & CRM Solutions",
+    desc: "Integrated platforms that streamline your institution's operations—from admissions to alumni relations—while providing a seamless experience for students and parents.",
+    img: "https://images.unsplash.com/photo-1635405074683-96d6921a2a2c?w=600&h=400&fit=crop",
+  }
 ];
 
 const SleekServices = () => {
