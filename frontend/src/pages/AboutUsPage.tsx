@@ -24,14 +24,14 @@ import Event2 from '../assets/events/Event2.webp';
 // import Event3 from '../assets/events/Event3.webp';
 import Event4 from '../assets/events/Event4.webp';
 // import Event5 from '../assets/events/Event5.webp';
-import Event6 from '../assets/events/Event6.webp';
+// import Event6 from '../assets/events/Event6.webp';
 import Event7 from '../assets/events/Event7.webp';
-// import Event8 from '../assets/events/Event8.webp';
+import Event8 from '../assets/events/Event8.webp';
 import Event10 from '../assets/events/Event10.webp';
-// import Event11 from '../assets/events/Event11.webp';
-// import Event12 from '../assets/events/Event12.webp';
-// import Event15 from '../assets/events/Event15.webp';
-// import Event16 from '../assets/events/Event16.webp';
+import Event11 from '../assets/events/Event11.webp';
+import Event12 from '../assets/events/Event12.webp';
+import Event15 from '../assets/events/Event15.webp';
+import Event16 from '../assets/events/Event16.webp';
 
 
 const stats = [
@@ -41,11 +41,11 @@ const stats = [
 ];
 
 const galleryImages = [
-  { src: Event1, h: "h-[450px]" },
-  { src: Event2, h: "h-[450px]" },
+  { src: Event11, h: "h-[450px]" },
   { src: Event2, h: "h-[450px]" },
   { src: Event4, h: "h-[450px]" },
-  { src: Event2, h: "h-[450px]" },
+  { src: Event7, h: "h-[450px]" },
+  { src: Event8, h: "h-[450px]" },
 ];
 const steps = [
   {
@@ -68,12 +68,12 @@ const steps = [
 ];
 const AboutUsPage = () => {
   const images = [
-    { id: 1, src: Event1, h: 'h-80' },
-    { id: 2, src: Event2, h: 'h-96' },
-    { id: 3, src: Event2, h: 'h-[400px]' },
-    { id: 4, src: Event4, h: 'h-80' },
-    { id: 5, src: Event2, h: 'h-96' },
-    { id: 6, src: Event6, h: 'h-72' },
+    { id: 1, src: Event8, h: 'h-80' },
+    { id: 2, src: Event11, h: 'h-96' },
+    { id: 3, src: Event10, h: 'h-[400px]' },
+    { id: 4, src: Event12, h: 'h-80' },
+    { id: 5, src: Event15, h: 'h-96' },
+    { id: 6, src: Event16, h: 'h-72' },
     { id: 7, src: Event7, h: 'h-80' },
   ];
 
@@ -87,11 +87,11 @@ const AboutUsPage = () => {
   ];
 
   const cards = [
-    { id: 1, title: "Modern Labs", img: Event1 },
-    { id: 2, title: "Live Mentorship", img: Event2 },
-    { id: 3, title: "Our Ecosystem", img: Event2 },
-    { id: 4, title: "Skill Mastery", img: Event4 },
-    { id: 5, title: "Future Careers", img: Event2 },
+    { id: 1, title: "Modern Labs", img: Event2 },
+    { id: 2, title: "Live Mentorship", img: Event4 },
+    { id: 3, title: "Our Ecosystem", img: Event10 },
+    { id: 4, title: "Skill Mastery", img: Event12 },
+    { id: 5, title: "Future Careers", img: Event15 },
   ];
 
   const missionCards = [
