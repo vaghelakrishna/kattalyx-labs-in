@@ -26,7 +26,7 @@ const Navbar = () => {
     "/blog": "Read inspiring stories, tips, and industry insights from our blog.",
     "/branding": "Explore our institutional branding services for visibility.",
     "/contact": "Need help? Reach out to our support team anytime.",
-    "/podcasting": "Stay updated with Kattalyx Labs podcasts.",
+    // "/podcasting": "Stay updated with Kattalyx Labs podcasts.",
   };
 
   const announcementMessage = announcementMessages[location.pathname] ?? "Stay updated with Kattalyx Labs.";
@@ -85,8 +85,8 @@ const Navbar = () => {
     { name: "Events", path: "/events" },
     { name: "Collaborations", path: "/collaborations" },
     { name: "Branding", path: "/branding" },
-    { name: "Podcasting", path: "/podcasting" },
-    { name: "Blog", path: "/blog" },
+    // { name: "Podcasting", path: "/podcasting" },
+    // { name: "Blog", path: "/blog" },
     { name: "Contact Us", path: "/contact" }
   ];
 
