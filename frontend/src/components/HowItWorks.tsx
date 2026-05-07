@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Event1 from "../assets/events/Event1.webp";
 import Event2 from "../assets/events/Event2.webp";
 import Event4 from "../assets/events/Event4.webp";
+import Event6 from "../assets/events/Event6.webp";
 const modules = [
   {
     id: "step-1",
@@ -23,14 +24,14 @@ const modules = [
     label: "Step 03",
     title: "We Set Everything Up",
     description: "From speaker coordination to event logistics, branding assets to digital infrastructure — we handle every detail end to end.",
-    image: Event2,
+    image: Event4,
   },
   {
     id: "step-4",
     label: "Step 04",
     title: "Your Institution Transforms",
     description: "Students gain real-world exposure. Your institution gains a modern brand. Founders find their network. Results are visible from day one.",
-    image: Event4,
+    image: Event6,
   },
 ];
 
