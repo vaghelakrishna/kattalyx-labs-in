@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import Event1 from '../../assets/events/Event1.webp'
 import Event2 from '../../assets/events/Event2.webp'
-import Event3 from '../../assets/events/Event3.webp'
+// import Event3 from '../../assets/events/Event3.webp'
 import Event4 from '../../assets/events/Event4.webp'
-import Event5 from '../../assets/events/Event5.webp'
+// import Event5 from '../../assets/events/Event5.webp'
 import Event6 from '../../assets/events/Event6.webp'
 import Event7 from '../../assets/events/Event7.webp'
 import Event8 from '../../assets/events/Event8.webp'
@@ -23,9 +23,9 @@ export const Marquee = () => {
   const PHOTO_GALLERY = [
     { url: Event1, tag: "Highlights" },
     { url: Event2, tag: "Innovation" },
-    { url: Event3, tag: "Mentorship" },
+    { url: Event2, tag: "Mentorship" },
     { url: Event4, tag: "Leadership" },
-    { url: Event5, tag: "Cybersecurity" },
+    { url: Event2, tag: "Cybersecurity" },
     { url: Event6, tag: "Confidence" },
     { url: Event7, tag: "Technology" },
     { url: Event8, tag: "Career" },
