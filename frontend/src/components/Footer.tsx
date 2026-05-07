@@ -5,7 +5,7 @@ import logo from "../assets/logo.png";
 
 const links = {
   company: [
-    { name: "About", href: "/about" },
+    { name: "About Us", href: "/about" },
     { name: "Collaborations", href: "/collaborations" },
     { name: "Blog", href: "/blog" },
 
@@ -13,8 +13,8 @@ const links = {
   ],
   resources: [
     { name: "Events", href: "/events" },
-    { name: "branding", href: "/branding" },
-    {name: "podcasting", href: "/podcasting"},
+    { name: "Branding", href: "/branding" },
+    {name: "Podcasting", href: "/podcasting"},
   ],
 };
 
