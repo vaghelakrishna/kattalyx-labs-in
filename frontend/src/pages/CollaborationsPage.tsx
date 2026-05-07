@@ -37,18 +37,29 @@ const CollaborationsPage = () => {
     };
     fetchSchools();
   }, []);
+  
   const PARTNER_SCHOOLS = [
-    { name: "Growell Girls School", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Growell CoEd", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Growell CoEd", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Doon School", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Growell Girls School", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Kidzee School", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Growell Co-ed", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Saifia Institute", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "IIT Delhi", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "KIET Group of Institutions", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "ABESIT", img: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=300&h=300&auto=format&fit=crop' },
+    // --- Schools ---
+    { name: "Growell Girls School", img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Growell Co-Ed School", img: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Doon School", img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Kidzee School", img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Godwin School", img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Takshashila World School", img: 'https://images.unsplash.com/photo-1577891728591-282c146ca1b5?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Cambridge Public School", img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "PM Shri Kendriya Vidyalaya", img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Lakshya Public School", img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Maharaja Agrasen Public School", img: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Andrews Public School", img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=300&h=300&auto=format&fit=crop' },
+
+    // --- Higher Ed / Institutes ---
+    { name: "Saifia Institute", img: 'https://images.unsplash.com/photo-1525921429624-479b6a26d84d?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "KIET Group of Institutions", img: 'https://images.unsplash.com/photo-1498243639359-2830a6796a1e?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "ABESIT", img: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Delhi School of Economics (DSE)", img: 'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "IIT Delhi", img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "Amity University", img: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=300&h=300&auto=format&fit=crop' },
+    { name: "BITS Pilani", img: 'https://images.unsplash.com/photo-1464936303368-842948b30342?q=80&w=300&h=300&auto=format&fit=crop' },
   ];
   return (
     <div className="min-h-screen bg-[#FDFDFD] text-slate-900 font-sans">
