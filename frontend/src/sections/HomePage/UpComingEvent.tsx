@@ -5,42 +5,43 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import Event1 from "../../assets/events/Event1.webp";
-// import Event3 from "../../assets/events/Event3.webp";
 import Event2 from "../../assets/events/Event2.webp";
 import Event4 from "../../assets/events/Event4.webp";
-// import Event5 from "../../assets/events/Event5.webp";
+import Event7 from "../../assets/events/Event7.webp";
+import Event8 from "../../assets/events/Event8.webp";
+// import Event9 from "../../assets/events/Event9.webp";
 
 
 // --- DATA ---
 const cards = [
   {
     image: Event1,
-    date: "08.12.24",
-    title: "Kattalyx Tech Meetup 2024",
+    // date: "08.12.24",
+    // title: "Kattalyx Tech Meetup 2024",
     isLive: true
   },
   {
-    image: Event2,
-    date: "09.05.24",
-    title: "Startup Ideation Lab",
+    image: Event8,
+    // date: "09.05.24",
+    // title: "Startup Ideation Lab",
     progress: 40
   },
   {
-    image: Event1,
-    date: "10.01.24",
-    title: "Full-Stack Development Bootcamp",
+    image: Event7,
+    // date: "10.01.24",
+    // title: "Full-Stack Development Bootcamp",
     progress: 75
   },
   {
     image: Event4,
-    date: "11.18.24",
-    title: "AI & Automation Workshop",
+    // date: "11.18.24",
+    // title: "AI & Automation Workshop",
     progress: 15
   },
   {
     image: Event2,
-    date: "12.10.24",
-    title: "Community Demo Day",
+    // date: "12.10.24",
+    // title: "Community Demo Day",
     progress: 90
   }
 ];
@@ -131,7 +132,7 @@ export default function UpComingEvent() {
             <div className="w-full flex gap-4 overflow-x-auto px-6 py-4 scrollbar-hide snap-x snap-mandatory">
               {cards.map((card, idx) => (
                 <div key={idx} className="min-w-[280px] h-[420px] relative rounded-[2.5rem] overflow-hidden snap-center border border-white/10 shadow-2xl">
-                  <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
+                  <img src={card.image}  className="w-full h-full object-cover" />
 
                   {/* Action Buttons (Top Right) */}
                   {/* <div className="absolute top-4 right-4 flex flex-col gap-2 z-20">
@@ -161,15 +162,15 @@ export default function UpComingEvent() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
                   {/* Text Overlay */}
-                  <div className="absolute bottom-0 w-full p-6 text-white space-y-4">
-                    <div>
-                      <span className="text-[10px] opacity-60 uppercase font-black tracking-widest">{card.date}</span>
-                      <h3 className="text-xl font-bold leading-tight line-clamp-2">{card.title}</h3>
-                    </div>
+                  {/* <div className="absolute bottom-0 w-full p-6 text-white space-y-4"> */}
+                    {/* <div> */}
+                      {/* <span className="text-[10px] opacity-60 uppercase font-black tracking-widest">{card.date}</span> */}
+                      {/* <h3 className="text-xl font-bold leading-tight line-clamp-2">{card.title}</h3> */}
+                    {/* </div> */}
                     {/* <button className="w-full bg-blue-600 py-3.5 rounded-2xl font-black text-sm active:scale-95 transition-transform flex items-center justify-center gap-2 shadow-lg shadow-blue-900/40">
                       <Play size={16} fill="currentColor" /> {card.isLive ? "WATCH LIVE" : "RESUME"}
                     </button> */}
-                  </div>
+                  {/* </div> */}
 
                   {/* Progress Bar */}
                   {card.progress && !card.isLive && (
@@ -202,11 +203,11 @@ export default function UpComingEvent() {
                     boxShadow: "0 25px 50px rgba(0,0,0,0.45)",
                   }}
                 >
-                  <img src={card.image} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-black/25 group-hover:bg-black/65 transition-colors duration-500" />
+                  <img src={card.image}  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  {/* <div className="absolute inset-0 bg-black/25  transition-colors duration-500" /> */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <span className="text-white/70 text-xs mb-1 uppercase tracking-widest">{card.date}</span>
-                    <h3 className="text-white text-lg font-bold leading-tight">{card.title}</h3>
+                    {/* <span className="text-white/70 text-xs mb-1 uppercase tracking-widest">{card.date}</span> */}
+                    {/* <h3 className="text-white text-lg font-bold leading-tight">{card.title}</h3> */}
                   </div>
                 </div>
               ))}
