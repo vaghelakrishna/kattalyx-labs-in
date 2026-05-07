@@ -115,8 +115,11 @@ function OurExpertise() {
             What We Help You <BigBrushUnderline text="Build" />
           </h2>
 
-          <p className="mt-3 max-w-3xl mx-auto text-sm text-slate-600 leading-relaxed">
-            We combine real-world skill education, hybrid learning, digital infrastructure, and career pathways into one unstoppable system.
+          <p className="mt-4 max-w-3xl mx-auto text-sm md:text-base text-slate-500 leading-relaxed tracking-tight font-medium">
+            We <span className="text-slate-900 italic">orchestrate</span> the convergence of real-world intelligence, digital infrastructure, and
+            <span className="text-slate-900 font-bold ml-1">
+              elite career pathways into a singular, unstoppable ecosystem.
+            </span>
           </p>
         </motion.div>
 
