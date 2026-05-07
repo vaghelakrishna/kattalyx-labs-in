@@ -20,12 +20,13 @@ const Navbar = () => {
 
   const announcementMessages: Record<string, string> = {
     "/": "Welcome to Kattalyx Labs! Discover the latest programs and events.",
-    "/about": "Learn why thousands of students choose Kattalyx Labs for their growth.",
-    "/collaborations": "See our powerful collaborations and global partners.",
-    "/events": "Join upcoming events and workshops curated for achievers.",
+    "/about-us": "Learn why thousands of students choose Kattalyx Labs for their growth.",
+    "/collaborations": "See our powerful institutional collaborations",
+    "/events": "Get upcoming events and workshops details for achievers.",
     "/blog": "Read inspiring stories, tips, and industry insights from our blog.",
     "/branding": "Explore our institutional branding services for visibility.",
     "/contact": "Need help? Reach out to our support team anytime.",
+    "/podcasting": "Stay updated with Kattalyx Labs podcasts.",
   };
 
   const announcementMessage = announcementMessages[location.pathname] ?? "Stay updated with Kattalyx Labs.";
@@ -80,7 +81,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
+    { name: "About Us", path: "/about-us" },
     { name: "Events", path: "/events" },
     { name: "Collaborations", path: "/collaborations" },
     { name: "Branding", path: "/branding" },
