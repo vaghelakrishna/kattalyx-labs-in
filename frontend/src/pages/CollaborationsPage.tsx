@@ -92,7 +92,7 @@ const CollaborationsPage = () => {
                 icon: CheckCircle2, title: "Founder Ecosystem", desc: " Kattalyx Labs builds the environment where India's next generation of founders find their footing."
               },
               {
-                icon: CheckCircle2, title: " Institutional Growth", desc: "where institutions gain branding, students gain exposure, and every stakeholder gains measurable value."
+                icon: CheckCircle2, title: " Institution Growth", desc: "where institutions gain branding, students gain exposure, and every stakeholder gains measurable value."
               }
             ].map((feature, i) => (
               <div key={i} className="p-8 bg-slate-50 border border-slate-100 rounded-[2rem] hover:bg-white hover:shadow-xl transition-all">
