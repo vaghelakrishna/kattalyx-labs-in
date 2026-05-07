@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import Event1 from "../assets/events/Event1.webp";
 import Event2 from "../assets/events/Event2.webp";
-import Event3 from "../assets/events/Event3.webp";
+// import Event3 from "../assets/events/Event3.webp";
 import Event4 from "../assets/events/Event4.webp";
-import Event5 from "../assets/events/Event5.webp";
+// import Event5 from "../assets/events/Event5.webp";
 
 const events = [
   {
@@ -21,7 +21,7 @@ const events = [
   {
     title: "Web & Product Development Bootcamp",
     date: "Jan 05, 2025",
-    image: Event3,
+    image: Event2,
     description: "Hands-on sessions focused on scalable web and product development."
   },
   {
@@ -33,7 +33,7 @@ const events = [
   {
     title: "AI & Automation for Founders",
     date: "Feb 02, 2025",
-    image: Event5,
+    image: Event4,
     description: "Leveraging AI tools and automation to scale smarter, not harder."
   }
 ];
