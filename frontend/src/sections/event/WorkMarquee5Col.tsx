@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
 import Event1 from '../../assets/events/Event1.webp'
 import Event2 from '../../assets/events/Event2.webp'
-import Event3 from '../../assets/events/Event3.webp'
+// import Event3 from '../../assets/events/Event3.webp'
 import Event4 from '../../assets/events/Event4.webp'
-import Event5 from '../../assets/events/Event5.webp'
+// import Event5 from '../../assets/events/Event5.webp'
 import Event6 from '../../assets/events/Event6.webp'
 
 export const WorkMarquee5Col = () => {
   const allProjects = [
     { title: "Smash Foods", img: Event1 },
     { title: "Lumar", img: Event2 },
-    { title: "Vybrance Labs", img: Event3 },
+    { title: "Vybrance Labs", img: Event2 },
     { title: "Coho+", img: Event4 },
-    { title: "Kahuna", img: Event5 },
+    { title: "Kahuna", img: Event2 },
     { title: "A La Maison", img: Event6 },
   ];
 
