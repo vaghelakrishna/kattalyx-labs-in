@@ -296,7 +296,7 @@ export const TOP_EVENTS: PortfolioEvent[] = [
     title: 'AI & LinkedIn Masterclass',
     location: 'Growell Girls School, Baraut',
     date: 'July 14, 2025',
-    image: Event1,
+    image: Event1 ,
     desc: 'Delivered an intensive masterclass on AI fundamentals and LinkedIn branding, empowering students to navigate AI-driven career pathways.',
   },
   {
