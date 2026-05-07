@@ -253,10 +253,10 @@ export default function HeroSection() {
             <div className="absolute top-8 right-1/2 translate-x-1/2 sm:right-4 sm:translate-x-0 z-30">
               <div className="bg-white/95 backdrop-blur-md rounded-[2rem] w-64 sm:w-72 p-6 border border-white shadow-xl">
                 <div className="flex justify-between items-start mb-6">
-                  <div className="flex items-center gap-2 px-3 py-1 bg-red-50 border border-red-100 rounded-full">
+                  {/* <div className="flex items-center gap-2 px-3 py-1 bg-red-50 border border-red-100 rounded-full">
                     <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
                     <span className="text-[10px] font-black text-red-600 uppercase tracking-widest">Live Now</span>
-                  </div>
+                  </div> */}
                 </div>
 
                 <h1 className="text-slate-900 text-sm font-[1000] leading-tight mb-2 uppercase tracking-tight">
