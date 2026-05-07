@@ -13,9 +13,8 @@ import { SCHOOL_EVENTS, COLLEGE_EVENTS, UNI_EVENTS } from '@/data/events';
 // Assets
 import Event1 from "@/assets/events/Event1.webp";
 import Event2 from "@/assets/events/Event2.webp";
-import Event3 from "@/assets/events/Event3.webp";
 import Event4 from "@/assets/events/Event4.webp";
-import Event5 from "@/assets/events/Event5.webp";
+// import Event5 from "@/assets/events/Event5.webp";
 import Event6 from "@/assets/events/Event6.webp";
 import Event7 from "@/assets/events/Event7.webp";
 import Event8 from "@/assets/events/Event8.webp";
@@ -90,9 +89,9 @@ const EventsPage = () => {
   const EVENT_ASSETS = [
     Event1,
     Event2,
-    Event3,
+    // Event3,
     Event4,
-    Event5,
+    // Event5,
     Event6,
     Event7,
     Event8,
