@@ -1,40 +1,44 @@
 import { useEffect, useRef, useState } from "react";
 import Event1 from "../assets/events/Event1.webp";
 import Event2 from "../assets/events/Event2.webp";
-// import Event3 from "../assets/events/Event3.webp";
+import Event10 from "../assets/events/Event10.webp";
 import Event4 from "../assets/events/Event4.webp";
-// import Event5 from "../assets/events/Event5.webp";
+import Event7 from "../assets/events/Event7.webp";
 
 const events = [
   {
     title: "Startup Launchpad Session",
-    date: "Dec 14, 2024",
+    date: 'July 14, 2025',
     image: Event1,
-    description: "Helping early-stage founders validate ideas and launch faster with expert guidance."
+    description: 'AI fundamentals, LinkedIn branding, and career pathways shaped by AI.',
   },
   {
-    title: "Design & Brand Strategy Workshop",
-    date: "Dec 21, 2024",
+
+    title: 'AI & LinkedIn for Faculty',
+    date: 'July 16, 2025',
     image: Event2,
-    description: "Building strong brand identities that connect emotionally with users."
+    description: 'AI implications in education, LinkedIn growth, and mentoring skills.',
   },
   {
-    title: "Web & Product Development Bootcamp",
-    date: "Jan 05, 2025",
-    image: Event2,
-    description: "Hands-on sessions focused on scalable web and product development."
-  },
-  {
-    title: "Growth & Digital Marketing Meetup",
-    date: "Jan 18, 2025",
+        title: 'Unlocking Human OS - From Habits to Higher Self',
+    date: 'August 12, 2025',
+    time: '01:00 PM',
     image: Event4,
-    description: "Strategies, tools, and insights to grow startups in the digital-first world."
+    description: 'Habit building, emotional intelligence, and resilience training.',
+  },
+
+  {
+    title: 'HackProof - Hack the Hackers',
+    date: 'August 20, 2025',
+    image: Event7,
+    description: 'Real-life cybercrime simulations and digital self-protection skills.',
+
   },
   {
-    title: "AI & Automation for Founders",
-    date: "Feb 02, 2025",
-    image: Event4,
-    description: "Leveraging AI tools and automation to scale smarter, not harder."
+    title: 'Personality Development',
+    date: 'August 22, 2025',
+    image: Event10,
+    description: 'Self-awareness, communication, resilience, and confidence building.',
   }
 ];
 
