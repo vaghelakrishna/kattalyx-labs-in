@@ -405,12 +405,12 @@ const CollaborationsPage = () => {
                 </div>
 
                 {/* Right Side: Partnership Actions */}
-                <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto ">
                   <Link to="/contact">
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full sm:w-56 py-4 bg-slate-900 text-white rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg shadow-slate-900/20 hover:bg-blue-600 transition-colors"
+                      className="w-full sm:w-56 py-4 bg-slate-900 text-white rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg shadow-slate-900/20 hover:bg-blue-600 transition-colors mt-20"
                     >
                       Become a Partner
                     </motion.button>
