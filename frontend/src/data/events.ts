@@ -1,8 +1,8 @@
 import Event1 from '@/assets/events/Event1.webp';
 import Event2 from '@/assets/events/Event2.webp';
-import Event3 from '@/assets/events/Event3.webp';
+// import Event3 from '@/assets/events/Event3.webp';
 import Event4 from '@/assets/events/Event4.webp';
-import Event5 from '@/assets/events/Event5.webp';
+// import Event5 from '@/assets/events/Event5.webp';
 import Event6 from '@/assets/events/Event6.webp';
 import Event7 from '@/assets/events/Event7.webp';
 import Event8 from '@/assets/events/Event8.webp';
@@ -70,7 +70,7 @@ export const SCHOOL_EVENTS: EducationEvent[] = [
     category: 'Entrepreneurship',
     location: 'Growell CoEd School, Baraut',
     segment: 'School',
-    image: Event3,
+    image: Event2,
     description: 'Startup fundamentals, business strategy, branding, and networking.',
   },
   {
@@ -92,7 +92,7 @@ export const SCHOOL_EVENTS: EducationEvent[] = [
     category: 'Cybersecurity',
     location: 'Growell Girls School, Baraut',
     segment: 'School',
-    image: Event5,
+    image: Event2,
     description: 'Cyber hygiene, online threats, digital reputation, and ethics.',
   },
   {
@@ -108,7 +108,7 @@ export const SCHOOL_EVENTS: EducationEvent[] = [
   },
   {
     id: '7',
-    title: 'Personality Development Demo',
+    title: 'Personality Development',
     date: 'August 22, 2025',
     time: '10:30 AM',
     category: 'Personal Growth',
@@ -205,7 +205,7 @@ export const COLLEGE_EVENTS: EducationEvent[] = [
     category: 'Technology',
     location: 'Amity University',
     segment: 'College',
-    image: Event5,
+    image: Event2,
     description: 'Industry-ready innovation demos and campus collaboration.',
   },
   {
@@ -304,7 +304,7 @@ export const TOP_EVENTS: PortfolioEvent[] = [
     title: 'Startup & Business Conference',
     location: 'Growell CoEd School, Baraut',
     date: 'August 6, 2025',
-    image: Event3,
+    image: Event2,
     desc: 'Orchestrated a comprehensive business summit focused on startup strategy, digital marketing, and the essential soft skills required for the modern economy.',
   }
 ];
@@ -312,13 +312,13 @@ export const TOP_EVENTS: PortfolioEvent[] = [
 export const POPULAR_EVENTS: PortfolioEvent[] = [
   { id: 1, title: 'AI & LinkedIn Masterclass', img: Event1, desc: 'AI fundamentals, LinkedIn branding, and career pathways shaped by AI.', date: 'July 14, 2025', location: 'Growell Girls School, Baraut' },
   { id: 2, title: 'AI & LinkedIn for Faculty', img: Event2, desc: 'AI implications in education, LinkedIn for faculty growth, and student mentoring skills.', date: 'July 16, 2025', location: 'Growell CoEd School, Baraut' },
-  { id: 3, title: 'Startup & Business Conference', img: Event3, desc: 'Startup fundamentals, business strategy, branding, networking, digital marketing, and soft skills.', date: 'August 6, 2025', location: 'Growell CoEd School, Baraut' },
+  { id: 3, title: 'Startup & Business Conference', img: Event2, desc: 'Startup fundamentals, business strategy, branding, networking, digital marketing, and soft skills.', date: 'August 6, 2025', location: 'Growell CoEd School, Baraut' },
   { id: 4, title: 'Unlocking Human OS - From Habits to Higher Self', img: Event4, desc: 'Habit building, emotional intelligence, IKIGAI, mental health, and peer-pressure management.', date: 'August 12, 2025', location: 'Doon School, Baraut' },
-  { id: 5, title: 'The DeCode - Cyber Awareness & Social Digital Ethics', img: Event5, desc: 'Cyber hygiene, online threats, digital reputation, and ethical behavior online.', date: 'August 13, 2025', location: 'Growell Girls School, Baraut' },
+  { id: 5, title: 'The DeCode - Cyber Awareness & Social Digital Ethics', img: Event2, desc: 'Cyber hygiene, online threats, digital reputation, and ethical behavior online.', date: 'August 13, 2025', location: 'Growell Girls School, Baraut' },
   { id: 6, title: 'The Human Toolkit - Control, Connect, Conquer', img: Event6, desc: 'Focus, communication, emotional intelligence, mental health, IKIGAI, and confidence for younger students.', date: 'August 18, 2025', location: 'Global Kids (Kidzee), Baraut' },
   { id: 7, title: 'HackProof - Hack the Hackers', img: Event7, desc: 'Cybercrime tactics, hacker psychology, real-life simulations, and digital self-protection.', date: 'August 20, 2025', location: 'Growell Co-ed School, Baraut' },
   { id: 8, title: 'The Cadet Code - Communicate, Confidence & Control', img: Event8, desc: 'Sense control, confidence-building, communication, and emotional intelligence in a small-group workshop.', date: 'August 21, 2025', location: 'Saifia Institute, Baraut' },
-  { id: 9, title: 'Personality Development Demo', img: Event10, desc: 'Self-awareness, communication, resilience, and foundation skills for longer workshops.', date: 'August 22, 2025', location: 'Godwin School, Kirthal, Uttar Pradesh' },
+  { id: 9, title: 'Personality Development', img: Event10, desc: 'Self-awareness, communication, resilience, and foundation skills for longer workshops.', date: 'August 22, 2025', location: 'Godwin School, Kirthal, Uttar Pradesh' },
   { id: 10, title: 'Project UTurn - From Pressure to Purpose', img: Event11, desc: 'Self-management, positive habits, emotional intelligence, and purpose discovery at scale.', date: 'August 25, 2025', location: 'Takshashila World School, Ambehta, Saharanpur' },
   { id: 11, title: 'Persona X - Unmute Yourself', img: Event12, desc: 'Public speaking, leadership, teamwork, presentation skills, and self-expression.', date: 'September 1, 2025', location: 'Cambridge Public School, Baraut' },
   { id: 12, title: 'Cyber Shield - Shield Your Clicks, Secure Your Future', img: Event15, desc: 'Cybercrime, data protection, device safety, digital ethics, and cybersecurity career inspiration.', date: 'September 11, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat' },
