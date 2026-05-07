@@ -6,9 +6,9 @@ import Footer from '@/components/Footer';
 import { TOP_EVENTS, POPULAR_EVENTS, UNI_EVENTS } from '@/data/events';
 import Event1 from '@/assets/events/Event1.webp';
 import Event2 from '@/assets/events/Event2.webp';
-import Event3 from '@/assets/events/Event3.webp';
+// import Event3 from '@/assets/events/Event3.webp';
 import Event4 from '@/assets/events/Event4.webp';
-import Event5 from '@/assets/events/Event5.webp';
+// import Event5 from '@/assets/events/Event5.webp';
 import Event6 from '@/assets/events/Event6.webp';
 import Event7 from '@/assets/events/Event7.webp';
 import Event8 from '@/assets/events/Event8.webp';
@@ -75,9 +75,9 @@ const Icon3 = STATS[3].icon;
 const PHOTO_GALLERY = [
   { url: Event1, tag: "Highlights" },
   { url: Event2, tag: "Innovation" },
-  { url: Event3, tag: "Mentorship" },
+  { url: Event2, tag: "Mentorship" },
   { url: Event4, tag: "Leadership" },
-  { url: Event5, tag: "Cybersecurity" },
+  { url: Event2, tag: "Cybersecurity" },
   { url: Event6, tag: "Confidence" },
   { url: Event7, tag: "Technology" },
   { url: Event8, tag: "Career" },
@@ -124,9 +124,9 @@ const EventPortfolio = () => {
   const EVENT_ASSETS = [
     Event1,
     Event2,
-    Event3,
+    Event2,
     Event4,
-    Event5,
+    Event2,
     Event6,
     Event7,
     Event8,
@@ -263,7 +263,7 @@ const EventPortfolio = () => {
       <section className="max-w-[1400px] mx-auto py-16 px-6">
         <div className="flex justify-between items-end mb-16">
           <div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900">Featured Events</h2>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900">School Events</h2>
             <p className="text-slate-500 mt-2 font-medium">Real-world learning experiences transforming students.</p>
           </div>
           <div className="h-px flex-1 mx-12 bg-slate-100 hidden md:block" />
@@ -348,11 +348,11 @@ const EventPortfolio = () => {
 
       {/* EVENT MODAL */}
       {selectedEvent && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={() => setSelectedEvent(null)}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 " onClick={() => setSelectedEvent(null)}>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
+            className="bg-white rounded-3xl max-w-xl w-full max-h-[90vh] overflow-y-auto relative mt-25"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -368,7 +368,7 @@ const EventPortfolio = () => {
                   className="w-full h-64 object-cover rounded-t-3xl"
                   alt="Event"
                 />
-                <div className="p-8">
+                <div className="p-6">
                   <h2 className="text-4xl font-black text-slate-900 mb-4">
                     {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.title}
                   </h2>
@@ -382,7 +382,7 @@ const EventPortfolio = () => {
                       {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.location}
                     </span>
                   </div>
-                  <p className="text-slate-600 leading-relaxed mb-8">
+                  <p className="text-slate-600 leading-relaxed mb-4">
                     {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.desc}
                   </p>
                   <button className="w-full bg-blue-600 text-white py-4 rounded-full font-bold hover:bg-blue-700 transition-colors">
@@ -765,9 +765,9 @@ const WorkMarquee5Col = () => {
   const allProjects = [
     { title: "Smash Foods", img: Event1},
     { title: "Lumar", img: Event2 },
-    { title: "Vybrance Labs", img: Event3, video: true },
+    { title: "Vybrance Labs", img: Event2, video: true },
     { title: "Coho+", img: Event4 },
-    { title: "Kahuna", img: Event5 },
+    { title: "Kahuna", img: Event2 },
     { title: "A La Maison", img: Event6 },
   ];
 
