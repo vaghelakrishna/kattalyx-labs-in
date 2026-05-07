@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Event1 from "../assets/events/Event1.webp";
 import Event2 from "../assets/events/Event2.webp";
-import Event3 from "../assets/events/Event3.webp";
 import Event4 from "../assets/events/Event4.webp";
 const modules = [
   {
@@ -24,7 +23,7 @@ const modules = [
     label: "Step 03",
     title: "We Set Everything Up",
     description: "From speaker coordination to event logistics, branding assets to digital infrastructure — we handle every detail end to end.",
-    image: Event3,
+    image: Event2,
   },
   {
     id: "step-4",
