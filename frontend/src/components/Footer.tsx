@@ -7,14 +7,14 @@ const links = {
   company: [
     { name: "About Us", href: "/about" },
     { name: "Collaborations", href: "/collaborations" },
-    { name: "Blog", href: "/blog" },
+    // { name: "Blog", href: "/blog" },
 
     {name : "Contact Us", href: "/contact"}
   ],
   resources: [
     { name: "Events", href: "/events" },
     { name: "Branding", href: "/branding" },
-    {name: "Podcasting", href: "/podcasting"},
+    // {name: "Podcasting", href: "/podcasting"},
   ],
 };
 
