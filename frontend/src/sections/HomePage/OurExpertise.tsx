@@ -59,7 +59,7 @@ function OurExpertise() {
       title: "Institutional Branding",
       icon: <School className="w-5 h-5" />,
       description: "Complete digital infrastructure. Websites, apps, and brand strategy for modern institutions.",
-      details: "Includes: Web/App Dev · Digital Marketing",
+      details: "Includes: Web/App Dev · Digital Marketing · ERP · CRM",
       // link: "/branding",
       btnText: "Build Brand"
     },
