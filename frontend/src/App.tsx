@@ -16,7 +16,7 @@ const App = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutUsPage />} />
+        <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/events" element={<EventPortfolio />} />
         <Route path="/collaborations" element={<CollaborationsPage />} />        <Route path="/branding" element={<BrandingPage />} />
         <Route path="/podcasting" element={<PodcastingPage />} />
