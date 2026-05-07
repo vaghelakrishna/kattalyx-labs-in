@@ -133,7 +133,7 @@ const ContactPage: React.FC = () => {
               >
                 <div className="text-6xl text-blue-700 font-bold tracking-tighter">Done.</div>
                 <p className="text-xl text-slate-500 max-w-md mx-auto">
-                  Your data has been logged into the Kattalyx core. Our team will reach out shortly.
+                  Your data has been logged into Kattalyx labs core. Our team will reach out shortly.
                 </p>
                 <button
                   onClick={() => setIsSuccess(false)}
