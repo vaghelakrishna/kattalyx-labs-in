@@ -17,6 +17,11 @@ import Event11 from '@/assets/events/Event11.webp';
 import Event12 from '@/assets/events/Event12.webp';
 import Event15 from '@/assets/events/Event15.webp';
 import Event16 from '@/assets/events/Event16.webp';
+
+import Event17 from '@/assets/events/Event17.jpeg';
+import Event18 from '@/assets/events/Event18.jpeg';
+import Event19 from '@/assets/events/Event19.jpeg';
+
 import DU1 from '@/assets/events/DU1.webp';
 import DU2 from '@/assets/events/DU2.webp';
 import DU3 from '@/assets/events/DU3.webp';
@@ -75,17 +80,18 @@ const Icon3 = STATS[3].icon;
 const PHOTO_GALLERY = [
   { url: Event1, tag: "Highlights" },
   { url: Event2, tag: "Innovation" },
-  { url: Event2, tag: "Mentorship" },
-  { url: Event4, tag: "Leadership" },
-  { url: Event2, tag: "Cybersecurity" },
-  { url: Event6, tag: "Confidence" },
-  { url: Event7, tag: "Technology" },
-  { url: Event8, tag: "Career" },
-  { url: Event10, tag: "Community" },
-  { url: Event11, tag: "Journey" },
-  { url: Event12, tag: "Expression" },
-  { url: Event15, tag: "Empowerment" },
-  { url: Event16, tag: "Impact" },
+  { url: Event4, tag: "Mentorship" },
+  { url: Event6, tag: "Leadership" },
+  { url: Event7, tag: "Cybersecurity" },
+  { url: Event8, tag: "Confidence" },
+  { url: Event18, tag: "Technology" },
+  { url: Event10, tag: "Career" },
+  { url: Event11, tag: "Community" },
+  { url: Event12, tag: "Journey" },
+  { url: Event15, tag: "Expression" },
+  { url: Event16, tag: "Empowerment" },
+  { url: Event17, tag: "Impact" },
+  { url: Event19, tag: "Innovation" },
   { url: DU1, tag: "AI" },
   { url: DU2, tag: "Bootcamp" },
   { url: DU3, tag: "Startup" },
@@ -123,10 +129,7 @@ const EventPortfolio = () => {
   // ];
   const EVENT_ASSETS = [
     Event1,
-    Event2,
-    Event2,
     Event4,
-    Event2,
     Event6,
     Event7,
     Event8,
@@ -134,6 +137,9 @@ const EventPortfolio = () => {
     Event11,
     Event12,
     Event15,
+    Event17,
+    Event18,
+    Event19,
     Event16,
   ];
   const ScrollingRow = ({ items, baseVelocity = 20, reverse = false }: { items: string[], baseVelocity?: number, reverse?: boolean }) => {
@@ -180,7 +186,7 @@ const EventPortfolio = () => {
               {/* Background Image with refined overlay */}
               <img
                 src={TOP_EVENTS[currentSlide].image}
-                className="h-full w-full object-cover opacity-50 md:opacity-60"
+                className="h-full w-full object-cover opacity-50 md:opacity-60 scale-120"
                 alt="Event Spotlight"
               />
               {/* Multilayered Gradient for Text Readability */}
@@ -405,6 +411,7 @@ const EventPortfolio = () => {
           <ScrollingRow items={EVENT_ASSETS} baseVelocity={50} reverse />
         </div>
       </div>
+
       <section className="relative h-screen max-h-screen min-h-[700px] flex flex-col justify-center overflow-hidden bg-white text-slate-900 py-12">
         {/* Soft Background Decorative Elements */}
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] pointer-events-none" />
@@ -573,185 +580,6 @@ const EventPortfolio = () => {
       </section>
 
 
-
-      {/* 7. VIDEO SECTION - PREMIUM CINEMATIC GRID */}
-      {/* <section className="bg-slate-50 py-20 px-6">
-        <div className="max-w-[1400px] mx-auto">
-
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div className="max-w-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="flex h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-                <span className="text-red-500 text-[10px] font-black uppercase tracking-[0.3em]">Aftermovies</span>
-              </div>
-              <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter leading-none">
-                EVENT <span className="text-blue-600">RECAPS.</span>
-              </h2>
-            </div>
-            <p className="text-slate-500 font-medium max-w-xs text-sm leading-relaxed border-l-2 border-slate-200 pl-6">
-              Relive the energy and the breakthroughs. Cinematic highlights from our latest workshops.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            {[
-              {
-                title: "AI Workshop Highlights",
-                duration: "2:45",
-                tags: ["Technology", "2024"],
-                thumbnail: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200",
-                cols: "md:col-span-7"
-              },
-              {
-                title: "Startup Conference",
-                duration: "3:12",
-                tags: ["Business", "Delhi"],
-                thumbnail: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1200",
-                cols: "md:col-span-5"
-              }
-            ].map((video, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.2 }}
-                className={`${video.cols} group relative h-[400px] md:h-[550px] rounded-[3rem] overflow-hidden cursor-pointer bg-slate-200`}
-              >
-                <img
-                  src={video.thumbnail}
-                  className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-[1.5s] ease-out"
-                  alt={video.title}
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-slate-950/90 transition-opacity duration-500" />
-                <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className="absolute top-8 left-8 right-8 flex justify-between items-start opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-y-4 group-hover:translate-y-0">
-                  <div className="flex gap-2">
-                    {video.tags.map(tag => (
-                      <span key={tag} className="px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <span className="font-mono text-white text-xs bg-black/40 px-3 py-1.5 rounded-lg backdrop-blur-md">
-                    {video.duration}
-                  </span>
-                </div>
-
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative">
-                    <div className="absolute inset-0 rounded-full bg-blue-600 blur-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
-                    <div className="w-20 h-20 md:w-28 md:h-28 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-500 shadow-2xl">
-                      <div className="w-0 h-0 border-l-[18px] border-l-white group-hover:border-l-blue-600 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-2 transition-colors" />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute bottom-10 left-10 right-10">
-                  <motion.div className="flex flex-col gap-2">
-                    <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none group-hover:text-blue-400 transition-colors duration-300">
-                      {video.title}
-                    </h3>
-                    <p className="text-white/50 text-xs font-bold uppercase tracking-[0.2em] overflow-hidden h-0 group-hover:h-5 transition-all duration-500">
-                      Click to play full recap
-                    </p>
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* <section className="bg-[#f0f4f8] py-16 font-sans selection:bg-blue-100 selection:text-blue-900">
-        <div className="max-w-[1400px] mx-auto px-6">
-
-          <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div>
-              <span className="text-blue-600 font-black uppercase tracking-widest text-[10px] bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-                Testimonials
-              </span>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mt-4">
-                Real Impact, <span className="text-blue-600">Real Stories</span>
-              </h2>
-            </div>
-            <p className="text-slate-500 font-medium max-w-xs text-sm">
-              Join the ranks of thousands of students who redefined their future with us.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {stories.map((story, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="group relative bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 flex h-[280px]"
-              >
-                <div className="w-1/3 h-full relative overflow-hidden">
-                  <img
-                    src={story.img}
-                    alt={story.student}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className={`absolute inset-0 ${story.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
-                </div>
-
-                <div className="w-2/3 p-6 md:p-8 flex flex-col justify-between relative">
-                  <div className="absolute top-4 right-6">
-                    <div className={`px-3 py-1 rounded-full ${story.color} text-white text-[9px] font-black uppercase tracking-tighter`}>
-                      {story.tag}
-                    </div>
-                  </div>
-
-                  <div className="mt-4">
-                    <div className="flex gap-0.5 mb-4">
-                      {[...Array(5)].map((_, j) => (
-                        <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                      ))}
-                    </div>
-                    <h3 className="text-lg md:text-xl font-bold text-slate-800 leading-snug">
-                      "{story.achievement}"
-                    </h3>
-                  </div>
-
-                  <div className="flex items-center justify-between mt-6 pt-6 border-t border-slate-50">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-full ${story.color} flex items-center justify-center text-white font-bold text-sm shadow-lg`}>
-                        {story.student[0]}
-                      </div>
-                      <div>
-                        <p className="text-sm font-bold text-slate-900">{story.student}</p>
-                        <p className="text-[11px] text-slate-400 font-semibold flex items-center gap-1">
-                          <GraduationCap size={12} className="text-blue-500" />
-                          {story.school}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="p-2 rounded-xl bg-slate-50 text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                      <ArrowUpRight size={18} />
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-12 flex items-center justify-center gap-3">
-            <CheckCircle2 size={18} className="text-green-500" />
-            <p className="text-slate-500 text-sm font-semibold">
-              Over <span className="text-slate-900 font-black">5,000+</span> workshops conducted across India
-            </p>
-          </div>
-        </div>
-      </section> */}
-
-
-
-
       <FAQSection />
       <Footer />
     </div>
@@ -763,12 +591,22 @@ export default EventPortfolio;
 
 const WorkMarquee5Col = () => {
   const allProjects = [
-    { title: "Smash Foods", img: Event1},
-    { title: "Lumar", img: Event2 },
-    { title: "Vybrance Labs", img: Event2, video: true },
-    { title: "Coho+", img: Event4 },
-    { title: "Kahuna", img: Event2 },
-    { title: "A La Maison", img: Event6 },
+    {  img: Event1},
+    { img: Event2 },
+    {  img: Event4 },
+    {  img: Event6 },
+    { img: Event7 },
+    {  img: Event8 },
+    {  img: Event10 },
+    {  img: Event11 },
+    { img: Event12 },
+    { img: Event15 },
+    { img: Event16 },
+    { img: Event17 },
+    {img: Event18 },
+    { img: Event19 },
+    {img : DU1 },
+
   ];
 
   const ColumnTrack = ({ items, reverse = false, duration = 30 }: { items: any[]; reverse?: boolean; duration?: number }) => (
@@ -789,11 +627,11 @@ const WorkMarquee5Col = () => {
               alt={item.title}
             />
             {/* Elegant light-themed overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            {/* <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
               <h3 className="text-zinc-900 font-black uppercase tracking-[0.1em] text-xs translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 {item.title}
               </h3>
-            </div>
+            </div> */}
             {item.video && (
               <div className="absolute top-5 right-5">
                 <div className="w-9 h-9 rounded-full bg-white/90 backdrop-blur-md shadow-sm flex items-center justify-center border border-zinc-100">
@@ -827,9 +665,9 @@ const WorkMarquee5Col = () => {
 
           <ColumnTrack items={[allProjects[0], allProjects[1], allProjects[2]]} duration={28} />
           <ColumnTrack items={[allProjects[3], allProjects[4], allProjects[5]]} reverse duration={38} />
-          <ColumnTrack items={[allProjects[2], allProjects[0], allProjects[4]]} duration={22} />
-          <ColumnTrack items={[allProjects[1], allProjects[5], allProjects[3]]} reverse duration={45} />
-          <ColumnTrack items={[allProjects[4], allProjects[2], allProjects[1]]} duration={32} />
+          <ColumnTrack items={[allProjects[6], allProjects[7], allProjects[8]]} duration={22} />
+          <ColumnTrack items={[allProjects[9], allProjects[10], allProjects[11]]} reverse duration={45} />
+          <ColumnTrack items={[allProjects[12], allProjects[13], allProjects[14]]} duration={32} />
 
           {/* Fading Mask Overlays - Match background color */}
           <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#FCFCFD] via-[#FCFCFD]/80 to-transparent z-20 pointer-events-none" />
