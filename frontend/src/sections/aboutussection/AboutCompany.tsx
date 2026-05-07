@@ -45,7 +45,7 @@ export default function AboutCompany() {
             className="rounded-2xl md:rounded-3xl shadow-2xl w-full max-w-[520px] object-cover h-[450px]"
           />
           <div className="absolute -left-4 -top-6 md:-left-12 md:-top-8 scale-75 md:scale-110">
-            <CircularTextBadge text=" • ABOUT • KATTALYX • LABS • ABOUT US •" />
+            <CircularTextBadge text=" • ABOUT US • ABOUT US • ABOUT US •" />
           </div>
         </motion.div>
 
@@ -61,7 +61,7 @@ export default function AboutCompany() {
 
           <div className="text-slate-600 leading-relaxed text-sm md:text-base">
             <p>
-              India has 3.17 lakh schools and over 40,000 colleges. Yet 42.6% of graduates step into the real world with no practical skills, no industry exposure, and no clarity on what they want to build with their lives.
+              India has 14.72 lakh schools and over 40,000 colleges. Yet 42.6% of graduates step into the real world with no practical skills, no industry exposure, and no clarity on what they want to build with their lives.
             </p>
 
             <AnimatePresence>
