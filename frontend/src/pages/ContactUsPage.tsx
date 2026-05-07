@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 interface ContactFormData {
+  name: string;
   email: string;
   phone: string;
   purpose: string;
@@ -13,6 +14,7 @@ interface ContactFormData {
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
     email: '',
+    name: '',
     phone: '',
     purpose: 'scaling',
     description: '',
@@ -21,7 +23,7 @@ const ContactPage: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbw6Dr63IuG4b49PL42dCFmqhMRQenisz6VUodAZ7i9G6-R1AvU4u0yjdrj0vFj8zp_Q-A/exec";
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbyO65tPSTD4XrdOktL4HLX-bqkn1vpaOBgU2lMCOd8w2T8GTfL7sxBXHB8NghXjjeXS-A/exec";
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -85,18 +87,21 @@ const ContactPage: React.FC = () => {
                 className="space-y-10 bg-white p-8 md:p-12 shadow-2xl shadow-blue-900/5 rounded-sm border-t-4 border-blue-700"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                  {/* Email */}
+
                   <div className="flex flex-col space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-slate-400">Email Address</label>
                     <input required name="email" type="email" value={formData.email} onChange={handleChange} className="border-b-2 border-slate-100 py-2 outline-none focus:border-blue-700 transition-all text-lg" />
+                  </div>
+                  {/* Name */}
+                  <div className="flex flex-col space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-slate-400">Full Name</label>
+                    <input required name="name" type="text" value={formData.name} onChange={handleChange} className="border-b-2 border-slate-100 py-2 outline-none focus:border-blue-700 transition-all text-lg" />
                   </div>
                   {/* Phone */}
                   <div className="flex flex-col space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-slate-400">Phone Number</label>
                     <input required name="phone" type="tel" value={formData.phone} onChange={handleChange} className="border-b-2 border-slate-100 py-2 outline-none focus:border-blue-700 transition-all text-lg" maxLength={10} />
                   </div>
-                </div>
-
                 {/* Purpose */}
                 <div className="flex flex-col space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-slate-400">Inquiry Purpose</label>
@@ -108,6 +113,8 @@ const ContactPage: React.FC = () => {
                     <option value="Infrastructure">Branding</option>
                   </select>
                 </div>
+                </div>
+
 
                 {/* Description */}
                 <div className="flex flex-col space-y-2">
