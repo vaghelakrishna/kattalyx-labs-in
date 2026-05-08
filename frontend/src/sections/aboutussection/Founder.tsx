@@ -54,7 +54,7 @@ export default function Founder() {
 
               <div className="flex gap-8">
                 <div>
-                  <p className="text-2xl font-black text-slate-900">16+</p>
+                  <p className="text-2xl font-black text-slate-900">20+</p>
                   <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Events Led</p>
                 </div>
                 <div>
