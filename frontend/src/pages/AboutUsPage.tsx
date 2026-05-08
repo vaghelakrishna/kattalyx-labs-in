@@ -64,7 +64,7 @@ const steps = [
     title: "Institutional Identity Transformation",
     desc: "We go beyond mere branding to engineer your institution’s entire identity—elevating your digital footprint, reputation, and the prestige that makes you the first choice for parents and a launchpad for students."
   },
-  
+
 ];
 const AboutUsPage = () => {
   const images = [
@@ -721,7 +721,7 @@ const AboutUsPage = () => {
       </section>
 
 
-<Founder/>
+      <Founder />
 
 
       {/* --- 4. FOUNDER SECTION --- */}
