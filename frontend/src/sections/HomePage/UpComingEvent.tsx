@@ -4,42 +4,43 @@ import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
-import Event1 from "../../assets/events/Event1.webp";
-import Event2 from "../../assets/events/Event2.webp";
-import Event4 from "../../assets/events/Event4.webp";
-import Event7 from "../../assets/events/Event7.webp";
+
 import Event8 from "../../assets/events/Event8.webp";
-// import Event9 from "../../assets/events/Event9.webp";
+import Event10 from "../../assets/events/Event10.webp";
+import DU1 from "../../assets/events/DU1.webp";
+import Event18 from "../../assets/events/Event18.jpeg";
+import Event19 from "../../assets/events/Event19.jpeg";
+
 
 
 // --- DATA ---
 const cards = [
   {
-    image: Event1,
+    image: Event8,
     // date: "08.12.24",
     // title: "Kattalyx Tech Meetup 2024",
     isLive: true
   },
   {
-    image: Event8,
+    image: Event10,
     // date: "09.05.24",
     // title: "Startup Ideation Lab",
     progress: 40
   },
   {
-    image: Event7,
+    image: DU1,
     // date: "10.01.24",
     // title: "Full-Stack Development Bootcamp",
     progress: 75
   },
   {
-    image: Event4,
+    image: Event18,
     // date: "11.18.24",
     // title: "AI & Automation Workshop",
     progress: 15
   },
   {
-    image: Event2,
+    image: Event19,
     // date: "12.10.24",
     // title: "Community Demo Day",
     progress: 90
