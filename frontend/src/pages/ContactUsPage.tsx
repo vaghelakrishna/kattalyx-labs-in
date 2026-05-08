@@ -16,7 +16,7 @@ const ContactPage: React.FC = () => {
     email: '',
     name: '',
     phone: '',
-    purpose: 'scaling',
+    purpose: 'General',
     description: '',
   });
 
@@ -106,11 +106,11 @@ const ContactPage: React.FC = () => {
                 <div className="flex flex-col space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-slate-400">Inquiry Purpose</label>
                   <select name="purpose" value={formData.purpose} onChange={handleChange} className="border-b-2 border-slate-100 py-2 outline-none focus:border-blue-700 transition-all text-lg bg-transparent">
-                    <option value="Event">General</option>
-                    <option value="Classes">Events</option>
-                    <option value="Podcast">Collaboration</option>
-                    <option value="Infrastructure">Podcasting</option>
-                    <option value="Infrastructure">Branding</option>
+                    <option value="General">General</option>
+                    <option value="Events">Events</option>
+                    <option value="Collaboration">Collaboration</option>
+                    <option value="Podcasting">Podcasting</option>
+                    <option value="Branding">Branding</option>
                   </select>
                 </div>
                 </div>
