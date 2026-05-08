@@ -83,7 +83,7 @@ export default function Founder() {
                 He views the classroom-to-real-world gap as a generational crisis. With 42.6% of graduates unemployable, Kattalyx Labs is his answer.
               </p>
               <p>
-                In under a year, he has led 16+ events across 12+ institutions including <strong>Kendriya Vidyalaya</strong> and <strong>Doon School</strong>, maintaining a 93.9% student satisfaction rate. He doesn't talk about changing education; he shows up and changes it.
+                In under a year, he has led 20+ events across 15+ institutions  maintaining a 96% student satisfaction rate. He doesn't talk about changing education; he shows up and changes it.
               </p>
             </div>
           </div>
