@@ -1,6 +1,6 @@
 "use client";
 import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
-import {  Fingerprint, ChevronLeft, ChevronRight } from "lucide-react";
+import {  Fingerprint } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
