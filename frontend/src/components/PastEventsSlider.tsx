@@ -7,7 +7,7 @@ import Event7 from "../assets/events/Event7.webp";
 
 const events = [
   {
-    title: "Startup Launchpad Session",
+    title: 'AI & LinkedIn Masterclass',
     date: 'July 14, 2025',
     image: Event1,
     description: 'AI fundamentals, LinkedIn branding, and career pathways shaped by AI.',
