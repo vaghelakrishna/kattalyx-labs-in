@@ -31,7 +31,7 @@ export default function AboutCompany() {
           className="flex lg:flex-col justify-between lg:justify-start border-l-2 border-blue-600 pl-6 lg:mt-4" // thoda top margin for alignment
         >
           <Stat number="20+" label="Events Hosted" />
-          <Stat number="15+" label="Events Conducted" />
+          <Stat number="15+" label="Institutions Partnered" />
           <Stat number="50+" label="Topics Covered" />
         </motion.div>
 
