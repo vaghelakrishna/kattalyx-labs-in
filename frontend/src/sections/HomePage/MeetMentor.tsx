@@ -26,16 +26,16 @@ function MeetMentor() {
   const [team, setTeam] = useState(initialTeam);
 
   // --- Scroll Logic ---
-  const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const { current: container } = scrollContainerRef;
-      const scrollAmount = container.offsetWidth * 0.8; // Dynamic width based on screen
-      container.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
+  // const scroll = (direction: "left" | "right") => {
+  //   if (scrollContainerRef.current) {
+  //     const { current: container } = scrollContainerRef;
+  //     const scrollAmount = container.offsetWidth * 0.8; // Dynamic width based on screen
+  //     container.scrollBy({
+  //       left: direction === "left" ? -scrollAmount : scrollAmount,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
   useEffect(() => {
     const fetchSpeakers = async () => {
@@ -116,7 +116,7 @@ function MeetMentor() {
         <div className="group/container relative">
 
           {/* Navigation Buttons */}
-          {!isMobile && (
+          {/* {!isMobile && (
             <>
               <button
                 onClick={() => scroll("left")}
@@ -131,7 +131,7 @@ function MeetMentor() {
                 <ChevronRight size={24} />
               </button>
             </>
-          )}
+          )} */}
 
           {/* Mobile Hint */}
           <AnimatePresence>
