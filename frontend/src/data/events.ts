@@ -1,15 +1,15 @@
 import Event1 from '@/assets/events/Event1.webp';
 import Event2 from '@/assets/events/Event2.webp';
-// import Event3 from '@/assets/events/Event3.webp';
+import Event3 from '@/assets/events/Event3.webp';
 import Event4 from '@/assets/events/Event4.webp';
-// import Event5 from '@/assets/events/Event5.webp';
+import Event5 from '@/assets/events/Event5.webp';
 import Event6 from '@/assets/events/Event6.webp';
 import Event7 from '@/assets/events/Event7.webp';
 import Event8 from '@/assets/events/Event8.webp';
 import Event10 from '@/assets/events/Event10.webp';
 import Event11 from '@/assets/events/Event11.webp';
 import Event12 from '@/assets/events/Event12.webp';
-// import Event15 from '@/assets/events/Event15.webp';
+import Event15 from '@/assets/events/Event15.webp';
 import Event16 from '@/assets/events/Event16.webp';
 import Event17 from '@/assets/events/Event17.jpeg';
 import Event18 from '@/assets/events/Event18.jpeg';
@@ -95,7 +95,7 @@ export const SCHOOL_EVENTS: EducationEvent[] = [
     category: 'Cybersecurity',
     location: 'Growell Girls School, Baraut',
     segment: 'School',
-    image: Event2,
+    image: Event5,
     description: 'Cyber hygiene, online threats, digital reputation, and ethics.',
   },
   {
@@ -199,63 +199,6 @@ export const SCHOOL_EVENTS: EducationEvent[] = [
   }
 ];
 
-export const COLLEGE_EVENTS: EducationEvent[] = [
-  {
-    id: '1',
-    title: 'Campus Tech Fest',
-    date: '01 Apr',
-    time: '02:00 PM',
-    category: 'Technology',
-    location: 'Amity University',
-    segment: 'College',
-    image: Event2,
-    description: 'Industry-ready innovation demos and campus collaboration.',
-  },
-  {
-    id: '2',
-    title: 'College Entrepreneurship Forum',
-    date: '15 Apr',
-    time: '04:00 PM',
-    category: 'Business',
-    location: 'IIT Delhi',
-    segment: 'College',
-    image: Event6,
-    description: 'Startup mentoring, investor readiness, and networking for college founders.',
-  },
-  {
-    id: '3',
-    title: 'Research Collaboration Day',
-    date: '28 Apr',
-    time: '11:00 AM',
-    category: 'Research',
-    location: 'BITS Pilani',
-    segment: 'College',
-    image: Event7,
-    description: 'Academic research showcases and cross-campus collaborations.',
-  },
-  {
-    id: '4',
-    title: 'Campus Career Fair',
-    date: '10 May',
-    time: '12:00 PM',
-    category: 'Career',
-    location: 'Symbiosis',
-    segment: 'College',
-    image: Event8,
-    description: 'Employer meet-and-greets, internships, and placement readiness.',
-  },
-  {
-    id: '5',
-    title: 'AI Bootcamp - Vertex AI & Google Agent Kit',
-    date: 'September 27, 2025',
-    time: '10:00 AM',
-    category: 'AI Training',
-    location: 'KIET Group of Institutions',
-    segment: 'College',
-    image: DU2,
-    description: 'Hands-on Vertex AI training for student developers.',
-  }
-];
 
 export const UNI_EVENTS: EducationEvent[] = [
   {
@@ -277,7 +220,7 @@ export const UNI_EVENTS: EducationEvent[] = [
     category: 'Generative AI',
     location: 'Innovation Hub',
     segment: 'University',
-    image: Event18,
+    image: Event15,
     description: 'Recipient of the KITE Institution Event Speaking Award for delivering an intensive bootcamp on building autonomous agents using Vertex AI and Google Agent Kit.',
   },
   {
@@ -315,19 +258,19 @@ export const TOP_EVENTS: PortfolioEvent[] = [
 export const POPULAR_EVENTS: PortfolioEvent[] = [
   { id: 1, title: 'AI & LinkedIn Masterclass', img: Event1, desc: 'AI fundamentals, LinkedIn branding, and career pathways shaped by AI.', date: 'July 14, 2025', location: 'Growell Girls School, Baraut' },
   { id: 2, title: 'AI & LinkedIn for Faculty', img: Event2, desc: 'AI implications in education, LinkedIn for faculty growth, and student mentoring skills.', date: 'July 16, 2025', location: 'Growell CoEd School, Baraut' },
-  { id: 3, title: 'Startup & Business Conference', img: Event2, desc: 'Startup fundamentals, business strategy, branding, networking, digital marketing, and soft skills.', date: 'August 6, 2025', location: 'Growell CoEd School, Baraut' },
+  { id: 3, title: 'Startup & Business Conference', img: Event3, desc: 'Startup fundamentals, business strategy, branding, networking, digital marketing, and soft skills.', date: 'August 6, 2025', location: 'Growell CoEd School, Baraut' },
   { id: 4, title: 'Unlocking Human OS - From Habits to Higher Self', img: Event4, desc: 'Habit building, emotional intelligence, IKIGAI, mental health, and peer-pressure management.', date: 'August 12, 2025', location: 'Doon School, Baraut' },
   { id: 5, title: 'The DeCode - Cyber Awareness & Social Digital Ethics', img: Event2, desc: 'Cyber hygiene, online threats, digital reputation, and ethical behavior online.', date: 'August 13, 2025', location: 'Growell Girls School, Baraut' },
   { id: 6, title: 'The Human Toolkit - Control, Connect, Conquer', img: Event6, desc: 'Focus, communication, emotional intelligence, mental health, IKIGAI, and confidence for younger students.', date: 'August 18, 2025', location: 'Global Kids (Kidzee), Baraut' },
   { id: 7, title: 'HackProof - Hack the Hackers', img: Event7, desc: 'Cybercrime tactics, hacker psychology, real-life simulations, and digital self-protection.', date: 'August 20, 2025', location: 'Growell Co-ed School, Baraut' },
   { id: 8, title: 'The Cadet Code - Communicate, Confidence & Control', img: Event8, desc: 'Sense control, confidence-building, communication, and emotional intelligence in a small-group workshop.', date: 'August 21, 2025', location: 'Saifia Institute, Baraut' },
   { id: 9, title: 'Personality Development', img: Event10, desc: 'Self-awareness, communication, resilience, and foundation skills for longer workshops.', date: 'August 22, 2025', location: 'Godwin School, Kirthal, Uttar Pradesh' },
-  { id: 10, title: 'Project UTurn - From Pressure to Purpose', img: Event11, desc: 'Self-management, positive habits, emotional intelligence, and purpose discovery at scale.', date: 'August 25, 2025', location: 'Takshashila World School, Ambehta, Saharanpur' },
-  { id: 11, title: 'Persona X - Unmute Yourself', img: Event12, desc: 'Public speaking, leadership, teamwork, presentation skills, and self-expression.', date: 'September 1, 2025', location: 'Cambridge Public School, Baraut' },
-  // { id: 12, title: 'Cyber Shield - Shield Your Clicks, Secure Your Future', img: Event15, desc: 'Cybercrime, data protection, device safety, digital ethics, and cybersecurity career inspiration.', date: 'September 11, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat' },
+  { id: 10, title: 'Project UTurn - From Pressure to Purpose', img: Event10, desc: 'Self-management, positive habits, emotional intelligence, and purpose discovery at scale.', date: 'August 25, 2025', location: 'Takshashila World School, Ambehta, Saharanpur' },
+  { id: 11, title: 'Persona X - Unmute Yourself', img: Event11, desc: 'Public speaking, leadership, teamwork, presentation skills, and self-expression.', date: 'September 1, 2025', location: 'Cambridge Public School, Baraut' },
+  { id: 12, title: 'Cyber Shield - Shield Your Clicks, Secure Your Future', img: Event12, desc: 'Cybercrime, data protection, device safety, digital ethics, and cybersecurity career inspiration.', date: 'September 11, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat' },
   { id: 13, title: 'Evarire - Women Empowerment & Menstrual Hygiene', img: Event18, desc: 'Menstrual health, body positivity, gender inclusivity, and empowered conversations.', date: 'September 16, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat' },
   { id: 14, title: 'AIgnition - Igniting the Future of AI', img: Event17, desc: 'AI fundamentals, education impact, hands-on exercises, and future-readiness for faculty.', date: 'September 24, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli' },
-  { id: 15, title: 'AI Bootcamp - Vertex AI & Google Agent Kit', img: DU2, desc: 'Vertex AI and Google Agent Kit training for college students building intelligent systems.', date: 'September 27, 2025', location: 'KIET Group of Institutions' },
+  // { id: 15, title: 'AI Bootcamp - Vertex AI & Google Agent Kit', img: Event15, desc: 'Vertex AI and Google Agent Kit training for college students building intelligent systems.', date: 'September 27, 2025', location: 'KIET Group of Institutions' },
   // { id: 16, title: 'Founder Fiesta', img: DU3, desc: 'Startup fundamentals, business strategy, branding, networking, and entrepreneurial mindset.', date: 'November 17, 2025', location: 'Lakshya Public School, Baghpat' },
   { id: 17, title: 'Dream Direction Drive', img: DU4, desc: 'Career clarity, stream alignment, skill-based jobs, and emerging field guidance.', date: 'December 2, 2025', location: 'Maharaja Agrasen Public School, Noida' },
   // { id: 18, title: 'Collaboration Catalyst', img: DU5, desc: 'Strategic partnerships, peer learning, and institutional networking.', date: 'December 10, 2025', location: 'Andrews Public School, Noida' }
