@@ -117,12 +117,12 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex gap-8">
+          {/* <div className="flex gap-8">
             <Link to="/privacy-policy" className="text-[10px] font-black text-slate-400 hover:text-slate-900 uppercase tracking-widest transition-all">Privacy Policy</Link>
             <Link to="/terms" className="text-[10px] font-black text-slate-400 hover:text-slate-900 uppercase tracking-widest transition-all">Terms of Service</Link>
 
             <Link to="/refund-policy" className="text-[10px] font-black text-slate-400 hover:text-slate-900 uppercase tracking-widest transition-all">Refund And Cancellation Policy</Link>
-          </div>
+          </div> */}
 
           <p className="text-[10px] font-bold text-slate-300 uppercase tracking-[0.3em]">
             Built for the 1%
