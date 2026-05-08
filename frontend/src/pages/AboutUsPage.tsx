@@ -494,7 +494,7 @@ const AboutUsPage = () => {
       >
         {/* Background Watermark */}
         <div className="absolute top-0 left-4 pointer-events-none select-none">
-          <span className="text-[clamp(100px,15vw,200px)] font-black text-white/5 leading-none uppercase">
+          <span className="text-[clamp(100px,15vw,200px)] font-black text-white/16 leading-none uppercase">
             GOAL
           </span>
         </div>
