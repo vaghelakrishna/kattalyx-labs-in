@@ -57,9 +57,6 @@ const CollaborationsPage = () => {
     { name: "KIET Group of Institutions", img: 'https://images.unsplash.com/photo-1498243639359-2830a6796a1e?q=80&w=300&h=300&auto=format&fit=crop' },
     { name: "ABESIT", img: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=300&h=300&auto=format&fit=crop' },
     { name: "Delhi School of Economics (DSE)", img: 'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "IIT Delhi", img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Amity University", img: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "BITS Pilani", img: 'https://images.unsplash.com/photo-1464936303368-842948b30342?q=80&w=300&h=300&auto=format&fit=crop' },
   ];
   return (
     <div className="min-h-screen bg-[#FDFDFD] text-slate-900 font-sans">
