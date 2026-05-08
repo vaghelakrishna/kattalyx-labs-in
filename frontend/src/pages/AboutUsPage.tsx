@@ -645,7 +645,7 @@ const AboutUsPage = () => {
                 Bridge <br /> The Gap
               </h3>
               <p className="text-zinc-500 text-sm md:text-base font-medium leading-relaxed">
-                Connecting 12 lakh institutions to the real world. High-impact events, branding, and networking.
+                Connecting each institutions to the real world. High-impact events, branding, and networking.
                 <span className="text-black block mt-4">Every student deserves exposure. Every institution deserves a world-class brand. We make both happen.</span>
               </p>
             </motion.div>
