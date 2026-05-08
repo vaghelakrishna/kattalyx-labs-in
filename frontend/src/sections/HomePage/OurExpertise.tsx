@@ -116,9 +116,10 @@ function OurExpertise() {
           </h2>
 
           <p className="mt-4 max-w-3xl mx-auto text-sm md:text-base text-slate-500 leading-relaxed tracking-tight font-medium">
-            We <span className="text-slate-900 italic">orchestrate</span> the convergence of real-world intelligence, digital infrastructure, and
+            We <span className="text-slate-900 italic">orchestrate</span> the convergence of real-world learning,
+            digital infrastructure, and
             <span className="text-slate-900 font-bold ml-1">
-              elite career pathways into a singular, unstoppable ecosystem.
+              founder events in institutions into a singular, unstoppable ecosystem.
             </span>
           </p>
         </motion.div>
