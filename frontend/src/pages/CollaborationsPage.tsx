@@ -38,25 +38,25 @@ const CollaborationsPage = () => {
     fetchSchools();
   }, []);
   
-  const PARTNER_SCHOOLS = [
-    // --- Schools ---
-    { name: "Growell Girls School", img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Growell Co-Ed School", img: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Doon School", img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Kidzee School", img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Godwin School", img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Takshashila World School", img: 'https://images.unsplash.com/photo-1577891728591-282c146ca1b5?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Cambridge Public School", img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "PM Shri Kendriya Vidyalaya", img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Lakshya Public School", img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Maharaja Agrasen Public School", img: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Andrews Public School", img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=300&h=300&auto=format&fit=crop' },
+   const PARTNER = [
+    // --- Schools (From Portfolio & Events) ---
+    { name: "Growell Girls School", img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "Growell Co-Ed School", img: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "Doon School", img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "Kidzee School (Global Kids)", img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "Godwin School", img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "Takshashila World School", img: 'https://images.unsplash.com/photo-1577891728591-282c146ca1b5?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "Cambridge Public School", img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "PM Shri Kendriya Vidyalaya", img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "Lakshya Public School", img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "Maharaja Agrasen Public School", img: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "Andrews Public School", img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=400&h=400&auto=format&fit=crop' },
 
-    // --- Higher Ed / Institutes ---
-    { name: "Saifia Institute", img: 'https://images.unsplash.com/photo-1525921429624-479b6a26d84d?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "KIET Group of Institutions", img: 'https://images.unsplash.com/photo-1498243639359-2830a6796a1e?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "ABESIT", img: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=300&h=300&auto=format&fit=crop' },
-    { name: "Delhi School of Economics (DSE)", img: 'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=300&h=300&auto=format&fit=crop' },
+    // --- Higher Ed / Institutes (From Portfolio & Events) ---
+    { name: "Saifia Institute", img: 'https://images.unsplash.com/photo-1525921429624-479b6a26d84d?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "KIET Group of Institutions", img: 'https://images.unsplash.com/photo-1498243639359-2830a6796a1e?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "ABESIT", img: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=400&h=400&auto=format&fit=crop' },
+    { name: "Delhi School of Economics (DSE)", img: 'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=400&h=400&auto=format&fit=crop' }
   ];
   return (
     <div className="min-h-screen bg-[#FDFDFD] text-slate-900 font-sans">
@@ -187,7 +187,7 @@ const CollaborationsPage = () => {
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={activeImage}
-                      src={PARTNER_SCHOOLS[activeImage].img}
+                      src={PARTNER[activeImage].img}
                       initial={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
                       animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                       exit={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
@@ -206,14 +206,14 @@ const CollaborationsPage = () => {
                   >
                     <p className="text-blue-400 font-mono text-[10px] uppercase tracking-widest mb-2">Network Campus</p>
                     <h4 className="text-white text-3xl font-black tracking-tighter uppercase leading-tight">
-                      {PARTNER_SCHOOLS[activeImage].name}
+                      {PARTNER[activeImage].name}
                     </h4>
                   </motion.div>
                 </div>
               </div>
 
               <div className="lg:col-span-7 order-1 lg:order-2">
-                {PARTNER_SCHOOLS.map((school, i) => (
+                {PARTNER.map((partner, i) => (
                   <motion.div
                     key={i}
                     onViewportEnter={() => setActiveImage(i)}
@@ -226,7 +226,7 @@ const CollaborationsPage = () => {
                           / 0{i + 1}
                         </span>
                         <h3 className={`text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none transition-all duration-500 ${activeImage === i ? 'text-slate-900 translate-x-4' : 'text-slate-200'}`}>
-                          {school.name}
+                          {partner.name}
                         </h3>
                       </div>
 {/* 
@@ -266,9 +266,9 @@ const CollaborationsPage = () => {
               </button>
 
               <img
-                src={PARTNER_SCHOOLS[selectedSchool].img}
+                src={PARTNER[selectedSchool].img}
                 className="w-full h-64 object-cover"
-                alt="School"
+                alt="Partner"
               />
 
               <div className="p-8">
@@ -280,7 +280,7 @@ const CollaborationsPage = () => {
                 </div>
 
                 <h2 className="text-4xl font-black text-slate-900 mb-6">
-                  {PARTNER_SCHOOLS[selectedSchool].name}
+                  {PARTNER[selectedSchool].name}
                 </h2>
 
                 <div className="grid md:grid-cols-3 gap-4 mb-8">
