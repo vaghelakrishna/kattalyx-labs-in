@@ -86,7 +86,7 @@ const CollaborationsPage = () => {
           <p className="text-slate-500 text-lg md:text-xl font-medium max-w-2xl leading-relaxed tracking-tight">
             Kattalyx Labs
             <span className="text-slate-900 mx-1 italic">converges</span>
-            with industry titans, elite institutions, and global social organizations to
+            with industry titans, institutions, and social organizations to
             <span className="text-slate-900 font-bold ml-1">architect the future of human capital.</span>
           </p>
         </section>
@@ -103,7 +103,7 @@ const CollaborationsPage = () => {
                 icon: CheckCircle2, title: "Founder Ecosystem", desc: " Kattalyx Labs builds the environment where India's next generation of founders find their footing."
               },
               {
-                icon: CheckCircle2, title: " Institution Growth", desc: "where institutions gain branding, students gain exposure, and every stakeholder gains measurable value."
+                icon: CheckCircle2, title: " Institution Growth", desc: "Where institutions gain branding, students gain exposure, and every stakeholder gains measurable value."
               }
             ].map((feature, i) => (
               <div key={i} className="p-8 bg-slate-50 border border-slate-100 rounded-[2rem] hover:bg-white hover:shadow-xl transition-all">
