@@ -15,7 +15,7 @@ import Event17 from '@/assets/events/Event17.jpeg';
 import Event18 from '@/assets/events/Event18.jpeg';
 import Event19 from '@/assets/events/Event19.jpeg';
 import DU1 from '@/assets/events/DU1.webp';
-import DU2 from '@/assets/events/DU2.webp';
+// import DU2 from '@/assets/events/DU2.webp';
 import DU3 from '@/assets/events/DU3.webp';
 import DU4 from '@/assets/events/DU4.webp';
 // import DU5 from '@/assets/events/DU5.webp';
