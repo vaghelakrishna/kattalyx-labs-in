@@ -79,11 +79,25 @@ const AboutUsPage = () => {
 
   const features = [
     {
-      title: "Events in Schools & Colleges", desc: "From entrepreneurship bootcamps to AI workshops — we bring real founders and industry experts into your institution, turning every session into a live mentorship experience that textbooks cannot replicate.", icon: Rocket },
-    { title: " Institutional Branding Services", desc: "Your institution's reputation is built on outcomes and visibility. We build websites, apps, and brand strategies that position your school or college as a forward-thinking, future-ready institution.", icon: Users },
-    { title: "Podcasting for Real-World Education", desc: "We bring CEOs, CFOs, and CMOs onto our podcast to share raw, unfiltered real-world knowledge with students — giving them a front-row seat to conversations that no classroom has ever hosted.", icon: Zap },
+      title: "Events in Schools & Colleges",
+      desc: "From bootcamps to AI workshops, we bring founders into your institution, creating live mentorship experiences that standard textbooks simply cannot replicate.",
+      icon: Rocket
+    },
     {
-      title: " Investor–Founder Networking Events", desc:"We curate high- signal rooms where startup founders meet the right investors.Meaningful connections, real conversations, and funding opportunities — all in one room.", icon: Target },
+      title: "Institutional Branding Services",
+      desc: "Your reputation is built on outcomes. We develop premium websites and brand strategies that position your institution as a forward-thinking and future-ready leader.",
+      icon: Users
+    },
+    {
+      title: "Podcasting for Education",
+      desc: "We bring top CEOs onto our podcast to share raw, unfiltered knowledge, giving students a front-row seat to high-level conversations and real-world industry insights.",
+      icon: Zap
+    },
+    {
+      title: "Investor–Founder Networking",
+      desc: "We curate high-signal rooms where founders meet investors, facilitating meaningful connections and strategic funding opportunities for the next generation of startups.",
+      icon: Target
+    },
   ];
 
   const cards = [
@@ -401,7 +415,7 @@ const AboutUsPage = () => {
 
                 {/* Text Content */}
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-black tracking-tighter uppercase leading-none group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-black tracking-tighter uppercase leading-none group-hover:text-blue-600 transition-colors">
                     {f.title.split(' ').map((word, index) => (
                       <span key={index}>{word} </span>
                     ))}
