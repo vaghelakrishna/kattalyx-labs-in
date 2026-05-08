@@ -278,7 +278,7 @@ export default function HeroSection() {
 
             {/* LEFT BOX (Program Card Style) */}
             <div className="absolute bottom-16 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:-left-4 z-20">
-              <div className="relative bg-white/70 backdrop-blur-xl rounded-[3rem] w-62 sm:w-[340px] py-12 px-6 border border-white/50 shadow-2xl">
+              <div className="relative bg-white/70 backdrop-blur-xl rounded-[3rem] w-62 sm:w-[340px] py-6 px-6 border border-white/50 shadow-2xl">
 
                 {/* Student Image */}
                 <div className="hidden sm:block absolute -top-60 left-8">
