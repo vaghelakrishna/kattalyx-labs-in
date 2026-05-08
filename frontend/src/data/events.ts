@@ -14,8 +14,9 @@ import Event16 from '@/assets/events/Event16.webp';
 import Event17 from '@/assets/events/Event17.jpeg';
 import Event18 from '@/assets/events/Event18.jpeg';
 import Event19 from '@/assets/events/Event19.jpeg';
+import Event20 from '@/assets/events/Event20.webp';
 import DU1 from '@/assets/events/DU1.webp';
-// import DU2 from '@/assets/events/DU2.webp';
+// import DU2 from '@/assets/events/DU2.webp';-
 import DU3 from '@/assets/events/DU3.webp';
 import DU4 from '@/assets/events/DU4.webp';
 // import DU5 from '@/assets/events/DU5.webp';
@@ -264,7 +265,7 @@ export const POPULAR_EVENTS: PortfolioEvent[] = [
   { id: 6, title: 'The Human Toolkit - Control, Connect, Conquer', img: Event6, desc: 'Focus, communication, emotional intelligence, mental health, IKIGAI, and confidence for younger students.', date: 'August 18, 2025', location: 'Global Kids (Kidzee), Baraut' },
   { id: 7, title: 'HackProof - Hack the Hackers', img: Event7, desc: 'Cybercrime tactics, hacker psychology, real-life simulations, and digital self-protection.', date: 'August 20, 2025', location: 'Growell Co-ed School, Baraut' },
   { id: 8, title: 'The Cadet Code - Communicate, Confidence & Control', img: Event8, desc: 'Sense control, confidence-building, communication, and emotional intelligence in a small-group workshop.', date: 'August 21, 2025', location: 'Saifia Institute, Baraut' },
-  { id: 9, title: 'Personality Development', img: Event10, desc: 'Self-awareness, communication, resilience, and foundation skills for longer workshops.', date: 'August 22, 2025', location: 'Godwin School, Kirthal, Uttar Pradesh' },
+  { id: 9, title: 'Personality Development', img: Event20, desc: 'Self-awareness, communication, resilience, and foundation skills for longer workshops.', date: 'August 22, 2025', location: 'Godwin School, Kirthal, Uttar Pradesh' },
   { id: 10, title: 'Project UTurn - From Pressure to Purpose', img: Event10, desc: 'Self-management, positive habits, emotional intelligence, and purpose discovery at scale.', date: 'August 25, 2025', location: 'Takshashila World School, Ambehta, Saharanpur' },
   { id: 11, title: 'Persona X - Unmute Yourself', img: Event11, desc: 'Public speaking, leadership, teamwork, presentation skills, and self-expression.', date: 'September 1, 2025', location: 'Cambridge Public School, Baraut' },
   { id: 12, title: 'Cyber Shield - Shield Your Clicks, Secure Your Future', img: Event12, desc: 'Cybercrime, data protection, device safety, digital ethics, and cybersecurity career inspiration.', date: 'September 11, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat' },
