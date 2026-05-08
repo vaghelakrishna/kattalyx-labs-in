@@ -11,7 +11,7 @@ export default function Founder() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 items-start">
 
         {/* LEFT: COMPACT STICKY IMAGE */}
-        <div className="sticky top-24  lg:block rounded-[1.5rem] overflow-hidden bg-black aspect-[4/5]">
+        <div className="sticky top-24  lg:block rounded-[1.5rem] overflow-hidden bg-neutral-900 aspect-[4/5]">
           <motion.div style={{ y: imageY }} className="h-[120%] w-full">
             <img
               src={vansh}
