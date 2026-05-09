@@ -114,12 +114,12 @@ const ContactPage: React.FC = () => {
 
                   <div className="space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      <InputField label="Name" name="name" value={formData.name} onChange={handleChange} placeholder="Vansh Jain" />
-                      <InputField label="Email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="vansh@labs.com" />
+                      <InputField label="Name" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" />
+                      <InputField label="Email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="example@gmail.com" />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      <InputField label="Phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="98765 43210" maxLength={10} />
+                      <InputField label="Phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="Your Phone Number" maxLength={10} />
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] uppercase tracking-widest font-bold text-zinc-400">I'm interested in</label>
                         <select 
