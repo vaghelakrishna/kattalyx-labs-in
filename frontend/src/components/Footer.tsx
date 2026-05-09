@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import {  Zap } from "lucide-react";
-import { FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
+// import {  Zap } from "lucide-react";
+import { FiInstagram, FiLinkedin } from "react-icons/fi";
 import logo from "../assets/logo.png";
 
 const links = {
@@ -111,7 +111,7 @@ export default function Footer() {
         {/* BOTTOM LEGAL */}
         <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <Zap size={14} className="text-blue-600 fill-blue-600" />
+            {/* <Zap size={14} className="text-blue-600 fill-blue-600" /> */}
             <p className="text-[10px] font-black text-slate-900 uppercase tracking-widest">
               © {new Date().getFullYear()} KATTALYX LABS
             </p>
