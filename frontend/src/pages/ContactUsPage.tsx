@@ -119,7 +119,7 @@ const ContactPage: React.FC = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      <InputField label="Phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="98765 43210" />
+                      <InputField label="Phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="98765 43210" maxLength={10} />
                       <div className="flex flex-col gap-2">
                         <label className="text-[10px] uppercase tracking-widest font-bold text-zinc-400">I'm interested in</label>
                         <select 
