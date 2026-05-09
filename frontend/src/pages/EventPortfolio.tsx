@@ -1,5 +1,5 @@
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import {  ChevronLeft, ChevronRight, Calendar, MapPin, Users, Star, X, Globe,  Briefcase, type LucideIcon } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -27,7 +27,7 @@ import DU2 from '@/assets/events/DU2.webp';
 import DU3 from '@/assets/events/DU3.webp';
 import DU4 from '@/assets/events/DU4.webp';
 import DU5 from '@/assets/events/DU5.webp';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import FAQSection from '@/components/FAQ';
 
 
@@ -39,6 +39,8 @@ interface StatItem {
   icon: LucideIcon;
   color: string;
 }
+
+
 
 const STATS: StatItem[] = [
   {
@@ -69,10 +71,10 @@ const STATS: StatItem[] = [
 
 
 // Extract icons as Capitalized Components for TSX compliance
-const Icon0 = STATS[0].icon;
-const Icon1 = STATS[1].icon;
-const Icon2 = STATS[2].icon;
-const Icon3 = STATS[3].icon;
+// const Icon0 = STATS[0].icon;
+// const Icon1 = STATS[1].icon;
+// const Icon2 = STATS[2].icon;
+// const Icon3 = STATS[3].icon;
 
 
 
@@ -102,6 +104,22 @@ const PHOTO_GALLERY = [
 
 
 const EventPortfolio = () => {
+
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  // Slide effect mapping
+  const x = useTransform(scrollYProgress, [0, 1], ["70%", "-30%"]);
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [0.85, 1.15]);
+
+  // COLOR MAPPING (Inspiration Colors)
+  const COLORS = ["#FFADF0", "#A0D2FF", "#C4FF8E", "#FFE16A"];
+  const ICONS = [Briefcase, Users, Globe, Star];
   const [currentSlide, setCurrentSlide] = useState(0);
   const [visibleEvents, setVisibleEvents] = useState(8);
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
@@ -321,34 +339,92 @@ const EventPortfolio = () => {
         )}
       </section>
 
-      <section className="max-w-[1400px] mx-auto py-16 px-6 bg-[#f8fafc] text-slate-900">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight">University Events</h2>
-            <p className="text-slate-500 mt-2 max-w-2xl">Featured university-level workshops and bootcamps that showcase our campus partnerships.</p>
-          </div>
-        </div>
+      <section className="py-32 bg-[#fcfcfc] relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-20">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {UNI_EVENTS.slice().reverse().map((event, idx) => (
-            <div key={`${event.id}-${idx}`} className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-sm transition-all hover:shadow-xl">
-              <div className="relative h-56 overflow-hidden">
-                <img src={event.image} alt={event.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-5">
-                  <p className="text-sm uppercase tracking-[0.26em] text-slate-200 font-bold">{event.category}</p>
-                </div>
+          {/* HEADER: Minimalist & Clean */}
+          <header className="mb-20 flex flex-col md:flex-row justify-between items-end gap-6">
+            <div className="space-y-2">
+              <div className="flex items-center gap-3">
+                <span className="w-8 h-[2px] bg-red-600"></span>
+                <span className="text-red-600 font-mono text-[10px] uppercase tracking-[0.4em] font-bold">Partnerships</span>
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-black text-slate-900 mb-3">{event.title}</h3>
-                <p className="text-sm text-slate-500 mb-4">{event.location} • {event.date}</p>
-                <p className="text-sm text-slate-600 leading-relaxed mb-5">{event.description}</p>
-                {/* <div className="flex items-center justify-between gap-3">
-                  <span className="text-xs uppercase tracking-[0.3em] font-bold text-slate-500">{event.segment}</span>
-                  <button className="rounded-full bg-slate-900 px-5 py-3 text-sm font-bold text-white hover:bg-blue-600 transition-colors">View Schedule</button>
-                </div> */}
-              </div>
+              <h2 className="text-5xl md:text-6xl font-black tracking-tighter uppercase text-black">
+                University <span className="text-zinc-300">Events</span>
+              </h2>
             </div>
-          ))}
+            <p className="text-zinc-400 text-sm font-medium max-w-[280px] leading-relaxed">
+              A chronological record of technical bootcamps and collaborative seminars across India.
+            </p>
+          </header>
+
+          {/* CLEAN 3-COLUMN GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {UNI_EVENTS.slice().reverse().map((event, idx) => (
+              <motion.div
+                key={`${event.id}-${idx}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group flex flex-col bg-white border border-zinc-200 rounded-[2rem] overflow-hidden hover:border-black transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
+              >
+                {/* IMAGE AREA */}
+                <div className="relative h-64 overflow-hidden bg-zinc-100">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[50%] group-hover:grayscale-0"
+                  />
+
+                  {/* Float Category Tag */}
+                  <div className="absolute top-5 left-5">
+                    <span className="bg-white/90 backdrop-blur-md text-black text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-black/5">
+                      {event.category}
+                    </span>
+                  </div>
+
+                  {/* Index Number */}
+                  <div className="absolute bottom-5 right-6">
+                    <span className="text-4xl font-black text-white/20 group-hover:text-white/40 transition-colors italic">
+                      0{idx + 1}
+                    </span>
+                  </div>
+                </div>
+
+                {/* CONTENT AREA */}
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="flex-grow space-y-4">
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-red-600 uppercase tracking-[0.2em]">
+                      <span>{event.date}</span>
+                      <span className="w-1 h-1 bg-zinc-300 rounded-full"></span>
+                      <span className="text-zinc-400">{event.location}</span>
+                    </div>
+
+                    <h3 className="text-2xl font-black tracking-tight text-black leading-tight group-hover:text-red-600 transition-colors">
+                      {event.title}
+                    </h3>
+
+                    <p className="text-zinc-500 text-sm leading-relaxed font-light line-clamp-3">
+                      {event.description}
+                    </p>
+                  </div>
+
+                  {/* BOTTOM ACTION */}
+                  {/* <div className="mt-8 pt-6 border-t border-zinc-100 flex justify-between items-center">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-400">
+                      Kattalyx / Tech
+                    </span>
+                    <div className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300">
+                      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:translate-x-0.5 transition-transform">
+                        <path d="M3.5 7.5H11.5M11.5 7.5L8 4M11.5 7.5L8 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                  </div> */}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -412,109 +488,84 @@ const EventPortfolio = () => {
         </div>
       </div>
 
-      <section className="relative h-screen max-h-screen min-h-[700px] flex flex-col justify-center overflow-hidden bg-white text-slate-900 py-12">
-        {/* Soft Background Decorative Elements */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-50 rounded-full blur-[100px] pointer-events-none" />
+      <section ref={containerRef} className="relative h-[250vh] bg-white">
+        <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden">
 
-        <div className="max-w-7xl mx-auto px-6 w-full relative">
-          {/* Compact Header */}
-          <div className="flex items-center justify-between mb-8 gap-10">
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="h-[1px] w-6 bg-blue-600" />
-                <span className="text-blue-600 font-bold text-[8px] uppercase tracking-[0.4em]">Impact</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter leading-none text-slate-900">
-                Empowering the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">next generation.</span>
-              </h2>
+          {/* 1. BACKGROUND TEXT - Reduced Size */}
+          <motion.div
+            style={{ opacity: bgOpacity, scale: bgScale }}
+            className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0"
+          >
+            <h2 className="text-[18vw] font-black text-zinc-50 leading-[0.8] tracking-tighter uppercase whitespace-nowrap select-none">
+              KATTALYX <br /> METRICS
+            </h2>
+          </motion.div>
+
+          {/* 2. SECTION HEADER - More Compact */}
+          <div className="absolute top-16 left-8 md:left-20 z-20">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="h-[1.5px] w-8 bg-black" />
+              <span className="text-black font-mono text-[9px] uppercase tracking-[0.3em] font-bold italic">Lab Archive</span>
             </div>
-            <p className="hidden md:block max-w-[200px] text-slate-500 text-[11px] leading-relaxed border-l border-slate-200 pl-4">
-              A decade of academic rigor and global networking.
-            </p>
+            <h3 className="text-5xl md:text-6xl font-black tracking-tighter text-black leading-[0.9] uppercase">
+              Proven <br /> <span className="text-zinc-300 italic font-serif lowercase">by</span> Numbers.
+            </h3>
           </div>
 
-          {/* Responsive Bento Grid */}
-          <div className="grid grid-cols-12 gap-4 h-full max-h-[60vh]">
+          {/* 3. COLORFUL CARDS - Reduced dimensions */}
+          <motion.div style={{ x }} className="relative z-30 flex gap-8 items-center pl-[15%]">
+            {STATS.map((stat, i) => {
+              const IconComponent = ICONS[i];
+              return (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -10, rotate: 0, scale: 1.02 }}
+                  style={{
+                    backgroundColor: COLORS[i],
+                    rotate: i % 2 === 0 ? -2 : 2,
+                  }}
+                  className="min-w-[320px] md:min-w-[380px] h-[240px] md:h-[280px] p-8 rounded-[3rem] shadow-xl flex flex-col justify-between border border-black/5 cursor-pointer group"
+                >
+                  <div className="flex justify-between items-start">
+                    <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <IconComponent className="w-5 h-5 text-white" />
+                    </div>
+                    <p className="font-mono text-[9px] uppercase tracking-widest text-black/30 font-bold">
+                      PRTC // 0{i + 1}
+                    </p>
+                  </div>
 
-            {/* Card 01 - Large Feature (Main Metric) */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="col-span-12 lg:col-span-8 bg-slate-50 border border-slate-100 rounded-3xl p-8 relative overflow-hidden group flex flex-col justify-between shadow-sm"
-            >
-              <div className="relative z-10 flex justify-between items-center">
-                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center">
-                  <Icon0 className="w-6 h-6 text-blue-600" />
-                </div>
-                <span className="font-mono text-[9px] text-slate-400 tracking-widest uppercase italic">Database // V.01</span>
-              </div>
-              <div className="relative z-10 mt-4">
-                <h3 className="text-8xl md:text-9xl font-black leading-none tracking-tighter -ml-1 text-slate-900">
-                  {STATS[0].value}
-                </h3>
-                <p className="text-blue-600 font-bold uppercase tracking-[0.4em] text-[10px] mt-2 ml-1">{STATS[0].label}</p>
-              </div>
-              {/* Subtle accent color instead of heavy glow */}
-              <div className={`absolute -right-10 -bottom-10 w-64 h-64 bg-gradient-to-br ${STATS[0].color} opacity-[0.08] rounded-full blur-[60px] group-hover:opacity-[0.12] transition-opacity duration-700`} />
-            </motion.div>
+                  <div>
+                    <h4 className="text-6xl md:text-7xl font-black tracking-tighter leading-none text-black -ml-1">
+                      {stat.value}
+                    </h4>
+                    <p className="font-black uppercase tracking-[0.3em] text-[10px] text-black/60 ml-1">
+                      {stat.label}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
 
-            {/* Card 02 - Accent Color (Keeps your gradient for impact) */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className={`col-span-12 md:col-span-6 lg:col-span-4 bg-gradient-to-br ${STATS[1].color} rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden shadow-xl shadow-indigo-200/50`}
-            >
-              <div className="relative z-10">
-                <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mb-6">
-                  <Icon1 className="w-5 h-5 text-white" />
-                </div>
-                <p className="text-white/80 uppercase tracking-widest text-[9px] font-bold mb-1">{STATS[1].label}</p>
-                <h3 className="text-6xl font-black tracking-tighter text-white">{STATS[1].value}</h3>
+            {/* FINAL CARD - Reduced Size */}
+            <div className="min-w-[320px] md:min-w-[380px] h-[280px] p-8 rounded-[3rem] bg-black text-white flex flex-col justify-center items-center text-center rotate-2">
+              <div className="mb-4 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
+                <div className="w-3 h-3 bg-red-600 rounded-full animate-ping" />
               </div>
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_#fff_1.2px,_transparent_0)] [background-size:16px_16px]" />
-            </motion.div>
+              <h4 className="text-2xl font-black uppercase italic leading-tight">
+                More Data <br /> Logging...
+              </h4>
+            </div>
+          </motion.div>
 
-            {/* Card 03 - Course Metrics */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="col-span-12 md:col-span-6 lg:col-span-5 bg-white border border-slate-200 rounded-3xl p-6 flex items-center gap-6 shadow-sm hover:border-blue-200 transition-colors"
-            >
-              <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0">
-                <Icon2 className="w-8 h-8 text-blue-600" />
-              </div>
-              <div>
-                <h4 className="text-5xl font-black text-slate-900 tracking-tighter leading-none">{STATS[2].value}</h4>
-                <p className="text-slate-500 text-[9px] uppercase tracking-[0.3em] font-bold mt-2">{STATS[2].label}</p>
-              </div>
-            </motion.div>
+          {/* 4. SCROLLBAR - Subtle */}
+          {/* <div className="absolute bottom-12 left-10 right-10 h-[1.5px] bg-zinc-100 rounded-full">
+            <motion.div style={{ scaleX: scrollYProgress, originX: 0 }} className="h-full bg-black" />
+          </div> */}
 
-            {/* Card 04 - Global Reach */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="col-span-12 lg:col-span-7 bg-slate-900 rounded-3xl p-6 flex items-center justify-between group overflow-hidden shadow-2xl"
-            >
-              <div className="relative z-10 px-4">
-                <p className="text-slate-400 text-[9px] font-bold uppercase tracking-[0.4em] mb-2">{STATS[3].label}</p>
-                <div className="flex items-baseline gap-2 text-white">
-                  <h4 className="text-6xl font-black tracking-tighter leading-none">{STATS[3].value}</h4>
-                  <span className="text-blue-400 text-2xl font-bold italic">Avg Feedback</span>
-                </div>
-              </div>
-              <div className="hidden md:block opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-                <Icon3 size={120} className="text-white -mr-6 rotate-12" />
-              </div>
-            </motion.div>
-
-          </div>
         </div>
       </section>
+      
       <WorkMarquee5Col />
 
 
