@@ -42,7 +42,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-4 mt-8">
               {[
-                { icon: <FiLinkedin size={18} />, href: "https://linkedin.com" },
+                { icon: <FiLinkedin size={18} />, href: "https://www.linkedin.com/company/kattalyx-labs/posts/?feedView=all" },
                 { icon: <FiInstagram size={18} />, href: "https://www.instagram.com/kattalyx.labs/" },
                 { icon: <FiTwitter size={18} />, href: "https://twitter.com" }
               ].map((social, i) => (
