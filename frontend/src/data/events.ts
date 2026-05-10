@@ -18,7 +18,7 @@ import Event20 from '@/assets/events/Event20.webp';
 import DU1 from '@/assets/events/DU1.webp';
 // import DU2 from '@/assets/events/DU2.webp';-
 import DU3 from '@/assets/events/DU3.webp';
-import DU4 from '@/assets/events/DU4.webp';
+// import DU4 from '@/assets/events/DU4.webp';
 // import DU5 from '@/assets/events/DU5.webp';
 
 export interface EducationEvent {
