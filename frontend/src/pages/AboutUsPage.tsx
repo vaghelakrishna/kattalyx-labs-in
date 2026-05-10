@@ -32,13 +32,10 @@ import Event11 from '../assets/events/Event11.webp';
 import Event12 from '../assets/events/Event12.webp';
 import Event15 from '../assets/events/Event15.webp';
 import Event16 from '../assets/events/Event16.webp';
+import StatsSection from "@/sections/aboutussection/n";
 
 
-const stats = [
-  { num: "50+", label: "Topics  Covered " },
-  { num: "15+", label: "Institutions  Partnered " },
-  { num: "20+", label: "Events Conducted" },
-];
+
 
 const galleryImages = [
   { src: Event11, h: "h-[450px]" },
@@ -258,20 +255,8 @@ const AboutUsPage = () => {
       </section>
 
 
+        <StatsSection />
       <section className="bg-white py-24 overflow-hidden font-mono text-black">
-        {/* 1. RAW MINIMAL STATS */}
-        <div className="flex flex-wrap gap-x-20 gap-y-10 px-10 md:px-20 mb-32">
-          {stats.map((item, i) => (
-            <div key={i} className="flex flex-col gap-3">
-              <span className="text-7xl md:text-8xl font-normal tracking-tighter leading-none">
-                {item.num}
-              </span>
-              <span className="text-[10px] font-bold tracking-[0.2em] max-w-[90px] leading-tight">
-                {item.label}
-              </span>
-            </div>
-          ))}
-        </div>
 
         {/* 2. INFINITE MASONRY SCROLL */}
         <div className="relative flex">
