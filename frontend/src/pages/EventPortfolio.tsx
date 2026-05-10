@@ -491,7 +491,6 @@ const EventPortfolio = () => {
       <section ref={containerRef} className="relative h-[250vh] bg-white">
         <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden">
 
-          {/* 1. BACKGROUND TEXT - Reduced Size */}
           <motion.div
             style={{ opacity: bgOpacity, scale: bgScale }}
             className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0"
@@ -501,7 +500,6 @@ const EventPortfolio = () => {
             </h2>
           </motion.div>
 
-          {/* 2. SECTION HEADER - More Compact */}
           <div className="absolute top-16 left-8 md:left-20 z-20">
             <div className="flex items-center gap-2 mb-2">
               <span className="h-[1.5px] w-8 bg-black" />
@@ -512,7 +510,6 @@ const EventPortfolio = () => {
             </h3>
           </div>
 
-          {/* 3. COLORFUL CARDS - Reduced dimensions */}
           <motion.div style={{ x }} className="relative z-30 flex gap-8 items-center pl-[15%]">
             {STATS.map((stat, i) => {
               const IconComponent = ICONS[i];
@@ -547,7 +544,6 @@ const EventPortfolio = () => {
               );
             })}
 
-            {/* FINAL CARD - Reduced Size */}
             <div className="min-w-[320px] md:min-w-[380px] h-[280px] p-8 rounded-[3rem] bg-black text-white flex flex-col justify-center items-center text-center rotate-2">
               <div className="mb-4 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
                 <div className="w-3 h-3 bg-red-600 rounded-full animate-ping" />
@@ -557,12 +553,6 @@ const EventPortfolio = () => {
               </h4>
             </div>
           </motion.div>
-
-          {/* 4. SCROLLBAR - Subtle */}
-          {/* <div className="absolute bottom-12 left-10 right-10 h-[1.5px] bg-zinc-100 rounded-full">
-            <motion.div style={{ scaleX: scrollYProgress, originX: 0 }} className="h-full bg-black" />
-          </div> */}
-
         </div>
       </section>
       
