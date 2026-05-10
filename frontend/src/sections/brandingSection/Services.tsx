@@ -26,7 +26,7 @@ const services = [
     "id": "04",
     "title": "Brand Strategy & Identity",
     "desc": "Complete visual systems and brand guidelines that make your institution instantly recognizable and deeply trusted across every touchpoint.",
-    "img": "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=600&h=400&fit=crop"
+    "img": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80](https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80"
   },
   {
     "id": "05",
