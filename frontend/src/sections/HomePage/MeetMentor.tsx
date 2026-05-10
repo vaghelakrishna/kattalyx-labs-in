@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { FiLinkedin } from "react-icons/fi";
 // ✅ Local Images
-import vanshImg from "@/assets/vanshJain.webp";
+import vanshImg from "@/assets/vanshjain.webp";
 import pushpakImg from "@/assets/puspak.jpg";
 import ishikaImg from "@/assets/ishika.jpg";
 
