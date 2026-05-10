@@ -281,9 +281,9 @@ export default function HeroSection() {
               <div className="relative bg-white/70 backdrop-blur-xl rounded-[3rem] w-62 sm:w-[340px] py-6 px-6 border border-white/50 shadow-2xl">
 
                 {/* Student Image */}
-                <div className="hidden sm:block absolute -top-60 -left-8">
+                <div className="hidden sm:block absolute -top-56 -left-14">
                   <div className="absolute inset-0 bg-blue-400/20 blur-[60px] rounded-full" />
-                  <img src={heroStudent} alt="Student" className="relative w-72 z-30 drop-shadow-[0_20px_40px_rgba(0,0,0,0.2)]" />
+                  <img src={heroStudent} alt="Student" className="relative w-92 z-30 drop-shadow-[0_20px_40px_rgba(0,0,0,0.2)]" />
                 </div>
 
                 <div className="mt-16 sm:mt-2">
