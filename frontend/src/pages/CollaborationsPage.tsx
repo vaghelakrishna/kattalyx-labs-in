@@ -22,7 +22,7 @@ import Event4 from "../assets/events/Event4.webp";
 import Event6 from "../assets/events/Event6.webp";
 import Event8 from "../assets/events/Event8.webp";
 import Event19 from "../assets/events/Event19.jpeg";
-import Event20 from "../assets/events/event20.webp";
+import Event20 from "../assets/events/Event20.webp";
 import Event11 from "../assets/events/Event11.webp";
 import Event12 from "../assets/events/Event12.webp";
 import Event15 from "../assets/events/Event15.webp";
