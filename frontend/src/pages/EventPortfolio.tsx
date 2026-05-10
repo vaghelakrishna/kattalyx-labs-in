@@ -374,7 +374,7 @@ const EventPortfolio = () => {
                   <img
                     src={event.image}
                     alt={event.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[50%] group-hover:grayscale-0"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
                   {/* Float Category Tag */}
