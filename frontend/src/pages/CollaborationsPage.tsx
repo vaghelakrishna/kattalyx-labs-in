@@ -15,13 +15,19 @@ import Footer from "@/components/Footer";
 // import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import FAQSection from "@/components/FAQ";
-// import Event1 from "@/assets/events/event1.webp";
-// import Event2 from "../assets/events/event2.webp";
+import Event1 from "@/assets/events/event1.webp";
+import Event2 from "../assets/events/event2.webp";
 // import Event3 from "../assets/events/event3.webp";
-// import Event11 from "../assets/events/event11.webp";
-// import Event12 from "../assets/events/Event12.webp";
-// import Event15 from "../assets/events/event15.webp";
-// import Event16 from "../assets/events/event16.webp";    
+import Event4 from "../assets/events/Event4.webp";
+import Event6 from "../assets/events/Event6.webp";
+import Event8 from "../assets/events/Event8.webp";
+import Event19 from "../assets/events/Event19.jpeg";
+import Event20 from "../assets/events/event20.webp";
+import Event11 from "../assets/events/Event11.webp";
+import Event12 from "../assets/events/Event12.webp";
+import Event15 from "../assets/events/Event15.webp";
+import Event16 from "../assets/events/Event16.webp";   
+import DU3 from "../assets/events/DU3.webp" 
 
 const CollaborationsPage = () => {
   const [activeImage, setActiveImage] = useState(0);
@@ -38,23 +44,66 @@ const CollaborationsPage = () => {
     fetchSchools();
   }, []);
   
-   const PARTNER = [
-    // --- Schools (From Portfolio & Events) ---
-    { name: "Growell Girls School", img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "Growell Co-Ed School", img: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "Doon School", img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "Kidzee School (Global Kids)", img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "Godwin School", img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "Takshashila World School", img: 'https://images.unsplash.com/photo-1577891728591-282c146ca1b5?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "Cambridge Public School", img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "PM Shri Kendriya Vidyalaya", img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "Lakshya Public School", img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=400&h=400&auto=format&fit=crop' },
+  // Pehle check karlo ki ye imports aapke file mein upar maujood hain:
+  // import Event1 from '@/assets/events/Event1.webp';
+  // import Event2 from '@/assets/events/Event2.webp'; ... (baaki sab)
 
-    // --- Higher Ed / Institutes (From Portfolio & Events) ---
-    { name: "Saifia Institute", img: 'https://images.unsplash.com/photo-1525921429624-479b6a26d84d?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "KIET Group of Institutions", img: 'https://images.unsplash.com/photo-1498243639359-2830a6796a1e?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "ABESIT", img: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "Delhi School of Economics (DSE)", img: 'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=400&h=400&auto=format&fit=crop' }
+  const PARTNER = [
+    // --- Schools (Matching with your SCHOOL_EVENTS imports) ---
+    {
+      name: "Growell Girls School",
+      img: Event1 // AI & LinkedIn Masterclass location
+    },
+    {
+      name: "Growell Co-Ed School",
+      img: Event2 // Faculty Training location
+    },
+    {
+      name: "Doon School",
+      img: Event4 // Unlocking Human OS location
+    },
+    {
+      name: "Kidzee School (Global Kids)",
+      img: Event6 // The Human Toolkit location
+    },
+    {
+      name: "Godwin School",
+      img: Event20 // Personality Development location
+    },
+    {
+      name: "Takshashila World School",
+      img: Event11 // Project UTurn location
+    },
+    {
+      name: "Cambridge Public School",
+      img: Event12 // Persona X location
+    },
+    {
+      name: "PM Shri Kendriya Vidyalaya",
+      img: Event16 // Evarire location
+    },
+    {
+      name: "Lakshya Public School",
+      img: Event16 // Founder Fiesta location (same as Event16 or DU3)
+    },
+
+    // --- Higher Ed / Institutes (Matching with your UNI_EVENTS imports) ---
+    {
+      name: "Saifia Institute",
+      img: Event8 // The Cadet Code location
+    },
+    {
+      name: "KIET Group of Institutions",
+      img: Event15 // AI Bootcamp location
+    },
+    {
+      name: "ABESIT",
+      img: Event19 // Raising Capital location
+    },
+    {
+      name: "Delhi School of Economics (DSE)",
+      img: DU3 // Entrepreneurship Unplugged location
+    }
   ];
   return (
     <div className="min-h-screen bg-[#FDFDFD] text-slate-900 font-sans">
