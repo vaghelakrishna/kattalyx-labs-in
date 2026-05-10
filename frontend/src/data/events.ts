@@ -282,7 +282,7 @@ export const POPULAR_EVENTS: PortfolioEvent[] = [
   { id: 13, title: 'Evarire - Women Empowerment & Menstrual Hygiene', img: Event18, desc: 'Menstrual health, body positivity, gender inclusivity, and empowered conversations.', date: 'September 16, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat' },
   { id: 14, title: 'AIgnition - Igniting the Future of AI', img: Event17, desc: 'AI fundamentals, education impact, hands-on exercises, and future-readiness for faculty.', date: 'September 24, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli' },
   // { id: 15, title: 'AI Bootcamp - Vertex AI & Google Agent Kit', img: Event15, desc: 'Vertex AI and Google Agent Kit training for college students building intelligent systems.', date: 'September 27, 2025', location: 'KIET Group of Institutions' },
-  // { id: 16, title: 'Founder Fiesta', img: DU3, desc: 'Startup fundamentals, business strategy, branding, networking, and entrepreneurial mindset.', date: 'November 17, 2025', location: 'Lakshya Public School, Baghpat' },
+  { id: 16, title: 'Founder Fiesta', img: Event16, desc: 'Startup fundamentals, business strategy, branding, networking, and entrepreneurial mindset.', date: 'November 17, 2025', location: 'Lakshya Public School, Baghpat' },
   // { id: 17, title: 'Dream Direction Drive', img: DU4, desc: 'Career clarity, stream alignment, skill-based jobs, and emerging field guidance.', date: 'December 2, 2025', location: 'Maharaja Agrasen Public School, Noida' },
   // { id: 18, title: 'Collaboration Catalyst', img: DU5, desc: 'Strategic partnerships, peer learning, and institutional networking.', date: 'December 10, 2025', location: 'Andrews Public School, Noida' }
 ];
