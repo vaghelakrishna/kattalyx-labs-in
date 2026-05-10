@@ -7,6 +7,7 @@ import Event6 from '@/assets/events/Event6.webp';
 import Event7 from '@/assets/events/Event7.webp';
 import Event8 from '@/assets/events/Event8.webp';
 import Event10 from '@/assets/events/Event10.webp';
+import Event21 from '@/assets/events/Event21.jpg';
 import Event11 from '@/assets/events/Event11.webp';
 import Event12 from '@/assets/events/Event12.webp';
 import Event15 from '@/assets/events/Event15.webp';
@@ -275,7 +276,7 @@ export const POPULAR_EVENTS: PortfolioEvent[] = [
 
   { id: 10, title: 'Project UTurn - From Pressure to Purpose', img: Event10, desc: 'Self-management, positive habits, emotional intelligence, and purpose discovery at scale.', date: 'August 25, 2025', location: 'Takshashila World School, Ambehta, Saharanpur' },
 
-  { id: 11, title: 'Persona X - Unmute Yourself', img: Event11, desc: 'Public speaking, leadership, teamwork, presentation skills, and self-expression.', date: 'September 1, 2025', location: 'Cambridge Public School, Baraut' },
+  { id: 11, title: 'Persona X - Unmute Yourself', img: Event21, desc: 'Public speaking, leadership, teamwork, presentation skills, and self-expression.', date: 'September 1, 2025', location: 'Cambridge Public School, Baraut' },
 
   { id: 12, title: 'Cyber Shield - Shield Your Clicks, Secure Your Future', img: Event12, desc: 'Cybercrime, data protection, device safety, digital ethics, and cybersecurity career inspiration.', date: 'September 11, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli, Baghpat' },
   
