@@ -591,7 +591,7 @@ const EventPortfolio = () => {
               <motion.div
                 key={i}
                 whileHover={{ scale: 0.98 }}
-                className={`relative flex-shrink-0 overflow-hidden rounded-[2.5rem] bg-slate-100 group cursor-none
+                className={`relative flex-shrink-0 overflow-hidden rounded-[2.5rem] bg-slate-100 group 
             ${i % 3 === 0 ? 'w-[300px] md:w-[300px]' : i % 2 === 0 ? 'w-[400px] md:w-[600px]' : 'w-[250px] md:w-[350px]'} 
             h-[350px] md:h-[350px]`}
               >
@@ -601,11 +601,11 @@ const EventPortfolio = () => {
                   alt="Event highlight"
                 />
                 {/* Subtle Glass Tag */}
-                <div className="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                {/* <div className="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                   <div className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white text-[10px] font-black uppercase tracking-widest">
                     {photo.tag}
                   </div>
-                </div>
+                </div> */}
               </motion.div>
             ))}
           </div>
