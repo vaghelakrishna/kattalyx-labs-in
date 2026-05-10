@@ -801,7 +801,7 @@ const AboutUsPage = () => {
         {/* FLOATING IMAGES */}
         <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
           {/* Image 1 */}
-          <div className="absolute top-[10%] left-[10%] w-[120px] rotate-[-10deg] rounded-xl shadow-xl">
+          <div className="absolute top-[10%] left-[10%] w-[160px] rotate-[-10deg] rounded-xl shadow-xl">
             <img
               src={Event10}
               alt=""
@@ -810,7 +810,7 @@ const AboutUsPage = () => {
           </div>
 
           {/* Image 2 */}
-          <div className="absolute bottom-[10%] left-[20%] w-[150px] rotate-[5deg] rounded-xl shadow-xl">
+          <div className="absolute bottom-[20%] left-[20%] w-[150px] rotate-[5deg] rounded-xl shadow-xl">
             <img
               src={Event2}
               alt=""
@@ -828,7 +828,7 @@ const AboutUsPage = () => {
           </div>
 
           {/* Image 4 */}
-          <div className="absolute bottom-[6%] right-[20%] w-[180px] rotate-[-5deg] rounded-xl shadow-xl">
+          <div className="absolute bottom-[20%] right-[20%] w-[180px] rotate-[-5deg] rounded-xl shadow-xl">
             <img
               src={Event4}
               alt=""
