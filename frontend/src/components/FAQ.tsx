@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, ChevronDown } from "lucide-react"; // ChevronDown icon add kiya hai
 import { useState, useEffect } from "react";
 
 // 1. Saara Data yahan define kar do (Page routes ke hisab se)
@@ -259,17 +259,25 @@ const allPageFaqs: Record<string, { q: string, a: string }[]> = {
   ],
 
 };
-
 export default function FAQSection() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [currentFaqs, setCurrentFaqs] = useState<{ q: string, a: string }[]>([]);
 
+  // 1. Pagination State: Shuru mein sirf 5 FAQs dikhane ke liye
+  const [visibleCount, setVisibleCount] = useState(5);
+
   useEffect(() => {
-    // Ye line check karegi ki user abhi kaunse page par hai
     const path = window.location.pathname;
-    // Agar path match nahi hota toh default "/" (home) ka data dikhayega
-    setCurrentFaqs(allPageFaqs[path] || allPageFaqs["/"]);
+    const data = allPageFaqs[path] || allPageFaqs["/"];
+    setCurrentFaqs(data);
+    // Jab page change ho toh wapas count 5 kar dena chahiye
+    setVisibleCount(5);
   }, []);
+
+  // 2. Load More Handler
+  const handleLoadMore = () => {
+    setVisibleCount(currentFaqs.length); // Saare FAQs dikha dega
+  };
 
   return (
     <section className="max-w-[1400px] mx-auto py-16 px-6">
@@ -281,7 +289,8 @@ export default function FAQSection() {
       </div>
 
       <div className="space-y-4 max-w-6xl mx-auto">
-        {currentFaqs.map((faq, i) => (
+        {/* 3. Slice lagaya hai taaki sirf visibleCount tak data dikhe */}
+        {currentFaqs.slice(0, visibleCount).map((faq, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 10 }}
@@ -314,6 +323,21 @@ export default function FAQSection() {
           </motion.div>
         ))}
       </div>
+
+      {/* 4. Load More Button - Sirf tab dikhega jab aur content baaki ho */}
+      {visibleCount < currentFaqs.length && (
+        <div className="mt-12 text-center">
+          <button
+            onClick={handleLoadMore}
+            className="group inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-600 transition-all active:scale-95 shadow-lg shadow-slate-200"
+          >
+            Load More Questions
+            <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+          </button>
+        </div>
+      )}
     </section>
   );
 }
+
+
