@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { FiLinkedin } from "react-icons/fi";
 // ✅ Local Images
-import vanshImg from "@/assets/vansh.jpg";
+import vanshImg from "@/assets/vanshJain.webp";
 import pushpakImg from "@/assets/puspak.jpg";
 import ishikaImg from "@/assets/ishika.jpg";
 
@@ -167,7 +167,7 @@ function MeetMentor() {
                 }}
                 className="relative shrink-0 w-[82vw] md:w-[350px] snap-center group cursor-pointer z-10"
               >
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[3rem] bg-slate-100 border border-slate-100 transition-all duration-500 group-hover:border-slate-300 shadow-sm pointer-events-none">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[3rem] bg-neutral-900 border border-slate-100 transition-all duration-500 group-hover:border-slate-300 shadow-sm pointer-events-none">
                   <img
                     src={member.avatar}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
