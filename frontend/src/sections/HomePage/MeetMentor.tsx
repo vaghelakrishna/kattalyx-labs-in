@@ -151,7 +151,7 @@ function MeetMentor() {
           {/* Cards Container */}
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 md:gap-10 overflow-x-auto pb-12 no-scrollbar scroll-smooth snap-x snap-mandatory"
+            className="flex gap-6 md:gap-10 overflow-x-auto pb-12 no-scrollbar scroll-smooth snap-x snap-mandatory items-center justify-center"
           >
             {team.map((member, index) => (
               <motion.div
