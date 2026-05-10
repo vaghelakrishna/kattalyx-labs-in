@@ -86,13 +86,13 @@ const ContactPage: React.FC = () => {
 
             <div className="space-y-6 max-w-sm">
               <p className="text-zinc-500 text-lg leading-relaxed font-light">
-                Whether it's a DU seminar, a podcasting marathon, or a full-scale brand overhaul—the execution starts here.
+                Whether it's a podcasting marathon, or a full-scale brand overhaul—the execution starts here.
               </p>
               <div className="flex gap-4">
                 <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center group cursor-pointer hover:bg-red-600 transition-colors">
                   <div className="w-2.5 h-2.5 bg-white rounded-full group-hover:scale-150 transition-transform" />
                 </div>
-                <p className="text-xs uppercase tracking-widest font-bold self-center">Based in Delhi, India</p>
+                <p className="text-xs uppercase tracking-widest font-bold self-center">Based in Noida, India</p>
               </div>
             </div>
           </div>
