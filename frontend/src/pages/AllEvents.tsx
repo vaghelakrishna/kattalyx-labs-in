@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 // import { dashboardAPI } from "@/services/api";
 import FAQSection from "@/components/FAQ";
-import { SCHOOL_EVENTS, COLLEGE_EVENTS, UNI_EVENTS } from '@/data/events';
+import { SCHOOL_EVENTS, UNI_EVENTS } from '@/data/events';
 
 // Assets
 import Event1 from "@/assets/events/Event1.webp";
@@ -271,7 +271,7 @@ const EventsPage = () => {
           </header>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {COLLEGE_EVENTS.slice().reverse().map((event, idx) => (
+            {UNI_EVENTS.slice().reverse().map((event, idx) => (
               <div
                 key={`${event.id}-${idx}`}
                 className="group relative bg-white rounded-[2.5rem] p-3 border border-slate-200/60 transition-all duration-500 hover:border-blue-500/20 hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.1)]"
