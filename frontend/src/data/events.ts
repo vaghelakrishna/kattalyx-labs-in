@@ -187,17 +187,17 @@ export const SCHOOL_EVENTS: EducationEvent[] = [
   //   image: DU3,
   //   description: 'Startup fundamentals, branding, and entrepreneurial mindset for students.',
   // },
-  {
-    id: '14',
-    title: 'Dream Direction Drive',
-    date: 'December 2, 2025',
-    time: '11:00 AM',
-    category: 'Career Guidance',
-    location: 'Maharaja Agrasen Public School, Noida',
-    segment: 'School',
-    image: DU4,
-    description: 'Stream alignment, skill-based jobs, and future-ready career clarity.',
-  }
+  // {
+  //   id: '14',
+  //   title: 'Dream Direction Drive',
+  //   date: 'December 2, 2025',
+  //   time: '11:00 AM',
+  //   category: 'Career Guidance',
+  //   location: 'Maharaja Agrasen Public School, Noida',
+  //   segment: 'School',
+  //   image: DU4,
+  //   description: 'Stream alignment, skill-based jobs, and future-ready career clarity.',
+  // }
 ];
 
 
@@ -273,6 +273,6 @@ export const POPULAR_EVENTS: PortfolioEvent[] = [
   { id: 14, title: 'AIgnition - Igniting the Future of AI', img: Event17, desc: 'AI fundamentals, education impact, hands-on exercises, and future-readiness for faculty.', date: 'September 24, 2025', location: 'PM Shri Kendriya Vidyalaya, Baoli' },
   // { id: 15, title: 'AI Bootcamp - Vertex AI & Google Agent Kit', img: Event15, desc: 'Vertex AI and Google Agent Kit training for college students building intelligent systems.', date: 'September 27, 2025', location: 'KIET Group of Institutions' },
   // { id: 16, title: 'Founder Fiesta', img: DU3, desc: 'Startup fundamentals, business strategy, branding, networking, and entrepreneurial mindset.', date: 'November 17, 2025', location: 'Lakshya Public School, Baghpat' },
-  { id: 17, title: 'Dream Direction Drive', img: DU4, desc: 'Career clarity, stream alignment, skill-based jobs, and emerging field guidance.', date: 'December 2, 2025', location: 'Maharaja Agrasen Public School, Noida' },
+  // { id: 17, title: 'Dream Direction Drive', img: DU4, desc: 'Career clarity, stream alignment, skill-based jobs, and emerging field guidance.', date: 'December 2, 2025', location: 'Maharaja Agrasen Public School, Noida' },
   // { id: 18, title: 'Collaboration Catalyst', img: DU5, desc: 'Strategic partnerships, peer learning, and institutional networking.', date: 'December 10, 2025', location: 'Andrews Public School, Noida' }
 ];
