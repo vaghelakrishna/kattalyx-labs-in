@@ -1,0 +1,722 @@
+
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import {  ChevronLeft, ChevronRight, Calendar, MapPin, Users, Star, X, Globe,  Briefcase, type LucideIcon } from 'lucide-react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import { TOP_EVENTS, POPULAR_EVENTS, UNI_EVENTS } from '@/data/events';
+import Event1 from '@/assets/events/Event1.webp';
+import Event2 from '@/assets/events/Event2.webp';
+// import Event3 from '@/assets/events/Event3.webp';
+import Event4 from '@/assets/events/Event4.webp';
+// import Event5 from '@/assets/events/Event5.webp';
+import Event6 from '@/assets/events/Event6.webp';
+import Event7 from '@/assets/events/Event7.webp';
+import Event8 from '@/assets/events/Event8.webp';
+import Event10 from '@/assets/events/Event10.webp';
+import Event11 from '@/assets/events/Event11.webp';
+import Event12 from '@/assets/events/Event12.webp';
+import Event15 from '@/assets/events/Event15.webp';
+import Event16 from '@/assets/events/Event16.webp';
+
+import Event17 from '@/assets/events/Event17.jpeg';
+import Event18 from '@/assets/events/Event18.jpeg';
+import Event19 from '@/assets/events/Event19.jpeg';
+
+import DU1 from '@/assets/events/DU1.webp';
+import DU2 from '@/assets/events/DU2.webp';
+import DU3 from '@/assets/events/DU3.webp';
+import DU4 from '@/assets/events/DU4.webp';
+import DU5 from '@/assets/events/DU5.webp';
+import { useRef, useState } from 'react';
+import FAQSection from '@/components/FAQ';
+
+
+
+
+interface StatItem {
+  label: string;
+  value: string;
+  icon: LucideIcon;
+  color: string;
+}
+
+
+
+const STATS: StatItem[] = [
+  {
+    label: "Total Events",
+    value: "20+",
+    icon: Briefcase,
+    color: "from-indigo-500 to-purple-600"
+  },
+  {
+    label: "Students Reached",
+    value: "10K+",
+    icon: Users,
+    color: "from-blue-600 to-indigo-700"
+  },
+  {
+    label: "Schools & Institutions",
+    value: "15+",
+    icon: Globe,
+    color: "from-slate-800 to-slate-900"
+  },
+  {
+    label: "Event Feedback",
+    value: "9.6/10",
+    icon: Star,
+    color: "from-yellow-400 to-orange-500"
+  }
+];
+
+
+// Extract icons as Capitalized Components for TSX compliance
+// const Icon0 = STATS[0].icon;
+// const Icon1 = STATS[1].icon;
+// const Icon2 = STATS[2].icon;
+// const Icon3 = STATS[3].icon;
+
+
+
+
+const PHOTO_GALLERY = [
+  { url: Event1, tag: "Highlights" },
+  { url: Event2, tag: "Innovation" },
+  { url: Event4, tag: "Mentorship" },
+  { url: Event6, tag: "Leadership" },
+  { url: Event7, tag: "Cybersecurity" },
+  { url: Event8, tag: "Confidence" },
+  { url: Event18, tag: "Technology" },
+  { url: Event10, tag: "Career" },
+  { url: Event11, tag: "Community" },
+  { url: Event12, tag: "Journey" },
+  { url: Event15, tag: "Expression" },
+  { url: Event16, tag: "Empowerment" },
+  { url: Event17, tag: "Impact" },
+  { url: Event19, tag: "Innovation" },
+  { url: DU1, tag: "AI" },
+  { url: DU2, tag: "Bootcamp" },
+  { url: DU3, tag: "Startup" },
+  { url: DU4, tag: "Guidance" },
+  { url: DU5, tag: "Collaboration" },
+];
+
+
+
+const EventPortfolio = () => {
+
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  // Slide effect mapping
+  const x = useTransform(scrollYProgress, [0, 1], ["70%", "-30%"]);
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [0.85, 1.15]);
+
+  // COLOR MAPPING (Inspiration Colors)
+  const COLORS = ["#FFADF0", "#A0D2FF", "#C4FF8E", "#FFE16A"];
+  const ICONS = [Briefcase, Users, Globe, Star];
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [visibleEvents, setVisibleEvents] = useState(8);
+  const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % TOP_EVENTS.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + TOP_EVENTS.length) % TOP_EVENTS.length);
+
+  // const stories = [
+  //   {
+  //     student: "Rohan Mehta",
+  //     school: "DPS Ghaziabad",
+  //     achievement: "Secured internship at Google after our AI workshop",
+  //     tag: "Tech Placement",
+  //     color: "bg-blue-500",
+  //     img: DU1
+  //   },
+  //   {
+  //     student: "Sneha Kapoor",
+  //     school: "Ryan International",
+  //     achievement: "Started her tech startup after the Summit",
+  //     tag: "Entrepreneurship",
+  //     color: "bg-indigo-600",
+  //     img: DU2
+  //   },
+  // ];
+  const EVENT_ASSETS = [
+    Event1,
+    Event4,
+    Event6,
+    Event7,
+    Event8,
+    Event10,
+    Event11,
+    Event12,
+    Event15,
+    Event17,
+    Event18,
+    Event19,
+    Event16,
+  ];
+  const ScrollingRow = ({ items, baseVelocity = 20, reverse = false }: { items: string[], baseVelocity?: number, reverse?: boolean }) => {
+    const tripledItems = [...items, ...items, ...items];
+    return (
+      <div className="flex overflow-hidden py-4">
+        <motion.div
+          className="flex gap-6 pr-6"
+          animate={{ x: reverse ? ["-33.33%", "0%"] : ["0%", "-33.33%"] }}
+          transition={{ ease: "linear", duration: baseVelocity, repeat: Infinity }}
+        >
+          {tripledItems.map((src, idx) => (
+            <div key={idx} className="w-60 md:w-80 shrink-0">
+              <img
+                src={src}
+                alt="Community"
+                className="w-full h-36 md:h-48 object-cover rounded-[2.5rem] shadow-sm border border-slate-100"
+              />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    );
+  };
+
+  return (
+    <div className="min-h-screen bg-white font-sans text-slate-900 ">
+      <Navbar />
+
+      {/* 1. TOP EVENT SLIDER (HERO) */}
+      <section className="relative w-full px-4 pt-28 pb-10 bg-[#FBFCFE]">
+        {/* Main Container - Responsive Height */}
+        <div className="relative min-h-[500px] md:h-[80vh] w-full overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-slate-900 shadow-2xl shadow-blue-900/10">
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.7 }}
+              className="absolute inset-0"
+            >
+              {/* Background Image with refined overlay */}
+              <img
+                src={TOP_EVENTS[currentSlide].image}
+                className="h-full w-full object-cover opacity-50 md:opacity-60 scale-120"
+                alt="Event Spotlight"
+              />
+              {/* Multilayered Gradient for Text Readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-transparent to-transparent hidden md:block" />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Content Area - Flexbox for perfect mobile centering */}
+          <div className="relative h-full w-full flex flex-col justify-end p-6 md:p-16 lg:p-24">
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="max-w-4xl"
+            >
+              {/* Floating Tags */}
+              <div className="flex flex-wrap items-center gap-3 mb-6 md:mb-8">
+                {/* <span className="bg-blue-600 text-white text-[10px] md:text-xs font-black px-3 py-1 rounded-lg uppercase tracking-widest">
+                  Live Now
+                </span> */}
+                <div className="flex items-center gap-4 text-white/70 text-[10px] md:text-xs font-bold uppercase tracking-wider">
+                  <span className="flex items-center gap-1.5">
+                    <Calendar size={14} className="text-blue-500" /> {TOP_EVENTS[currentSlide].date}
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <MapPin size={14} className="text-blue-500" /> {TOP_EVENTS[currentSlide].location}
+                  </span>
+                </div>
+              </div>
+
+              {/* Dynamic Typography - Fluid scaling */}
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-[1.1] md:leading-[0.9] mb-8 md:mb-12">
+                {TOP_EVENTS[currentSlide].title}
+              </h1>
+
+              {/* Action Buttons - Stacked on mobile, row on desktop */}
+              {/* <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                <button className="w-full sm:w-auto group flex items-center justify-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all duration-300">
+                  Get Tickets <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-white/20 transition-all">
+                  Learn More
+                </button>
+              </div> */}
+            </motion.div>
+          </div>
+
+          {/* Navigation Controls - Relocated for better thumb reach on mobile */}
+          <div className="absolute top-6 right-6 md:top-auto md:bottom-10 md:right-10 flex flex-col md:flex-row items-center gap-4">
+            {/* Slide Indicator Dots */}
+            <div className="flex md:flex-row gap-2 mb-2 md:mb-0">
+              {TOP_EVENTS.map((_, i) => (
+                <div
+                  key={i}
+                  className={`h-1.5 transition-all duration-300 rounded-full ${currentSlide === i ? 'w-8 bg-blue-500' : 'w-2 bg-white/30'}`}
+                />
+              ))}
+            </div>
+
+            {/* Arrow Buttons */}
+            <div className="flex gap-2">
+              <button
+                onClick={prevSlide}
+                className="p-3 md:p-4 rounded-xl bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-white hover:text-slate-900 transition-all"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="p-3 md:p-4 rounded-xl bg-white/10 backdrop-blur-lg border border-white/10 text-white hover:bg-white hover:text-slate-900 transition-all"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* 2. POPULAR EVENTS (MODERN GRID) */}
+      <section className="max-w-[1400px] mx-auto py-16 px-6">
+        <div className="flex justify-between items-end mb-16">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900">School Events</h2>
+            <p className="text-slate-500 mt-2 font-medium">Real-world learning experiences transforming students.</p>
+          </div>
+          <div className="h-px flex-1 mx-12 bg-slate-100 hidden md:block" />
+          {/* <button className="text-sm font-black uppercase tracking-[0.2em] text-blue-600 border-b-2 border-blue-600 pb-1">
+            View All
+          </button> */}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {POPULAR_EVENTS.slice(0, visibleEvents).map((event) => (
+            <motion.div
+              key={event.id}
+              whileHover={{ y: -10 }}
+              className="group relative h-[400px] rounded-[2.5rem] overflow-hidden cursor-pointer"
+            >
+              <img
+                src={event.img}
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                alt={event.title}
+              />
+              {/* Soft overlay that darkens on hover */}
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300" />
+
+              <div className="absolute bottom-8 left-8 right-8">
+                <h3 className="text-2xl font-black text-white leading-tight translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  {event.title}
+                </h3>
+                <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button
+                    onClick={() => setSelectedEvent(event.id)}
+                    className="text-[10px] font-black text-blue-400 uppercase tracking-widest hover:text-blue-300 transition-colors"
+                  >
+                    Learn More →
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        {visibleEvents < POPULAR_EVENTS.length && (
+          <div className="text-center mt-12">
+            <button
+              onClick={() => setVisibleEvents(prev => prev + 8)}
+              className="px-8 py-4 border-2 border-slate-900 text-slate-900 rounded-full font-bold hover:bg-slate-900 hover:text-white transition-all"
+            >
+              Load More Events
+            </button>
+          </div>
+        )}
+      </section>
+
+      <section className="py-32 bg-[#fcfcfc] relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-20">
+
+          {/* HEADER: Minimalist & Clean */}
+          <header className="mb-20 flex flex-col md:flex-row justify-between items-end gap-6">
+            <div className="space-y-2">
+              <div className="flex items-center gap-3">
+                <span className="w-8 h-[2px] bg-red-600"></span>
+                <span className="text-red-600 font-mono text-[10px] uppercase tracking-[0.4em] font-bold">Partnerships</span>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-black tracking-tighter uppercase text-black">
+                University <span className="text-zinc-300">Events</span>
+              </h2>
+            </div>
+            <p className="text-zinc-400 text-sm font-medium max-w-[280px] leading-relaxed">
+              A chronological record of technical bootcamps and collaborative seminars across India.
+            </p>
+          </header>
+
+          {/* CLEAN 3-COLUMN GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {UNI_EVENTS.slice().reverse().map((event, idx) => (
+              <motion.div
+                key={`${event.id}-${idx}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group flex flex-col bg-white border border-zinc-200 rounded-[2rem] overflow-hidden hover:border-black transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
+              >
+                {/* IMAGE AREA */}
+                <div className="relative h-64 overflow-hidden bg-zinc-100">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[50%] group-hover:grayscale-0"
+                  />
+
+                  {/* Float Category Tag */}
+                  <div className="absolute top-5 left-5">
+                    <span className="bg-white/90 backdrop-blur-md text-black text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-black/5">
+                      {event.category}
+                    </span>
+                  </div>
+
+                  {/* Index Number */}
+                  <div className="absolute bottom-5 right-6">
+                    <span className="text-4xl font-black text-white/20 group-hover:text-white/40 transition-colors italic">
+                      0{idx + 1}
+                    </span>
+                  </div>
+                </div>
+
+                {/* CONTENT AREA */}
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="flex-grow space-y-4">
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-red-600 uppercase tracking-[0.2em]">
+                      <span>{event.date}</span>
+                      <span className="w-1 h-1 bg-zinc-300 rounded-full"></span>
+                      <span className="text-zinc-400">{event.location}</span>
+                    </div>
+
+                    <h3 className="text-2xl font-black tracking-tight text-black leading-tight group-hover:text-red-600 transition-colors">
+                      {event.title}
+                    </h3>
+
+                    <p className="text-zinc-500 text-sm leading-relaxed font-light line-clamp-3">
+                      {event.description}
+                    </p>
+                  </div>
+
+                  {/* BOTTOM ACTION */}
+                  {/* <div className="mt-8 pt-6 border-t border-zinc-100 flex justify-between items-center">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-400">
+                      Kattalyx / Tech
+                    </span>
+                    <div className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300">
+                      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:translate-x-0.5 transition-transform">
+                        <path d="M3.5 7.5H11.5M11.5 7.5L8 4M11.5 7.5L8 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                  </div> */}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* EVENT MODAL */}
+      {selectedEvent && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 " onClick={() => setSelectedEvent(null)}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-white rounded-3xl max-w-xl w-full max-h-[90vh] overflow-y-auto relative mt-25"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedEvent(null)}
+              className="absolute top-6 right-6 p-2 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            {POPULAR_EVENTS.find(e => e.id === selectedEvent) && (
+              <>
+                <img
+                  src={POPULAR_EVENTS.find(e => e.id === selectedEvent)!.img}
+                  className="w-full h-64 object-cover rounded-t-3xl"
+                  alt="Event"
+                />
+                <div className="p-6">
+                  <h2 className="text-4xl font-black text-slate-900 mb-4">
+                    {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.title}
+                  </h2>
+                  <div className="flex gap-4 mb-6">
+                    <span className="flex items-center gap-2 text-slate-600 text-sm font-bold">
+                      <Calendar className="w-4 h-4 text-blue-600" />
+                      {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.date}
+                    </span>
+                    <span className="flex items-center gap-2 text-slate-600 text-sm font-bold">
+                      <MapPin className="w-4 h-4 text-blue-600" />
+                      {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.location}
+                    </span>
+                  </div>
+                  <p className="text-slate-600 leading-relaxed mb-4">
+                    {POPULAR_EVENTS.find(e => e.id === selectedEvent)!.desc}
+                  </p>
+                  <button className="w-full bg-blue-600 text-white py-4 rounded-full font-bold hover:bg-blue-700 transition-colors">
+                    Register Now
+                  </button>
+                </div>
+              </>
+            )}
+          </motion.div>
+        </div>
+      )}
+
+
+
+      <div className="relative z-10">
+        <div className="absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-slate-50 via-slate-50/40 to-transparent z-10" />
+        <div className="absolute inset-y-0 right-0 w-64 bg-gradient-to-l from-slate-50 via-slate-50/40 to-transparent z-10" />
+        <div className="flex flex-col gap-6">
+          <ScrollingRow items={EVENT_ASSETS} baseVelocity={35} />
+          <ScrollingRow items={EVENT_ASSETS} baseVelocity={50} reverse />
+        </div>
+      </div>
+
+      <section ref={containerRef} className="relative h-[250vh] bg-white">
+        <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden">
+
+          <motion.div
+            style={{ opacity: bgOpacity, scale: bgScale }}
+            className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-0"
+          >
+            <h2 className="text-[18vw] font-black text-zinc-50 leading-[0.8] tracking-tighter uppercase whitespace-nowrap select-none">
+              KATTALYX <br /> METRICS
+            </h2>
+          </motion.div>
+
+          <div className="absolute top-16 left-8 md:left-20 z-20">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="h-[1.5px] w-8 bg-black" />
+              <span className="text-black font-mono text-[9px] uppercase tracking-[0.3em] font-bold italic">Lab Archive</span>
+            </div>
+            <h3 className="text-5xl md:text-6xl font-black tracking-tighter text-black leading-[0.9] uppercase">
+              Proven <br /> <span className="text-zinc-300 italic font-serif lowercase">by</span> Numbers.
+            </h3>
+          </div>
+
+          <motion.div style={{ x }} className="relative z-30 flex gap-8 items-center pl-[15%]">
+            {STATS.map((stat, i) => {
+              const IconComponent = ICONS[i];
+              return (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -10, rotate: 0, scale: 1.02 }}
+                  style={{
+                    backgroundColor: COLORS[i],
+                    rotate: i % 2 === 0 ? -2 : 2,
+                  }}
+                  className="min-w-[320px] md:min-w-[380px] h-[240px] md:h-[280px] p-8 rounded-[3rem] shadow-xl flex flex-col justify-between border border-black/5 cursor-pointer group"
+                >
+                  <div className="flex justify-between items-start">
+                    <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <IconComponent className="w-5 h-5 text-white" />
+                    </div>
+                    <p className="font-mono text-[9px] uppercase tracking-widest text-black/30 font-bold">
+                      PRTC // 0{i + 1}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-6xl md:text-7xl font-black tracking-tighter leading-none text-black -ml-1">
+                      {stat.value}
+                    </h4>
+                    <p className="font-black uppercase tracking-[0.3em] text-[10px] text-black/60 ml-1">
+                      {stat.label}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+
+            <div className="min-w-[320px] md:min-w-[380px] h-[280px] p-8 rounded-[3rem] bg-black text-white flex flex-col justify-center items-center text-center rotate-2">
+              <div className="mb-4 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
+                <div className="w-3 h-3 bg-red-600 rounded-full animate-ping" />
+              </div>
+              <h4 className="text-2xl font-black uppercase italic leading-tight">
+                More Data <br /> Logging...
+              </h4>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      
+      <WorkMarquee5Col />
+
+
+      {/* 5. PHOTO FEED SECTION (DYNAMIC INFINITE MARQUEE) */}
+      <section className="bg-white py-20 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <h2 className="text-[10px] font-black text-blue-600 uppercase tracking-[0.4em] mb-4">Inside the Experience</h2>
+            <p className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter leading-none">
+              Moments in <span className="text-slate-300">Motion.</span>
+            </p>
+          </div>
+          <p className="text-slate-500 font-medium max-w-xs text-sm leading-relaxed">
+            A glimpse into the workshops, energy, and breakthroughs from our global sessions.
+          </p>
+        </div>
+
+        {/* Marquee Container */}
+        <div className="relative flex flex-col gap-6">
+          {/* First Row - Moving Right */}
+          <div className="flex gap-6 animate-marquee whitespace-nowrap">
+            {[...PHOTO_GALLERY, ...PHOTO_GALLERY].map((photo, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 0.98 }}
+                className={`relative flex-shrink-0 overflow-hidden rounded-[2.5rem] bg-slate-100 group 
+            ${i % 3 === 0 ? 'w-[300px] md:w-[300px]' : i % 2 === 0 ? 'w-[400px] md:w-[600px]' : 'w-[250px] md:w-[350px]'} 
+            h-[350px] md:h-[350px]`}
+              >
+                <img
+                  src={photo.url}
+                  className="h-full w-full object-cover  transition-all duration-1000 ease-in-out group-hover:scale-110"
+                  alt="Event highlight"
+                />
+                {/* Subtle Glass Tag */}
+                {/* <div className="absolute bottom-8 left-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                  <div className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white text-[10px] font-black uppercase tracking-widest">
+                    {photo.tag}
+                  </div>
+                </div> */}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Reverse Row - Optional: Use if you want a second row moving left for more depth */}
+        </div>
+
+        {/* CSS for the Marquee Animation */}
+        <style>{`
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: fit-content;
+      animation: marquee 40s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  `}</style>
+      </section>
+
+
+      <FAQSection />
+      <Footer />
+    </div>
+  );
+};
+
+export default EventPortfolio;
+
+
+const WorkMarquee5Col = () => {
+  const allProjects = [
+    {  img: Event1},
+    { img: Event2 },
+    {  img: Event4 },
+    {  img: Event6 },
+    { img: Event7 },
+    {  img: Event8 },
+    {  img: Event10 },
+    {  img: Event11 },
+    { img: Event12 },
+    { img: Event15 },
+    { img: Event16 },
+    { img: Event17 },
+    {img: Event18 },
+    { img: Event19 },
+    {img : DU1 },
+
+  ];
+
+  const ColumnTrack = ({ items, reverse = false, duration = 30 }: { items: any[]; reverse?: boolean; duration?: number }) => (
+    <div className="flex flex-col gap-4 overflow-hidden h-[700px] relative shrink-0">
+      <motion.div
+        animate={{ y: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
+        transition={{ ease: "linear", duration: duration, repeat: Infinity }}
+        className="flex flex-col gap-4"
+      >
+        {[...items, ...items].map((item, idx) => (
+          <div
+            key={idx}
+            className="w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-zinc-100 bg-white group relative shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.03)] transition-all duration-500"
+          >
+            <img
+              src={item.img}
+              className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
+              alt={item.title}
+            />
+            {/* Elegant light-themed overlay */}
+            {/* <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+              <h3 className="text-zinc-900 font-black uppercase tracking-[0.1em] text-xs translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                {item.title}
+              </h3>
+            </div> */}
+            {item.video && (
+              <div className="absolute top-5 right-5">
+                <div className="w-9 h-9 rounded-full bg-white/90 backdrop-blur-md shadow-sm flex items-center justify-center border border-zinc-100">
+                  {/* <div className="w-0 h-0 border-t-[4px] border-t-transparent border-l-[7px] border-l-zinc-900 border-b-[4px] border-b-transparent ml-0.5" /> */}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+
+  return (
+    <section className="bg-[#FCFCFD] py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* SECTION HEADER */}
+        <div className="mb-20 flex flex-col items-center text-center space-y-4">
+          <div className="flex items-center gap-3">
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400">Archive / 2026</span>
+            <div className="w-12 h-[1.5px] bg-zinc-200" />
+          </div>
+          <h2 className="text-5xl md:text-8xl font-[1000] text-zinc-900 tracking-tighter uppercase leading-[0.8]">
+            WORK CYCLE<span className="text-blue-700">.</span>
+          </h2>
+        </div>
+
+        {/* 5-COLUMN GRID */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 h-[700px] relative overflow-hidden px-2">
+
+          <ColumnTrack items={[allProjects[0], allProjects[1], allProjects[2]]} duration={28} />
+          <ColumnTrack items={[allProjects[3], allProjects[4], allProjects[5]]} reverse duration={38} />
+          <ColumnTrack items={[allProjects[6], allProjects[7], allProjects[8]]} duration={22} />
+          <ColumnTrack items={[allProjects[9], allProjects[10], allProjects[11]]} reverse duration={45} />
+          <ColumnTrack items={[allProjects[12], allProjects[13], allProjects[14]]} duration={32} />
+
+          {/* Fading Mask Overlays - Match background color */}
+          <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#FCFCFD] via-[#FCFCFD]/80 to-transparent z-20 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#FCFCFD] via-[#FCFCFD]/80 to-transparent z-20 pointer-events-none" />
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
