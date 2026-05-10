@@ -19,7 +19,7 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const announcementMessages: Record<string, string> = {
-    "/": "Discover the next generation ecosystem for institutions and students.",
+    "/": "Welcome to Kattalyx Labs! Discover the next generation ecosystem for institutions,founder and students.",
     "/about-us": "Learn why thousands of students choose Kattalyx Labs for their growth.",
     "/collaborations": "See our powerful institutional collaborations",
     "/events": "Get upcoming events and workshops details for achievers.",
