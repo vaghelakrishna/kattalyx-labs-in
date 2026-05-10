@@ -49,8 +49,6 @@ const CollaborationsPage = () => {
     { name: "Cambridge Public School", img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=400&h=400&auto=format&fit=crop' },
     { name: "PM Shri Kendriya Vidyalaya", img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=400&h=400&auto=format&fit=crop' },
     { name: "Lakshya Public School", img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "Maharaja Agrasen Public School", img: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=400&h=400&auto=format&fit=crop' },
-    { name: "Andrews Public School", img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=400&h=400&auto=format&fit=crop' },
 
     // --- Higher Ed / Institutes (From Portfolio & Events) ---
     { name: "Saifia Institute", img: 'https://images.unsplash.com/photo-1525921429624-479b6a26d84d?q=80&w=400&h=400&auto=format&fit=crop' },
