@@ -20,7 +20,7 @@ import Event16 from '@/assets/events/Event16.webp';
 
 import Event17 from '@/assets/events/Event17.webp';
 import Event18 from '@/assets/events/Event18.webp';
-import Event19 from '@/assets/events/Event19.jpeg';
+import Event19 from '@/assets/events/Event19.webp';
 
 import DU1 from '@/assets/events/DU1.webp';
 import DU2 from '@/assets/events/DU2.webp';
