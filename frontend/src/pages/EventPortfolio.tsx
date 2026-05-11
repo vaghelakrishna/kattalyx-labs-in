@@ -18,8 +18,8 @@ import Event12 from '@/assets/events/Event12.webp';
 import Event15 from '@/assets/events/Event15.webp';
 import Event16 from '@/assets/events/Event16.webp';
 
-import Event17 from '@/assets/events/Event17.jpeg';
-import Event18 from '@/assets/events/Event18.jpeg';
+import Event17 from '@/assets/events/Event17.webp';
+import Event18 from '@/assets/events/Event18.webp';
 import Event19 from '@/assets/events/Event19.jpeg';
 
 import DU1 from '@/assets/events/DU1.webp';
