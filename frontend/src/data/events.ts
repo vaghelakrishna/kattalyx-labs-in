@@ -7,14 +7,14 @@ import Event6 from '@/assets/events/Event6.webp';
 import Event7 from '@/assets/events/Event7.webp';
 import Event8 from '@/assets/events/Event8.webp';
 import Event10 from '@/assets/events/Event10.webp';
-import Event21 from '@/assets/events/Event21.jpg';
+import Event21 from '@/assets/events/Event21.webp';
 import Event11 from '@/assets/events/Event11.webp';
 import Event12 from '@/assets/events/Event12.webp';
 import Event15 from '@/assets/events/Event15.webp';
 import Event16 from '@/assets/events/Event16.webp';
 import Event17 from '@/assets/events/Event17.webp';
 import Event18 from '@/assets/events/Event18.webp';
-import Event19 from '@/assets/events/Event19.jpeg';
+import Event19 from '@/assets/events/Event19.webp';
 import Event20 from '@/assets/events/Event20.webp';
 import DU1 from '@/assets/events/DU1.webp';
 // import DU2 from '@/assets/events/DU2.webp';-
