@@ -183,7 +183,7 @@
 
 import { ArrowRight, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroStudent from "@/assets/heroAv4.png";
+import heroStudent from "@/assets/heroAv4.webp"; 
 
 export default function HeroSection() {
   return (
