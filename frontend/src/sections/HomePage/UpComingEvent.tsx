@@ -9,7 +9,7 @@ import Event8 from "../../assets/events/Event8.webp";
 import Event10 from "../../assets/events/Event10.webp";
 import DU1 from "../../assets/events/DU1.webp";
 import Event18 from "../../assets/events/Event18.webp";
-import Event19 from "../../assets/events/Event19.jpeg";
+import Event19 from "../../assets/events/Event19.webp";
 
 
 
